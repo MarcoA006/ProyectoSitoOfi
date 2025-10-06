@@ -1,0 +1,57 @@
+<html>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<body bgcolor="white">
+<h1> Request Information </h1>
+<font size="4">
+JSP Request Method: GET
+<br>
+Request URI: /examples/jsp/snp/snoop.jsp
+<br>
+Request Protocol: HTTP/1.1
+<br>
+Servlet path: /jsp/snp/snoop.jsp
+<br>
+Path info: null
+<br>
+Query string: file=../../../../../../../conf/server.xml
+<br>
+Content length: -1
+<br>
+Content type: null
+<br>
+Server name: 189.254.143.102
+<br>
+Server port: 443
+<br>
+Remote user: null
+<br>
+Remote address: 189.254.143.102
+<br>
+Remote host: 189.254.143.102
+<br>
+Authorization scheme: null 
+<br>
+Locale: es_MX
+<hr>
+The browser you are using is
+python-requests/2.28.1
+<hr>
+</font>
+</body>
+</html>

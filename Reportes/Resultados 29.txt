@@ -1,0 +1,62 @@
+Script de Análisis Real y Explotación Efectiva:
+
+================================================================================
+ANÁLISIS REAL DE VULNERABILIDADES SITO UTSLP
+================================================================================
+
+[1] ENDPOINTS CONFIRMADOS:
+✅ /jsp/escolar/proceso_admision/proceso_interesado.jsp?xModalidadP=N - 200 (129286 bytes)
+✅ /jsp/escolar/proceso_admision/proceso_interesado.jsp?xModalidadP=D - 200 (128122 bytes)
+✅ /jsp/escolar/proceso_admision/proceso_interesado.jsp?xModalidadP=Z - 200 (38640 bytes)
+✅ /jsp/escolar/proceso_admision_lic/proceso_interesado.jsp - 200 (115279 bytes)
+✅ /jsp/seguimiento_egreso/proceso_registro_egresado.jsp?xNuevo=1 - 200 (27430 bytes)
+✅ /jsp/escolar/proceso_admision/muestra_bachillerato_ajax.jsp?xCveBachillerato=1 - 200 (29 bytes)
+✅ /jsp/escolar/muestra_bachillerato_ajax.jsp?xCveBachillerato=1 - 200 (29 bytes)
+
+[2] ANALIZANDO ARCHIVOS JAVASCRIPT:
+📜 /javascript/utilities.js - Encontrado
+📜 /javascript/jquery/jquery-1.5.1.min.js - Encontrado
+   🔍 urls: ['http://jquery.com/', 'http://jquery.org/license', 'http://sizzlejs.com/']
+   🔍 api_endpoints: ['json', 'json']
+📜 /javascript/jquery/jquery-ui-1.8.2.min.js - Encontrado
+   🔍 urls: ['http://jqueryui.com/about)', 'http://docs.jquery.com/UI', 'http://jqueryui.com/about)']
+📜 /javascript/scriptAnimaciones.js - Encontrado
+   🔍 urls: ['https://weichiachang.github.io/easter-eggs-mobile/images/ghost.gif', 'https://weichiachang.github.io/easter-eggs-mobile/images/running-cat.gif', 'https://weichiachang.github.io/easter-eggs-mobile/images/running-pikachu.gif']
+
+[3] EXPLOTANDO ENDPOINTS AJAX FUNCIONALES:
+📊 xCveBachillerato=1 -> 1¬INSTITUTO OCTAVIO PAZ
+📊 xCveBachillerato=2 -> 2¬CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS NUM. 168
+📊 xCveBachillerato=3 -> 3¬CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS NUM. 195
+📊 xCveBachillerato=10 -> 10¬CENTRO DE BACHILLERATO TECNOLOGICO AGROPECUARIO NUM. 40
+📊 xCveBachillerato=100 -> 100¬INSTITUTO VICTOR MANUEL CASTELAZO MURIEL
+
+[4] BUSCANDO ARCHIVOS DIRECTAMENTE ACCESIBLES:
+📁 /docs/ - ACCESIBLE (13256 bytes)
+❌ /docs/ - Error: 'in <string>' requires string as left operand, not bytes
+📁 /examples/ - ACCESIBLE (1156 bytes)
+❌ /examples/ - Error: 'in <string>' requires string as left operand, not bytes
+
+[5] ANALIZANDO PARÁMETROS OCULTOS:
+📋 Formulario: /jsp/escolar/proceso_admision/proceso_interesado.jsp?xModalidadP=N
+   🔒 yAccion = 
+   🔒 yInteresado = 0
+   🔒 yEncuestado = 0
+   🔒 yCveTipoSeguroOtro = 10
+   🔒 yResolucion = 800x600
+📋 Formulario: /jsp/seguimiento_egreso/proceso_registro_egresado.jsp?xNuevo=1
+   🔒 yAccion = sin valor
+   🔒 yResolucion = 
+   🔒 yMostrar = false
+   🔒 ySave = false
+   🔒 yCarrera = 0
+
+[6] PROBANDO BYPASS DE AUTENTICACIÓN:
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito]
+└──╼ $
+
+Script para Extracción Masiva de Datos del Endpoint AJAX:
+
+Sin respuesta
+
+curls FALLIDOS
+

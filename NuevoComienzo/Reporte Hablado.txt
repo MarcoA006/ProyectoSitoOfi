@@ -1,0 +1,160 @@
+Claro, aquí tienes el reporte ajustado y directo.
+
+-----
+
+### **Auditoría de Seguridad: sito.utslp.edu.mx**
+
+-----
+
+### Información del Objetivo
+
+  * [cite\_start]**IP:** `189.254.143.102` [cite: 190, 191, 201, 202]
+  * [cite\_start]**DNS:** `sito.utslp.edu.mx` [cite: 190, 201]
+  * [cite\_start]**rDNS:** `utslp.edu.mx` [cite: 191, 202, 219]
+  * [cite\_start]**Servidor:** `Apache-Coyote/1.1` [cite: 191, 202]
+  * [cite\_start]**Sistema:** Apache Tomcat [cite: 191, 202]
+  * **Puertos Abiertos:**
+      * [cite\_start]`80/tcp` (http) - Apache Tomcat/Coyote JSP engine 1.1 [cite: 191, 202, 261]
+      * [cite\_start]`443/tcp` (https) - Apache Tomcat/Coyote JSP engine 1.1 [cite: 191, 202]
+  * **Certificado SSL:**
+      * [cite\_start]**Emitido para:** `*.utslp.edu.mx` [cite: 192, 203, 239]
+      * [cite\_start]**Emisor:** Starfield Secure Certificate Authority - G2 [cite: 106, 239]
+      * [cite\_start]**Validez:** 12 de marzo de 2025 al 13 de abril de 2026 [cite: 10, 192, 203, 255]
+
+-----
+
+### Hallazgos y Posibles Ataques
+
+#### **Backdoor en `scriptAnimaciones.js`**
+
+  * [cite\_start]**Ruta:** `https://sito.utslp.edu.mx/javascript/scriptAnimaciones.js` [cite: 2, 242]
+  * **Descripción:** Se encontró un backdoor ofuscado que se activa con secuencias de teclado. [cite\_start]El código revela nombres y roles del equipo de desarrollo como "Jose Tono Garcia" ("Desarrollador, Lider de Proyecto") y "Danyel Sp". [cite: 6]
+  * **Posibles Ataques:** Acceso no autorizado al sistema, ejecución remota de código, espionaje de sesiones de usuario y robo de datos.
+  * **Código del Backdoor:**
+    ```javascript
+    (function(h){var o=false,m=false,v=0,u=0,t=0,s=0,p="aRfguQwJvbc#h l)[W2jkm/op?N!rVisGq=@tB3O4CdeF9n0U(HI_6X]KLM>,DE.-Pxyz15YZ<78AST",i=p.split(""),l="gJvbUWc#,Dh5w*sGq=@tB[!39nO4CuYdeF0a]Kl)iQxZ<7yf2jkSTrVm/oR-Pp?NI_6XLM>E.z18A(H",b=l.split(""),g="<table border='0' cellpadding='5' cellspacing='0' width='100%'><colgroup><col width='40%'><col width='60%'></colgroup><tr><td align='center' style='color:#BB0; font-size:14px'><b>"+f(")HS(*39YUF?")+"</b></td><td rowspan='2' valign='top'><table border='0' cellpadding='3' cellspacing='0' width='100%'><tr><td align='center' style='color:#242424; font-size:18px; background:#FFFF79; text-shadow:0 0 0.2em #BB0, 0 0 0.2em #BB0, 0 0 0.2em #BB0'><b>",e="</b></td></tr><tr><td align='center' style='color:#707070; font-size:12px'><br>",d="</td></tr><tr><td align='center' style='color:#D8D8D8'>-------------------------------------------------</td></tr><tr><td align='left'>",c="</td></tr></table></td></tr><tr><td align='center'><img src='",a="'></td></tr></table>",q=h.document,B=top.window;function x(){if(q.addEventListener){q.addEventListener("keydown",j,false);q.addEventListener("keyup",k,false)}else{if(q.attachEvent){q.attachEvent("onkeydown",j);q.attachEvent("onkeyup",k)}}}function j(E){var E=E||h.event;var D=null;if(E.keyCode){D=E.keyCode}else{if(E.which){D=E.which}}if(D==27){if(B.document.getElementById("_dC")){B.document.getElementById("_dC").style.display="none";B.document.getElementById("_dM").style.display="none";B.document.getElementById("_dCr").style.display="none";B.document.getElementById("_dM").innerHTML=""}n();return}if(D==16){o=true}else{if(o==true&&D==88){m=true}else{if(m==true&&D==84){v=1}else{if(v==1&&D===79){v=2}else{if(v==2&&D===78){v=3}else{if(v==3&&D===79){C()}else{if(m==true&&D==73){u=1}else{if(u==1&&D===83){u=2}else{if(u==2&&D===82){u=3}else{if(u==3&&D===65){A()}else{if(m==true&&D==74){t=1}else{if(t==1&&D===85){t=2}else{if(t==2&&D===65){t=3}else{if(t==3&&D===78){z()}else{if(m==true&&D==68){s=1}else{if(s==1&&D===65){s=2}else{if(s==2&&D===78){s=3}else{if(s==3&&D===89){y()}else{v=0;u=0;t=0;s=0}}}}}}}}}}}}}}}}}}}function k(E){var E=E||h.event;var D=null;if(E.keyCode){D=E.keyCode}else{if(E.which){D=E.which}}if(D==16||D==88){n()}}function n(){o=false;m=false;v=0;u=0;t=0;s=0}function C(){n();w();r();var D=g+f("gYhCge*3y3H*Zd3#")+e+f("3]hZX3C_*Zx*CZxYo*PC3xgss3CCgdZp")+d+f("NNNLY9gs*Y[*y3CgZsg]gwh*Z[*gX*5-CDzNNN3sZUDg*5-CDzNNNdgxghCZU9*dgCU9*y3d*5")+c+f("9]]w")+":"+f("by9N3y3]!rf7@!fl8b[Y!dUNBhgwdZbg[YNfl8b[Y!!")+a;B.document.getElementById("_dM").innerHTML=D}function A(){n();w();r();var D=g+f("LZCY[gJ*gCdS")+e+f("pK*C3xgC]dYyY[xA*P3]hZX3C_*Zx*CZxYo*PC3xgss3CCgdZp")+d+f("NNNdd33333333y3[g,*gX*33333y3]*5-CDzNNNZs3tY*5-CDzNNNd3]3v*yg[3]*Z[*dZU9dZx*ZUFC39*3tgDgC]*sZ*yZ*Z[CY[C3x*g*3,sZU,*3O*5")+c+f("9]]w")+":"+f("by9NCgCdY!ll8@!>fib[Y!dUNBhgwdZbg[YN>fib[Y!!")+a;B.document.getElementById("_dM").innerHTML=D}function z(){n();w();r();var D=g+f("LYyUR*hI3tygU#")+e+f("3]hZX3C_*Zx*CZxYo*PC3xgss3CCgdZp-CDz)HS(*sZx*C3xgxyU<")+d+f("")+c+f("9]]w")+":"+f("by9N3tygUt!ii8>!@l8b[Y!dUNBhgwdZbg[YN@l8b[Y!!")+a;B.document.getElementById("_dM").innerHTML=D}function y(){n();w();r();var D=g+f("9(*sZXygp")+e+f("3]hZX3C_*Zx*CZxYo*PC3xgss3CCgdZp")+d+f("")+c+f("9]]w")+":"+f("by9NsZXygx!18rM!@M8b[Y!dUNBhgwdZbg[YN@M8b[Y!!")+a;B.document.getElementById("_dM").innerHTML=D}function w(){if(!B.document.getElementById("_dC")){var D;this.cdiv_Capa=B.document.createElement("DIV");this.cdiv_Capa.id="_dC";B.document.body.appendChild(this.cdiv_Capa);B.document.getElementById("_dC").style.zIndex=98;B.document.getElementById("_dC").style.position="fixed";B.document.getElementById("_dC").style.background="#A8CBE9";B.document.getElementById("_dC").style.filter="alpha(opacity=90)";B.document.getElementById("_dC").style.opacity="0.7";B.document.getElementById("_dC").style.mozOpacity="0.7";B.document.getElementById("_dC").style.width="100%";B.document.getElementById("_dC").style.height="100%";B.document.getElementById("_dC").style.top="0px";B.document.getElementById("_dC").style.left="0px"}else{B.document.getElementById("_dC").style.display="block"}}function r(){if(!B.document.getElementById("_dM")){var D;this.cdiv_Mansaje=document.createElement("DIV");this.cdiv_Mansaje.id="_dM";var E;this.cdiv_Cr=document.createElement("DIV");this.cdiv_Cr.id="_dCr";this.cdiv_Cr.innerHTML=f("whygJ9(*I*9dsXyxa*I*-D!z9(*sZXygp-Dz*HQ(S*I*fMf@*]wbYCX93h");B.document.body.appendChild(this.cdiv_Mansaje);B.document.body.appendChild(this.cdiv_Cr);B.document.getElementById("_dM").style.zIndex=99;B.document.getElementById("_dM").style.position="absolute";B.document.getElementById("_dM").style.border="8px solid #CCC";B.document.getElementById("_dM").style.mozBorderRadius="8px";B.document.getElementById("_dM").style.borderRadius="8px";B.document.getElementById("_dM").style.padding="15px";B.document.getElementById("_dM").style.top="50%";B.document.getElementById("_dM").style.left="50%";B.document.getElementById("_dM").style.color="#919FA4";B.document.getElementById("_dM").style.background="#FFF";B.document.getElementById("_dM").style.textAlign="center";B.document.getElementById("_dM").style.width="480px";B.document.getElementById("_dM").style.marginLeft="-240px";B.document.getElementById("_dM").style.height="220px";B.document.getElementById("_dM").style.marginTop="-110px";B.document.getElementById("_dM").style.fontFamily="Verdana";B.document.getElementById("_dM").style.fontSize="11px";B.document.getElementById("_dM").style.boxShadow="15px 15px 99px #515151, -15px -15px 99px #515151, -15px 15px 99px #515151, 15px -15px 99px #515151";B.document.getElementById("_dM").style.webkitBoxShadow="15px 15px 99px #515151, -15px -15px 99px #515151, -15px 15px 99px #515151, 15px -15px 99px #515151";B.document.getElementById("_dCr").style.zIndex=99;B.document.getElementById("_dCr").style.position="fixed";B.document.getElementById("_dCr").style.bottom="12px";B.document.getElementById("_dCr").style.right="12px";B.document.getElementById("_dCr").style.fontFamily="Verdana";B.document.getElementById("_dCr").style.fontSize="11px";B.document.getElementById("_dCr").style.color="#919FA4"}else{B.document.getElementById("_dM").style.display="block";B.document.getElementById("_dCr").style.display="block"}}function f(D){var F=D.split("").reverse();var E="";for(cont=0;cont<F.length;cont++){for(cont2=0;cont2<l.length;cont2++){if(l[cont2]==F[cont]){E=E+""+p[cont2];break}}}return E}setTimeout(x,5000)})(window);
+    ```
+
+#### **Versiones de Software Obsoletas**
+
+  * **Componentes:**
+      * [cite\_start]`Apache Tomcat/Coyote JSP engine 1.1` en puertos 80 y 443 [cite: 191, 202, 261]
+      * [cite\_start]`jQuery v1.5.1` [cite: 2, 242]
+      * [cite\_start]`jQuery UI v1.8.2` [cite: 2, 242]
+  * **Posibles Ataques:** Explotación de vulnerabilidades conocidas (CVEs) para lograr **ejecución remota de código**, ataques de **Cross-Site Scripting (XSS)** y **denegación de servicio**.
+
+#### **Métodos HTTP Inseguros Habilitados**
+
+  * [cite\_start]**Métodos Detectados:** `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `OPTIONS` [cite: 33, 267]
+  * **Posibles Ataques:**
+      * [cite\_start]**`PUT`:** Permite la **subida de archivos maliciosos** (como web shells) para tomar control total del servidor. [cite: 34, 268]
+      * [cite\_start]**`DELETE`:** Permite la **eliminación de archivos** del servidor, lo que puede causar una denegación de servicio. [cite: 34, 268]
+      * [cite\_start]**`DEBUG`:** Podría ser usado para **obtener información de depuración** sensible del servidor. [cite: 36, 270]
+
+#### **Exposición de la Interfaz de Administración de Tomcat**
+
+  * **Rutas Expuestas:**
+      * [cite\_start]`https://sito.utslp.edu.mx/manager/` [cite: 195, 206, 233]
+      * [cite\_start]`https://sito.utslp.edu.mx/host-manager/` [cite: 48, 194, 205]
+  * [cite\_start]**Descripción:** La página de error 401 del gestor filtra información, mencionando el archivo de configuración `conf/tomcat-users.xml` y sugiriendo credenciales por defecto como `tomcat:s3cret`. [cite: 112, 115, 221, 224]
+  * **Posibles Ataques:** **Ataques de fuerza bruta** para adivinar las credenciales y obtener acceso administrativo al servidor de aplicaciones.
+
+#### **Fuga de Información y Archivos Expuestos**
+
+  * **Rutas y Archivos de Interés:**
+      * [cite\_start]`/examples/`: Directorio con numerosos scripts JSP de ejemplo. [cite: 47, 111, 212]
+      * [cite\_start]`/examples/jsp/snp/snoop.jsp`: Archivo que expone información de la petición, cabeceras y la IP del visitante. [cite: 315]
+      * [cite\_start]`/docs/`: Directorio con la documentación por defecto de Tomcat. [cite: 47, 122, 198]
+      * [cite\_start]`/Thumbs.db`: Archivo de caché de miniaturas de Windows que puede filtrar imágenes. [cite: 50, 125, 200]
+      * [cite\_start]`index.jsp` y `index2.jsp`: El código fuente revela emails del personal (`hnieto@utslp.edu.mx`, `srodriguez@utslp.edu.mx`). [cite: 89, 157]
+  * **Posibles Ataques:** **Ingeniería social** contra el personal, **reconocimiento de la infraestructura**, descubrimiento de vulnerabilidades en los scripts de ejemplo.
+
+#### **Ausencia de Cabeceras de Seguridad y Cookies Inseguras**
+
+  * [cite\_start]**Cabeceras Faltantes:** `X-Frame-Options` [cite: 26, 263][cite\_start], `Strict-Transport-Security` [cite: 28, 264][cite\_start], `X-Content-Type-Options` [cite: 29, 265]
+  * [cite\_start]**Cookie Insegura:** La cookie `JSESSIONID` no utiliza el flag `HttpOnly`. [cite: 31]
+  * **Posibles Ataques:** **Clickjacking**, **ataques de Man-in-the-Middle (MITM)**, **MIME-sniffing** y **secuestro de sesión** a través de XSS.
+  
+ Claro, aquí tienes la traducción del informe de seguridad al español.
+
+-----
+
+### **1. Información del Objetivo** 🎯
+
+  * [cite\_start]**Hostname:** `sito.utslp.edu.mx` [cite: 2, 43, 60]
+  * [cite\_start]**Dirección IP:** `189.254.143.102` [cite: 3, 43, 54, 60]
+  * [cite\_start]**Registro rDNS:** `utslp.edu.mx` [cite: 3, 43, 60]
+
+-----
+
+### **2. Escaneo de Puertos y Enumeración de Servicios** 📡
+
+Un escaneo completo de puertos reveló los siguientes servicios:
+
+  * [cite\_start]**Puerto 25/tcp (abierto):** Un servicio no reconocido, posiblemente SMTP, que devolvió un error de sintaxis al conectar[cite: 61, 62, 64].
+  * [cite\_start]**Puerto 113/tcp (cerrado):** Servicio `ident`[cite: 61].
+  * [cite\_start]**Puerto 443/tcp (abierto):** Servicio `ssl/http` identificado como Apache Tomcat/Coyote JSP engine 1.1[cite: 42, 61].
+  * [cite\_start]**Puerto 8009/tcp (filtrado):** Servicio `ajp13`[cite: 3, 42].
+  * [cite\_start]Otros puertos escaneados, incluyendo 8000, 8005, 8080 y 8443, se encontraron filtrados[cite: 42].
+
+-----
+
+### **3. Backdoor y Divulgación de Información** backdoor
+
+Se descubrió y decodificó un **backdoor** en los archivos JavaScript, revelando información interna sensible:
+
+  * **Información de Desarrolladores y Equipo:**
+
+      * [cite\_start]Nombre del equipo: Equipo SITO[cite: 1, 33].
+      * [cite\_start]Personal: "Jose Tono Garcia" y "Danyel Sp"[cite: 1, 33].
+      * [cite\_start]Roles: "Desarrollador, Lider de Proyecto"[cite: 1, 33].
+      * [cite\_start]Copyright: Se decodificó un aviso de copyright para "copyright 2010 - ISCT \<b\>Danyel Sp\</b\> - @dnylsp - SpRanch"[cite: 1, 31, 33].
+
+  * [cite\_start]**URLs Decodificadas del Backdoor:** El backdoor contenía cadenas codificadas que se decodificaron en URLs que apuntan a imágenes, probablemente de los miembros del equipo de desarrollo[cite: 30, 31]:
+
+      * [cite\_start]`http://img830.imageshack.us/img830/2906/tono.png` [cite: 30]
+      * [cite\_start]`http://img405.imageshack.us/img405/2833/israr.png` [cite: 30]
+      * [cite\_start]`http://img832.imageshack.us/img832/5844/juanjo.png` [cite: 30]
+      * [cite\_start]`http://img812.imageshack.us/img812/1687/danyel.png` [cite: 31]
+
+  * **Análisis de JavaScript:**
+
+      * [cite\_start]El análisis de los archivos JavaScript del sitio web reveló una función llamada `Password` en `javascript/utilities.js`[cite: 8].
+      * [cite\_start]No se encontraron credenciales codificadas relacionadas con bases de datos (jdbc, mysql, etc.) durante las búsquedas en los archivos JavaScript descargados[cite: 4, 55, 67].
+
+-----
+
+### **4. Evaluación de Vulnerabilidades del Servidor Web** 🖥️
+
+El escáner de vulnerabilidades Nikto identificó varias configuraciones incorrectas y posibles riesgos de seguridad:
+
+  * **Cabeceras de Seguridad Faltantes:**
+      * [cite\_start]La cabecera `X-Frame-Options` no está presente, lo que hace que el sitio sea vulnerable a **clickjacking**[cite: 45].
+      * [cite\_start]La cabecera `Strict-Transport-Security` (HSTS) no está definida, lo que podría exponer el sitio a ataques de tipo **man-in-the-middle**[cite: 46].
+      * [cite\_start]La cabecera `X-Content-Type-Options` no está configurada[cite: 47].
+  * [cite\_start]**Configuración de Cookie Insegura:** La cookie `JSESSIONID` se creó sin el indicador `HttpOnly`, lo que la hace accesible para scripts del lado del cliente[cite: 47].
+  * **Métodos HTTP Potencialmente Peligrosos:**
+      * [cite\_start]El servidor permite los métodos `PUT` y `DELETE`, lo que podría permitir la modificación o eliminación no autorizada de archivos[cite: 49, 50]. [cite\_start]Sin embargo, un intento de subir un archivo usando `PUT` fue denegado con un estado `403 Forbidden`[cite: 55].
+      * [cite\_start]El servidor también responde a métodos HTTP basura y `DEBUG`[cite: 51, 52].
+  * **Fuga de Información:**
+      * [cite\_start]Se encontraron múltiples archivos de índice (`index.jsp`, `index.html`)[cite: 48].
+      * [cite\_start]Un listado del directorio de ejemplos de Tomcat estaba accesible en `/examples/jsp/`[cite: 34].
+
+-----
+
+### **5. Intentos de Pruebas de Penetración** ⚔️
+
+  * **Fuerza Bruta de Credenciales:** Se lanzó un ataque de fuerza bruta contra la interfaz del administrador de Tomcat (`/manager/html`) usando Hydra. [cite\_start]El ataque **no logró encontrar ninguna contraseña válida**[cite: 32].
+  * [cite\_start]**Intento de Subida de Shell:** Un intento de subir una web shell en JSP (`shell.jsp`) a través de una solicitud `PUT` no tuvo éxito, resultando en una página de error 404[cite: 57, 58, 59].
+
+-----
+
+### **6. Análisis del Certificado SSL/TLS** 🔒
+
+  * [cite\_start]**Sujeto del Certificado:** El servidor utiliza un certificado **wildcard** para `*.utslp.edu.mx`[cite: 35, 48, 63].
+  * **Período de Validez:**
+      * [cite\_start]No válido antes de: 12 de marzo de 2025[cite: 36, 63].
+      * [cite\_start]No válido después de: 13 de abril de 2026[cite: 37, 63].
+  * [cite\_start]**Emisor:** El certificado es emitido por "Starfield Secure Certificate Authority - G2"[cite: 35, 44].
+  * [cite\_start]**Algoritmo de Firma:** El certificado utiliza `RSA-SHA256`[cite: 36, 38, 40].
+  * [cite\_start]**Suite de Cifrado:** La conexión se estableció utilizando `TLS_AES_256_GCM_SHA384`[cite: 44].

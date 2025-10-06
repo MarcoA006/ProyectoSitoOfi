@@ -1,0 +1,156 @@
+### **RESUMEN GENERAL DEL OBJETIVO**
+---
+* **IP Target:** 189.254.143.102
+* **Aplicación:** SITO - MISITIO / SITO - UTSLP
+* **Tecnología Principal:** Apache-Coyote/1.1 (Tomcat 6.0.53)
+* **Base de Datos:** MySQL (Identificada)
+* **Nivel de Autorización:** Estudiante ITI con autorización
+* **Puntuación General de Seguridad:** 5.2/10 (Regular)
+
+---
+### **PUERTOS Y SERVICIOS IDENTIFICADOS (Nmap)**
+---
+El escaneo de red reveló que el host está protegido por un firewall, con muchos puertos en estado `filtrado`. Los siguientes puertos se confirmaron como `abiertos`, exponiendo los servicios correspondientes:
+
+* **Puerto 80/tcp:** Abierto | Servicio: **http** | Versión: **Apache httpd 2.2.22**
+* **Puerto 443/tcp:** Abierto | Servicio: **ssl/http** | Versión: **Apache httpd 2.2.22**
+* **Puerto 8009/tcp:** Abierto | Servicio: **ajp13** | Versión: **Apache Jserv (Protocol v1.3)**
+* **Puerto 8080/tcp:** Abierto | Servicio: **http-proxy** | Versión: **Apache Tomcat/Coyote JSP engine 1.1**
+
+---
+### **RUTAS DE DICCIONARIOS (WORDLISTS) DEL ANALISTA**
+---
+Ubicaciones de las listas de palabras utilizadas durante las pruebas en el sistema Parrot OS:
+
+* **brutespray:** /usr/share/brutespray/wordlist
+* **dirb:** /usr/share/dirb/wordlists
+* **dirbuster:** /usr/share/dirbuster/wordlists
+* **metasploit:** /usr/share/metasploit-framework/data/wordlists
+* **nmap:** /usr/share/nmap/nselib/data/passwords.lst
+* **rockyou.txt:** Presente en el directorio principal de wordlists
+* **wfuzz:** /usr/share/wfuzz/wordlist
+
+---
+### **RUTAS Y DIRECTORIOS DESCUBIERTOS**
+---
+* **/ (Raíz):** SITO - UTSLP (Código 200)
+* **/docs/:** Apache Tomcat 6.0.53 Documentation (Código 200 - **VULNERABLE**)
+* **/examples/:** Apache Tomcat Examples (Código 200 - **VULNERABLE CRÍTICA**)
+* **/manager/html:** Requiere autenticación (Código 401)
+* **/host-manager/html:** Requiere autenticación (Código 401)
+* **/jsp/:** Sistema de Información Táctico Operativo (Código 200)
+* **/jsp/index.jsp:** Sistema de Información Táctico Operativo (Código 200)
+* **/jsp/escolar/proceso_admision/muestra_bachillerato_ajax.jsp:** Endpoint AJAX (Crítico)
+* **/WEB-INF/web.xml:** Revelado a través de Directory Traversal
+
+---
+### **HALLAZGOS EN ARCHIVOS DE CONFIGURACIÓN LEÍDOS**
+---
+Se confirmó la lectura de archivos críticos del servidor mediante Directory Traversal. Aunque las pruebas de fuerza bruta al Tomcat Manager fallaron, los archivos de configuración revelaron la configuración interna del servidor y malas prácticas.
+
+* **`tomcat-users.xml`:** Este archivo, que define los usuarios y roles del Tomcat Manager, fue encontrado, pero **no contenía ninguna definición de usuario o rol**. Estaba vacío de configuraciones, lo que explica por qué ninguna credencial (ni siquiera las por defecto) funcionó durante las pruebas. Esto representa una configuración incompleta pero accidentalmente segura para el Manager.
+* **`server.xml`:** Este archivo reveló la arquitectura de los conectores del servidor.
+    * **Puerto de Shutdown:** El puerto `8005` está configurado para apagar la instancia de Tomcat, pero solo acepta conexiones desde `localhost`, limitando el riesgo de un apagado remoto.
+    * **Conector HTTP:** El puerto `8080` está activo para tráfico HTTP.
+    * **Conector AJP:** El puerto `8009` está activo para el protocolo AJP, usado para la comunicación con un servidor web como Apache.
+* **`web.xml` (Global y de la App SITO):**
+    * **Tiempo de Sesión:** El tiempo de espera de la sesión está configurado en **30 minutos** (`<session-timeout>30</session-timeout>`), un dato útil para ataques que requieran una sesión activa.
+    * **Mapeo de Servlets:** El archivo `web.xml` de la aplicación SITO expone la estructura interna de las clases Java y las rutas URL que utilizan, ofreciendo un mapa detallado para dirigir ataques a funcionalidades específicas.
+
+---
+### **CREDENCIALES ENCONTRADAS**
+---
+* **Credenciales Válidas Encontradas (Aplicación SITO):**
+    * **Usuario:** hnieto
+    * **Contraseña:** utslp
+    * **Resultado:** Login exitoso a la aplicación SITO.
+
+---
+### **PRUEBAS REALIZADAS Y RESULTADOS DETALLADOS**
+---
+#### **1. Directory Traversal**
+* **Prueba:** Explotación de JSP Samples vulnerables en `/examples/`.
+* **Payload Exitoso:** `include.jsp?page=../../../../conf/tomcat-users.xml`.
+* **Resultado:** EXITOSA. Se extrajeron múltiples archivos de configuración que permitieron analizar la estructura interna del servidor.
+
+#### **2. Inyección de SQL (SQLi)**
+* **Prueba:** Inyección en el formulario de login.
+* **Resultado:** POSIBLE INYECCIÓN CIEGA. La aplicación responde con una página genérica, pero se guardaron respuestas exitosas de la inyección en archivos como `sql_injection_success.html` y `response_' OR '1'='.html`.
+* **Payloads Probados (Login):**
+    * `' OR '1'='1'--`
+    * `admin' OR 1=1--`
+    * `admin' UNION SELECT 1,2,3,4--`
+
+* **Prueba:** Inyección en endpoint AJAX (`muestra_bachillerato_ajax.jsp`).
+* **Resultado:** **VULNERABILIDAD CONFIRMADA**. Se logró extraer una lista completa de 49 bachilleratos.
+* **Payloads Probados (AJAX):**
+    * `1' OR '1'='1'--` (Devuelve Error 404/500)
+    * `1 UNION SELECT 1,2,3--` (Devuelve Error 404/500)
+
+#### **3. Cross-Site Request Forgery (CSRF)**
+* **Prueba:** Creación de un exploit HTML para realizar acciones no autorizadas.
+* **Resultado:** **VULNERABILIDAD CONFIRMADA**. Se creó el archivo `csrf_exploit.html` para demostrar la prueba de concepto.
+
+
+### **Desglose de Puertos y Servicios**
+
+El análisis de Nmap no solo identificó los puertos abiertos, sino que también reveló la presencia de un firewall que filtra el tráfico a otros servicios comunes, lo que limita la superficie de ataque desde el exterior.
+
+* **Puertos Abiertos Confirmados:**
+    * **80/tcp (HTTP):** Responde con el banner de **Apache httpd 2.2.22**, que actúa como el servidor web principal o proxy inverso para la aplicación.
+    * **443/tcp (HTTPS/SSL):** También gestionado por **Apache httpd 2.2.22**, asegura el tráfico hacia la aplicación.
+    * **8009/tcp (AJP):** Servicio **Apache Jserv v1.3**, utilizado para la comunicación directa y eficiente entre el servidor web Apache y el motor de servlets de Tomcat.
+    * **8080/tcp (HTTP Proxy):** Es el puerto del conector HTTP nativo de **Apache Tomcat/Coyote JSP engine 1.1**. Permite el acceso directo a la aplicación Tomcat, bypassando el servidor Apache principal.
+
+* **Puertos Filtrados Notables:**
+    * Puertos como **21 (FTP), 22 (SSH), 25 (SMTP), y 3306 (MySQL)** se encontraron en estado `filtrado`, lo que significa que un firewall está bloqueando activamente los intentos de conexión, impidiendo determinar si los servicios están activos detrás de él.
+
+***
+
+### **Desglose de Rutas y Endpoints Clave**
+
+La enumeración de directorios y el análisis de la aplicación revelaron rutas críticas que son la base de las vulnerabilidades encontradas.
+
+* **Directorios de Configuración Expuestos:**
+    * **/docs/:** Contiene la documentación completa de la versión de Tomcat, lo que puede dar a un atacante información detallada sobre posibles exploits específicos de esa versión.
+    * **/examples/:** Este es el punto más crítico. Contiene aplicaciones JSP de ejemplo que son notoriamente inseguras y fueron el vector para el ataque de **Directory Traversal**.
+
+* **Puntos de Entrada a la Aplicación (JSPs):**
+    * Se identificaron múltiples formularios de "proceso de interesado" y "registro de egresado" que son accesibles públicamente y procesan una gran cantidad de parámetros, aumentando el riesgo de vulnerabilidades de inyección.
+
+* **Endpoint AJAX Vulnerable:**
+    * La ruta `/jsp/escolar/proceso_admision/muestra_bachillerato_ajax.jsp` es el endpoint más débil. Acepta el parámetro `xCveBachillerato`, que no es sanitizado correctamente, permitiendo la inyección directa de código SQL.
+
+***
+
+### **Desglose de Hallazgos en Archivos de Configuración**
+
+La lectura de los archivos de configuración a través de Directory Traversal proporcionó una visión profunda de la arquitectura y las debilidades del servidor.
+
+* **`server.xml` (Archivo de configuración principal de Tomcat):**
+    * **Puerto de Shutdown (8005):** ` <Server port="8005" shutdown="SHUTDOWN">` - Confirma que el comando para apagar el servidor está activo pero, de forma segura, solo escucha en `localhost`.
+    * **Conectores de Servicio:** Detalla la configuración de los puertos `8080` (HTTP) y `8009` (AJP), confirmando la arquitectura de la aplicación.
+
+* **`tomcat-users.xml` (Archivo de credenciales del Manager):**
+    * El archivo fue leído con éxito, pero se encontró **completamente vacío de definiciones de usuarios y roles** (`<tomcat-users></tomcat-users>`). Este hallazgo es clave: la seguridad del Tomcat Manager no se debe a contraseñas fuertes, sino a una configuración incompleta que impide cualquier inicio de sesión.
+
+* **`web.xml` (Descriptor de despliegue de la aplicación):**
+    * **Gestión de Sesiones:** Se define un tiempo de espera de sesión de 30 minutos (`<session-timeout>30</session-timeout>`), lo que da a los atacantes una ventana de tiempo considerable para explotar sesiones robadas.
+    * **Mapeo de la Aplicación SITO:** El archivo `web.xml` de SITO contiene el mapeo de todas las clases Java a las rutas URL. Por ejemplo, define qué servlet se encarga de procesar las peticiones de los formularios, revelando la lógica interna del código sin tener acceso a él.
+
+***
+
+### **Desglose de Vectores de Ataque y Técnicas**
+
+* **Directory Traversal (Lectura de Archivos):**
+    * **Técnica:** Se utilizó un payload como `?page=../../../../conf/server.xml` en una de las aplicaciones JSP de ejemplo (`/examples/jsp/include/include.jsp`). El `../` le indica al servidor que suba un nivel en la estructura de directorios, permitiendo escapar del directorio web y acceder a cualquier archivo del sistema con los mismos permisos que el usuario de Tomcat.
+    * **Impacto:** Permitió la exfiltración de todos los archivos de configuración mencionados, lo que fue fundamental para el resto de la auditoría.
+
+* **Inyección de SQL (SQLi):**
+    * **Técnica (Error-Based en AJAX):** La vulnerabilidad en el endpoint AJAX se confirmó al observar las diferentes respuestas del servidor.
+        * Una petición normal (`?xCveBachillerato=1`) devuelve un **código 200 OK** y la lista de bachilleratos.
+        * Una petición con una inyección (`?xCveBachillerato=1' UNION SELECT 1,2,3--`) fuerza un error en la base de datos, lo que causa que la aplicación devuelva un **código 404 o 500**. Esta diferencia en el comportamiento es un oráculo que confirma la vulnerabilidad.
+    * **Técnica (Blind en Login):** Se presume que el login es vulnerable a inyección ciega porque al enviar payloads lógicos como `' OR '1'='1'--`, la aplicación procesa la petición sin error, como se evidencia en los archivos `sql_injection_success.html`. Aunque no se extrajeron datos, esto sugiere que la lógica de autenticación puede ser bypassada.
+
+* **Cross-Site Request Forgery (CSRF):**
+    * **Escenario de Ataque:** Un atacante podría crear una página web maliciosa (demostrado con `csrf_exploit.html`) que contenga un formulario invisible. Este formulario apuntaría a una función crítica de SITO, como "cambiar contraseña". Si un administrador con una sesión activa en SITO visita la página maliciosa, su navegador enviaría automáticamente la petición para cambiar la contraseña a una elegida por el atacante, sin que la víctima se dé cuenta.

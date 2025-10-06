@@ -1,0 +1,326 @@
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/wgets]
+└──╼ $js decode_backdoor.js 
+Original: )HS(*39YUF? -> Decoded: Equipo SITO
+Original: gYhCge*3y3H*Zd3# -> Decoded: Jose Tono Garcia
+Original: 3]hZX3C_*Zx*CZxYo*PC3xgss3CCgdZp -> Decoded: Desarrollador, Lider de Proyecto
+Original: whygJ9(*I*9dsXyxa*I*-D!z9(*sZXygp-Dz*HQ(S*I*fMf@*]wbYCX93h -> Decoded: copyright 2010 - ISCT <b>Danyel Sp</b> - @dnylsp - SpRanch
+
+$curl -k "https://sito.utslp.edu.mx/examples/jsp/" | grep -o 'href="[^"]*' | cut -d'"' -f2
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 16658  100 16658    0     0  15020      0  0:00:01  0:00:01 --:--:-- 15034
+http://tomcat.apache.org/
+jsp2/el/basic-arithmetic.jsp
+jsp2/el/basic-arithmetic.jsp
+jsp2/el/basic-arithmetic.html
+jsp2/el/basic-arithmetic.html
+jsp2/el/basic-comparisons.jsp
+jsp2/el/basic-comparisons.jsp
+jsp2/el/basic-comparisons.html
+jsp2/el/basic-comparisons.html
+jsp2/el/implicit-objects.jsp?foo=bar
+jsp2/el/implicit-objects.jsp?foo=bar
+jsp2/el/implicit-objects.html
+jsp2/el/implicit-objects.html
+jsp2/el/functions.jsp?foo=JSP+2.0
+jsp2/el/functions.jsp?foo=JSP+2.0
+jsp2/el/functions.html
+jsp2/el/functions.html
+jsp2/simpletag/hello.jsp
+jsp2/simpletag/hello.jsp
+jsp2/simpletag/hello.html
+jsp2/simpletag/hello.html
+jsp2/simpletag/repeat.jsp
+jsp2/simpletag/repeat.jsp
+jsp2/simpletag/repeat.html
+jsp2/simpletag/repeat.html
+jsp2/simpletag/book.jsp
+jsp2/simpletag/book.jsp
+jsp2/simpletag/book.html
+jsp2/simpletag/book.html
+jsp2/tagfiles/hello.jsp
+jsp2/tagfiles/hello.jsp
+jsp2/tagfiles/hello.html
+jsp2/tagfiles/hello.html
+jsp2/tagfiles/panel.jsp
+jsp2/tagfiles/panel.jsp
+jsp2/tagfiles/panel.html
+jsp2/tagfiles/panel.html
+jsp2/tagfiles/products.jsp
+jsp2/tagfiles/products.jsp
+jsp2/tagfiles/products.html
+jsp2/tagfiles/products.html
+jsp2/jspx/basic.jspx
+jsp2/jspx/basic.jspx
+jsp2/jspx/basic.html
+jsp2/jspx/basic.html
+jsp2/jspx/svgexample.html
+jsp2/jspx/svgexample.html
+jsp2/jspx/textRotate.html
+jsp2/jspx/textRotate.html
+jsp2/jspattribute/jspattribute.jsp
+jsp2/jspattribute/jspattribute.jsp
+jsp2/jspattribute/jspattribute.html
+jsp2/jspattribute/jspattribute.html
+jsp2/jspattribute/shuffle.jsp
+jsp2/jspattribute/shuffle.jsp
+jsp2/jspattribute/shuffle.html
+jsp2/jspattribute/shuffle.html
+jsp2/misc/dynamicattrs.jsp
+jsp2/misc/dynamicattrs.jsp
+jsp2/misc/dynamicattrs.html
+jsp2/misc/dynamicattrs.html
+jsp2/misc/config.jsp
+jsp2/misc/config.jsp
+jsp2/misc/config.html
+jsp2/misc/config.html
+num/numguess.jsp
+num/numguess.jsp
+num/numguess.html
+num/numguess.html
+dates/date.jsp
+dates/date.jsp
+dates/date.html
+dates/date.html
+snp/snoop.jsp
+snp/snoop.jsp
+snp/snoop.html
+snp/snoop.html
+error/error.html
+error/error.html
+error/er.html
+error/er.html
+sessions/carts.html
+sessions/carts.html
+sessions/crt.html
+sessions/crt.html
+checkbox/check.html
+checkbox/check.html
+checkbox/cresult.html
+checkbox/cresult.html
+colors/colors.html
+colors/colors.html
+colors/clr.html
+colors/clr.html
+cal/login.html
+cal/login.html
+cal/calendar.html
+cal/calendar.html
+include/include.jsp
+include/include.jsp
+include/inc.html
+include/inc.html
+forward/forward.jsp
+forward/forward.jsp
+forward/fwd.html
+forward/fwd.html
+plugin/plugin.jsp
+plugin/plugin.jsp
+plugin/plugin.html
+plugin/plugin.html
+jsptoserv/jsptoservlet.jsp
+jsptoserv/jsptoservlet.jsp
+jsptoserv/jts.html
+jsptoserv/jts.html
+simpletag/foo.jsp
+simpletag/foo.jsp
+simpletag/foo.html
+simpletag/foo.html
+xml/xml.jsp
+xml/xml.jsp
+xml/xml.html
+xml/xml.html
+tagplugin/if.jsp
+tagplugin/if.jsp
+tagplugin/if.html
+tagplugin/if.html
+tagplugin/foreach.jsp
+tagplugin/foreach.jsp
+tagplugin/foreach.html
+tagplugin/foreach.html
+tagplugin/choose.jsp
+tagplugin/choose.jsp
+tagplugin/choose.html
+tagplugin/choose.html
+
+
+
+openssl s_client -connect sito.utslp.edu.mx:443 -showcerts < /dev/null
+CONNECTED(00000003)
+depth=2 C = US, ST = Arizona, L = Scottsdale, O = "Starfield Technologies, Inc.", CN = Starfield Root Certificate Authority - G2
+verify return:1
+depth=1 C = US, ST = Arizona, L = Scottsdale, O = "Starfield Technologies, Inc.", OU = http://certs.starfieldtech.com/repository/, CN = Starfield Secure Certificate Authority - G2
+verify return:1
+depth=0 CN = *.utslp.edu.mx
+verify return:1
+---
+Certificate chain
+ 0 s:CN = *.utslp.edu.mx
+   i:C = US, ST = Arizona, L = Scottsdale, O = "Starfield Technologies, Inc.", OU = http://certs.starfieldtech.com/repository/, CN = Starfield Secure Certificate Authority - G2
+   a:PKEY: rsaEncryption, 2048 (bit); sigalg: RSA-SHA256
+   v:NotBefore: Mar 12 22:57:40 2025 GMT; NotAfter: Apr 13 22:57:40 2026 GMT
+-----BEGIN CERTIFICATE-----
+MIIGuDCCBaCgAwIBAgIJAM22ouJPS0E6MA0GCSqGSIb3DQEBCwUAMIHGMQswCQYD
+VQQGEwJVUzEQMA4GA1UECBMHQXJpem9uYTETMBEGA1UEBxMKU2NvdHRzZGFsZTEl
+MCMGA1UEChMcU3RhcmZpZWxkIFRlY2hub2xvZ2llcywgSW5jLjEzMDEGA1UECxMq
+aHR0cDovL2NlcnRzLnN0YXJmaWVsZHRlY2guY29tL3JlcG9zaXRvcnkvMTQwMgYD
+VQQDEytTdGFyZmllbGQgU2VjdXJlIENlcnRpZmljYXRlIEF1dGhvcml0eSAtIEcy
+MB4XDTI1MDMxMjIyNTc0MFoXDTI2MDQxMzIyNTc0MFowGTEXMBUGA1UEAwwOKi51
+dHNscC5lZHUubXgwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCtP46b
+cw7tw12t4COW/NHIejzsHD8MaRcNtON06pFvKN6b50wfgvjoaU/Ix/03FAbUi4Vg
+9YDiByzJGHrMyelthBLmc057/YiQn2k0HAUHgHpyJvo98kT7YmrX2TmlrH1D1ki6
+52aCHmJtQi0ysBt9Y38ESR3leiAsbJJgkRBX/ferXgIo+DogYhgGH3+lrkj98Xpy
+UXBnPqAZykICPlhO8/VaZAvB+03gRi/XeMIEbC1hzPZSq8XxmQhB+tx31GaQ508B
+PGpX7u0oToF1y/O0eLpE1XTAacPtchCNbbZUu5r4FBgnFPxAsH4uRl0G7sKuehZo
+fird7Qh+j7f402ndAgMBAAGjggNTMIIDTzAMBgNVHRMBAf8EAjAAMB0GA1UdJQQW
+MBQGCCsGAQUFBwMBBggrBgEFBQcDAjAOBgNVHQ8BAf8EBAMCBaAwPQYDVR0fBDYw
+NDAyoDCgLoYsaHR0cDovL2NybC5zdGFyZmllbGR0ZWNoLmNvbS9zZmlnMnMxLTgy
+Mi5jcmwwYwYDVR0gBFwwWjBOBgtghkgBhv1uAQcXATA/MD0GCCsGAQUFBwIBFjFo
+dHRwOi8vY2VydGlmaWNhdGVzLnN0YXJmaWVsZHRlY2guY29tL3JlcG9zaXRvcnkv
+MAgGBmeBDAECATCBggYIKwYBBQUHAQEEdjB0MCoGCCsGAQUFBzABhh5odHRwOi8v
+b2NzcC5zdGFyZmllbGR0ZWNoLmNvbS8wRgYIKwYBBQUHMAKGOmh0dHA6Ly9jZXJ0
+aWZpY2F0ZXMuc3RhcmZpZWxkdGVjaC5jb20vcmVwb3NpdG9yeS9zZmlnMi5jcnQw
+HwYDVR0jBBgwFoAUJUWBaFAmOD07LSy+zWrZtj2zZmMwJwYDVR0RBCAwHoIOKi51
+dHNscC5lZHUubXiCDHV0c2xwLmVkdS5teDAdBgNVHQ4EFgQUiaDTzmmj8jy0ClYL
+dusjGOossDgwggF8BgorBgEEAdZ5AgQCBIIBbASCAWgBZgB2AA5XlLzzrqk+Mxss
+mQez95Dfm8I9cTIl3SGpJaxhxU4hAAABlYyT8ugAAAQDAEcwRQIhAPCLRrvMQDy2
+K9HFPNrzbFREnsUw5J/Cjqkl45z5thZ0AiBPsfCGpOj5gZLVTVf1rUCV3RTBLasS
+txffYGDVqW5OEgB1AGQRxGykEuyniRyiAi4AvKtPKAfUHjUnq+r+1QPJfc3wAAAB
+lYyT8+cAAAQDAEYwRAIgYrWW37rGLS0Cv57S+7td2PQWXXHJUzQuqS4FsmTibl0C
+IClKDl72mRntIBRxF/RV1vuZCTvnf4LN6zX3R6WPHijjAHUAyzj3FYl8hKFEX1vB
+3fvJbvKaWc1HCmkFhbDLFMMUWOcAAAGVjJP0TgAABAMARjBEAiAJiJN+IbENc+N/
+WNr7sIDpQDUHhJSpQNalrCQIrAvnygIgOkam9A26PMN1x3jMF5ZtVVLnrTgFV1cG
+B25OmVWvBDMwDQYJKoZIhvcNAQELBQADggEBAFh3UUDA5C+e4bKhbtHc+2Z8dzXK
+ijZcGS0kYnMcjAxQFPVsICZWrwGWm6V5XXQJMFk9jCj88F61BR1FhTOBJgOZtXDp
+JX1BuQu37HIjAc8nXEZBElkZGexyoXAnmheUywkyQ+ILNyoOp99ddawE54RPaQs1
+EBk1LyJVFjLk7JrBNDXkFAXufqbIqXv9ug6ViZxOs0k1y4Ujl4fumTGAvtosZiAC
+rHjkj61nKpdE8hzM7prFSjAY1RIsubrIy+bcR/IvskrJA17Mwjo9bOJ0uKkU0Vvq
+w84/RWXTXtzZTjYFSa5JJr/SPL+erk0atGXJcwfXemZO0tR272z0FUIMJ9s=
+-----END CERTIFICATE-----
+ 1 s:C = US, ST = Arizona, L = Scottsdale, O = "Starfield Technologies, Inc.", OU = http://certs.starfieldtech.com/repository/, CN = Starfield Secure Certificate Authority - G2
+   i:C = US, ST = Arizona, L = Scottsdale, O = "Starfield Technologies, Inc.", CN = Starfield Root Certificate Authority - G2
+   a:PKEY: rsaEncryption, 2048 (bit); sigalg: RSA-SHA256
+   v:NotBefore: May  3 07:00:00 2011 GMT; NotAfter: May  3 07:00:00 2031 GMT
+-----BEGIN CERTIFICATE-----
+MIIFADCCA+igAwIBAgIBBzANBgkqhkiG9w0BAQsFADCBjzELMAkGA1UEBhMCVVMx
+EDAOBgNVBAgTB0FyaXpvbmExEzARBgNVBAcTClNjb3R0c2RhbGUxJTAjBgNVBAoT
+HFN0YXJmaWVsZCBUZWNobm9sb2dpZXMsIEluYy4xMjAwBgNVBAMTKVN0YXJmaWVs
+ZCBSb290IENlcnRpZmljYXRlIEF1dGhvcml0eSAtIEcyMB4XDTExMDUwMzA3MDAw
+MFoXDTMxMDUwMzA3MDAwMFowgcYxCzAJBgNVBAYTAlVTMRAwDgYDVQQIEwdBcml6
+b25hMRMwEQYDVQQHEwpTY290dHNkYWxlMSUwIwYDVQQKExxTdGFyZmllbGQgVGVj
+aG5vbG9naWVzLCBJbmMuMTMwMQYDVQQLEypodHRwOi8vY2VydHMuc3RhcmZpZWxk
+dGVjaC5jb20vcmVwb3NpdG9yeS8xNDAyBgNVBAMTK1N0YXJmaWVsZCBTZWN1cmUg
+Q2VydGlmaWNhdGUgQXV0aG9yaXR5IC0gRzIwggEiMA0GCSqGSIb3DQEBAQUAA4IB
+DwAwggEKAoIBAQDlkGZL7PlGcakgg77pbL9KyUhpgXVObST2yxcT+LBxWYR6ayuF
+pDS1FuXLzOlBcCykLtb6Mn3hqN6UEKwxwcDYav9ZJ6t21vwLdGu4p64/xFT0tDFE
+3ZNWjKRMXpuJyySDm+JXfbfYEh/JhW300YDxUJuHrtQLEAX7J7oobRfpDtZNuTlV
+Bv8KJAV+L8YdcmzUiymMV33a2etmGtNPp99/UsQwxaXJDgLFU793OGgGJMNmyDd+
+MB5FcSM1/5DYKp2N57CSTTx/KgqT3M0WRmX3YISLdkuRJ3MUkuDq7o8W6o0OPnYX
+v32JgIBEQ+ct4EMJddo26K3biTr1XRKOIwSDAgMBAAGjggEsMIIBKDAPBgNVHRMB
+Af8EBTADAQH/MA4GA1UdDwEB/wQEAwIBBjAdBgNVHQ4EFgQUJUWBaFAmOD07LSy+
+zWrZtj2zZmMwHwYDVR0jBBgwFoAUfAwyH6fZMH/EfWijYqihzqsHWycwOgYIKwYB
+BQUHAQEELjAsMCoGCCsGAQUFBzABhh5odHRwOi8vb2NzcC5zdGFyZmllbGR0ZWNo
+LmNvbS8wOwYDVR0fBDQwMjAwoC6gLIYqaHR0cDovL2NybC5zdGFyZmllbGR0ZWNo
+LmNvbS9zZnJvb3QtZzIuY3JsMEwGA1UdIARFMEMwQQYEVR0gADA5MDcGCCsGAQUF
+BwIBFitodHRwczovL2NlcnRzLnN0YXJmaWVsZHRlY2guY29tL3JlcG9zaXRvcnkv
+MA0GCSqGSIb3DQEBCwUAA4IBAQBWZcr+8z8KqJOLGMfeQ2kTNCC+Tl94qGuc22pN
+QdvBE+zcMQAiXvcAngzgNGU0+bE6TkjIEoGIXFs+CFN69xpk37hQYcxTUUApS8L0
+rjpf5MqtJsxOYUPl/VemN3DOQyuwlMOS6eFfqhBJt2nk4NAfZKQrzR9voPiEJBjO
+eT2pkb9UGBOJmVQRDVXFJgt5T1ocbvlj2xSApAer+rKluYjdkf5lO6Sjeb6JTeHQ
+sPTIFwwKlhR8Cbds4cLYVdQYoKpBaXAko7nv6VrcPuuUSvC33l8Odvr7+2kDRUBQ
+7nIMpBKGgc0T0U7EPMpODdIm8QC3tKai4W56gf0wrHofx1l7
+-----END CERTIFICATE-----
+ 2 s:C = US, ST = Arizona, L = Scottsdale, O = "Starfield Technologies, Inc.", CN = Starfield Root Certificate Authority - G2
+   i:C = US, ST = Arizona, L = Scottsdale, O = "Starfield Technologies, Inc.", CN = Starfield Root Certificate Authority - G2
+   a:PKEY: rsaEncryption, 2048 (bit); sigalg: RSA-SHA256
+   v:NotBefore: Sep  1 00:00:00 2009 GMT; NotAfter: Dec 31 23:59:59 2037 GMT
+-----BEGIN CERTIFICATE-----
+MIID3TCCAsWgAwIBAgIBADANBgkqhkiG9w0BAQsFADCBjzELMAkGA1UEBhMCVVMx
+EDAOBgNVBAgTB0FyaXpvbmExEzARBgNVBAcTClNjb3R0c2RhbGUxJTAjBgNVBAoT
+HFN0YXJmaWVsZCBUZWNobm9sb2dpZXMsIEluYy4xMjAwBgNVBAMTKVN0YXJmaWVs
+ZCBSb290IENlcnRpZmljYXRlIEF1dGhvcml0eSAtIEcyMB4XDTA5MDkwMTAwMDAw
+MFoXDTM3MTIzMTIzNTk1OVowgY8xCzAJBgNVBAYTAlVTMRAwDgYDVQQIEwdBcml6
+b25hMRMwEQYDVQQHEwpTY290dHNkYWxlMSUwIwYDVQQKExxTdGFyZmllbGQgVGVj
+aG5vbG9naWVzLCBJbmMuMTIwMAYDVQQDEylTdGFyZmllbGQgUm9vdCBDZXJ0aWZp
+Y2F0ZSBBdXRob3JpdHkgLSBHMjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoC
+ggEBAL3twQP89o/8ArFvW59I2Z154qK3A2FWGMNHttfKPTUuiUP3oWmb3ooa/RMg
+nLRJdzIpVv257IzdIvpy3Cdhl+72WoTsbhm5iSzchFvVdPtrX8WJpRBSiUZV9Lh1
+HOZ/5FSuS/hVclcCGfgXcVnrHigHdMWdSL5stPSksPNkN3mSwOxGXn/hbVNMYq/N
+Hwtjuzqd+/x5AJhhdM8mgkBj87JyahkNmcrUDnXMN/uLicFZ8WJ/X7NfZTD4p7dN
+dloedl40wOiWVpmKs/B/pM293DIxfJHP4F8R+GuqSVzRmZTRouNjWwl2tVZi4Ut0
+HZbUJtQIBFnQmA4O5t78w+wfkPECAwEAAaNCMEAwDwYDVR0TAQH/BAUwAwEB/zAO
+BgNVHQ8BAf8EBAMCAQYwHQYDVR0OBBYEFHwMMh+n2TB/xH1oo2Kooc6rB1snMA0G
+CSqGSIb3DQEBCwUAA4IBAQARWfolTwNvlJk7mh+ChTnUdgWUXuEok21iXQnCoKjU
+sHU48TRqneSfioYmUeYs0cYtbpUgSpIB7LiKZ3sx4mcujJUDJi5DnUox9g61DLu3
+4jd/IroAow57UvtruzvE03lRTs2Q9GcHGcg8RnoNAX3FWOdt5oUwF5okxBDgBPfg
+8n/Uqgr/Qh037ZTlZFkSIHc40zI+OIF1lnP6aI+xy84fxez6nH7PfrHxBy22/L/K
+pL/QlwVKvOoYKAKQvVR4CSFx09F9HdkWsKlhPdAKACL8x3vLCWRFCztAgfd9fDL1
+mMpYjn0q7pBZc2T5NnReJaH1ZgUufzkVqSr7UIuOhWn0
+-----END CERTIFICATE-----
+---
+Server certificate
+subject=CN = *.utslp.edu.mx
+issuer=C = US, ST = Arizona, L = Scottsdale, O = "Starfield Technologies, Inc.", OU = http://certs.starfieldtech.com/repository/, CN = Starfield Secure Certificate Authority - G2
+---
+No client certificate CA names sent
+Peer signing digest: SHA256
+Peer signature type: RSA-PSS
+Server Temp Key: ECDH, prime256v1, 256 bits
+---
+SSL handshake has read 4890 bytes and written 864 bytes
+Verification: OK
+---
+New, TLSv1.3, Cipher is TLS_AES_256_GCM_SHA384
+Server public key is 2048 bit
+Secure Renegotiation IS NOT supported
+Compression: NONE
+Expansion: NONE
+No ALPN negotiated
+Early data was not sent
+Verify return code: 0 (ok)
+---
+DONE
+
+
++] Starting Tomcat Audit for sito.utslp.edu.mx
+[+] Date: vie 03 oct 2025 13:15:48 CST
+[1] Port Scanning
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-10-03 13:15 CST
+Nmap scan report for sito.utslp.edu.mx (189.254.143.102)
+Host is up (0.012s latency).
+rDNS record for 189.254.143.102: utslp.edu.mx
+
+PORT     STATE    SERVICE    VERSION
+80/tcp   open     http       Apache Tomcat/Coyote JSP engine 1.1
+443/tcp  filtered https
+8000/tcp filtered http-alt
+8005/tcp filtered mxi
+8009/tcp filtered ajp13
+8080/tcp filtered http-proxy
+8443/tcp filtered https-alt
+
+└──╼ $nikto -h https://sito.utslp.edu.mx/ -C all -o nikto_scan.txt
+- Nikto v2.5.0
+---------------------------------------------------------------------------
++ Target IP:          189.254.143.102
++ Target Hostname:    sito.utslp.edu.mx
++ Target Port:        443
+---------------------------------------------------------------------------
++ SSL Info:        Subject:  /CN=*.utslp.edu.mx
+                   Ciphers:  TLS_AES_256_GCM_SHA384
+                   Issuer:   /C=US/ST=Arizona/L=Scottsdale/O=Starfield Technologies, Inc./OU=http:\/\/certs.starfieldtech.com\/repository\//CN=Starfield Secure Certificate Authority - G2
++ Start Time:         2025-10-03 12:54:40 (GMT-6)
+---------------------------------------------------------------------------
++ Server: Apache-Coyote/1.1
++ /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
++ /: The site uses TLS and the Strict-Transport-Security HTTP header is not defined. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security
++ /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type. See: https://www.netsparker.com/web-vulnerability-scanner/vulnerabilities/missing-content-type-header/
++ /HnORyhHc.ini: Cookie JSESSIONID created without the httponly flag. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
++ Multiple index files found: /index.jsp, /index.html.
++ Server is using a wildcard certificate: *.utslp.edu.mx. See: https://en.wikipedia.org/wiki/Wildcard_certificate
++ OPTIONS: Allowed HTTP Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS .
++ HTTP method ('Allow' Header): 'PUT' method could allow clients to save files on the web server.
++ HTTP method ('Allow' Header): 'DELETE' may allow clients to remove files on the web server.
++ /: Web Server returns a valid response with junk HTTP methods which may cause false positives.
++ /: DEBUG HTTP verb may show server debugging information. See: https://docs.microsoft.com/en-us/visualstudio/debugger/how-to-enable-debugging-for-aspnet-applications?view=vs-2017
+

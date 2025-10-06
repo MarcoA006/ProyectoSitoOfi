@@ -1,0 +1,10 @@
+REPORTE DE ESCANEO TOMCAT 6.0.53
+==================================================
+Target: 189.254.143.102
+Fecha: Tue Sep 23 20:44:04 2025
+
+RESUMEN DE HALLAZGOS:
+- Puertos abiertos: 8
+- Rutas encontradas: 20
+- Vulnerabilidades: 16
+- Archivos de config: 0

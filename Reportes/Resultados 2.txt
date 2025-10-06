@@ -1,0 +1,23 @@
+Explotar Examples resultado:
+=== EXPLOTANDO VULNERABILIDADES ENCONTRADAS ===
+
+[*] Buscando aplicaciones JSP en /examples/
+[+] JSP sample encontrada: /examples/servlets/servlet/RequestParamExample
+[+] JSP sample encontrada: /examples/servlets/servlet/SessionExample
+[+] JSP sample encontrada: /examples/jsp/jsp2/tagfiles/hello.jsp
+[+] JSP sample encontrada: /examples/jsp/include/include.jsp
+
+[*] Intentando exploit de JSP samples...
+[*] Webshell preparada (Base64): PCVAIHBhZ2UgaW1wb3J0PSJqYXZhLnV0aWwuKixqYXZhLmlvLi...
+
+[*] Probando Directory Traversal...
+
+[*] Escaneando aplicaciones web...
+[+] App encontrada: / -   SITO - MISITIO
+[+] App encontrada: /docs - Apache Tomcat 6.0 (6.0.53) - D
+[+] App encontrada: /examples - No title
+
+Fuerza bruta Mejorada resultados:
+PS C:\Users\MarxB\desktop\ProyectoSito> py FBruta.py
+[*] Iniciando fuerza bruta avanzada...
+[-] No se encontraron credenciales válidas

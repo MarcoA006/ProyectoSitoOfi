@@ -1,0 +1,22 @@
+
+-----------------
+DIRB v2.22    
+By The Dark Raver
+-----------------
+
+OUTPUT_FILE: dirb_scan.txt
+START_TIME: Sun Sep 28 00:10:06 2025
+URL_BASE: http://189.254.143.102/
+WORDLIST_FILES: /usr/share/dirb/wordlists/common.txt
+
+-----------------
+
+GENERATED WORDS: 4612
+
+---- Scanning URL: http://189.254.143.102/ ----
+(!) WARNING: NOT_FOUND[] not stable, unable to determine correct URLs {30X}.
+    (Try using FineTunning: '-f')
+
+-----------------
+END_TIME: Sun Sep 28 00:10:07 2025
+DOWNLOADED: 0 - FOUND: 0

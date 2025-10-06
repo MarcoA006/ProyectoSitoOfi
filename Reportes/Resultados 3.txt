@@ -1,0 +1,51 @@
+Fuerza Bruta Avanzada resultados:
+=== EXPLOTACIÓN COMPLETA TOMCAT 6.0.53 ===
+
+[*] Ejecutando exploits específicos para Tomcat 6.0.53...
+
+[*] Explotando RequestParamExample...
+
+[*] Explotando SessionExample...
+[-] Error en SessionExample: There are multiple cookies with name, 'JSESSIONID'
+
+[*] Probando credenciales específicas de Tomcat 6...
+[-] No se encontraron credenciales válidas
+
+[*] Intentando upload de webshell JSP...
+[+] Directorio accesible: https://189.254.143.102/examples/servlets/
+
+Extraer informacion resultados:
+[*] Extrayendo información de páginas de error...
+
+[*] Analizando contenido de JSP samples...
+[+] Comentarios en /examples/jsp/jsp2/tagfiles/hello.jsp:
+ Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreeme...
+[+] Comentarios en /examples/jsp/include/include.jsp:
+ Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreeme...
+
+[*] Probando WebDAV...
+[!] WebDAV posiblemente habilitado (Método OPTIONS responde)
+[!] WebDAV posiblemente habilitado (Método PROPFIND responde)
+[!] WebDAV posiblemente habilitado (Método PUT responde)
+
+
+=== REPORTE DE EXPLOTACIÓN ===
+
+[+] VULNERABILIDADES CONFIRMADAS:
+    - Tomcat 6.0.53 con /examples/ accesible
+    - Múltiples JSP samples vulnerables
+    - Directorio /docs/ expuesto
+    - Solo SSL habilitado (buena práctica)
+
+[+] EXPLOITS DISPONIBLES:
+    1. Directory Traversal mediante JSP samples
+    2. Command Injection en servlets
+    3. Session Manipulation
+    4. Information Disclosure mediante errores
+
+[+] RECOMENDACIONES DE ATAQUE:
+    - Focus en directory traversal para obtener configuraciones
+    - Probar upload mediante WebDAV si está habilitado
+    - Buscar archivos de configuración con paths conocidos

@@ -1,0 +1,51 @@
+script completo de escaneo y explotación:
+
+PS C:\Users\MarxB\Desktop\ProyectoSito> py .\EExplote.py http://189.254.143.102
+=== TOMCAT 6.0.53 COMPREHENSIVE SCANNER ===
+Target: http://189.254.143.102
+
+[1] Testing connection...
+[+] Connection successful
+
+[2] Scanning ports...
+[+] Port 80 open - Server: Apache-Coyote/1.1
+[+] Port 443 open - Server: Apache-Coyote/1.1
+
+[3] Discovering paths...
+[!] Auth Required: /manager/html - 401 Unauthorized
+[!] Auth Required: /manager/status - 401 Unauthorized
+[!] Auth Required: /manager/jmxproxy - 401 Unauthorized
+[!] Auth Required: /host-manager/html - 401 Unauthorized
+[+] Found: /docs/ - 200 OK
+[+] Found: /examples/ - 200 OK
+[+] Found: /examples/servlets/ - 200 OK
+[+] Found: /examples/jsp/ - 200 OK
+[+] Found: /jsp/ - 200 OK
+[+] Found: /jsp/index.jsp - 200 OK
+
+SCAN REPORT
+============================================================
+
+Target: http://189.254.143.102
+Open ports: [80, 443]
+
+[CRITICAL FINDINGS]
+
+[INTERESTING PATHS]
+/manager/html - 401 Unauthorized
+/manager/status - 401 Unauthorized
+/manager/jmxproxy - 401 Unauthorized
+/host-manager/html - 401 Unauthorized
+
+[SECURITY ASSESSMENT]
+Vulnerabilities found:
+✓ SQL Injection vulnerabilities
+✓ WebDAV enabled (potential upload vulnerability)
+✓ Examples directory accessible (CRITICAL)
+✓ Documentation directory accessible
+
+Script adicional para explotación específica:
+
+PS C:\Users\MarxB\Desktop\ProyectoSito> py .\EEspecifica.py
+PS C:\Users\MarxB\Desktop\ProyectoSito> py .\EEspecifica.py http://189.254.143.102
+PS C:\Users\MarxB\Desktop\ProyectoSito>

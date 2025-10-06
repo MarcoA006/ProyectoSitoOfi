@@ -1,0 +1,129 @@
+SCRIPT: ANÁLISIS DE PARÁMETROS FUNCIONALES:
+
+=== ANÁLISIS DE PARÁMETROS FUNCIONALES ===
+
+[+] Analizando parámetro: xModalidadP
+  xModalidadP=N: Status 200, Tamaño 129286
+    🔍 xModalidadP_N: {'formularios': 1, 'inputs_ocultos': 20, 'botones': 0, 'javascript': 14, 'tablas': 32, 'enlaces': 6}
+  xModalidadP=D: Status 200, Tamaño 128122
+    🔍 xModalidadP_D: {'formularios': 1, 'inputs_ocultos': 20, 'botones': 0, 'javascript': 14, 'tablas': 32, 'enlaces': 6}
+  xModalidadP=Z: Status 200, Tamaño 38640
+  xModalidadP=X: Status 200, Tamaño 38586
+  xModalidadP=admin: Status 200, Tamaño 38586
+  xModalidadP=1: Status 200, Tamaño 38586
+
+[+] Analizando parámetro: yAccion
+  yAccion=debug: Status 200, Tamaño 38586
+  yAccion=test: Status 200, Tamaño 38586
+  yAccion=admin: Status 200, Tamaño 38586
+  yAccion=config: Status 200, Tamaño 38586
+
+[+] Analizando parámetro: yUsuario
+  yUsuario=hnieto: Status 200, Tamaño 38586
+  yUsuario=admin: Status 200, Tamaño 38586
+  yUsuario=root: Status 200, Tamaño 38586
+
+[+] Analizando parámetro: yIntentos
+  yIntentos=0: Status 200, Tamaño 38586
+  yIntentos=999: Status 200, Tamaño 38586
+  yIntentos=admin: Status 200, Tamaño 38586
+
+[+] Probando envío de formularios...
+Formularios encontrados: 1
+
+--- Formulario 1 ---
+  Input: yAccion =  (hidden)
+  Input: yInteresado = 0 (hidden)
+  Input: yEncuestado = 0 (hidden)
+  Input: yCveTipoSeguroOtro = 10 (hidden)
+  Input: yResolucion = 800x600 (hidden)
+  Input: ySexo = M (hidden)
+  Input: yObjeto =  (hidden)
+  Input: yScroll =  (hidden)
+  Input: yBloqueoG = true (hidden)
+  Input: yMenorEdad = 1 (hidden)
+  Enviando a: https://189.254.143.102/jsp/escolar/proceso_admision/proceso_interesado.jsp (post)
+  Respuesta: Status 200, Tamaño 38586
+
+SCRIPT: BUSCAR VULNERABILIDADES EN LOS ARCHIVOS JS:
+
+=== ESCANEO DE VULNERABILIDADES EN JS ===
+
+[+] Analizando: /javascript/utilities.js
+  🔍 Buscando credenciales hardcodeadas...
+  🔍 Buscando endpoints API...
+  🔍 Buscando consultas SQL...
+  🔍 Buscando datos de configuración...
+  🔍 Buscando funciones de debug...
+
+[+] Analizando: /javascript/scriptAnimaciones.js
+  🔍 Buscando credenciales hardcodeadas...
+  🔍 Buscando endpoints API...
+  🔍 Buscando consultas SQL...
+  🔍 Buscando datos de configuración...
+  🔍 Buscando funciones de debug...
+
+[+] Analizando: /javascript/jquery/jquery-1.5.1.min.js
+  🔍 Buscando credenciales hardcodeadas...
+  🔍 Buscando endpoints API...
+  🔍 Buscando consultas SQL...
+    ✅ Consulta SQL encontrada:
+      • SelectorAll"in a?a.querySelectorAll("*"):[]}function $(a,b){if(b.nodeType===1){var c=b.nodeName.toLo...
+    ✅ Consulta SQL encontrada:
+      • update:function(){this.options.step&&this.options.step.call(this.elem,this.now,this),(d.fx.step[this...
+  🔍 Buscando datos de configuración...
+  🔍 Buscando funciones de debug...
+
+[+] Analizando: /javascript/jquery/jquery-ui-1.8.2.min.js
+  🔍 Buscando credenciales hardcodeadas...
+  🔍 Buscando endpoints API...
+  🔍 Buscando consultas SQL...
+    ✅ Consulta SQL encontrada:
+      • updateCache:function(b){this.offset=this.helper.offset...
+      • updateDatepicker(b);this._updateAlternate(b)}},_dialogDatepicker:function(a,b,c,e,f){a=this._dialogI...
+  🔍 Buscando datos de configuración...
+  🔍 Buscando funciones de debug...
+    ⚠️  Función de debug encontrada: console\.log
+
+SCRIPT: EXPLORACIÓN DE LA BASE DE DATOS MEDIATE LOS DATOS EXTRAÍDOS:
+
+=== ANÁLISIS DE DATOS EXTRAÍDOS ===
+📊 Total de bachilleratos extraídos: 49
+🔢 Rango de IDs: 1 - 49
+
+📈 Estadísticas de tipos:
+  TECNOLOGICO: 26
+  INDUSTRIAL: 5
+  AGROPECUARIO: 6
+  COLEGIO: 18
+  EMSAD: 8
+
+🎯 Ejemplos interesantes:
+  1: INSTITUTO OCTAVIO PAZ...
+  2: CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE...
+  3: CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE...
+  4: CENTRO DE ESTUDIOS TECNOLOGICOS INDUSTRIAL Y DE SE...
+  5: CENTRO DE BACHILLERATO TECNICO EN COMPUTACION...
+
+[+] Buscando tablas relacionadas...
+
+[+] Probando operaciones de BD...
+
+SCRIPT: FUERZA BRUTA MEJORADA CON PATRONES UTSLP:
+
+=== ANÁLISIS DE PÁGINA DE LOGIN ===
+📄 Página de login: Status 200, Tamaño 1750 bytes
+📋 Formularios encontrados: 1
+
+--- Formulario 1 ---
+Action:
+Method: post
+Inputs encontrados:
+🔍 Referencias a sesión encontradas
+
+=== COMPORTAMIENTO DE LOGIN ===
+📊 Respuesta a credenciales incorrectas:
+   Status: 200
+   Tamaño: 1750 bytes
+   ❌ No se detectó mensaje de error específico
+   ⚠️  Mismo tamaño que página de login (posible redirección al login)

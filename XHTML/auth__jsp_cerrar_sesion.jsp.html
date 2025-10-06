@@ -1,0 +1,60 @@
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title> Sistema de Información Táctico Operativo </title>
+
+	<link rel="stylesheet" href="/styles2/pages.css" type="text/css">
+	<link rel="stylesheet" href="/styles2/tables.css" type="text/css">
+	<link rel="stylesheet" href="/styles2/cells.css" type="text/css">
+	<link rel="stylesheet" href="/styles2/characters.css" type="text/css">
+</head>
+
+<script language="javascript" type="text/javascript">
+<!--
+	window.history.go(1);
+//-->
+</script>
+
+<script language="javascript" type="text/javascript">
+<!--
+    function Cerrar_Sesion_Alerta(){
+		alert("Se va a proceder a cerrar la sesión con un proceso activo");
+	}
+	
+	function Cerrar_Sesion_Ir_Inicio(){
+		document.forma.action = "../";
+		document.forma.submit();
+	}
+//-->
+</script>
+
+<body onload="Cerrar_Sesion_Ir_Inicio()">
+<form name="forma" method="post" action="">
+	<input type="hidden" name="yAccion" id="yAccion" value="">
+	<br>
+	<table class="TablaDatosTitulo" width="100%" align="center" cellpadding="0" cellspacing="0">
+		<th class="CeldaDatosTitulo"> Cerrar Sesión </th>
+	</table>
+	<table border="0" width="100%" align="center" cellpadding="0" cellspacing="0">
+		<colgroup>
+			<col width="20%"> <col width="80%">
+		</colgroup>	
+		<tr class="CeldaDatos">
+			<td colspan="2">&nbsp;  </td>
+		</tr>
+		<tr class="CeldaDatos">
+			<td align="center"> <img src="/images/info_32.gif"> </td>
+			<td> El sistema está cerrando su sesión </td>
+		</tr>
+		<tr class="CeldaDatos">
+			<td colspan="2">&nbsp;  </td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>

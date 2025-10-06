@@ -1,0 +1,172 @@
+body {
+	background-color: #FBFBFB;
+	font-family: 'Montserrat', Helvetica, Arial, Lucida, sans-serif;;
+	font-size: 10px;
+	line-height: 20px;
+	color: #336699;
+	margin:0px;
+}
+
+th {
+	font-family: 'Montserrat', Helvetica, Arial, Lucida, sans-serif;;
+	font-size: 14px;
+	line-height: 20px;
+	color: #565cad;
+}
+
+td {
+	font-family: 'Montserrat', Helvetica, Arial, Lucida, sans-serif;;
+	font-size: 12px;
+	line-height: 20px;
+	color: #565cad;
+}
+
+a {
+	font-size: 10px;
+	text-decoration:none;
+	color: #0000FF;
+}
+
+/*input {
+	font-family: 'Montserrat', Helvetica, Arial, Lucida, sans-serif;
+	font-size: 10px;
+	line-height: 10px;
+}
+
+textarea {
+	font-family: 'Montserrat', Helvetica, Arial, Lucida, sans-serif;
+	font-size: 10px;
+	line-height: 12px;
+}
+
+select {
+	font-family: 'Montserrat', Helvetica, Arial, Lucida, sans-serif;
+	font-size: 10px;
+	line-height: 20px;
+}*/
+
+
+select, input, textarea {
+  padding: 4px;
+  border: 1px solid #dbebff; /* Borde del select */
+  border-radius: 5px; /* Bordes redondeados */
+  background-color: #fff; /* Color de fondo */
+  color: #13519c; /* Color del texto */
+  cursor: pointer; /* Cambio de cursor al pasar sobre el select */
+	margin:4px;
+}
+
+select:hover, input:hover, textarea:hover  {
+  background-color: #f5f6fa; /* Color de fondo al pasar sobre el select */
+}
+
+select:focus, input:focus, textarea:focus  {
+  outline: none; /* Eliminar el contorno al hacer focus */
+  border-color: #4CAF50; /* Color del borde al hacer focus */
+}
+
+.title {
+	font-family: 'Montserrat', Helvetica, Arial, Lucida, sans-serif;;
+	font-size: 12px;
+	line-height: 20px;
+ background-color: #99CC00; color: #003333;}
+
+.subtitle {
+	font-family: 'Montserrat', Helvetica, Arial, Lucida, sans-serif;;
+	font-size: 10px;
+	line-height: 20px;
+ color: #003300;}
+
+.header {
+	font-family: 'Montserrat', Helvetica, Arial, Lucida, sans-serif;;
+	font-size: 10px;
+	background-color: #669900;
+ color: #FFFF33;
+}
+
+.nav {
+	font-family: 'Montserrat', Helvetica, Arial, Lucida, sans-serif;;
+	font-size: 10px;
+	font-weight: normal;
+	background-color: #CCFF99;
+}
+
+.navLink {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	background-color: #DEDECA;
+}
+
+.sidebar {
+	font-family: 'Montserrat', Helvetica, Arial, Lucida, sans-serif;;
+	font-size: 10px;
+	line-height: 20px;
+	padding: 3px;
+	background-color: #FFFFCC;
+ color: #003333;
+}
+
+.sidebarHeader {
+	font-family: 'Montserrat', Helvetica, Arial, Lucida, sans-serif;;
+	font-size: 12px;
+	line-height: 20px;
+	color: #003300;
+	background-color: #FFFF66;
+}
+
+.sidebarFooter {
+	font-family: 'Montserrat', Helvetica, Arial, Lucida, sans-serif;;
+	font-size: 12px;
+	line-height: 20px;
+	background-color: #FFFF99;
+ font-style: italic;
+}
+
+.footer {
+	font-family: 'Montserrat', Helvetica, Arial, Lucida, sans-serif;;
+	font-size: 10px;
+	font-weight: bold;
+	line-height: 20px;
+	color: #333333;
+	background-color: #CCFF99;
+}
+
+.legal {
+	font-family: 'Montserrat', Helvetica, Arial, Lucida, sans-serif;;
+	font-size: 9px;
+	color: #333333;
+}
+
+.box1 {
+	border-width: thin;
+	border-color: #99FF99 #003300 #003300 #99FF99;
+ 	border-style: double;
+ }
+
+.promo {
+	font-family: 'Montserrat', Helvetica, Arial, Lucida, sans-serif;
+	color: #000033;
+}
+
+.titlebar {
+	font-family: 'Montserrat', Helvetica, Arial, Lucida, sans-serif;
+	font-size: 10px;
+	color: #FFFFFF;
+	background-color: #336699;
+}
+
+.dingbat {
+	font-family: 'Montserrat', Helvetica, Arial, Lucida, sans-serif;
+	background-color: #FFFFFF;
+ 	color: #660000; font-weight: bolder; font-size: medium;
+ }
+
+input.big {
+	width: 100px;
+}
+
+input.small {
+	width: 50px;
+}
+

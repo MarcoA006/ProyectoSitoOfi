@@ -1,0 +1,6 @@
+Rutas Accesibles:
+https://sito.utslp.edu.mx/jsp/seguimiento_egreso/proceso_registro_egresado.jsp?xNuevo=1
+https://sito.utslp.edu.mx/jsp/escolar/proceso_admision_lic/proceso_interesado.jsp
+https://sito.utslp.edu.mx/jsp/escolar/proceso_admision/proceso_interesado.jsp?xModalidadP=N
+https://sito.utslp.edu.mx/jsp/escolar/proceso_admision/proceso_interesado.jsp?xModalidadP=D
+https://sito.utslp.edu.mx/jsp/escolar/proceso_admision/proceso_interesado.jsp?xModalidadP=Z

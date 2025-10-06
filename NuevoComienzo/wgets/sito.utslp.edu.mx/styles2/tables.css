@@ -1,0 +1,52 @@
+.TablaInferior{
+	border-bottom-width:1px;
+	border-bottom-style:solid;
+	border-color:#000000;
+}
+
+.TablaDerechaInferior{
+	border-right-width:1px;
+	border-bottom-width:1px;
+	border-right-style:solid;
+	border-bottom-style:solid;
+	border-color:#000000;
+}
+
+.TablaDatosTitulo{
+	border-bottom-width:1px;
+	border-bottom-style:solid;
+	border-color:#000000;
+}
+
+.TablaFotografia{
+	border:1px;
+	border-color:#000000;
+	border-style:solid;
+}
+
+
+
+
+/* ---------------------------------------------------- */
+.bordeL{border-left:1px solid #000;}
+.bordeR{border-right:1px solid #000;}
+.bordeT{border-top:1px solid #000;}
+.bordeB{border-bottom:1px solid #000;}
+
+.bordeL2{border-left:2px solid #999;}
+.bordeR2{border-right:2px solid #999;}
+.bordeT2{border-top:2px solid #999;}
+.bordeB2{border-bottom:2px solid #999;}
+
+.bordeL3{border-left:1px solid #E7DFDA;}
+.bordeR3{border-right:1px solid #E7DFDA;}
+.bordeT3{border-top:1px solid #E7DFDA;}
+.bordeB3{border-bottom:1px solid #E7DFDA;}
+
+.bordeL4{border-left:1px solid #FFF;}
+.bordeR4{border-right:1px solid #FFF;}
+.bordeT4{border-top:1px solid #FFF;}
+.bordeB4{border-bottom:1px solid #FFF;}
+
+.celdaHover:hover{background:#E9E9E9 !important;}
+.filaDisable td{color:#BAB0A7 !important;}

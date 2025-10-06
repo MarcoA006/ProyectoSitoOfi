@@ -1,0 +1,48 @@
+# Nmap 7.94SVN scan initiated Fri Oct  3 21:50:40 2025 as: nmap -sS -sV -sC -p- -T4 -A -oN full_scan.txt sito.utslp.edu.mx
+Nmap scan report for sito.utslp.edu.mx (189.254.143.102)
+Host is up (0.019s latency).
+rDNS record for 189.254.143.102: utslp.edu.mx
+Not shown: 65532 filtered tcp ports (no-response)
+PORT    STATE  SERVICE  VERSION
+25/tcp  open   smtp?
+|_smtp-commands: SMTP EHLO sito.utslp.edu.mx: failed to receive data: connection closed
+| fingerprint-strings: 
+|   FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, Hello, Help, Kerberos, LDAPSearchReq, LPDString, RTSPRequest, SIPOptions, SSLSessionReq, TLSSessionReq, TerminalServerCookie: 
+|_    452 syntax error (connecting)
+113/tcp closed ident
+443/tcp open   ssl/http Apache Tomcat/Coyote JSP engine 1.1
+|_ssl-date: TLS randomness does not represent time
+|_http-server-header: Apache-Coyote/1.1
+| ssl-cert: Subject: commonName=*.utslp.edu.mx
+| Subject Alternative Name: DNS:*.utslp.edu.mx, DNS:utslp.edu.mx
+| Not valid before: 2025-03-12T22:57:40
+|_Not valid after:  2026-04-13T22:57:40
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port25-TCP:V=7.94SVN%I=7%D=10/3%Time=68E09A1B%P=x86_64-pc-linux-gnu%r(H
+SF:ello,1F,"452\x20syntax\x20error\x20\(connecting\)\r\n")%r(Help,1F,"452\
+SF:x20syntax\x20error\x20\(connecting\)\r\n")%r(GenericLines,1F,"452\x20sy
+SF:ntax\x20error\x20\(connecting\)\r\n")%r(GetRequest,1F,"452\x20syntax\x2
+SF:0error\x20\(connecting\)\r\n")%r(HTTPOptions,1F,"452\x20syntax\x20error
+SF:\x20\(connecting\)\r\n")%r(RTSPRequest,1F,"452\x20syntax\x20error\x20\(
+SF:connecting\)\r\n")%r(SSLSessionReq,1F,"452\x20syntax\x20error\x20\(conn
+SF:ecting\)\r\n")%r(TerminalServerCookie,1F,"452\x20syntax\x20error\x20\(c
+SF:onnecting\)\r\n")%r(TLSSessionReq,1F,"452\x20syntax\x20error\x20\(conne
+SF:cting\)\r\n")%r(Kerberos,1F,"452\x20syntax\x20error\x20\(connecting\)\r
+SF:\n")%r(FourOhFourRequest,1F,"452\x20syntax\x20error\x20\(connecting\)\r
+SF:\n")%r(LPDString,1F,"452\x20syntax\x20error\x20\(connecting\)\r\n")%r(L
+SF:DAPSearchReq,1F,"452\x20syntax\x20error\x20\(connecting\)\r\n")%r(SIPOp
+SF:tions,1F,"452\x20syntax\x20error\x20\(connecting\)\r\n");
+OS fingerprint not ideal because: Didn't receive UDP response. Please try again with -sSU
+No OS matches for host
+Network Distance: 5 hops
+
+TRACEROUTE (using port 80/tcp)
+HOP RTT      ADDRESS
+1   4.11 ms  192.168.100.1
+2   6.16 ms  10.64.64.1
+3   12.15 ms 10.180.24.65
+4   12.34 ms 10.180.24.68
+5   11.75 ms utslp.edu.mx (189.254.143.102)
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Fri Oct  3 21:55:43 2025 -- 1 IP address (1 host up) scanned in 303.50 seconds

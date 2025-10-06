@@ -1,0 +1,91 @@
+SCRIPT CORREGIDO: DIRECTORY TRAVERSAL REAL:
+
+=== DIRECTORY TRAVERSAL REAL ===
+
+[+] Probando include.jsp...
+  ⚠️  Respuesta interesante de include.jsp - /conf/tomcat-users.xml (3579 bytes)
+  ⚠️  Respuesta interesante de include.jsp - /conf/tomcat-users.xml (3579 bytes)
+  ⚠️  Respuesta interesante de include.jsp - /conf/tomcat-users.xml (3579 bytes)
+  ⚠️  Respuesta interesante de include.jsp - /conf/tomcat-users.xml (3579 bytes)
+  ⚠️  Respuesta interesante de include.jsp - /conf/server.xml (3579 bytes)
+  ⚠️  Respuesta interesante de include.jsp - /conf/server.xml (3579 bytes)
+  ⚠️  Respuesta interesante de include.jsp - /conf/server.xml (3579 bytes)
+  ⚠️  Respuesta interesante de include.jsp - /conf/server.xml (3579 bytes)
+  ⚠️  Respuesta interesante de include.jsp - /webapps/SITO/WEB-INF/web.xml (3579 bytes)
+  ⚠️  Respuesta interesante de include.jsp - /webapps/SITO/WEB-INF/web.xml (3579 bytes)
+  ⚠️  Respuesta interesante de include.jsp - /webapps/SITO/WEB-INF/web.xml (3579 bytes)
+  ⚠️  Respuesta interesante de include.jsp - /webapps/SITO/WEB-INF/web.xml (3579 bytes)
+  ⚠️  Respuesta interesante de include.jsp - /webapps/SITO/WEB-INF/classes/database.properties (3579 bytes)
+  ⚠️  Respuesta interesante de include.jsp - /webapps/SITO/WEB-INF/classes/database.properties (3579 bytes)
+  ⚠️  Respuesta interesante de include.jsp - /webapps/SITO/WEB-INF/classes/database.properties (3579 bytes)
+  ⚠️  Respuesta interesante de include.jsp - /webapps/SITO/WEB-INF/classes/database.properties (3579 bytes)
+  ⚠️  Respuesta interesante de include.jsp - /windows/system32/drivers/etc/hosts (3579 bytes)
+  ⚠️  Respuesta interesante de include.jsp - /windows/system32/drivers/etc/hosts (3579 bytes)
+  ⚠️  Respuesta interesante de include.jsp - /windows/system32/drivers/etc/hosts (3579 bytes)
+  ⚠️  Respuesta interesante de include.jsp - /windows/system32/drivers/etc/hosts (3579 bytes)
+  ⚠️  Respuesta interesante de include.jsp - /etc/passwd (3579 bytes)
+  ⚠️  Respuesta interesante de include.jsp - /etc/passwd (3579 bytes)
+  ⚠️  Respuesta interesante de include.jsp - /etc/passwd (3579 bytes)
+  ⚠️  Respuesta interesante de include.jsp - /etc/passwd (3579 bytes)
+
+[+] Probando snoop.jsp con diferentes parámetros...
+
+[+] Probando calendar.jsp...
+  ⚠️  Respuesta interesante de calendar.jsp (1017 bytes)
+  ⚠️  Respuesta interesante de calendar.jsp (1017 bytes)
+  ⚠️  Respuesta interesante de calendar.jsp (1017 bytes)
+
+[+] Probando servlets...
+  ⚠️  Respuesta interesante de /examples/servlets/servlet/SessionExample (1136 bytes)
+
+[+] Probando WebDAV...
+  ⚠️  Respuesta interesante de WebDAV (1368 bytes)
+  ⚠️  Respuesta interesante de WebDAV (1368 bytes)
+  ⚠️  Respuesta interesante de WebDAV (1368 bytes)
+
+SCRIPT: EXPLOTACIÓN AVANZADA DE SITO:
+
+=== EXPLOTACIÓN SQL AVANZADA ===
+
+[1] Payload: 1
+   Status: 200, Tamaño: 29
+   Contenido: '1¬INSTITUTO OCTAVIO PAZ'
+   ✅ Formato de datos reconocido
+   ✅ Respuesta normal del sistema
+
+[2] Payload: 2
+   Status: 200, Tamaño: 77
+   Contenido: '2¬CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS NUM. 168'
+   ✅ Formato de datos reconocido
+   ⚠️  Respuesta DIFERENTE detectada!
+
+[3] Payload: 3
+   Status: 200, Tamaño: 77
+   Contenido: '3¬CENTRO DE BACHILLERATO TECNOLOGICO INDUSTRIAL Y DE SERVICIOS NUM. 195'
+   ✅ Formato de datos reconocido
+   ⚠️  Respuesta DIFERENTE detectada!
+
+HTMLS CON ERROR 404
+
+=== DESCUBRIENDO ESTRUCTURA SITO ===
+✅ Encontrado: /jsp/index.jsp
+
+=== TESTEO DE PARÁMETROS ===
+Status: 200, Tamaño: 38584
+🔍 Referencia a admin encontrada
+
+SCRIPT: BUSCAR ARCHIVOS DE CONFIGURACIÓN SITO:
+
+=== BUSCANDO CONFIGURACIONES SITO ===
+
+🔍 Buscando en: /jsp/
+
+🔍 Buscando en: /jsp/escolar/
+
+🔍 Buscando en: /jsp/escolar/proceso_admision/
+
+🔍 Buscando en: /SITO/
+
+🔍 Buscando en: /webapps/SITO/
+
+🔍 Buscando en: /

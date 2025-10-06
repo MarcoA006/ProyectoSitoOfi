@@ -1,0 +1,611 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Información Egresado</title>
+	<link rel="stylesheet" href="../../styles/pages.css" type="text/css">
+	<link rel="stylesheet" href="../../styles/tables.css" type="text/css">
+	<link rel="stylesheet" href="../../styles/cells.css" type="text/css">
+	<link rel="stylesheet" href="../../styles/characters.css" type="text/css">
+	<link rel="stylesheet" href="../../styles/letras.css" type="text/css">
+	<link rel="stylesheet" href="../../styles/tooltip.css" type="text/css">
+		
+    <link rel="stylesheet" href="../../../styles2/reports.css" type="text/css">
+	<link rel="stylesheet" href="../../../javascript/themes/aqua.css" type="text/css">
+	<link rel="stylesheet" href="../../../styles2/qtip/jquery.qtip.min.css" />
+	
+	
+</head>
+<script language="javascript" type="text/javascript" src="../../javascript/utilities.js"></script>
+<script language="javascript" type="text/javascript" src="../../javascript/utils.js"></script>
+<script language="javascript" type="text/javascript" src="../../javascript/boxover.js"></script>
+<script language="javascript" type="text/javascript">
+<!--
+	/*window.history.go(1);
+		document.oncontextmenu = function(){ return false;}		
+		
+		document.onkeydown = function()
+		  { 
+			if(window.event && window.event.keyCode == 116)
+			  {
+				 window.event.keyCode = 505; 
+		 	  }
+			
+			if(window.event && window.event.keyCode == 505)
+			  { 
+			 	return false;    
+			  }			  			
+		   }  */
+//-->
+</script>
+<script language="javascript" type="text/javascript">
+    <!--
+	
+	function Telefono(numero){
+		var data = "0123456789,";
+		var nav4 = window.Event ? true : false;
+		var key = nav4 ? numero.which : numero.keyCode;
+		
+		if (data.indexOf(String.fromCharCode(key)) > -1 || key <= 12)
+			return true;
+		else
+			return false;
+		}
+	
+        function Alerta(visible, color){
+            document.getElementById("Alerta").style.visibility = visible;
+            document.getElementById("Alerta").style.color = color;	
+			setTimeout("LimpiarAlerta()",'6000');
+			
+        }
+		
+		
+        function Mostrar(mensaje){
+           alert(mensaje);
+		   window.location.href = "../../";
+        }
+		
+		function LimpiarAlerta(){
+            document.getElementById("Alerta").style.visibility = 'hidden';	
+        }
+
+        function ValidaMatricula( valor )
+	    {
+			if(valor == 1){
+				document.forma.xMatriculaSITO.disabled = false ; 
+				document.forma.yMostrar.value=false;
+			}
+			else
+			{
+				document.forma.xMatriculaSITO.disabled = true ; 	
+				document.forma.yMostrar.value=true;
+			}
+			document.forma.yAccion.value = "Limpiar";
+			document.forma.submit();
+	    }
+	  
+	  	function Limpiar()
+		{
+			//document.forma.xTipoRegistro[1].checked = true;
+			document.forma.xMatriculaSITO.value = "";
+			document.forma.yAccion.value = "Limpiar";
+			document.forma.yMostrar.value=false;
+			document.forma.submit();	
+		}
+		
+		function Alumno_Recargar(opcion)
+		{ 
+			var tipo=1
+			//alert(tipo);
+			if(tipo==1){
+				if ( document.forma.xMatriculaSITO.value.length < 3)
+				{
+					alert("Debes colocar tu matrícula");
+					document.forma.xMatriculaSITO.focus();
+					return;	
+				} 
+				if(opcion==1){
+					document.forma.xTipoEgresado.value=0;
+				}
+				document.forma.yAccion.value = "Alumno_Recargar";
+			}
+			document.forma.submit();	
+		}
+		
+		function Colonia_Buscar(control)
+        {			
+            var pagina = "../muestra_colonia.jsp?xControl=" + control;
+            var vWinPres = window.open(pagina, "Muestra", "width=700, height=500, status=yes, directories=no, scrollbars=yes, resizable=no, top=0, left=0");
+            vWinPres.opener = self;
+        }
+		
+		function crearAjax() {
+            var xmlhttp = false;
+            try {
+                xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+            } catch (e) {
+                try {
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                } catch (E) {
+                    xmlhttp = false;
+                }
+            }
+
+            if (!xmlhttp && typeof XMLHttpRequest != 'undefined') {
+                xmlhttp = new XMLHttpRequest();
+            }
+
+            return xmlhttp;
+        }
+		
+		function Colonia_Recargar() {
+            var cve_colonia = document.forma.yColonia.value;
+			if(cve_colonia>-0){
+				xmlhttp = crearAjax();
+				if (xmlhttp) {
+					//inicializa_menu();
+					xmlhttp.open("GET", "../escolar/proceso_admision/muestra_domicilio_ajax.jsp?xCveColonia=" + cve_colonia);
+					xmlhttp.onreadystatechange = function() {
+	
+						if (xmlhttp.readyState == 4) {
+						
+							var domicilio = Trim((xmlhttp.responseText).replace(/\r\n|\n|\r/g, " "));
+							var domicilio_corto = domicilio.split('¬');
+							
+							document.getElementById("yColonia").value = domicilio_corto[0];
+							document.getElementById("xColonia").value = domicilio_corto[1];
+							document.getElementById("xCP").value = domicilio_corto[2];
+							document.getElementById("yCiudad").value = domicilio_corto[3];
+							document.getElementById("xCiudad").value= domicilio_corto[4];
+							document.getElementById("yEstado").value = domicilio_corto[5];
+							document.getElementById("xEstado").value = domicilio_corto[6];
+	
+						}
+					}
+					xmlhttp.send(null);
+				}
+			}
+            
+        }
+		
+		function Colonia_Registrar(opcion)
+        {
+            var pagina = "../escolar/proceso_admision/registrar_colonia.jsp?xOpcion="+opcion;
+            var vWinPres = window.open(pagina, "Registar_Colonia", "width=500, height=230, status=no, directories=no, scrollbars=no, resizable=no, top=0, left=0");
+            vWinPres.opener = self;
+        }
+		
+		function GuardarEgresado(){
+			if (document.forma.xTipoEgresado.value == 0)
+            {
+                alert("Selecciona el tipo de egresado");
+                document.forma.xTipoEgresado.focus();
+                return;
+            }
+			if ( document.forma.xMatriculaOriginal.value.length < 3)
+			{
+				alert("Debes ingresar tu matrícula");
+				document.forma.xMatriculaOriginal.focus();
+				return;	
+			}
+			if (Trim(document.forma.xNombre.value) == "-" || Trim(document.forma.xNombre.value) == "" || Trim(document.forma.xNombre.value).length <= 1)
+            {
+                alert("Debes de introducir tu nombre");
+                document.forma.xNombre.focus();
+                return;
+            }
+			if (Trim(document.forma.xApp.value) == "-" || Trim(document.forma.xApp.value) == "" || Trim(document.forma.xApp.value).length <= 1)
+            {
+                alert("Debes de introducir tu apellido paterno");
+                document.forma.xApp.focus();
+                return;
+            }
+			/*if (Trim(document.forma.xApm.value) == "-" || Trim(document.forma.xApm.value) == "" || Trim(document.forma.xApm.value).length <= 1)
+            {
+                alert("Debes de introducir tu apellido materno");
+                document.forma.xApm.focus();
+                return;
+            } */     
+			if (document.forma.xAnioEgreso.value == -1)
+            {
+                alert("Selecciona el año de egreso");
+                document.forma.xAnioEgreso.focus(); 
+                return;
+            }
+			if (document.forma.xMes.value == "")
+            {
+                alert("Selecciona el mes de egreso");
+                document.forma.xMes.focus();
+                return;
+            }
+			if (Trim(document.forma.xGeneracion.value) == "-" || Trim(document.forma.xGeneracion.value) == "" || Trim(document.forma.xGeneracion.value).length < 1)
+            {
+                alert("Debes de introducir de que generación eres");
+                document.forma.xGeneracion.focus();
+                return;
+            }
+			//alert('carrera: '+document.forma.xCarrera.value+' especialidad: '+document.forma.xEspecialidad.value);
+			if (document.forma.xCarrera.value == 0)
+            {
+                alert("Selecciona la carrera");
+                document.forma.xCarrera.focus();
+                return;
+            }
+			if (document.forma.xEspecialidad.value == -1)
+            {
+                alert("Selecciona la especialidad");
+                document.forma.xEspecialidad.focus();
+                return;
+            }
+			if (Trim(document.forma.xNombre.value) == "-" || Trim(document.forma.xNombre.value) == "" || Trim(document.forma.xNombre.value).length <= 1)
+            {
+                alert("Debes de introducir tu nombre");
+                document.forma.xNombre.focus();
+                return;
+            }
+			if (Trim(document.forma.xTelefono.value) == "-" || Trim(document.forma.xTelefono.value) == "" || Trim(document.forma.xTelefono.value).length < 7)
+            {
+                alert("Debes de introducir al menos un teléfono");
+                document.forma.xTelefono.focus();
+                return;
+            }
+			if (document.forma.xTelefonoR.value== "" || document.forma.xTelefonoR.value.length == 0)
+            {
+                document.forma.xTelefonoR.value="-";
+                
+            }
+			/*if(Trim(document.forma.xTelefono.value).contains(Trim(document.forma.xTelefonoR.value))){
+				alert("El teléfono de recados debe de ser diferente al teléfono personal");
+				return;
+			}*/
+			if (Trim(document.forma.xCorreo.value) != "-" && Trim(document.forma.xCorreo.value).length == 0)
+            {
+				alert("Debes ingresar tu correo electrónico");
+				return;
+			} 
+			if (Trim(document.forma.xCorreo.value) != "-" && Trim(document.forma.xCorreo.value).length > 0)
+            {
+                var filtro = /^[A-Za-z][A-Za-z0-9_.-]*@[A-Za-z0-9_.-]+\.[A-Za-z0-9_.]+[A-za-z]$/;
+
+                if (filtro.test(document.forma.xCorreo.value) == false)
+                {
+                    alert("Dirección de correo electrónico no válida, Por favor verifiquelo");
+                    document.forma.xCorreo.focus();
+                    return;
+                }
+
+            }
+			 if (Trim(document.forma.xCalle.value) == "-" || Trim(document.forma.xCalle.value) == "" || Trim(document.forma.xCalle.value).length < 5)
+            {
+                alert("Debes de introducir el nombre de la calle donde vives");
+                document.forma.xCalle.focus();
+                return;
+            }
+			if (document.forma.xNumeroExterior.value == 0 || Trim(document.forma.xNumeroExterior.value) == "-")
+            {
+                alert("Debes ingresar el número exterior de tu domicilio");
+                document.forma.xNumeroExterior.focus();
+                return;
+            }
+ 
+            if (parseInt(document.forma.yColonia.value) <= -1)
+            {
+                alert("Debes de seleccionar tu colonia");
+                return;
+            }
+			
+			if(confirm("Se va a proceder a guardar y crear el usuario de acuerdo a la información proporcionada. Se recomienda revisar los datos antes de proceder. ¿Desea continuar con el registro?")){
+				document.forma.yAccion.value="GuardarEgresado";
+				document.forma.submit();	
+			}
+		}
+   //-->
+</script>
+    <body onload="">
+        <form name="forma" method="post" action="">
+            <input type="hidden" name="yAccion" id="yAccion" />
+            <input name="yResolucion" type="hidden" id="yResolucion" value=""/>
+			<input name="yMostrar" type="hidden" id="yMostrar" value="false"/>
+			<input name="ySave" type="hidden" id="ySave" value="false"/>
+            
+            <table border="0" width="80%" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                
+                               
+						<tr style="display:">
+							<td width="40%" >&nbsp;&nbsp;<img src="../../../images/logo_negro.png" height="80" align="center"/><img src="../../../images/banner_egresado.jpg" height="80"/align="right">
+							</td>
+						</tr>
+						<tr style="display:"><td>
+						<table border="0" class="" width="100%" align="center" cellpadding="0" cellspacing="0">
+						 			<colgroup>
+                                            <col width="55%"> <col width="45%">
+                                    </colgroup>
+							<tr ><td colspan="2">&nbsp;</td></tr>
+							<tr>
+								<th class="CeldaDatos" valign="middle"> Para registrarte debes haber terminado tus estudios como TSU o ING,
+								</th>
+								<th class="CeldaDatos" valign="middle"> <font color="#003399">Registro con matrícula existente</font> </th>
+								<td class="CeldaDatos" rowspan="3" align="center" valign="middle" style="display:none">
+									<img src="../../images/save_24.gif" style="cursor:pointer" onclick="GuardarEgresado();  return false;" title="cssbody=[dvbdy1] cssheader=[dvhdr1] header=[<center>Guardar</center>] body=[Dar clic para guardar]" />
+									<br /><font color="#003399">Guardar</font> 
+									</th>
+							</tr>
+							
+							
+							<tr align="center">
+								<th class="CeldaDatos" valign="middle">  Ingresa solo los últimos dígitos de tu Matrícula después de las letras.  Ejemplo:2131PIM<font color="#FF0000">10520</font>
+									<!--	<input title="cssbody=[dvbdy1] cssheader=[dvhdr1] header=[<center>Nuevos</center>] body=[Egresados que no están en el sistema como alumnos]" name="xTipoRegistro" type="radio" value="0" onchange="ValidaMatricula('0')" onclick=""  /></td>
+										-->
+									</th>
+							  <td class="CeldaDatos" valign="middle"> 
+										<input title="cssbody=[dvbdy1] cssheader=[dvhdr1] header=[<center>Con matrícula</center>] body=[Egresados que ya están registrados en el sistema como alumnos]"  name="xTipoRegistro" type="radio" value="1" onchange="ValidaMatricula('1')" onclick="" checked /> &nbsp; 
+									<br></td>
+							</tr>
+							<tr> 
+							<th class="CeldaDatos" valign="middle"> Si no conoces el número de tu matrícula, comunícate a Servicios Escolares </th>
+							<td class="CeldaDatos" align="center">Matrícula : &nbsp;
+							  <input type="text" name="xMatriculaSITO" id="xMatriculaSITO" title="Matrícula" value="" maxlength="8" size="12" onkeypress="return Numeros(event)" onkeydown="if(event.keyCode==13)Alumno_Recargar('1')" autocomplete="off"/>
+							  &nbsp; <img style='cursor:pointer' src="../../images/cancel_16.gif" onclick="Limpiar()" > Cancelar 
+							  &nbsp; <img style='cursor:pointer' src="../../images/confirm_16.gif" onclick="Alumno_Recargar('1')" > 
+							  <input type="reset" value="Clear" style="display:none" id="reset" /></td>
+							</tr>
+							<tr ><th class="CeldaDatos" valign="middle"> Tel (444) 8 34 83 00 Ext. 2072</th>
+							<td class="CeldaDatos">&nbsp;</td>
+							</tr>
+						</table>
+						</td></tr>
+						<tr><td align="center">&nbsp;</td></tr>
+						<tr><td align="center">&nbsp;<label id="Alerta" style="font-size:14px"> <b></b> </label> </td></tr>
+						<tr style="display:none">
+                            <td>
+                                <table class="TablaDatosTitulo" width="97%" align="center" cellpadding="0" cellspacing="0">
+                                    <colgroup>
+                                            <col width="20%"> <col width="80%">
+                                    </colgroup>
+                                    <th colspan="2" class="CeldaDatosTitulo"> Datos Generales </th>
+                                    <th colspan="2" align="left"> </th>
+									
+                                </table>
+                            </td>
+                        </tr>
+						
+                        <tr style="display:none">
+							<td> 
+								<table class="CeldaDatos" width="97%" align="center" cellpadding="0" cellspacing="0">
+									<colgroup>
+                                            <col width="15%"> <col width="60%"><col width="25%">
+                                    </colgroup>
+                                   	<tr>
+										<td>&nbsp;<b>Tipo Egresado: <label style="color:#FF0000"> * </label></b></td>
+										<td> <select id="xTipoEgresado" name="xTipoEgresado" onchange="Alumno_Recargar('2')">
+												<option value="0">[ Seleccionar ]</option>
+												 
+																<option value="1" >TSU</option>
+															
+																<option value="2" >Ingeniería</option>
+															
+											</select>
+										</td>
+										<td rowspan="16"></td>
+									</tr>
+									<tr>
+										<td>&nbsp;<b>Matrícula: <label style="color:#FF0000"> * </label></b></td>
+										<td> <input type="text" id="xMatriculaOriginal" name="xMatriculaOriginal" value="" onpaste="return false;"
+											onkeypress="return Numeros(event)" autocomplete="off" maxlength="14" class="TextoDesabilitado" readonly=""/></td>
+									</tr>
+									<tr>
+										<td>&nbsp;<b>Nombre Completo: <label style="color:#FF0000"> * </label></b></td>
+										<td> 
+                                                                                    <input type="text" id="xNombre" name="xNombre" value="" placeholder="NOMBRE" size="25" maxlength="100" onkeypress="return Letras(event);" onkeyup="this.value = this.value.toString().toUpperCase()" autocomplete="off" readonly="readonly"/> 
+											<input type="text" id="xApp" name="xApp" value="" placeholder="APELLIDO PATERNO" size="25"  maxlength="50" onkeypress="return Letras(event)" onkeyup="this.value = this.value.toString().toUpperCase()" autocomplete="off" readonly="readonly"/> 
+											<input type="text" id="xApm" name="xApm" value="" placeholder="APELLIDO MATERNO" size="25" maxlength="50" onkeypress="return Letras(event)" onkeyup="this.value = this.value.toString().toUpperCase()" autocomplete="off" readonly="readonly"/></td>
+									</tr>
+									<tr>
+										<td>&nbsp;<b>Sexo: <label style="color:#FF0000"> * </label></b></td>
+										<td> <input type="radio" id="xSexo1" name="xSexo" value="F" checked/><b>Femenino</b> <input type="radio" id="xSexo2" name="xSexo" value="M"  /> <b>Masculino</b></td>
+									</tr>
+									<tr>
+										<td>&nbsp;<b>Año de egreso <label style="color:#FF0000"> * </label>:</b></td>
+										<td> <select id="xAnioEgreso" name="xAnioEgreso">
+											<option value="-1">[ Seleccionar ]</option>    
+										
+												<option value=2025 >2025</option>
+										
+												<option value=2024 >2024</option>
+										
+												<option value=2023 >2023</option>
+										
+												<option value=2022 >2022</option>
+										
+												<option value=2021 >2021</option>
+										
+												<option value=2020 >2020</option>
+										
+												<option value=2019 >2019</option>
+										
+												<option value=2018 >2018</option>
+										
+												<option value=2017 >2017</option>
+										
+												<option value=2016 >2016</option>
+										
+												<option value=2015 >2015</option>
+										
+												<option value=2014 >2014</option>
+										
+												<option value=2013 >2013</option>
+										
+												<option value=2012 >2012</option>
+										
+												<option value=2011 >2011</option>
+										
+												<option value=2010 >2010</option>
+										
+												<option value=2009 >2009</option>
+										
+												<option value=2008 >2008</option>
+										
+												<option value=2007 >2007</option>
+										
+												<option value=2006 >2006</option>
+										
+												<option value=2005 >2005</option>
+										
+												<option value=2004 >2004</option>
+										
+												<option value=2003 >2003</option>
+										
+												<option value=2002 >2002</option>
+										
+												<option value=2001 >2001</option>
+										
+												<option value=2000 >2000</option>
+										
+												<option value=1999 >1999</option>
+										
+												<option value=1998 >1998</option>
+										
+												<option value=1997 >1997</option>
+										
+												
+											</select>  
+											
+											&nbsp;&nbsp;&nbsp; <b>Mes <label style="color:#FF0000"> * </label>:</b>
+											<select id="xMes" name="xMes">
+												<option value="">[ Seleccionar ]</option>    
+												<option value="ene" >Enero</option>		
+												<option value="feb" >Febrero</option>	
+												<option value="mar" >Marzo</option>	
+												<option value="abr" >Abril</option>	
+												<option value="may" >Mayo</option>	
+												<option value="jun" >Junio</option>	
+												<option value="jul" >Julio</option>	
+												<option value="ago" >Agosto</option>	
+												<option value="sep" >Septiembre</option>	
+												<option value="oct" >Octubre</option>	
+												<option value="nov" >Noviembre</option>	
+												<option value="dic" >Diciembre</option>							
+											</select>   
+										</td>
+									</tr>
+									<tr>
+										<td>&nbsp;<b>Generación<label style="color:#FF0000"> * </label>:</b></td>
+										<td> <input type="text" id="xGeneracion" name="xGeneracion" value="" maxlength="50" onkeypress="return NumeroDomicilio(event)" autocomplete="off"/> </td>
+									</tr>
+									<tr>
+										<td>&nbsp;<b>Carrera <label style="color:#FF0000"> * </label>:</b></td>
+										<td> <select id="xCarrera" name="xCarrera" onchange="document.forma.submit()" disabled="disabled">
+													  <option value="0">[ Seleccionar ]</option>
+													  
+												</select>
+												<input name="yCarrera" type="hidden" id="yCarrera" value="0"/>	 
+											</td>
+									</tr>
+									<tr>
+										<td>&nbsp;<b>Especialidad <label style="color:#FF0000"> * </label>:</b></td>
+										<td> <select id="xEspecialidad" name="xEspecialidad" onchange="document.forma.submit()" disabled="disabled">
+													  <option value="-1">[ Seleccionar ]</option>
+													  
+												</select>
+												<input name="yEspecialidad" type="hidden" id="yEspecialidad" value="-1"/>
+											</td>
+									</tr>
+									<tr>
+										<td>&nbsp;<b>Teléfono(s) <label style="color:#FF0000"> * </label>:</b></td>
+										<td> <input type="text" id="xTelefono" name="xTelefono" value="" maxlength="100" size="50" placeholder="NUM1,NUM2,NUM3...." onkeypress="return Telefono(event)" autocomplete="off"/> </td>
+									</tr>
+									<tr>
+										<td>&nbsp;<b>Teléfono de recados: <label style="color:#FF0000"></label>
+										</b></td>
+										<td> <input type="text" id="xTelefonoR" name="xTelefonoR" value="" maxlength="15" onkeypress="return Telefono(event)" autocomplete="off"/></td>
+									</tr>
+									<tr>
+										<td>&nbsp;<b>E-mail: <label style="color:#FF0000"> * </label></b></td>
+										<td> <input type="text" id="xCorreo" name="xCorreo" value="" size="50" maxlength="100" onkeypress="return Mail(event)" autocomplete="off"/></td>
+									</tr>
+									<tr>
+										<td>&nbsp;<b>Calle: <label style="color:#FF0000"> * </label></b></td>
+										<td> <input type="text" id="xCalle" name="xCalle" value="" size="50"  maxlength="100" onkeypress="return Direccion(event)" autocomplete="off"/></td>
+									</tr> 
+									<tr>
+										<td>&nbsp;<b>Número Exterior: <label style="color:#FF0000"> * </label></b></td>
+										<td> <input type="text" id="xNumeroExterior" name="xNumeroExterior" value="" maxlength="15" onkeypress="return NumeroDomicilio(event)" autocomplete="off"/>  </td>
+									</tr>
+									<tr>
+										<td>&nbsp;<b>Colonia: <label style="color:#FF0000"> * </label></b></td>
+										<td> <input type="text" id="xColonia" name="xColonia" value=""/ class="TextoDesabilitado" readonly=""> 
+										<img src="../../images/search_16.gif" style="cursor:pointer" onclick="Colonia_Buscar('document.forma.yColonia')"/>  
+										&nbsp;&nbsp;<b>No encuentro mi colonia</b>
+										<img src="../../images/finance_16.gif" title="Registrar Colonia" style="cursor:pointer" onclick="Colonia_Registrar('1');  return false;"> 
+										<input type="hidden" id="yColonia" name="yColonia" value="-1"/>
+									    </td>
+									</tr>
+									<tr>
+										<td>&nbsp;<b>Código Postal: <label style="color:#FF0000"> * </label></b></td>
+										<td> <input type="text" id="xCP" name="xCP" value="-1" class="TextoDesabilitado" readonly=""> 
+									    </td>
+									</tr>
+									<tr>
+										<td>&nbsp;<b>Ciudad: <label style="color:#FF0000"> * </label></b></td>
+										<td> <input type="text" id="xCiudad" name="xCiudad" value=""/ class="TextoDesabilitado" readonly=""> 
+										<input type="hidden" id="yCiudad" name="yCiudad" value="-1"/>
+									    </td>
+									</tr>
+									<tr>
+										<td>&nbsp;<b>Estado: <label style="color:#FF0000"> * </label></b></td>
+										<td> <input type="text" id="xEstado" name="xEstado" value=""/ class="TextoDesabilitado" readonly=""> 
+										<input type="hidden" id="yEstado" name="yEstado" value="-1"/>
+									    </td>
+									</tr>
+									<tr>
+										<table width="100%" cellpadding="0" cellspacing="0" border="0"> <!- tabla interna aviso de privacidad -->
+							<tr><td>&nbsp;</td></tr>
+							<tr>				   
+								<td width="50%"><i>
+									"Los datos personales proporcionados, ser&aacute;n protegidos, incorporados y tratados en la
+									base de datos de la Universidad Tecnol&oacute;gica de San Luis Potos&iacute;, con la &uacute;nica
+									determinada, expl&iacute;cita y leg&iacute;tima finalidad para sus procesos acad&eacute;micos."</i>
+								</td>
+								<td>
+									<a href="aviso.jsp" target="_blank"><img src="../../../images/asignar_doc.png" style="cursor:pointer">
+									leer acuerdo...</a>
+								</td>
+								<td>
+									<input type="checkbox" id="xAviso" name="xAviso" /> Estoy de acuerdo de que la Universidad Tecnol&oacute;gica de San Luis Potos&iacute;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; utilice mi informaci&oacute;n para los procesos que requiera.
+								</td>		  	
+							</tr>
+							</table>	
+							</tr>
+                                </table>
+							</td>
+						</tr>
+						<tr>
+							<td align="center">
+							
+						
+						
+						</td></tr>
+                        <tr>
+                            <td>
+                                <table border="0" width="97%" align="center" cellpadding="0" cellspacing="0">
+                                    <colgroup>
+                                        <col width="3%"> <col width="97%">
+                                    </colgroup>
+                                    <tr class="CeldaDatosRezaltar">
+                                        <td> &nbsp; <label style="color:#FF0000"> * </label>  </td>
+                                        <td> &nbsp; Información obligatoria  </td>						
+                                    </tr>					
+                                </table>
+                            </td>
+                        </tr>
+                        
+            </table>
+        </form>
+    </body>
+</html>

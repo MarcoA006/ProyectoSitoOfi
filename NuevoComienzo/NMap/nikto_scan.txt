@@ -1,0 +1,14 @@
+- Nikto v2.5.0/
++ Target Host: sito.utslp.edu.mx
++ Target Port: 443
++ GET /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options: 
++ GET /: The site uses TLS and the Strict-Transport-Security HTTP header is not defined. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security: 
++ GET /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type. See: https://www.netsparker.com/web-vulnerability-scanner/vulnerabilities/missing-content-type-header/: 
++ GET /HnORyhHc.ini: Cookie JSESSIONID created without the httponly flag. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies: 
++ GET Multiple index files found: /index.jsp, /index.html.
++ GET Server is using a wildcard certificate: *.utslp.edu.mx. See: https://en.wikipedia.org/wiki/Wildcard_certificate: 
++ OPTIONS OPTIONS: Allowed HTTP Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS .
++ GET HTTP method ('Allow' Header): 'PUT' method could allow clients to save files on the web server.
++ GET HTTP method ('Allow' Header): 'DELETE' may allow clients to remove files on the web server.
++ SSRUQSKC /: Web Server returns a valid response with junk HTTP methods which may cause false positives.
++ DEBUG /: DEBUG HTTP verb may show server debugging information. See: https://docs.microsoft.com/en-us/visualstudio/debugger/how-to-enable-debugging-for-aspnet-applications?view=vs-2017: 

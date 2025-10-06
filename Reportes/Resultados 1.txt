@@ -1,0 +1,80 @@
+[*] Iniciando escaneo de 189.254.143.102
+[*] Escaneando puertos...
+[+] Puerto 443 abierto
+
+[*] Probando https://189.254.143.102:443
+[*] Verificando rutas en https://189.254.143.102:443
+[!] Ruta protegida: https://189.254.143.102:443/manager/html (Requiere autenticación)
+[!] Ruta protegida: https://189.254.143.102:443/manager/status (Requiere autenticación)
+[!] Ruta protegida: https://189.254.143.102:443/manager/jmxproxy (Requiere autenticación)
+[!] Ruta protegida: https://189.254.143.102:443/host-manager/html (Requiere autenticación)
+[+] Ruta encontrada: https://189.254.143.102:443/docs/
+[+] Ruta encontrada: https://189.254.143.102:443/examples/
+[*] Probando credenciales en Tomcat Manager...
+[-] Falló: admin:admin
+[-] Falló: tomcat:tomcat
+[-] Falló: admin:tomcat
+[-] Falló: admin:
+[-] Falló: tomcat:
+[-] Falló: admin:password
+[-] Falló: root:root
+[-] Falló: admin:123456
+[*] Verificando vulnerabilidades...
+[!] ¡Cuidado! Directorio /examples/ está accesible
+[!] ¡Cuidado! Directorio /docs/ está accesible
+
+[*] Probando http://189.254.143.102
+[*] Verificando rutas en http://189.254.143.102
+[!] Ruta protegida: http://189.254.143.102/manager/html (Requiere autenticación)
+[!] Ruta protegida: http://189.254.143.102/manager/status (Requiere autenticación)
+[!] Ruta protegida: http://189.254.143.102/manager/jmxproxy (Requiere autenticación)
+[!] Ruta protegida: http://189.254.143.102/host-manager/html (Requiere autenticación)
+[+] Ruta encontrada: http://189.254.143.102/docs/
+[+] Ruta encontrada: http://189.254.143.102/examples/
+[*] Probando credenciales en Tomcat Manager...
+[-] Falló: admin:admin
+[-] Falló: tomcat:tomcat
+[-] Falló: admin:tomcat
+[-] Falló: admin:
+[-] Falló: tomcat:
+[-] Falló: admin:password
+[-] Falló: root:root
+[-] Falló: admin:123456
+[*] Verificando vulnerabilidades...
+[!] ¡Cuidado! Directorio /examples/ está accesible
+[!] ¡Cuidado! Directorio /docs/ está accesible
+
+
+
+
+
+resultados de python para analisis de javasecript:
+=== ANÁLISIS DE JAVASCRIPT ===
+[*] Encontrados 7 scripts en http://189.254.143.102
+[*] Analizando script externo: http://189.254.143.102/javascript/utilities.js
+  [!] Tokens encontrados: ['abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789', 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ']
+[*] Analizando script externo: http://189.254.143.102/javascript/jquery/jquery-1.5.1.min.js
+  [!] URLs encontrados: ['http://jquery.com/', 'http://jquery.org/license', 'http://sizzlejs.com/']
+  [!] Tokens encontrados: ['subtractsBorderForOverflowNotVisible', 'subtractsBorderForOverflowNotVisible', 'doesNotIncludeMarginInBodyOffset']
+  [!] Passwords encontrados: ['password:function(a){return"password"===a.type},submit:function(a){return"submit"===a.type},image:function(a){return"image"===a.type},reset:function(a){return"reset"===a.type},button:function(a){return"button"===a.type||a.nodeName.toLowerCase()==="button"},input:function(a){return/input|select|textarea|button/i.test(a.nodeName)}},setFilters:{first:function(a,b){return']
+[*] Analizando script externo: http://189.254.143.102/javascript/jquery/jquery-ui-1.8.2.min.js
+  [!] URLs encontrados: ['http://jqueryui.com/about)', 'http://docs.jquery.com/UI', 'http://jqueryui.com/about)']
+[*] Analizando script inline #4
+[*] Analizando script externo: http://189.254.143.102/javascript/scriptAnimaciones.js
+  [!] URLs encontrados: ['https://weichiachang.github.io/easter-eggs-mobile/images/ghost.gif', "https://weichiachang.github.io/easter-eggs-mobile/images/running-cat.gif'", "https://weichiachang.github.io/easter-eggs-mobile/images/running-pikachu.gif'"]
+[*] Analizando script inline #6
+[*] Analizando script inline #7
+  [Script 7] Variables: ['iconoInfo', 'pagina', 'vWinPres']
+  [Script 7] Funciones: ['SITO_Alerta', 'SITO_Manual', 'SITO_Acceso', 'Restablecer_contrasena', 'RecContra']
+
+=== BÚSQUEDA DE INFORMACIÓN SENSIBLE ===
+[*] Buscando información sensible en: http://189.254.143.102
+
+[*] Probando manager: http://189.254.143.102/manager
+[*] Encontrados 0 scripts en http://189.254.143.102/manager
+
+
+REsultados de inyeccion de codigo
+PS C:\Users\MarxB\desktop\ProyectoSito> py Inyection.py
+[*] Probando inyecciones básicas en: http://189.254.143.102
+PS C:\Users\MarxB\desktop\ProyectoSito>

