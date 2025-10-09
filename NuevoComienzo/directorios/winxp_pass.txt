@@ -1,0 +1,12 @@
+password
+admin
+1234
+12345
+123456
+Administrator
+Guest
+blank
+
+P@ssw0rd
+P@ssword
+Passw0rd

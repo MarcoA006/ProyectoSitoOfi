@@ -1,0 +1,9 @@
+/conf/tomcat-users.xml
+/conf/server.xml
+/conf/web.xml
+/conf/context.xml
+/WEB-INF/web.xml
+/META-INF/context.xml
+/bin/catalina.bat
+/bin/catalina.sh
+/logs/catalina.out

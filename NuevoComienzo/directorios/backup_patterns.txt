@@ -1,0 +1,10 @@
+web.xml.bak
+context.xml.old
+server.xml.backup
+tomcat-users.xml.bak
+database.properties.backup
+.bak
+.old
+.backup
+.save
+.orig

@@ -1,0 +1,7 @@
+/windows/system32/drivers/etc/hosts
+/boot.ini
+/autoexec.bat
+/config.sys
+/windows/win.ini
+/windows/system.ini
+/Program Files/Apache Software Foundation/Tomcat 6.0/conf/tomcat-users.xml

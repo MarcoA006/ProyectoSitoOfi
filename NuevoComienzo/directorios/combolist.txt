@@ -1,0 +1,5 @@
+manager:ISCT_2010
+tomcat:Spr@nch2024
+admin:ISCT_2010
+jose:Danyel2010
+danyel:Spr@nch2024
