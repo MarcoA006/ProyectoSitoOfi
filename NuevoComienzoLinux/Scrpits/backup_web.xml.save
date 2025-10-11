@@ -1,0 +1,40 @@
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title> Sistema de Información Táctico Operativo </title>
+
+	<link rel="stylesheet" href="/styles2/pages.css" type="text/css">
+	<link rel="stylesheet" href="/styles2/tables.css" type="text/css">
+	<link rel="stylesheet" href="/styles2/cells.css" type="text/css">
+	<link rel="stylesheet" href="/styles2/characters.css" type="text/css">
+</head>
+
+<body>
+<form name="forma" method="post" action="">
+	<br>
+	<table class="TablaDatosTitulo" width="100%" align="center" cellpadding="0" cellspacing="0">
+		  <th class="CeldaDatosTitulo"> Error 404</th>
+	</table>
+	<table border="0" width="100%" align="center" cellpadding="0" cellspacing="0">
+		<colgroup>
+			<col width="20%"> <col width="80%">
+		</colgroup>	
+		<tr class="CeldaDatos">
+			<td colspan="2">&nbsp;  </td>
+		</tr>
+		<tr class="CeldaDatos">
+			<td align="center"> <img src="/images/error404.png"> </td>
+			<td><b> Error 404, página no encontrada, por favor reportarlo al departamento de Sistemas Informáticos</b></td>
+		</tr>
+		<tr class="CeldaDatos">
+			<td colspan="2">&nbsp;  </td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>

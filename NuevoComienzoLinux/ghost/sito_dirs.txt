@@ -1,0 +1,13 @@
+/css                 [36m (Status: 302)[0m [Size: 0][34m [--> https://sito.utslp.edu.mx/css/][0m
+/docs                [36m (Status: 302)[0m [Size: 0][34m [--> https://sito.utslp.edu.mx/docs/][0m
+/examples            [36m (Status: 302)[0m [Size: 0][34m [--> https://sito.utslp.edu.mx/examples/][0m
+/fotos               [36m (Status: 302)[0m [Size: 0][34m [--> https://sito.utslp.edu.mx/fotos/][0m
+/host-manager        [36m (Status: 302)[0m [Size: 0][34m [--> https://sito.utslp.edu.mx/host-manager/][0m
+/images              [36m (Status: 302)[0m [Size: 0][34m [--> https://sito.utslp.edu.mx/images/][0m
+/index.html          [32m (Status: 200)[0m [Size: 634]
+/javascript          [36m (Status: 302)[0m [Size: 0][34m [--> https://sito.utslp.edu.mx/javascript/][0m
+/jsp                 [36m (Status: 302)[0m [Size: 0][34m [--> https://sito.utslp.edu.mx/jsp/][0m
+/manager             [36m (Status: 302)[0m [Size: 0][34m [--> https://sito.utslp.edu.mx/manager/][0m
+/styles              [36m (Status: 302)[0m [Size: 0][34m [--> https://sito.utslp.edu.mx/styles/][0m
+/tmp                 [36m (Status: 302)[0m [Size: 0][34m [--> https://sito.utslp.edu.mx/tmp/][0m
+/Thumbs.db           [32m (Status: 200)[0m [Size: 154624]

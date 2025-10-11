@@ -1,0 +1,14 @@
+tomcat
+Tomcat
+TOMCAT
+tomcat6
+Tomcat6
+TOMCAT6
+tomcat.6
+Tomcat.6
+tomcat123
+tomcat2010
+tomcat2009
+tomcat2008
+tomcatadmin
+tomcatmanager

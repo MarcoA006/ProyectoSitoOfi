@@ -1,0 +1,11 @@
+WEB-INF/web.xml
+WEB-INF/classes/database.properties
+conf/server.xml
+conf/context.xml
+conf/tomcat-users.xml
+conf/catalina/localhost/manager.xml
+META-INF/context.xml
+lib/ojdbc6.jar
+lib/mysql-connector.jar
+logs/catalina.out
+work/Catalina/localhost

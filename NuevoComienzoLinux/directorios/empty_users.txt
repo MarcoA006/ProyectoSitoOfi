@@ -1,0 +1,7 @@
+
+null
+NULL
+empty
+EMPTY
+blank
+BLANK

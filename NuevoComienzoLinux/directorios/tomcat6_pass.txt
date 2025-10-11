@@ -1,0 +1,12 @@
+admin
+manager
+tomcat
+role1
+both
+root
+server
+administer
+
+s3cret
+password
+changeme

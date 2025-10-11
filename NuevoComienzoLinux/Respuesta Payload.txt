@@ -1,0 +1,1116 @@
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Pragma: No-cache
+Cache-Control: no-cache
+Expires: Wed, 31 Dec 1969 18:00:00 CST
+Content-Type: text/html;charset=iso-8859-1
+Date: Sat, 11 Oct 2025 21:18:52 GMT
+Content-Length: 38983
+
+
+
+  
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+
+<title>Encuesta de Expectativa del Alumnado TSU</title> 
+	<link rel="stylesheet" href="../../../styles2/tables.css" type="text/css"/>
+	<link rel="stylesheet" href="../../../styles2/cells.css" type="text/css"/>
+	<link rel="stylesheet" href="../../../styles2/reports.css" type="text/css"/>
+	<link rel="stylesheet" href="../../../styles2/characters.css" type="text/css">
+	<link rel="stylesheet" href="../../../javascript/themes/aqua.css" type="text/css">
+	<link rel="stylesheet" href="../../../styles2/pages.css" type="text/css">
+	
+</head>
+
+<script language="javascript" type="text/javascript" src="../../../javascript/utilities.js"></script>
+<script language="javascript" type="text/javascript" src="../../../javascript/utils.js"></script>
+<script language="javascript" type="text/javascript">
+
+   function Alerta(visible, color)
+	  {
+		document.getElementById("Alerta").style.visibility = visible;
+		document.getElementById("Alerta").style.color = color;
+		setTimeout("LimpiarAlerta()", 4000);
+		
+	  }
+	function LimpiarAlerta(){
+	    document.getElementById("Alerta").style.visibility = 'hidden';
+	}
+	
+	function Guardar()
+	{  
+		if (validarRespuestas()){
+		document.forma.yAccion.value = "Guardar";
+		//alert("Guardado");
+		var aceptado = document.forma.xAceptado.value;
+		
+		/*
+		if(aceptado==''){
+			alert("Es necesario indicar si el aspirante fue aceptado");
+			return;
+		}
+		*/	  
+				
+		var cadena = document.forma.xComentarios.value;
+		
+		cadena = cadena.replace(/[\r\n]+/g," ");
+		
+		document.forma.xComentarios.value=cadena;
+		
+		document.getElementById("xBtnGuardar").style.visibility = 'hidden';
+		document.forma.submit();
+		}	 
+		//alert("GUARDADO!!");
+	}
+	
+	function Habilitar( activar, valor )
+    {
+	   var objeto = findObj( "yRespuestaAbierta" + valor );
+	   
+	   objeto.disabled = !activar;
+		
+	   if ( !activar )
+		  objeto.focus();	 
+	 }	
+	
+	function validarRespuestas(){ 
+	 	 var validacion =false;
+		 var numPreguntas = document.forma.yTotalPreguntas.value;	
+		// alert(numPreguntas);	 
+		 for(var k=1; k<=numPreguntas; k++){		 
+		   var tipo_pregunta = document.getElementById("yTipoPregunta"+k).value;	
+		   var tam_res =  document.getElementById("yTamRespuestas"+k).value;	
+		   var nombre = "yRespuestaPregunta"+k;  
+		   var clave_pregunta = findObj ("yCvePregunta"+k);
+		                       
+		  if(tipo_pregunta == 2 || tipo_pregunta == 5){
+		     if(validarSimple(k,tam_res))
+			  { validacion =true; }
+			 else
+			  {  return false;
+				 validacion =false;
+			  } 
+		  }
+		  
+		  if(tipo_pregunta == 4 || tipo_pregunta == 1){
+		     if(validarMultiple(k,tam_res))
+			 { validacion = true;  }
+			 else
+			 {
+			    return false;
+				validacion = false
+			 }
+		  }
+		  
+		  if(tipo_pregunta == 3)
+		  {
+			 if(validarAbierta(k))
+			  { validacion =true; }
+			 else
+			  {  return false;
+				 validacion =false;
+			  } 
+		  }
+		 }
+	
+	     return validacion;
+	}
+	
+	function validarSimple(pregunta, respuestas){
+	   var validarS = false;
+	   for(var j = 1; j <= respuestas; j++){
+	    if(document.getElementById("yRespuestaPregunta"+pregunta+""+j).checked)
+		{
+		  if(document.getElementById("yResAbierta"+pregunta+""+j).value == 1)  
+		  {
+		     var respuesta_abierta = findObj("yRespuestaAbierta"+pregunta+""+j); 
+			 if(Trim( respuesta_abierta.value ) != "" && Trim( respuesta_abierta.value ) != "-")
+			 {
+			   validarS=true
+			   return validarS;
+			 }
+			 else
+			 {		 
+			   alert( "Es necesario indicar la información para la respuesta  de la pregunta No. " + pregunta );
+			   var respuesta = findObj("yRespuestaAbierta"+pregunta+""+j);
+			   respuesta.focus();
+			   return false;
+			   validarS=false;
+			 }
+		  }
+		  else{
+		    validarS = true;
+			return validarS;
+		  } 
+		}	   
+	   }
+	   
+	   if(validarS==false)
+	    alert("Falta responder la pregunta No. "+(pregunta));
+	   
+	   return validarS;
+	}
+	
+	function validarAbierta(pregunta){
+		var validarA = false;
+	    var respuesta_abierta = findObj("yRespuestaAbierta"+pregunta+""+1); 
+		if(Trim( respuesta_abierta.value ) != "" && Trim( respuesta_abierta.value ) != "-")
+		{
+		   validarA=true
+		   return validarA;
+		}
+		 else
+		 {		 
+		   alert("Falta responder la pregunta No. "+(pregunta));
+		   var respuesta = findObj("yRespuestaAbierta"+pregunta+""+1);
+		   respuesta.focus();
+		   return false;
+		   validarA=false;
+		 }
+	   return validarA;
+	}
+	
+	function validarMultiple(pregunta, respuestas){
+	
+	   var validarM = false;
+	   var checado = 0;
+	   for(var j = 1; j <= respuestas; j++){
+	    if(document.getElementById("#"+pregunta+""+j).checked)
+		{
+		  if(document.getElementById("yResAbierta"+pregunta+""+j).value == 1)  
+		  {
+		     var respuesta_abierta = findObj("yRespuestaAbierta"+pregunta+""+j); 
+			 if(Trim( respuesta_abierta.value ) != "" && Trim( respuesta_abierta.value ) != "-")
+			 {
+			    checado++;
+			 }
+			 else
+			 {		 
+			   alert( "Es necesario indicar la información para la respuesta  de la pregunta No. " + pregunta );
+			   var respuesta = findObj("yRespuestaAbierta"+pregunta+""+j);
+			   respuesta.focus();
+			   return false;
+			   validarM=false;
+			 }
+		  }
+		  else{
+		  checado++;
+		  } 
+		}	   
+	   }
+	   
+	   if(checado>0){ validarM=true }
+	   else
+	   {
+	    alert("Falta responder la pregunta No. "+(pregunta));
+	   }
+	   
+	   return validarM;
+	}
+	
+	function Aspirante_Recargar(){		
+		document.forma.submit();
+	}
+	
+	  function ValidarPreguntas(pregunta, respuesta, cve_pregunta){
+		
+			var validar_todo=false;
+
+			if(cve_pregunta==0 && respuesta==0 && pregunta==0){ 
+				validar_todo=true;	
+			}
+		
+	   } 
+	
+	function Buscar() 
+	  {
+		var pagina = "muestra_interesado.jsp?xControl=document.forma.xSolicitud&xBandera=1";
+		var vWinPres = window.open(pagina, "MuestraAlumno", "width=700, height=450, statusbar=yes, directories=no, scrollbars=yes, resizable=no, top=0, left=0");
+		vWinPres.opener = self;
+	  }
+	  
+</script>
+<body onload=";ValidarPreguntas(0,0,0)" class="CeldaReporte">  
+<form name="forma" method="post" action="" id="forma">
+<input type="hidden" name="yAccion" id="yAccion" value=""/>
+<input type="hidden" name="yResolucion" id="yResolucion" value=""/>
+<input type="hidden" name="yTipoAccion" id="yTipoAccion" value="Nuevo"/>
+<input type="hidden" name="yPersona" id="yPersona" value="10031"/>	
+<input type="hidden" name="yGeneral" id="yGeneral" value="false"/>	
+<input type="hidden" name="ValidaP1886" id="ValidaP1886" value="0">	
+<input type="hidden" name="ValidaP1891" id="ValidaP1891" value="0">	
+<input type="hidden" name="ValidaP1894" id="ValidaP1894" value="0">	
+<input type="hidden" name="ValidaP1729" id="ValidaP1729" value="0">	
+
+ 
+<table border="0" width="100%" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+		  <td>&nbsp;</td>
+		</tr>
+		
+		
+		  
+        <!--Diseño del jsp-->	
+		<tr>
+		<td>
+		</td>
+		</tr>
+		<tr>
+		<td>
+		<!--CREACIÓN DE LA TABLA PREGUNTAS Y RESPUESTAS--> 
+		<input type="hidden" id="yEncuesta" name="yEncuesta" value="76" />
+		<table border="0" cellpadding="0" cellspacing="0" width="95%" align="center" class="TablaGeneralDerechaInferior" bgcolor="#FFFFFF">
+		<tr> 
+			<td colspan="2">&nbsp;</td>
+		</tr>
+		<tr>
+			<td>
+			
+			<table border="0" width="80%" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+					<colgroup>
+						<col width="20%"/> <col width="80%"/>
+					</colgroup>
+					<tr align="left">
+						<td> 
+							<img src="../../../images/logo3.png" />										</td>
+					    <td><table border="0" width="100%" cellpadding="0" cellspacing="0">
+                          <tr align="center">
+                            <td><label class="TituloNegrita"> Universidad Tecnológica de San Luis Potosí </label></td>
+                          </tr>
+                          <tr align="center">
+                            <td><label class="Subtitulo"> &nbsp;</label>                            </td>
+                          </tr>
+                          <tr>
+                            <td><p align="center">
+                              <label style="font-size:14px"> <b>ENCUESTA DE EXPECTATIVA DEL ALUMNADO DE TSU </b></label>
+                            </p></td>
+                          </tr>
+                          <tr>
+                            <td>&nbsp;</td>
+                          </tr>
+                        </table></td>
+					</tr>
+				</table>
+				
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td> 
+		</tr>
+		<tr>
+		<td>
+		<table width="80%" align="center" cellpadding="0" cellspacing="0">
+		<tr>
+		<td height="24" colspan="2">&nbsp;
+		
+		      <table width="97%" align="left" cellpadding="0" cellspacing="0">
+					<colgroup>
+						<col width="25%"/> <col width="75"/>
+					</colgroup>
+					  <th colspan="2">&nbsp;</th>
+					    <th width="88%" colspan="2" align="left"> <label id="Alerta" style="font-size:14px"></label> </th>
+				</table>			</td>
+		</tr>
+		</table>
+		<br /> 
+		</td>
+		</tr>
+		<tr>
+			<td>
+				<table class="TablaFinaDerechaSuperior" border="0" cellpadding="0" cellspacing="0" width="90%" align="center" bgcolor="#FFFFFF">
+				<colgroup>
+					<col width="18%"> <col width="40%"> <col width="8%"> <col width="34%"> 
+				</colgroup>
+				<tr>
+					<td colspan="4" class="rCeldaLista"> <b>DATOS PERSONALES</b></td>
+				</tr>
+				
+				<tr> 
+					<td class="rCeldaLista" >&nbsp;No. de Ficha:&nbsp;</td>
+					<td class="rCelda" style="color:#FF0000">&nbsp;					
+					
+						<label>10061 </label>
+					
+					</td> 
+					<td class="rCeldaLista">&nbsp;Nombre: &nbsp;</td>
+					<td class="rCelda" style="color:#FF0000">&nbsp; JESUS NIÑO RAMOS</td>
+				</tr>
+				<tr>
+					<td class="rCeldaLista">&nbsp;Colonia: &nbsp;</td>
+					<td class="rCelda" >&nbsp; SAN IGNACIO</td>
+					<td class="rCeldaLista">&nbsp;Ciudad: &nbsp;</td>
+					<td class="rCelda">&nbsp; Moctezuma</td>
+				</tr>
+				<tr>
+					<td class="rCeldaLista">&nbsp;Carrera: &nbsp;</td>
+					<td class="rCelda">&nbsp; Sistemas Automotrices</td>
+					<td class="rCeldaLista">&nbsp;Celular: &nbsp;</td>
+					<td class="rCelda">&nbsp; 4861150579</td>
+				</tr>
+				<tr>
+					<td class="rCeldaLista">&nbsp;Correo electrónico: &nbsp;</td>
+					<td class="rCelda">&nbsp; -</td>
+					<td class="rCeldaLista">&nbsp;Género: &nbsp;</td>
+					<td class="rCelda">&nbsp; Hombre</td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+		
+		 <tr >
+		 <td >
+		 
+		<table class="TablaFinaDerechaSuperior" border="0" cellpadding="3" cellspacing="0" width="90%" align="center" bgcolor="#FFFFFF" id="xTabla2018">
+			<input type="hidden" id="yContador2018" name="yContador2018" value="1" />
+		  <input type="hidden" name="yCvePregunta1" id="yCvePregunta1" value="2018"/>
+		  <input type="hidden" name="yTipoPregunta1" id="yTipoPregunta1" value="2"/>
+		 <tr class="CeldaDatos">   
+		 	<td class="rCeldaLista"><strong>&nbsp;1.- &nbsp; ¿Que importancia tiene que la Universidad Tecnológica te brinde educación integral? de acuerdo a los siguientes aspectos: Prácticas en talleres y laboratorios</strong></td>
+		 </tr>
+		 
+						 
+						 <tr class="CeldaDatos">
+						 	<td class="rCelda" >
+						 
+									<input type="radio" name="yRespuestaPregunta1"  
+									id="yRespuestaPregunta11" value="1"
+									onclick="ValidarPreguntas( 1, 1,2018  )  "
+									checked 
+									 />Muy importante
+							
+						    </td>
+						  </tr>
+						  <input type="hidden" name="yResAbierta11" id="yResAbierta11" value="0"/>
+						  
+						 
+						 <tr class="CeldaDatos">
+						 	<td class="rCelda" >
+						 
+									<input type="radio" name="yRespuestaPregunta1"  
+									id="yRespuestaPregunta12" value="2"
+									onclick="ValidarPreguntas( 1, 2,2018  )  "
+									 
+									 />Importante
+							
+						    </td>
+						  </tr>
+						  <input type="hidden" name="yResAbierta12" id="yResAbierta12" value="0"/>
+						  
+						 
+						 <tr class="CeldaDatos">
+						 	<td class="rCelda" >
+						 
+									<input type="radio" name="yRespuestaPregunta1"  
+									id="yRespuestaPregunta13" value="3"
+									onclick="ValidarPreguntas( 1, 3,2018  ) ;Habilitar( this.checked, 13 ) "
+									 
+									 />Medianamente importante. Especifica porque.
+							
+						   	<input type="text" name="yRespuestaAbierta13"
+							id="yRespuestaAbierta13" 
+							size="70" disabled 
+							value="-"
+							onblur="if ( Trim( this.value ) == '' ) this.value = '-'" 
+							onfocus="if ( Trim( this.value ) == '-' ) this.value = ''" maxlength="350"/>
+							
+						    </td>
+						  </tr>
+						  <input type="hidden" name="yResAbierta13" id="yResAbierta13" value="1"/>
+						  
+						 
+						 <tr class="CeldaDatos">
+						 	<td class="rCelda" >
+						 
+									<input type="radio" name="yRespuestaPregunta1"  
+									id="yRespuestaPregunta14" value="4"
+									onclick="ValidarPreguntas( 1, 4,2018  ) ;Habilitar( this.checked, 14 ) "
+									 
+									 />No es importante. Especifica porque.
+							
+						   	<input type="text" name="yRespuestaAbierta14"
+							id="yRespuestaAbierta14" 
+							size="70" disabled 
+							value="-"
+							onblur="if ( Trim( this.value ) == '' ) this.value = '-'" 
+							onfocus="if ( Trim( this.value ) == '-' ) this.value = ''" maxlength="350"/>
+							
+						    </td>
+						  </tr>
+						  <input type="hidden" name="yResAbierta14" id="yResAbierta14" value="1"/>
+						  
+						<input type="hidden" name="yTamRespuestas1" id="yTamRespuestas1" value="4"/>
+						 
+		<table class="TablaFinaDerechaSuperior" border="0" cellpadding="3" cellspacing="0" width="90%" align="center" bgcolor="#FFFFFF" id="xTabla2020">
+			<input type="hidden" id="yContador2020" name="yContador2020" value="2" />
+		  <input type="hidden" name="yCvePregunta2" id="yCvePregunta2" value="2020"/>
+		  <input type="hidden" name="yTipoPregunta2" id="yTipoPregunta2" value="2"/>
+		 <tr class="CeldaDatos">   
+		 	<td class="rCeldaLista"><strong>&nbsp;2.- &nbsp; ¿Que importancia tiene que la Universidad Tecnológica te brinde educación integral? de acuerdo a los siguientes aspectos: Visitas a la industria</strong></td>
+		 </tr>
+		 
+						 
+						 <tr class="CeldaDatos">
+						 	<td class="rCelda" >
+						 
+									<input type="radio" name="yRespuestaPregunta2"  
+									id="yRespuestaPregunta21" value="1"
+									onclick="ValidarPreguntas( 2, 1,2020  )  "
+									 
+									 />Muy importante
+							
+						    </td>
+						  </tr>
+						  <input type="hidden" name="yResAbierta21" id="yResAbierta21" value="0"/>
+						  
+						 
+						 <tr class="CeldaDatos">
+						 	<td class="rCelda" >
+						 
+									<input type="radio" name="yRespuestaPregunta2"  
+									id="yRespuestaPregunta22" value="2"
+									onclick="ValidarPreguntas( 2, 2,2020  )  "
+									checked 
+									 />Importante
+							
+						    </td>
+						  </tr>
+						  <input type="hidden" name="yResAbierta22" id="yResAbierta22" value="0"/>
+						  
+						 
+						 <tr class="CeldaDatos">
+						 	<td class="rCelda" >
+						 
+									<input type="radio" name="yRespuestaPregunta2"  
+									id="yRespuestaPregunta23" value="3"
+									onclick="ValidarPreguntas( 2, 3,2020  ) ;Habilitar( this.checked, 23 ) "
+									 
+									 />Medianamente importante. Especifica porque.
+							
+						   	<input type="text" name="yRespuestaAbierta23"
+							id="yRespuestaAbierta23" 
+							size="70" disabled 
+							value="-"
+							onblur="if ( Trim( this.value ) == '' ) this.value = '-'" 
+							onfocus="if ( Trim( this.value ) == '-' ) this.value = ''" maxlength="350"/>
+							
+						    </td>
+						  </tr>
+						  <input type="hidden" name="yResAbierta23" id="yResAbierta23" value="1"/>
+						  
+						 
+						 <tr class="CeldaDatos">
+						 	<td class="rCelda" >
+						 
+									<input type="radio" name="yRespuestaPregunta2"  
+									id="yRespuestaPregunta24" value="4"
+									onclick="ValidarPreguntas( 2, 4,2020  ) ;Habilitar( this.checked, 24 ) "
+									 
+									 />No es importante. Especifica porque.
+							
+						   	<input type="text" name="yRespuestaAbierta24"
+							id="yRespuestaAbierta24" 
+							size="70" disabled 
+							value="-"
+							onblur="if ( Trim( this.value ) == '' ) this.value = '-'" 
+							onfocus="if ( Trim( this.value ) == '-' ) this.value = ''" maxlength="350"/>
+							
+						    </td>
+						  </tr>
+						  <input type="hidden" name="yResAbierta24" id="yResAbierta24" value="1"/>
+						  
+						<input type="hidden" name="yTamRespuestas2" id="yTamRespuestas2" value="4"/>
+						 
+		<table class="TablaFinaDerechaSuperior" border="0" cellpadding="3" cellspacing="0" width="90%" align="center" bgcolor="#FFFFFF" id="xTabla2022">
+			<input type="hidden" id="yContador2022" name="yContador2022" value="3" />
+		  <input type="hidden" name="yCvePregunta3" id="yCvePregunta3" value="2022"/>
+		  <input type="hidden" name="yTipoPregunta3" id="yTipoPregunta3" value="2"/>
+		 <tr class="CeldaDatos">   
+		 	<td class="rCeldaLista"><strong>&nbsp;3.- &nbsp; ¿Que importancia tiene que la Universidad Tecnológica te brinde educación integral? de acuerdo a los siguientes aspectos: Actividades Culturales</strong></td>
+		 </tr>
+		 
+						 
+						 <tr class="CeldaDatos">
+						 	<td class="rCelda" >
+						 
+									<input type="radio" name="yRespuestaPregunta3"  
+									id="yRespuestaPregunta31" value="1"
+									onclick="ValidarPreguntas( 3, 1,2022  )  "
+									 
+									 />Muy importante
+							
+						    </td>
+						  </tr>
+						  <input type="hidden" name="yResAbierta31" id="yResAbierta31" value="0"/>
+						  
+						 
+						 <tr class="CeldaDatos">
+						 	<td class="rCelda" >
+						 
+									<input type="radio" name="yRespuestaPregunta3"  
+									id="yRespuestaPregunta32" value="2"
+									onclick="ValidarPreguntas( 3, 2,2022  )  "
+									checked 
+									 />Importante
+							
+						    </td>
+						  </tr>
+						  <input type="hidden" name="yResAbierta32" id="yResAbierta32" value="0"/>
+						  
+						 
+						 <tr class="CeldaDatos">
+						 	<td class="rCelda" >
+						 
+									<input type="radio" name="yRespuestaPregunta3"  
+									id="yRespuestaPregunta33" value="3"
+									onclick="ValidarPreguntas( 3, 3,2022  ) ;Habilitar( this.checked, 33 ) "
+									 
+									 />Medianamente importante. Especifica porque.
+							
+						   	<input type="text" name="yRespuestaAbierta33"
+							id="yRespuestaAbierta33" 
+							size="70" disabled 
+							value="-"
+							onblur="if ( Trim( this.value ) == '' ) this.value = '-'" 
+							onfocus="if ( Trim( this.value ) == '-' ) this.value = ''" maxlength="350"/>
+							
+						    </td>
+						  </tr>
+						  <input type="hidden" name="yResAbierta33" id="yResAbierta33" value="1"/>
+						  
+						 
+						 <tr class="CeldaDatos">
+						 	<td class="rCelda" >
+						 
+									<input type="radio" name="yRespuestaPregunta3"  
+									id="yRespuestaPregunta34" value="4"
+									onclick="ValidarPreguntas( 3, 4,2022  ) ;Habilitar( this.checked, 34 ) "
+									 
+									 />No es importante. Especifica porque.
+							
+						   	<input type="text" name="yRespuestaAbierta34"
+							id="yRespuestaAbierta34" 
+							size="70" disabled 
+							value="-"
+							onblur="if ( Trim( this.value ) == '' ) this.value = '-'" 
+							onfocus="if ( Trim( this.value ) == '-' ) this.value = ''" maxlength="350"/>
+							
+						    </td>
+						  </tr>
+						  <input type="hidden" name="yResAbierta34" id="yResAbierta34" value="1"/>
+						  
+						<input type="hidden" name="yTamRespuestas3" id="yTamRespuestas3" value="4"/>
+						 
+		<table class="TablaFinaDerechaSuperior" border="0" cellpadding="3" cellspacing="0" width="90%" align="center" bgcolor="#FFFFFF" id="xTabla2024">
+			<input type="hidden" id="yContador2024" name="yContador2024" value="4" />
+		  <input type="hidden" name="yCvePregunta4" id="yCvePregunta4" value="2024"/>
+		  <input type="hidden" name="yTipoPregunta4" id="yTipoPregunta4" value="2"/>
+		 <tr class="CeldaDatos">   
+		 	<td class="rCeldaLista"><strong>&nbsp;4.- &nbsp; ¿Que importancia tiene que la Universidad Tecnológica te brinde educación integral? de acuerdo a los siguientes aspectos: Actividades Deportivas</strong></td>
+		 </tr>
+		 
+						 
+						 <tr class="CeldaDatos">
+						 	<td class="rCelda" >
+						 
+									<input type="radio" name="yRespuestaPregunta4"  
+									id="yRespuestaPregunta41" value="1"
+									onclick="ValidarPreguntas( 4, 1,2024  )  "
+									 
+									 />Muy importante
+							
+						    </td>
+						  </tr>
+						  <input type="hidden" name="yResAbierta41" id="yResAbierta41" value="0"/>
+						  
+						 
+						 <tr class="CeldaDatos">
+						 	<td class="rCelda" >
+						 
+									<input type="radio" name="yRespuestaPregunta4"  
+									id="yRespuestaPregunta42" value="2"
+									onclick="ValidarPreguntas( 4, 2,2024  )  "
+									checked 
+									 />Importante
+							
+						    </td>
+						  </tr>
+						  <input type="hidden" name="yResAbierta42" id="yResAbierta42" value="0"/>
+						  
+						 
+						 <tr class="CeldaDatos">
+						 	<td class="rCelda" >
+						 
+									<input type="radio" name="yRespuestaPregunta4"  
+									id="yRespuestaPregunta43" value="3"
+									onclick="ValidarPreguntas( 4, 3,2024  ) ;Habilitar( this.checked, 43 ) "
+									 
+									 />Medianamente importante. Especifica porque.
+							
+						   	<input type="text" name="yRespuestaAbierta43"
+							id="yRespuestaAbierta43" 
+							size="70" disabled 
+							value="-"
+							onblur="if ( Trim( this.value ) == '' ) this.value = '-'" 
+							onfocus="if ( Trim( this.value ) == '-' ) this.value = ''" maxlength="350"/>
+							
+						    </td>
+						  </tr>
+						  <input type="hidden" name="yResAbierta43" id="yResAbierta43" value="1"/>
+						  
+						 
+						 <tr class="CeldaDatos">
+						 	<td class="rCelda" >
+						 
+									<input type="radio" name="yRespuestaPregunta4"  
+									id="yRespuestaPregunta44" value="4"
+									onclick="ValidarPreguntas( 4, 4,2024  ) ;Habilitar( this.checked, 44 ) "
+									 
+									 />No es importante. Especifica porque.
+							
+						   	<input type="text" name="yRespuestaAbierta44"
+							id="yRespuestaAbierta44" 
+							size="70" disabled 
+							value="-"
+							onblur="if ( Trim( this.value ) == '' ) this.value = '-'" 
+							onfocus="if ( Trim( this.value ) == '-' ) this.value = ''" maxlength="350"/>
+							
+						    </td>
+						  </tr>
+						  <input type="hidden" name="yResAbierta44" id="yResAbierta44" value="1"/>
+						  
+						<input type="hidden" name="yTamRespuestas4" id="yTamRespuestas4" value="4"/>
+						 
+		<table class="TablaFinaDerechaSuperior" border="0" cellpadding="3" cellspacing="0" width="90%" align="center" bgcolor="#FFFFFF" id="xTabla2026">
+			<input type="hidden" id="yContador2026" name="yContador2026" value="5" />
+		  <input type="hidden" name="yCvePregunta5" id="yCvePregunta5" value="2026"/>
+		  <input type="hidden" name="yTipoPregunta5" id="yTipoPregunta5" value="2"/>
+		 <tr class="CeldaDatos">   
+		 	<td class="rCeldaLista"><strong>&nbsp;5.- &nbsp; ¿Que importancia tiene que la Universidad Tecnológica te proporcione las competencias (conocimientos, habilidades y actitudes) que te permitan tener éxito en tu desarrollo profesional?</strong></td>
+		 </tr>
+		 
+						 
+						 <tr class="CeldaDatos">
+						 	<td class="rCelda" >
+						 
+									<input type="radio" name="yRespuestaPregunta5"  
+									id="yRespuestaPregunta51" value="1"
+									onclick="ValidarPreguntas( 5, 1,2026  )  "
+									checked 
+									 />Muy importante
+							
+						    </td>
+						  </tr>
+						  <input type="hidden" name="yResAbierta51" id="yResAbierta51" value="0"/>
+						  
+						 
+						 <tr class="CeldaDatos">
+						 	<td class="rCelda" >
+						 
+									<input type="radio" name="yRespuestaPregunta5"  
+									id="yRespuestaPregunta52" value="2"
+									onclick="ValidarPreguntas( 5, 2,2026  )  "
+									 
+									 />Importante
+							
+						    </td>
+						  </tr>
+						  <input type="hidden" name="yResAbierta52" id="yResAbierta52" value="0"/>
+						  
+						 
+						 <tr class="CeldaDatos">
+						 	<td class="rCelda" >
+						 
+									<input type="radio" name="yRespuestaPregunta5"  
+									id="yRespuestaPregunta53" value="3"
+									onclick="ValidarPreguntas( 5, 3,2026  ) ;Habilitar( this.checked, 53 ) "
+									 
+									 />Medianamente importante. Especifica porque.
+							
+						   	<input type="text" name="yRespuestaAbierta53"
+							id="yRespuestaAbierta53" 
+							size="70" disabled 
+							value="-"
+							onblur="if ( Trim( this.value ) == '' ) this.value = '-'" 
+							onfocus="if ( Trim( this.value ) == '-' ) this.value = ''" maxlength="350"/>
+							
+						    </td>
+						  </tr>
+						  <input type="hidden" name="yResAbierta53" id="yResAbierta53" value="1"/>
+						  
+						 
+						 <tr class="CeldaDatos">
+						 	<td class="rCelda" >
+						 
+									<input type="radio" name="yRespuestaPregunta5"  
+									id="yRespuestaPregunta54" value="4"
+									onclick="ValidarPreguntas( 5, 4,2026  ) ;Habilitar( this.checked, 54 ) "
+									 
+									 />No es importante. Especifica porque.
+							
+						   	<input type="text" name="yRespuestaAbierta54"
+							id="yRespuestaAbierta54" 
+							size="70" disabled 
+							value="-"
+							onblur="if ( Trim( this.value ) == '' ) this.value = '-'" 
+							onfocus="if ( Trim( this.value ) == '-' ) this.value = ''" maxlength="350"/>
+							
+						    </td>
+						  </tr>
+						  <input type="hidden" name="yResAbierta54" id="yResAbierta54" value="1"/>
+						  
+						<input type="hidden" name="yTamRespuestas5" id="yTamRespuestas5" value="4"/>
+						 
+		<table class="TablaFinaDerechaSuperior" border="0" cellpadding="3" cellspacing="0" width="90%" align="center" bgcolor="#FFFFFF" id="xTabla2028">
+			<input type="hidden" id="yContador2028" name="yContador2028" value="6" />
+		  <input type="hidden" name="yCvePregunta6" id="yCvePregunta6" value="2028"/>
+		  <input type="hidden" name="yTipoPregunta6" id="yTipoPregunta6" value="2"/>
+		 <tr class="CeldaDatos">   
+		 	<td class="rCeldaLista"><strong>&nbsp;6.- &nbsp; ¿Que importancia tiene que la Universidad Tecnológica fomente valores (respeto, honradez, responsabilidad, puntualidad y trabajo en equipo) a sus estudiantes?</strong></td>
+		 </tr>
+		 
+						 
+						 <tr class="CeldaDatos">
+						 	<td class="rCelda" >
+						 
+									<input type="radio" name="yRespuestaPregunta6"  
+									id="yRespuestaPregunta61" value="1"
+									onclick="ValidarPreguntas( 6, 1,2028  )  "
+									checked 
+									 />Muy importante
+							
+						    </td>
+						  </tr>
+						  <input type="hidden" name="yResAbierta61" id="yResAbierta61" value="0"/>
+						  
+						 
+						 <tr class="CeldaDatos">
+						 	<td class="rCelda" >
+						 
+									<input type="radio" name="yRespuestaPregunta6"  
+									id="yRespuestaPregunta62" value="2"
+									onclick="ValidarPreguntas( 6, 2,2028  )  "
+									 
+									 />Importante
+							
+						    </td>
+						  </tr>
+						  <input type="hidden" name="yResAbierta62" id="yResAbierta62" value="0"/>
+						  
+						 
+						 <tr class="CeldaDatos">
+						 	<td class="rCelda" >
+						 
+									<input type="radio" name="yRespuestaPregunta6"  
+									id="yRespuestaPregunta63" value="3"
+									onclick="ValidarPreguntas( 6, 3,2028  ) ;Habilitar( this.checked, 63 ) "
+									 
+									 />Medianamente importante. Especifica porque.
+							
+						   	<input type="text" name="yRespuestaAbierta63"
+							id="yRespuestaAbierta63" 
+							size="70" disabled 
+							value="-"
+							onblur="if ( Trim( this.value ) == '' ) this.value = '-'" 
+							onfocus="if ( Trim( this.value ) == '-' ) this.value = ''" maxlength="350"/>
+							
+						    </td>
+						  </tr>
+						  <input type="hidden" name="yResAbierta63" id="yResAbierta63" value="1"/>
+						  
+						 
+						 <tr class="CeldaDatos">
+						 	<td class="rCelda" >
+						 
+									<input type="radio" name="yRespuestaPregunta6"  
+									id="yRespuestaPregunta64" value="4"
+									onclick="ValidarPreguntas( 6, 4,2028  ) ;Habilitar( this.checked, 64 ) "
+									 
+									 />No es importante. Especifica porque.
+							
+						   	<input type="text" name="yRespuestaAbierta64"
+							id="yRespuestaAbierta64" 
+							size="70" disabled 
+							value="-"
+							onblur="if ( Trim( this.value ) == '' ) this.value = '-'" 
+							onfocus="if ( Trim( this.value ) == '-' ) this.value = ''" maxlength="350"/>
+							
+						    </td>
+						  </tr>
+						  <input type="hidden" name="yResAbierta64" id="yResAbierta64" value="1"/>
+						  
+						<input type="hidden" name="yTamRespuestas6" id="yTamRespuestas6" value="4"/>
+						 
+		<table class="TablaFinaDerechaSuperior" border="0" cellpadding="3" cellspacing="0" width="90%" align="center" bgcolor="#FFFFFF" id="xTabla2030">
+			<input type="hidden" id="yContador2030" name="yContador2030" value="7" />
+		  <input type="hidden" name="yCvePregunta7" id="yCvePregunta7" value="2030"/>
+		  <input type="hidden" name="yTipoPregunta7" id="yTipoPregunta7" value="2"/>
+		 <tr class="CeldaDatos">   
+		 	<td class="rCeldaLista"><strong>&nbsp;7.- &nbsp; ¿Que importancia tiene que la Universidad Tecnológica realice sus actividades en los tiempos establecidos para apoyarte en concluir tu carrera de TSU?</strong></td>
+		 </tr>
+		 
+						 
+						 <tr class="CeldaDatos">
+						 	<td class="rCelda" >
+						 
+									<input type="radio" name="yRespuestaPregunta7"  
+									id="yRespuestaPregunta71" value="1"
+									onclick="ValidarPreguntas( 7, 1,2030  )  "
+									checked 
+									 />Muy importante
+							
+						    </td>
+						  </tr>
+						  <input type="hidden" name="yResAbierta71" id="yResAbierta71" value="0"/>
+						  
+						 
+						 <tr class="CeldaDatos">
+						 	<td class="rCelda" >
+						 
+									<input type="radio" name="yRespuestaPregunta7"  
+									id="yRespuestaPregunta72" value="2"
+									onclick="ValidarPreguntas( 7, 2,2030  )  "
+									 
+									 />Importante
+							
+						    </td>
+						  </tr>
+						  <input type="hidden" name="yResAbierta72" id="yResAbierta72" value="0"/>
+						  
+						 
+						 <tr class="CeldaDatos">
+						 	<td class="rCelda" >
+						 
+									<input type="radio" name="yRespuestaPregunta7"  
+									id="yRespuestaPregunta73" value="3"
+									onclick="ValidarPreguntas( 7, 3,2030  ) ;Habilitar( this.checked, 73 ) "
+									 
+									 />Medianamente importante. Especifica porque.
+							
+						   	<input type="text" name="yRespuestaAbierta73"
+							id="yRespuestaAbierta73" 
+							size="70" disabled 
+							value="-"
+							onblur="if ( Trim( this.value ) == '' ) this.value = '-'" 
+							onfocus="if ( Trim( this.value ) == '-' ) this.value = ''" maxlength="350"/>
+							
+						    </td>
+						  </tr>
+						  <input type="hidden" name="yResAbierta73" id="yResAbierta73" value="1"/>
+						  
+						 
+						 <tr class="CeldaDatos">
+						 	<td class="rCelda" >
+						 
+									<input type="radio" name="yRespuestaPregunta7"  
+									id="yRespuestaPregunta74" value="4"
+									onclick="ValidarPreguntas( 7, 4,2030  ) ;Habilitar( this.checked, 74 ) "
+									 
+									 />No es importante. Especifica porque.
+							
+						   	<input type="text" name="yRespuestaAbierta74"
+							id="yRespuestaAbierta74" 
+							size="70" disabled 
+							value="-"
+							onblur="if ( Trim( this.value ) == '' ) this.value = '-'" 
+							onfocus="if ( Trim( this.value ) == '-' ) this.value = ''" maxlength="350"/>
+							
+						    </td>
+						  </tr>
+						  <input type="hidden" name="yResAbierta74" id="yResAbierta74" value="1"/>
+						  
+						<input type="hidden" name="yTamRespuestas7" id="yTamRespuestas7" value="4"/>
+						 
+		<table class="TablaFinaDerechaSuperior" border="0" cellpadding="3" cellspacing="0" width="90%" align="center" bgcolor="#FFFFFF" id="xTabla2032">
+			<input type="hidden" id="yContador2032" name="yContador2032" value="8" />
+		  <input type="hidden" name="yCvePregunta8" id="yCvePregunta8" value="2032"/>
+		  <input type="hidden" name="yTipoPregunta8" id="yTipoPregunta8" value="2"/>
+		 <tr class="CeldaDatos">   
+		 	<td class="rCeldaLista"><strong>&nbsp;8.- &nbsp; ¿Que importancia tiene que la Universidad Tecnológica asegure un proyecto en una empresa para la realización de estadía?</strong></td>
+		 </tr>
+		 
+						 
+						 <tr class="CeldaDatos">
+						 	<td class="rCelda" >
+						 
+									<input type="radio" name="yRespuestaPregunta8"  
+									id="yRespuestaPregunta81" value="1"
+									onclick="ValidarPreguntas( 8, 1,2032  )  "
+									checked 
+									 />Muy importante
+							
+						    </td>
+						  </tr>
+						  <input type="hidden" name="yResAbierta81" id="yResAbierta81" value="0"/>
+						  
+						 
+						 <tr class="CeldaDatos">
+						 	<td class="rCelda" >
+						 
+									<input type="radio" name="yRespuestaPregunta8"  
+									id="yRespuestaPregunta82" value="2"
+									onclick="ValidarPreguntas( 8, 2,2032  )  "
+									 
+									 />Importante
+							
+						    </td>
+						  </tr>
+						  <input type="hidden" name="yResAbierta82" id="yResAbierta82" value="0"/>
+						  
+						 
+						 <tr class="CeldaDatos">
+						 	<td class="rCelda" >
+						 
+									<input type="radio" name="yRespuestaPregunta8"  
+									id="yRespuestaPregunta83" value="3"
+									onclick="ValidarPreguntas( 8, 3,2032  ) ;Habilitar( this.checked, 83 ) "
+									 
+									 />Medianamente importante. Especifica porque.
+							
+						   	<input type="text" name="yRespuestaAbierta83"
+							id="yRespuestaAbierta83" 
+							size="70" disabled 
+							value="-"
+							onblur="if ( Trim( this.value ) == '' ) this.value = '-'" 
+							onfocus="if ( Trim( this.value ) == '-' ) this.value = ''" maxlength="350"/>
+							
+						    </td>
+						  </tr>
+						  <input type="hidden" name="yResAbierta83" id="yResAbierta83" value="1"/>
+						  
+						 
+						 <tr class="CeldaDatos">
+						 	<td class="rCelda" >
+						 
+									<input type="radio" name="yRespuestaPregunta8"  
+									id="yRespuestaPregunta84" value="4"
+									onclick="ValidarPreguntas( 8, 4,2032  ) ;Habilitar( this.checked, 84 ) "
+									 
+									 />No es importante. Especifica porque.
+							
+						   	<input type="text" name="yRespuestaAbierta84"
+							id="yRespuestaAbierta84" 
+							size="70" disabled 
+							value="-"
+							onblur="if ( Trim( this.value ) == '' ) this.value = '-'" 
+							onfocus="if ( Trim( this.value ) == '-' ) this.value = ''" maxlength="350"/>
+							
+						    </td>
+						  </tr>
+						  <input type="hidden" name="yResAbierta84" id="yResAbierta84" value="1"/>
+						  
+						<input type="hidden" name="yTamRespuestas8" id="yTamRespuestas8" value="4"/>
+						 
+		<table class="TablaFinaDerechaSuperior" border="0" cellpadding="3" cellspacing="0" width="90%" align="center" bgcolor="#FFFFFF" id="xTabla2034">
+			<input type="hidden" id="yContador2034" name="yContador2034" value="9" />
+		  <input type="hidden" name="yCvePregunta9" id="yCvePregunta9" value="2034"/>
+		  <input type="hidden" name="yTipoPregunta9" id="yTipoPregunta9" value="3"/>
+		 <tr class="CeldaDatos">   
+		 	<td class="rCeldaLista"><strong>&nbsp;9.- &nbsp; Recomendaciones:</strong></td>
+		 </tr>
+		 
+						 
+						 <tr class="CeldaDatos">
+						 	<td class="rCelda" >
+						 
+						   	<input type="text" name="yRespuestaAbierta91"
+							id="yRespuestaAbierta91" 
+							size="70"  
+							value="Quisiera conocer un poco mas acerca de la vinculación de los estudiantes con las empresas."
+							onblur="if ( Trim( this.value ) == '' ) this.value = '-'" 
+							onfocus="if ( Trim( this.value ) == '-' ) this.value = ''" maxlength="350"/>
+							
+						    </td>
+						  </tr>
+						  <input type="hidden" name="yResAbierta91" id="yResAbierta91" value="1"/>
+						  
+						<input type="hidden" name="yTamRespuestas9" id="yTamRespuestas9" value="1"/>
+						
+				  </table>
+			 
+				  
+		<input type="hidden" name="yTotalPreguntas" id="yTotalPreguntas" value="9"/>	
+		</td>
+	</tr>
+		 
+		 
+		<tr>
+			<td colspan="2">&nbsp;</td>
+		</tr>
+		<tr style="display:none">
+			<td colspan="2">
+			 <table class="TablaFinaDerechaSuperior" border="0" cellpadding="0" cellspacing="0" width="90%" align="center" bgcolor="#FFFFFF">
+				<colgroup>
+					<col width="20%"> <col width="80%">
+				</colgroup>   
+				
+					 
+				<tr>    
+					<td class="rCeldaLista"><strong>&nbsp;¿El alumno es Aceptado? <label style="color:#FF0000">*</label></strong></td> 
+					<td class="rCelda">&nbsp; 
+						<input type="radio" id="xAceptado" name="xAceptado" value="1" />  Sí
+						<input type="radio" id="xAceptado" name="xAceptado" value="0" />  No
+					</td>
+				 </tr>
+					<tr>  
+					 
+					<td class="rCeldaLista"><strong>&nbsp;Comentarios:</strong></td>
+					<td class="rCelda">&nbsp; 
+						<textarea id="xComentarios" name="xComentarios" rows="5" cols="100" maxlength="800" ></textarea>
+					</td>
+				 </tr>		     </table>
+			</td> 
+		</tr>
+		<tr>
+			<td colspan="2">&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan="2" id="xBtnGuardar"> 
+			 <table border="0" cellpadding="0" cellspacing="0" width="80%" align="center" bgcolor="#FFFFFF">
+				<colgroup>
+					<col width="80%"/> <col width="5%"/>
+				</colgroup>
+				<tr>
+					<td colspan="2" align="right"><br />
+					<b>FO-ET-23 Rev: 2 </b>
+					<br />
+					</td> 
+				</tr> 
+				<tr>
+				<td>&nbsp;</td>
+				<td align="center" class="CeldaMenuOpcion" onmouseover="this.className='CeldaMenuOpcionSeleccionado'" onmouseout="this.className='CeldaMenuOpcion'" onclick="Guardar()"><img src="../../../images/arrow-forward_32.gif" /><br />
+						<b>Siguiente</b>	</td>
+				<tr>
+		     </table>
+			</td> 
+		</tr>
+		
+		
+		<tr>
+			<td colspan="2">&nbsp;</td>
+		</tr>
+		</table>
+			
+		<!--FIN DE LA TABLA PREGUNTAS Y RESPUESTAS -->
+		</td>
+		</tr>	
+		<tr>
+		<td>		
+		</td>
+		</tr>
+	
+		
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+</table>
+</form>
+</body>
+</html>

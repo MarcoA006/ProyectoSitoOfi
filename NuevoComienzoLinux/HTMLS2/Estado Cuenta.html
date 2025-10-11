@@ -1,0 +1,876 @@
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Pragma: No-cache
+Cache-Control: no-cache
+Expires: Wed, 31 Dec 1969 18:00:00 CST
+Content-Type: text/html;charset=iso-8859-1
+Date: Sat, 11 Oct 2025 18:29:07 GMT
+Content-Length: 26854
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Registro pagos inscripción</title>
+
+	<link rel="stylesheet" href="../../styles2/pages.css" type="text/css">
+	<link rel="stylesheet" href="../../styles2/tables.css" type="text/css">
+	<link rel="stylesheet" href="../../styles2/cells.css" type="text/css">
+	<link rel="stylesheet" href="../../styles2/characters.css" type="text/css">
+	<link rel="stylesheet" href="../../javascript/themes/aqua.css" type="text/css">
+	
+	<style>
+	
+		.filaSeleccionada {
+			background-color: #cce5ff; /* Color de fondo para fila seleccionada */
+		}
+	
+		.imgtipo{
+		    display: table-column;
+			margin-right: 10px;
+		}
+		
+		.nombrealumno{
+			vertical-align: middle;
+			display: table-cell;
+		}
+		
+		.oculto {
+            display: none;
+        }
+	</style>
+	
+</head>
+
+<script language="javascript" type="text/javascript" src="../../javascript/utilities.js"></script>
+<script language="javascript" type="text/javascript" src="../../javascript/utils.js"></script>
+<script language="javascript" type="text/javascript" src="../../javascript/calendar.js"></script>
+<script language="javascript" type="text/javascript" src="../../javascript/calendar-setup.js"></script>
+<script language="javascript" type="text/javascript" src="../../javascript/calendar-sp.js"></script>
+<script language="javascript" type="text/javascript">
+<!--
+	window.history.go(1);
+	
+	document.oncontextmenu = function(){return false};
+	
+	document.onkeydown = function()
+	  {
+		  if (window.event && window.event.keyCode == 116)
+			  window.event.keyCode = 505;
+		  if (window.event && window.event.keyCode == 505)
+			  return false;
+	  }
+//-->
+</script>
+
+<script language="JavaScript" type="text/javascript">//Configuraciones calendarios
+		var startDateString =	"";	
+		var endDateString =	"";		
+					
+		if(startDateString !== "" && endDateString !== ""){
+			var startParts = startDateString.split('-');
+			var endParts = endDateString.split('-');
+							
+			var startDay = parseInt(startParts[0], 10);
+			var startMonth = parseInt(startParts[1], 10) - 1; // Los meses en JavaScript van de 0 a 11
+			var startYear = parseInt(startParts[2], 10);
+							
+			var endDay = parseInt(endParts[0], 10);
+			var endMonth = parseInt(endParts[1], 10) - 1; // Los meses en JavaScript van de 0 a 11
+			var endYear = parseInt(endParts[2], 10);
+			var startDate = new Date(startYear, startMonth, startDay);
+			var endDate = new Date(endYear, endMonth, endDay);
+		}
+					
+		function resetDates() {
+			startDate = endDate = null;
+			document.forma.xFiltroFechaInicio.value = "";
+			document.forma.xFiltroFechaFin.value = "";
+		}
+					
+		function compareDatesOnly(date1, date2) {
+			var year1 = date1.getYear();
+			var year2 = date2.getYear();
+			var month1 = date1.getMonth();
+			var month2 = date2.getMonth();
+			var day1 = date1.getDate();
+			var day2 = date2.getDate();
+					
+			if (year1 > year2) {
+				return -1;
+			}
+			if (year2 > year1) {
+				return 1;
+			}
+			//years are equal
+			if (month1 > month2) {
+				return -1;
+			}
+			if (month2 > month1) {
+				return 1;
+			}
+			//years and months are equal
+			if (day1 > day2) {
+				return -1;
+			}
+			if (day2 > day1) {
+				return 1;
+			}
+			//days are equal
+			return 0;
+		}
+					
+		function filterDates1(cal) {
+		
+			startDate = cal.date;
+				
+			if (endDate == null) { 
+				Zapatec.Calendar.setup({
+					firstDay: 0,
+					showOthers: true,
+					step: 5, 
+					electric		: 	false,
+					inputField		: 	"xFiltroFechaFin",
+					button			: 	"xFiltroFechaFin",
+					ifFormat		: 	"%d-%m-%Y",
+					timeFormat     :    "24",
+					date           	:     startDate,
+					dateStatusFunc 	:  	dateInRange2, //the function to call
+					onUpdate       	:  	filterDates2
+				});
+			}
+			document.forma.xFiltroFechaFin.value = "";
+		}
+					
+		function filterDates2(cal) {
+			var fechaFin = document.forma.xFiltroFechaFin;
+			var fechaInicio = document.forma.xFiltroFechaInicio;
+			if(fechaInicio.value != ""){
+				CargaCombos(fechaFin);
+				}
+			endDate = cal.date;
+			}
+				
+		function dateInRange1(date) {
+			if (endDate != null) {
+			// Disable dates after end date
+			var compareEnd = compareDatesOnly(date, endDate);
+			if  (compareEnd < 0) {
+				return (true);
+			}
+			// Hilight end date with "edges" style
+			if  (compareEnd == 0) {
+				{return "edges";}
+			}
+			// Hilight inner dates with "between" style
+			if (startDate != null){
+			var compareStart = compareDatesOnly(date, startDate);
+				if  (compareStart < 0) {
+					return "between";
+				} 
+			} 
+		}		
+		//all other days are enabled
+		return false;
+	}
+		
+	function dateInRange2(date) {
+		if (startDate != null) {
+			// Disable dates before start date
+			var compareDays = compareDatesOnly(startDate, date);
+			if  (compareDays < 0) {
+				return (true);
+			}
+			// Hilight end date with "edges" style
+			if  (compareDays == 0) {
+				{return "edges";}
+			}
+			// Hilight inner dates with "between" style
+			if ((endDate != null) && (date > startDate) && (date < endDate)) {
+				return "between";
+			} 
+		} 
+					
+		//all other days are enabled
+		return false;
+	}
+</script> 
+
+<script language="javascript" type="text/javascript">
+<!--
+
+	
+	
+	
+
+	function MostrarOcultar() {
+            var tipo_filtro = document.getElementById('TipoFiltroFecha').checked;
+            var contenedorFechas = document.getElementById('ContenedorFecha');
+            var contenedorPeriodo = document.getElementById('ContenedorPeriodo');
+
+            if (tipo_filtro) {
+                contenedorFechas.classList.remove('oculto');
+                contenedorPeriodo.classList.add('oculto');
+            } else {
+                contenedorFechas.classList.add('oculto');
+                contenedorPeriodo.classList.remove('oculto');
+            }
+        }
+
+	function SoloNumeros(evt) {//document.getElementById("xComentario"+valor).value
+			var tipoFiltro = document.forma.TipoFiltroFecha.checked;
+			var charCode = (evt.which) ? evt.which : evt.keyCode;
+			
+			if(!tipoFiltro){//es por periodo
+				var periodoSeleccionado = document.forma.xPeriodo.value;
+				
+				if(periodoSeleccionado != 0){
+					if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+						return false;
+					}
+				}else{
+					alert("Seleccione periodo");
+					return false;
+				}
+			}else{//es por fecha
+				var fechaInicio = document.forma.xFiltroFechaInicio.value == "";
+				var fechaFin = document.forma.xFiltroFechaFin.value == "";
+				if(fechaInicio || fechaFin){
+					alert("Seleccione rango de fechas");
+					return false;
+				}else{
+					if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+						return false;
+					}
+				}
+			}
+            
+            return true;
+        }
+	
+	function Abrir_Datos_Listado()                    {
+		var pagina = "../proceso_exportacion_excel.jsp?xParametro1=D:\\ReportesExcel\\ListadoTransacciones122907.xls";
+        var Vpadre = window.open(pagina);	
+		Vpadre.opener = self;
+	}
+	function Abrir_Datos_Detalle()                    {
+		var pagina = "../proceso_exportacion_excel.jsp?xParametro1=D:\\ReportesExcel\\DetallePreinscritos122907.xls";
+        var Vpadre = window.open(pagina);
+		Vpadre.opener = self;	
+	}
+		
+	
+	function Alerta(visible, color){
+		document.getElementById("Alerta").style.visibility = visible;
+		document.getElementById("Alerta").style.color = color;
+	} 
+	 
+	function BuscarMatricula(event) {
+		
+        if (event.keyCode === 13) { // presionan enter
+			var fechaInicio = document.forma.xFiltroFechaInicio.value != "";
+			var fechaFin = document.forma.xFiltroFechaFin.value != "";
+			var periodo = document.forma.xPeriodo.value != 0;
+			
+			if(periodo || (fechaInicio && fechaFin)){ //si hay periodo seleccionado o fechas capturadas
+				event.preventDefault();
+				
+				if(document.forma.TipoFiltroFecha.checked){ 
+					document.forma.xPeriodo.value="-";
+				}else{
+					document.forma.xFiltroFechaInicio.value="";
+					document.forma.xFiltroFechaFin.value="";
+				}
+				
+				document.forma.xFiltroTipoTransaccion.value="-";
+				
+				document.forma.submit();
+			}
+        }
+    }
+	
+	
+	function CargaCombos(obj){
+		if(obj==document.forma.xFiltroFechaFin){
+			document.forma.xPeriodo.value="-";
+			document.forma.yPeriodo.value="";
+			document.forma.xMatricula.value="";
+		}
+		if(obj==document.forma.xPeriodo){
+			document.forma.xFiltroFechaInicio.value="";
+			document.forma.xFiltroFechaFin.value="";
+			document.forma.xMatricula.value="";
+		}
+		document.forma.submit(); 
+	}
+	
+	
+	function Buscar_Alumno(control){
+		if(document.forma.xPeriodo.value!=0){
+			var pagina = "muestra_alumno.jsp?gControl=" + control;
+			var vWinPres = window.open(pagina, "Muestra", "width=790, height=590, statusbar=yes, directories=no, scrollbars=yes, resizable=no, top=0, left=0");
+			vWinPres.opener = self;
+		}else{
+			alert("Seleccione un periodo");
+		}
+
+	}
+	
+	function Alumno_Recargar(){
+		var enterEvent = new KeyboardEvent('keydown', {
+			key: 'Enter',
+			keyCode: 13,
+			code: 'Enter',
+			which: 13,
+			charCode: 13,
+			bubbles: true
+		});
+		BuscarMatricula(enterEvent);
+	}
+	
+	
+	function GenerarPDF(contador,clave){  		
+		if (confirm("Se va a proceder a generar el recibo. \n¿Está usted seguro?"))
+		{		
+			document.forma.yCvePagoCambio.value = clave;
+			document.forma.yContador.value = contador;		
+			document.forma.yResolucion.value = screen.width + "x" + screen.height;
+			document.forma.yAccion.value = "GenerarPDF";								
+			document.forma.submit();
+		}
+
+	}
+	function Exportar(opc){
+		if(document.forma.yTotalRegistros.value==0){
+			alert("No hay registro para exportar");
+			return;
+		}
+		if(opc==1){
+			document.forma.yAccion.value = "ExportarListado";
+		}
+        document.forma.submit();
+    }
+//-->
+</script>
+
+<body onload="">
+<form name="forma" method="post" action="">
+	<input type="hidden" name="yAccion" id="yAccion" value="">
+	<input type="hidden" name="yResolucion" id="yResolucion" value="0">	
+	<input type="hidden" name="yCvePagoCambio" id="yCvePagoCambio" value="">	
+	<input type="hidden" name="yActivoCambio" id="yActivoCambio" value="">	
+	<input type="hidden" name="yContador" id="yContador" value="">
+	<input type="hidden" name="yContadorFila" id="yContadorFila" value="">
+	
+		
+	<table border="0" width="100%" align="center" cellpadding="0" cellspacing="0">		
+		<tr>
+			<td>&nbsp;</td> 
+		</tr>
+	  
+		<tr>
+			<td>
+				<table border="0" width="97%" align="center" cellpadding="0" cellspacing="0">
+					<colgroup>
+						<col width="23%"> <col width="27%"> <col width="15%"> <col width="35%">
+					</colgroup>
+					<tr class="CeldaDatos">
+						<td>&nbsp;  </td>
+						<td>&nbsp;  </td>
+						<td>&nbsp;  </td>
+						<td>&nbsp;  </td>
+					</tr>	
+					<tr class="CeldaDatos"> 
+						  
+					
+					
+			
+					<tr class="CeldaDatos">
+						<td> &nbsp; Unidad Acad&eacute;mica </td>
+						<td colspan="3">
+								&nbsp; 
+											<b><span>Nivel Licenciatura</span></b></span>	
+						</td>
+					</tr>  
+					<tr class="CeldaDatos">
+						<td> &nbsp; Carrera </td>
+						<td colspan="3">
+							&nbsp;
+							<b><span>(NME) Ingeniería en Tecnologías de la Información e Innovación Digital</span></b></span>	
+						</td>
+					</tr>
+						<tr class="CeldaDatos">
+							<td> &nbsp; Especialidad </td>
+							<td colspan="3">
+								&nbsp; 
+								<b><span>Infraestructura de Redes Digitales</span></b></span>	
+							</td>
+						</tr>
+						<tr class="CeldaDatos">
+							<td> &nbsp; Matricula </td>
+							<td colspan="3">
+								&nbsp; 
+								<b><span>21136</span></b></span>			
+								
+										<input type="hidden"  name="xMatricula" id="xMatricula" value="21136"/>
+															
+							</td>							
+						</tr>
+						<tr class="CeldaDatos">
+							<td> &nbsp; Nombre </td>
+							<td colspan="3">
+								&nbsp; 
+											<b><span>MARCO ANTONIO BLANCO MENDEZ</span></b></span>						
+							</td>							
+						</tr>
+						<tr class="CeldaDatos">
+							<td> &nbsp; Status </td>
+							<td colspan="3">
+								&nbsp; 
+											<b><span>Inscrito</span></b></span>							
+							</td>							
+						</tr>
+										
+
+					
+					
+					<tr class="CeldaDatos">
+						<td colspan="4">&nbsp;   
+							<input type="hidden" name="yNivel" id="yNivel" value=""/>
+							<input type="hidden" name="yPeriodo" id="yPeriodo" value="  al  "/>
+							<input type="hidden" name="yCarrera" id="yCarrera" value=""/>
+							<input type="hidden" name="yEspecialidad" id="yEspecialidad" value=""/>						
+						</td>
+					</tr>
+				</table>			
+			</td>
+		</tr>
+		<tr> <td>&nbsp;  </td> </tr>	
+  
+		<tr> <td>&nbsp;  </td> </tr>
+		
+		<tr> 
+			<td>
+				<table border="0" width="97%" align="center" cellpadding="0" cellspacing="0" style="box-shadow: rgb(149 157 165 / 51%) 0px 0px 5px; padding: 10px; margin-bottom:10px;">
+				
+				
+					
+					<colgroup> 
+						<col width="4%"> <col width="10%"><col width="37%"> <col width="15%"> <col width="17%"><col width="17%">
+					</colgroup> 
+					<tr class="" align="center">
+						 					  
+						<td align="left" colspan="6" width="100" class="CeldaDatosTitulo">
+							 <b style="font-size:14px">Lista de transacciones</br></b> 
+						</td>
+					</tr>	
+					<tr class="" align="center">
+						<td align="left" colspan="6" width="100" class="CeldaDatosTitulo"> <p></p> </td>
+					</tr>	
+					<tr class="CeldaLista" align="center" height="40px">		
+						<td></td>
+						<td> <b>Matricula</b></td>
+						<td> <b>Alumno</b></td>
+						<td> <b>Concepto</b></td>
+						<td> <b>Monto</b></td>
+						<td> <b>Fecha</b></td>
+					</tr>
+					 
+					
+				
+					
+					
+						   
+					
+					<tr> 
+						<td colspan="6" class="CeldaDatos" align="center" height="10px">
+							
+						</td> 
+					</tr>  		   
+					       
+					
+									<tr class="celdaHover seleccionable" align="center" id="trinteresado1" style="cursor:pointer" title="Inscripción y Colegiatura Septiembre-Diciembre 2024">							
+										<td>
+											<b>1</b>
+										</td>	
+										<td align="center"> 21136 </td>     
+										<td>
+											<div style="display: flex; align-items: center;">
+												<img src="../../images/cargo.png" height="20px" class="imgtipo"> 
+												<div class="nombrealumno"><b>MARCO ANTONIO BLANCO MENDEZ</b></div>
+											</div>
+										</td> 
+										<td align="left">
+											<label>BECA MEJOR BACHILLER COMPLETA</label>  
+										</td>   
+										<td > <label id="xMontoTransaccion1" name="xMontoTransaccion1"></label>
+											5500.0
+										</td>	
+										<td>
+											<label name="xFechaTransaccion1" id="xFechaTransaccion1" >
+												01-09-2024
+											</label>
+									 			
+										</td> 					
+									</tr> 
+									
+									<tr> 
+										<td colspan="6" class="CeldaDatos" align="center" height="10px"></td> 
+									</tr>
+								       
+					
+									<tr class="celdaHover seleccionable" align="center" id="trinteresado2" style="cursor:pointer" title="Inscripción y Colegiatura Septiembre-Diciembre 2024">							
+										<td>
+											<b>2</b>
+										</td>	
+										<td align="center"> 21136 </td>     
+										<td>
+											<div style="display: flex; align-items: center;">
+												<img src="../../images/abono.png" height="20px" class="imgtipo"> 
+												<div class="nombrealumno"><b>MARCO ANTONIO BLANCO MENDEZ</b></div>
+											</div>
+										</td> 
+										<td align="left">
+											<label>BECA MEJOR BACHILLER COMPLETA</label>  
+										</td>   
+										<td > <label id="xMontoTransaccion2" name="xMontoTransaccion2"></label>
+											5500.0
+										</td>	
+										<td>
+											<label name="xFechaTransaccion2" id="xFechaTransaccion2" >
+												20-09-2024
+											</label>
+									 			
+										</td> 					
+									</tr> 
+									
+									<tr> 
+										<td colspan="6" class="CeldaDatos" align="center" height="10px"></td> 
+									</tr>
+								       
+					
+									<tr class="celdaHover seleccionable" align="center" id="trinteresado3" style="cursor:pointer" title=" Colegiatura Enero-Abril 2025">							
+										<td>
+											<b>3</b>
+										</td>	
+										<td align="center"> 21136 </td>     
+										<td>
+											<div style="display: flex; align-items: center;">
+												<img src="../../images/cargo.png" height="20px" class="imgtipo"> 
+												<div class="nombrealumno"><b>MARCO ANTONIO BLANCO MENDEZ</b></div>
+											</div>
+										</td> 
+										<td align="left">
+											<label>COLEGIATURA</label>  
+										</td>   
+										<td > <label id="xMontoTransaccion3" name="xMontoTransaccion3"></label>
+											3500.0
+										</td>	
+										<td>
+											<label name="xFechaTransaccion3" id="xFechaTransaccion3" >
+												06-01-2025
+											</label>
+									 			
+										</td> 					
+									</tr> 
+									
+									<tr> 
+										<td colspan="6" class="CeldaDatos" align="center" height="10px"></td> 
+									</tr>
+								       
+					
+									<tr class="celdaHover seleccionable" align="center" id="trinteresado4" style="cursor:pointer" title=" Colegiatura Enero-Abril 2025 (BECA MEJOR BACHILLER)">							
+										<td>
+											<b>4</b>
+										</td>	
+										<td align="center"> 21136 </td>     
+										<td>
+											<div style="display: flex; align-items: center;">
+												<img src="../../images/abono.png" height="20px" class="imgtipo"> 
+												<div class="nombrealumno"><b>MARCO ANTONIO BLANCO MENDEZ</b></div>
+											</div>
+										</td> 
+										<td align="left">
+											<label>COLEGIATURA</label>  
+										</td>   
+										<td > <label id="xMontoTransaccion4" name="xMontoTransaccion4"></label>
+											3500.0
+										</td>	
+										<td>
+											<label name="xFechaTransaccion4" id="xFechaTransaccion4" >
+												20-01-2025
+											</label>
+									 			
+										</td> 					
+									</tr> 
+									
+									<tr> 
+										<td colspan="6" class="CeldaDatos" align="center" height="10px"></td> 
+									</tr>
+								       
+					
+									<tr class="celdaHover seleccionable" align="center" id="trinteresado5" style="cursor:pointer" title=" Colegiatura Mayo-Agosto 2025">							
+										<td>
+											<b>5</b>
+										</td>	
+										<td align="center"> 21136 </td>     
+										<td>
+											<div style="display: flex; align-items: center;">
+												<img src="../../images/cargo.png" height="20px" class="imgtipo"> 
+												<div class="nombrealumno"><b>MARCO ANTONIO BLANCO MENDEZ</b></div>
+											</div>
+										</td> 
+										<td align="left">
+											<label>COLEGIATURA</label>  
+										</td>   
+										<td > <label id="xMontoTransaccion5" name="xMontoTransaccion5"></label>
+											3500.0
+										</td>	
+										<td>
+											<label name="xFechaTransaccion5" id="xFechaTransaccion5" >
+												01-05-2025
+											</label>
+									 			
+										</td> 					
+									</tr> 
+									
+									<tr> 
+										<td colspan="6" class="CeldaDatos" align="center" height="10px"></td> 
+									</tr>
+								       
+					
+									<tr class="celdaHover seleccionable" align="center" id="trinteresado6" style="cursor:pointer" title=" Colegiatura Mayo-Agosto 2025 Mejor Bachiller">							
+										<td>
+											<b>6</b>
+										</td>	
+										<td align="center"> 21136 </td>     
+										<td>
+											<div style="display: flex; align-items: center;">
+												<img src="../../images/abono.png" height="20px" class="imgtipo"> 
+												<div class="nombrealumno"><b>MARCO ANTONIO BLANCO MENDEZ</b></div>
+											</div>
+										</td> 
+										<td align="left">
+											<label>COLEGIATURA</label>  
+										</td>   
+										<td > <label id="xMontoTransaccion6" name="xMontoTransaccion6"></label>
+											3500.0
+										</td>	
+										<td>
+											<label name="xFechaTransaccion6" id="xFechaTransaccion6" >
+												20-05-2025
+											</label>
+									 			
+										</td> 					
+									</tr> 
+									
+									<tr> 
+										<td colspan="6" class="CeldaDatos" align="center" height="10px"></td> 
+									</tr>
+								       
+					
+									<tr class="celdaHover seleccionable" align="center" id="trinteresado7" style="cursor:pointer" title="Reinscripcion y Colegiatura Septiembre-Diciembre 2025">							
+										<td>
+											<b>7</b>
+										</td>	
+										<td align="center"> 21136 </td>     
+										<td>
+											<div style="display: flex; align-items: center;">
+												<img src="../../images/cargo.png" height="20px" class="imgtipo"> 
+												<div class="nombrealumno"><b>MARCO ANTONIO BLANCO MENDEZ</b></div>
+											</div>
+										</td> 
+										<td align="left">
+											<label>REINSCRIPCION Y COLEGIATURA</label>  
+										</td>   
+										<td > <label id="xMontoTransaccion7" name="xMontoTransaccion7"></label>
+											5500.0
+										</td>	
+										<td>
+											<label name="xFechaTransaccion7" id="xFechaTransaccion7" >
+												01-09-2025
+											</label>
+									 			
+										</td> 					
+									</tr> 
+									
+									<tr> 
+										<td colspan="6" class="CeldaDatos" align="center" height="10px"></td> 
+									</tr>
+								       
+					
+									<tr class="celdaHover seleccionable" align="center" id="trinteresado8" style="cursor:pointer" title="Reinscripcion y Colegiatura Septiembre-Diciembre 2025">							
+										<td>
+											<b>8</b>
+										</td>	
+										<td align="center"> 21136 </td>     
+										<td>
+											<div style="display: flex; align-items: center;">
+												<img src="../../images/abono.png" height="20px" class="imgtipo"> 
+												<div class="nombrealumno"><b>MARCO ANTONIO BLANCO MENDEZ</b></div>
+											</div>
+										</td> 
+										<td align="left">
+											<label>REINSCRIPCION Y COLEGIATURA</label>  
+										</td>   
+										<td > <label id="xMontoTransaccion8" name="xMontoTransaccion8"></label>
+											5500.0
+										</td>	
+										<td>
+											<label name="xFechaTransaccion8" id="xFechaTransaccion8" >
+												20-09-2025
+											</label>
+									 			
+										</td> 					
+									</tr> 
+									
+									<tr> 
+										<td colspan="6" class="CeldaDatos" align="center" height="10px"></td> 
+									</tr>
+								
+					<tr> 
+						<td colspan="6" class="CeldaDatos" align="center">&nbsp;</td> 
+					</tr>
+
+				</table>
+				<!--segunda hoja ESTADO DE CUENTA	-->							
+				<table border="0" width="97%" align="center" cellpadding="0" cellspacing="0" style="box-shadow: rgb(149 157 165 / 51%) 0px 0px 5px; padding: 10px; margin-top: 30px; margin-bottom: 30px;">
+			
+					<colgroup> 
+						<col width="46%"> <col width="18%"> <col width="18%"><col width="18%">
+					</colgroup> 
+					<tr class="" align="center">
+											  
+						<td align="left" colspan="4" width="100" class="CeldaDatosTitulo">
+							 <b style="font-size:14px">Estado de cuenta</br></b> 
+						</td>
+					</tr>	
+					<tr class="" align="center">
+						<td align="left" colspan="4" width="100" class="CeldaDatosTitulo">&nbsp;  </td>
+					</tr>	
+					<tr class="CeldaLista" align="center" height="40px">		
+						<td><b>Concepto</b></td>
+						<td> <b>Cargos</b></td>
+						<td> <b>Abonos</b></td>
+						<td> <b>Saldo</b></td>
+					</tr>
+					<tr> 
+						<td colspan="4" class="CeldaDatos" align="center" height="10px"></td> 
+					</tr>
+				
+						
+						
+							
+							<tr class="celdaHover seleccionable" align="center" id="trinteresado8" style="cursor:pointer">					  
+								
+								<td align="left">
+									BECA MEJOR BACHILLER COMPLETA
+								</td>   
+								<td > 
+									5500.0 
+								</td>	
+								<td>
+									5500.0 							 			
+								</td>		
+								<td align="center"> 
+									0.0 
+								</td>   				
+							</tr> 
+									
+							<tr> 
+								<td colspan="4" class="CeldaDatos" align="center" height="10px"></td> 
+							</tr>
+							
+						
+							
+							<tr class="celdaHover seleccionable" align="center" id="trinteresado8" style="cursor:pointer">					  
+								
+								<td align="left">
+									COLEGIATURA
+								</td>   
+								<td > 
+									7000.0 
+								</td>	
+								<td>
+									7000.0 							 			
+								</td>		
+								<td align="center"> 
+									0.0 
+								</td>   				
+							</tr> 
+									
+							<tr> 
+								<td colspan="4" class="CeldaDatos" align="center" height="10px"></td> 
+							</tr>
+							
+						
+							
+							<tr class="celdaHover seleccionable" align="center" id="trinteresado8" style="cursor:pointer">					  
+								
+								<td align="left">
+									REINSCRIPCION Y COLEGIATURA
+								</td>   
+								<td > 
+									5500.0 
+								</td>	
+								<td>
+									5500.0 							 			
+								</td>		
+								<td align="center"> 
+									0.0 
+								</td>   				
+							</tr> 
+									
+							<tr> 
+								<td colspan="4" class="CeldaDatos" align="center" height="10px"></td> 
+							</tr>
+							
+						
+						
+							<tr class="CeldaLista" align="center" height="20px">		
+								<td colspan="4" width="100%"><b>Total</b></td>
+							</tr>
+							<tr> 
+								<td colspan="4" class="CeldaDatos" align="center" height="10px"></td> 
+							</tr>
+							
+							<tr class="celdaHover seleccionable" align="center" id="trinteresado8" style="cursor:pointer">					  
+									
+									<td align="left">
+										TODOS LO CONCEPTOS
+									</td>   
+									<td > 
+										18000.0 
+									</td>	
+									<td>
+										18000.0 							 			
+									</td>		
+									<td align="center"> 
+										0.0 
+									</td>   				
+							</tr> 
+							<tr> 
+								<td colspan="4" class="CeldaDatos" align="center" height="10px"></td> 
+							</tr>
+						
+					
+				</table>
+			</td>		
+					<tr> 
+						<td colspan="9" class="CeldaDatos" align="center">&nbsp; 
+							<input type="hidden" id="yTotalRegistros" name="yTotalRegistros" value="8" />
+						</td> 
+					</tr>
+					  
+					
+					
+		<tr> <td>&nbsp;  </td> </tr>				
+	
+	</table>
+</form>
+</body>
+</html>

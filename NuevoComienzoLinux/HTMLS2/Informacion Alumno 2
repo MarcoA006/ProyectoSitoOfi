@@ -1,0 +1,26 @@
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Pragma: No-cache
+Cache-Control: no-cache
+Expires: Wed, 31 Dec 1969 18:00:00 CST
+Content-Type: text/html;charset=iso-8859-1
+Content-Length: 616
+Date: Sat, 11 Oct 2025 18:12:12 GMT
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Registro de datos</title>
+</head>
+<frameset rows="58,*" cols="*" framespacing="0" frameborder="no" border="0">
+  <frame src="pestanas_registro_alumno.jsp" name="topFrame" scrolling="No" noresize="noresize" id="topFrame" />
+  <frame src="proceso_alumno.jsp" name="mainFrame" id="mainFrame" />
+</frameset>
+<noframes><body>
+</body>
+</noframes></html>

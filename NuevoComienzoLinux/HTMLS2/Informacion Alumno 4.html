@@ -1,0 +1,930 @@
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Pragma: No-cache
+Cache-Control: no-cache
+Expires: Wed, 31 Dec 1969 18:00:00 CST
+Content-Type: text/html;charset=iso-8859-1
+Date: Sat, 11 Oct 2025 18:13:38 GMT
+Content-Length: 32508
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Agregar datos personales del EmpleadoMARCO ANTONIO BLANCO MENDEZ</title>
+
+	<link rel="stylesheet" href="../../styles2/pages.css" type="text/css">
+	<link rel="stylesheet" href="../../styles2/tables.css" type="text/css">
+	<link rel="stylesheet" href="../../styles2/cells.css" type="text/css">
+	<link rel="stylesheet" href="../../styles2/characters.css" type="text/css">
+	<link rel="stylesheet" href="../../javascript/themes/aqua.css" type="text/css">
+</head>
+
+<script language="javascript" type="text/javascript" src="../../javascript/utilities.js"></script>
+<script language="javascript" type="text/javascript" src="../../javascript/utils.js"></script>
+<script language="javascript" type="text/javascript" src="../../javascript/calendar.js"></script>
+<script language="javascript" type="text/javascript" src="../../javascript/calendar-setup.js"></script>
+<script language="javascript" type="text/javascript" src="../../javascript/calendar-sp.js"></script>
+<script language="javascript" type="text/javascript">
+
+<!--
+	window.history.go(1);
+		document.oncontextmenu = function(){ return false;}		
+		
+		document.onkeydown = function()
+		  { 
+			if(window.event && window.event.keyCode == 116)
+			  {
+				 window.event.keyCode = 505; 
+		 	  }
+			
+			if(window.event && window.event.keyCode == 505)
+			  { 
+			 	return false;    
+			  }			  			
+		   }  
+
+//-->
+</script>
+<script language="javascript" type="text/javascript">
+	 <!--
+	 	function Recarga()
+		{
+			parent.topFrame.document.forma.yClavePersona.value="17158";
+			parent.topFrame.document.forma.submit();
+		}
+	 
+	 	function Persona_Alerta(visible, color)
+		  {
+			document.getElementById("Alerta").style.visibility = visible;
+			document.getElementById("Alerta").style.color = color;	
+		  }
+
+		function Persona_Cargar()
+		  {
+		  	document.forma.yResolucion.value = screen.width + "x" + screen.height;
+			document.forma.yAccion.value = "Recargar";
+			document.forma.submit();
+		  }
+
+		function Aspirante_Nuevo()
+		  {		  
+			 parent.topFrame.document.forma.yClavePersona.value = "0";
+			 parent.topFrame.document.forma.submit();
+			 
+		     document.forma.yResolucion.value = screen.width + "x" + screen.height;
+			 document.forma.xClavePersona.value = "0";
+			 document.forma.yClavePersona.value = "0";
+			 document.forma.yPag.value    = "0"
+			 document.forma.yAccion.value = "Nuevo";
+			 document.forma.submit();
+		  }
+
+		function Aspirante_Guardar()
+		  {		   
+
+			  if (document.forma.xNombre.value == "-")
+			    {
+					alert("El nombre del persona es necesario");
+					document.forma.xNombre.focus();
+					return;
+				}				
+					
+			  if (document.forma.xApPaterno.value == "-" && document.forma.xApMaterno.value == "-")
+			    {
+					alert("Es necesario por lo menos un apellido del persona");
+					
+					if (document.forma.xApPaterno.value == "-")
+					 {
+					 	document.forma.xApPaterno.focus();
+					 }
+					else
+					 { 
+					   document.forma.xApMaterno.focus();
+					 }  
+					return;
+				}
+			
+			 var fecha = document.forma.xFechaNacimiento.value;
+	
+			 if (parseInt(fecha.substring(6,10)) > (2025 - 15))  
+			   {
+			   	   	alert("La fecha de Nacimiento no es válida. Por favor verificala");
+					return;
+			   }			 
+			 
+			 fecha =  fecha.substring(8,10) + "" + fecha.substring(3,5) + "" + fecha.substring(0,2);			  
+			 
+			 if (Trim(document.forma.xRFC.value).length > 1 && document.forma.xRFC.value!="-" )
+			   {			 
+				  if (Trim(document.forma.xRFC.value).length < 10)	
+					{
+						alert("El RFC introducido no es válido. Por Favor verificalo");
+						document.forma.xRFC.focus();
+						return;
+					}
+					
+				  if (Trim(document.forma.xRFC.value).indexOf(fecha) == -1)
+					{
+						alert("El RFC propocionado no corresponde a la fecha de nacimiento seleccionada. Por favor verificalo");
+						document.forma.xRFC.focus();
+						return;
+					}	 	 
+				}
+			
+			if (Trim(document.forma.xCURP.value).length > 1 && document.forma.xCURP.value!="-")
+			   {  				 												 
+					if ( Trim(document.forma.xCURP.value).length < 18 )
+					  {
+						 alert("El CURP introducido no es válido. Por Favor verificalo");
+						 document.forma.xCURP.focus();
+						 return;
+					  }
+					  
+					if (Trim(document.forma.xRFC.value).length > 1)
+					  {  
+						 if (Trim(document.forma.xCURP.value).substring(0,10) != Trim(document.forma.xRFC.value))
+						   {
+							 alert("Los primeros 10 digitos del CURP deben ser iguales al RFC. Por favor verificalo");
+							 document.forma.xCURP.focus();
+							 return;
+						   }
+					  }
+					else
+					  {
+					  	 if (Trim(document.forma.xCURP.value).indexOf(fecha) == -1)
+						  {
+							 alert("El CURP propocionado no corresponde a la fecha de nacimiento seleccionada. Por favor verificalo");
+							 document.forma.xCURP.focus();
+							 return;
+						  }	 	 
+					  }   
+					   	      
+					 
+					var sexo = document.forma.xSex[0].checked == true ? "H" : "M";
+	
+					if (Trim(document.forma.xCURP.value).charAt(10).toUpperCase() != sexo)
+					   {
+					   
+						   alert("El CURP proporcionado no corresponde al sexo seleccionado. Por favor verificalo");
+						   document.forma.xCURP.focus();
+						   return;
+					   }	   	
+			 }
+			 
+			 
+ 			 if (Trim(document.forma.xCorreoElectronico.value).length > 0 && Trim(document.forma.xCorreoElectronico.value) != "-")
+			   {
+			   	  if (Trim(document.forma.xCorreoElectronico.value).length < 5)
+				    {
+						alert("Debes de introducir un correo electrónico válido");
+						document.forma.xCorreoElectronico.focus();
+						return;
+					}	
+				  
+				  var numero = 0, puntos = 0;
+
+				  for (var contador = 0; contador < Trim(document.forma.xCorreoElectronico.value).length; contador++ )
+				     {
+					 	 var letra = document.forma.xCorreoElectronico.value.charAt(contador);
+						 
+						 if (letra == "@")
+						   numero++;		
+						 
+						 if (letra == ".")
+						   puntos++;
+						     
+						 if (contador < 1 && numero == 1)
+						   {
+						       alert("El correo electrónico no es válido. Por favor verificalo");
+							   document.forma.xCorreoElectronico.focus();
+							   return;							   
+						   }
+						 else if (contador < 1 && puntos == 1)
+						   {
+						   	   alert("El correo electrónico no es válido. Por favor verificalo");
+							   document.forma.xCorreoElectronico.focus();
+							   return;		
+						   }    				    
+					 }
+					 
+				  if (numero > 1)
+				    {
+						alert("El correo electrónico no es válido. Por favor verificalo");
+						document.forma.xCorreoElectronico.focus();
+						return;
+					}	 
+				
+				  if (numero <= 0 || puntos == 0)
+				    {
+						alert("El correo electrónico no es válido. Por favor verificalo");
+						document.forma.xCorreoElectronico.focus();
+						return;
+					}
+			   }	
+			 
+			 
+			 if (Trim(document.forma.xTelefono.value).length > 1 && Trim(document.forma.xTelefono.value).length < 5 )  
+			 	{
+					alert("Los digitos del teléfono son incorrectos. Por favor verifique el número");
+					document.forma.xTelefono.focus();
+					return;
+				}
+				
+			 var opcionEstado = document.forma.xEstadoCivil.selectedIndex;
+			 
+			 if (opcionEstado <= 0)
+			   {
+			   	  alert("Debe seleccionar el estado civil del persona");
+				  document.forma.xEstadoCivil.focus();
+				  return;
+			   }	
+			   
+			  var opcionNacionalidad = document.forma.xNacionalidad.selectedIndex;
+			  
+			  if (opcionNacionalidad <= 0)
+			    {
+					alert("Debe seleccionar la nacionalidad del persona");
+					document.forma.xNacionalidad.focus();
+					return;
+				} 
+			
+			  var opcionCiudad = document.forma.xPais.selectedIndex;	
+			 
+			  if (opcionCiudad <= 0)
+			    {
+					alert("Debe seleccionar el Pais de nacimiento del persona");
+					document.forma.xPais.focus();
+					return;
+				} 	
+			
+			  opcionCiudad = document.forma.xEstado.selectedIndex;	
+			  
+			  if (opcionCiudad <= 0)
+			    {
+					alert("Debe seleccionar el Estado de nacimiento del persona");
+					document.forma.xEstado.focus();
+					return;
+				} 		
+				
+ 		      opcionCiudad = document.forma.xCiudad.selectedIndex;	
+			  
+			  if (opcionCiudad <= 0)
+			    {
+					alert("Debe seleccionar la ciudad de nacimiento del persona");
+					document.forma.xCiudad.focus();
+					return;
+				} 	
+			 
+			 document.forma.yResolucion.value = screen.width + "x" + screen.height;
+			 document.forma.yAccion.value = "Guardar";
+			 document.forma.submit();
+			  
+		  }
+
+		function limpiar_variable()
+		  {
+			document.forma.yAccion.value = "Limpiar";
+			document.forma.submit();
+		  }	
+		  
+	  function Alumno_Recargar(){
+	  	document.forma.xClavePersona.value=0;
+		document.forma.yClavePersona.value=0;
+		if (Trim(document.forma.xMatricula.value).length < 3 )  
+		{
+			alert("Favor de ingresar una matrícula válida");
+			document.forma.xMatrícula.focus();
+			return;
+		}
+		document.forma.yAccion.value="CargarDatosAlumno";
+		document.forma.submit();
+	}	  
+	
+	function RecargarAlumno(){
+		document.forma.yBuscar.value=true;
+		document.forma.submit();
+	}	
+	
+	function Limpiar(){
+		document.forma.yAccion.value="Limpiar";
+		document.forma.xClavePersona.value=0;
+		document.forma.yClavePersona.value=0;
+		document.forma.yBuscar.value=false;
+		document.forma.submit();
+	}		
+	
+	function Buscar()
+	  {
+		var pagina = "muestra_alumno.jsp?xControl=document.forma.xMatricula";
+		var vWinPres = window.open(pagina, "MuestraAlumno", "width=700, height=450, statusbar=yes, directories=no, scrollbars=yes, resizable=no, top=0, left=0");
+		vWinPres.opener = self;
+	  }
+	  
+	//-->
+</script>
+
+<body onload="">
+<form name="forma" method="post" action="">
+	<input type="hidden" name="yBuscar" id="yBuscar" value="false">
+	<input type="hidden" name="yAccion" id="yAccion">
+	<input type="hidden" name="yActivo" id="yActivo" value="false">
+	<input type="hidden" name="xCargado" id="xCargado" value="0"/>
+	<input type="hidden" name="yTipoAccion" id="yTipoAccion" value="Nuevo" />
+	<input type="hidden" name="Accion" id="Accion" />
+	<input name="yResolucion" type="hidden" id="yResolucion" value=""/>
+	<input name="yPag" type="hidden" id="yPag" />
+	<input name="xClavePersona" type="hidden" id="xClavePersona" value="17158"/>
+	<input name="yClavePersona" type="hidden" id="yClavePersona" value="17158"/>
+	<table border="0" width="98%" align="center" cellpadding="0" cellspacing="0">
+		<tr>
+			<td>
+				<table border="0" width="250" align="right" cellpadding="0" cellspacing="12">
+					<tr>
+						<td align="center"  onclick="">
+						 
+								 </td>
+						<td align="center" class="CeldaMenuOpcion" onmouseover="this.className='CeldaMenuOpcionSeleccionado'" onmouseout="this.className='CeldaMenuOpcion'" onclick="Aspirante_Guardar()">
+							<img src="../../images/save_24.gif">
+							<br> Guardar						</td>
+						<td align="center" >
+							<img src="../../images/darktrash_24.gif">
+							<br> Eliminar						</td>
+						<td align="center"  onclick="">
+							<img src="../../images/darksearch_24.gif"><br> 
+							Buscar						
+						</td>
+						<td align="center" >
+							<!--<img src="../../images/darkreport_24.gif"> -->
+							<!--<br> Reporte					-->	
+						</td>
+					</tr>
+				</table>			</td>
+		</tr>
+
+					
+					<tr>
+						<td>
+							<table class="TablaDatosTitulo" width="97%" align="center" cellpadding="0" cellspacing="0">
+								  <th class="CeldaDatosTitulo" valign="middle"> Datos Personales</th>
+								    <th> <label id="Alerta">  </label> </th>
+						    </table>
+						</td>
+					</tr>
+					<tr>
+					  <td>
+						<table border="0" width="98%" align="center" cellpadding="0" cellspacing="0">				
+							<tr>						 
+								<td height="51"><label style="color:#FF0000"> * </label> Nombre </td>
+								<td colspan="6">
+									<table width="95%" border="0" align="left"> 
+										<tr>
+											<td width="33%" align="center">Nombre(s)</td>
+											<td width="33%" align="center">Apellido Paterno </td>
+											<td width="34%" align="center">Apellido Materno </td>						    
+										</tr>
+										<tr>
+										<td width="33%" align="left" >
+										<input name="xNombre" type="text" id="xNombre" onkeypress="return LetrasAcento(event)" size="40" maxlength="25" onfocus="if (this.value == '-') this.value = ''; Persona_Alerta('hidden', '#008000')" 
+										onblur="if (this.value == '') this.value = '-'"   readonly  class="TextoDesabilitado"
+										value="MARCO ANTONIO" />
+										</td>
+										<td width="33%" align="center">
+									<input name="xApPaterno" type="text" id="xApPaterno" onfocus="if(this.value=='-')this.value=''; Persona_Alerta('hidden', '#008000')"
+									onblur="if(this.value=='')this.value='-';" onkeypress="return LetrasAcento(event)" size="25" maxlength="40" 
+									value="BLANCO"   readonly  class="TextoDesabilitado" />
+								</td>
+								<td width="33%" align="center">
+									<input name="xApMaterno" type="text" id="xApMaterno" onfocus="if(this.value=='-')this.value=''; Persona_Alerta('hidden', '#008000')"
+									onblur="if(this.value=='')this.value='-';" onkeypress="return LetrasAcento(event)" size="25" maxlength="40" 
+									value="MENDEZ"   readonly  class="TextoDesabilitado" />
+								</td>
+							 </tr>
+							 
+						  </table></td>
+						</tr>
+						<tr style="display:">
+						  <td height="26">&nbsp;&nbsp;&nbsp;Fecha de Nacimiento </td>
+						  <td  >&nbsp;
+						  	
+                            <input name="xFechaNacimiento" type="text" id="xFechaNacimiento" size="25" maxlength="10" readonly 
+							 value="28-05-2006"/>
+                            <img src="../../images/calendar_16.gif" alt="Seleccionar la Fecha de Nacimiento" name="FechaNacimiento" 
+								width="16" height="16" class="CeldaImagenSeleccionada" id="FechaNacimiento" />
+								
+                            <script language="JavaScript" type="text/javascript">//<![CDATA[								
+										Zapatec.Calendar.setup({
+											firstDay          : 0,
+											showOthers        : true,
+											step              : 5,
+											electric          : false,
+											inputField        : "xFechaNacimiento",
+											button            : "FechaNacimiento",
+											ifFormat          : "%d-%m-%Y",
+											daFormat          : "%Y/%m/%d"
+										});
+									//]]></script>                          </td>
+						  <td align="right"><label style="color:#FF0000"> * </label>Sexo: </td>
+						  <td>
+							<input type="radio" name="xSex"  value="M" checked/>
+							  	Masculino &nbsp; 		
+							<input type="radio" name="xSex"  value="F"  />							  
+								Femenino					  
+						    </td>
+						</tr>
+						<tr>
+						  <td height="24">&nbsp;&nbsp;&nbsp;RFC<label style="color:#FF0000"></label></td>
+						  <td width="235">&nbsp;
+                          <input name="xRFC" type="text"  onkeypress="return RFC(event)"  
+							 onfocus="if(this.value=='-')this.value='';" onblur="if(this.value=='')this.value='-';" 
+							 class="TextoMayuscula" id="xRFC" size="15" maxlength="10" 
+							 value="-" /></td>
+
+						  <td align="right">CURP:
+				            
+			              </td>
+						    
+						  <td >&nbsp;
+                            <input name="xCURP" type="text" id="xCURP" size="30" maxlength="18" 
+						  	     onfocus="if(this.value=='-')this.value='';" onblur="if(this.value=='')this.value='-';" 
+						         class="TextoMayuscula" onkeypress="return CURP(event)" value="BAMM060528HSPLNRA9" /></td>
+						</tr>
+						<tr style="display:">
+						  <td>&nbsp;Correo Electr&oacute;nico </td>
+						  <td>&nbsp;
+                            <input name="xCorreoElectronico" type="text" id="xCorreoElectronico"
+						  	     onfocus="if(this.value=='-')this.value='';" onblur="if(this.value=='')this.value='-';" 
+						         size="30" maxlength="60" value="blancomendezm110@gmail.com" 
+								 onkeypress="return Mail(event)"/></td>
+						  <td align="right">Celular: </td>
+						  <td >&nbsp; 
+							<input name="xTelefono" type="text" id="xTelefono" 
+						  	     onfocus="if(this.value=='-')this.value='';" onblur="if(this.value=='')this.value='-';" 
+						         onkeypress="return Telefono(event)" size="15" maxlength="15" value="4445865320" /></td>
+					    </tr>
+						<tr  style="display:" >
+						  <td height="26">&nbsp;Estado Civil:
+					      <label style="color:#FF0000">* </label></td>
+						  <td>&nbsp;
+						    <select name="xEstadoCivil" id="xEstadoCivil">
+                              <option value="0">-</option>
+                              
+							 					<option value="0" >Desconocido</option>
+							 
+							 					<option value="1" selected>Soltero</option>
+							 
+							 					<option value="2" >Casado</option>
+							 
+							 					<option value="3" >Divorciado</option>
+							 
+							 					<option value="4" >Viudo</option>
+							 
+							 					<option value="5" >Union Libre</option>
+							 
+                          </select></td>
+						  <td align="right">&nbsp;Nacionalidad:
+                          <label style="color:#FF0000"> * </label></td>
+						  <td >&nbsp;						  		  
+						    <select name="xNacionalidad" id="xNacionalidad">
+                              <option value="0">-</option>                              
+							  
+							 				 <option value="1" >Antiguano</option>
+							 
+							 				 <option value="2" >Antillano neerlandés</option>
+							 
+							 				 <option value="3" >Argentino</option>
+							 
+							 				 <option value="4" >Arubeño</option>
+							 
+							 				 <option value="5" >Bahameño</option>
+							 
+							 				 <option value="6" >Barbadense</option>
+							 
+							 				 <option value="7" >Beliceño</option>
+							 
+							 				 <option value="8" >Bermudeño</option>
+							 
+							 				 <option value="9" >Boliviano</option>
+							 
+							 				 <option value="10" >Brasileño</option>
+							 
+							 				 <option value="11" >Canadiense</option>
+							 
+							 				 <option value="12" >Chileno</option>
+							 
+							 				 <option value="13" >Colombiano</option>
+							 
+							 				 <option value="14" >Costarricense</option>
+							 
+							 				 <option value="15" >Cubano</option>
+							 
+							 				 <option value="16" >Dominiques</option>
+							 
+							 				 <option value="17" >Ecuatoriano</option>
+							 
+							 				 <option value="18" >Salvadoreño</option>
+							 
+							 				 <option value="46" >Español</option>
+							 
+							 				 <option value="50" >Español</option>
+							 
+							 				 <option value="19" >Estadounidense</option>
+							 
+							 				 <option value="48" >Frances</option>
+							 
+							 				 <option value="20" >Granadino</option>
+							 
+							 				 <option value="21" >Groenlandés</option>
+							 
+							 				 <option value="22" >Guatemalteco</option>
+							 
+							 				 <option value="23" >Francoguayanés</option>
+							 
+							 				 <option value="24" >Guyanés</option>
+							 
+							 				 <option value="25" >Haitiano</option>
+							 
+							 				 <option value="26" >Hondureño</option>
+							 
+							 				 <option value="47" >Ingles</option>
+							 
+							 				 <option value="27" >Caimanés</option>
+							 
+							 				 <option value="28" >Malvinense</option>
+							 
+							 				 <option value="29" >Virgenense británico</option>
+							 
+							 				 <option value="30" >Virgenense americano</option>
+							 
+							 				 <option value="49" >Italiana</option>
+							 
+							 				 <option value="31" >Jamaicano</option>
+							 
+							 				 <option value="32" selected>Mexicana</option>
+							 
+							 				 <option value="33" >Nicaragüense</option>
+							 
+							 				 <option value="34" >Panameño</option>
+							 
+							 				 <option value="35" >Paraguayo</option>
+							 
+							 				 <option value="36" >Peruano</option>
+							 
+							 				 <option value="37" >Puertorriqueño</option>
+							 
+							 				 <option value="38" >Dominicano</option>
+							 
+							 				 <option value="39" >Sancristobaleño</option>
+							 
+							 				 <option value="40" >Sanvicentino</option>
+							 
+							 				 <option value="41" >Santaluciano</option>
+							 
+							 				 <option value="42" >Surinamés</option>
+							 
+							 				 <option value="43" >Trinitense</option>
+							 
+							 				 <option value="44" >Uruguayo</option>
+							 
+							 				 <option value="45" >Venezolano</option>
+							 	  							  
+                          </select></td>
+					    </tr>
+						<tr style="display:">
+						  <td height="26">&nbsp;Pais:<label style="color:#FF0000">
+					      * </label></td>
+						  <td>&nbsp;
+							<select name="xPais" id="xPais" onchange="document.forma.Accion.value='1'; limpiar_variable()">
+							  <option value="0">-</option>
+							  
+												<option value="1" >Antigua y Barbuda</option>
+							 
+												<option value="2" >Antillas Holandesas</option>
+							 
+												<option value="3" >Argentina</option>
+							 
+												<option value="4" >Aruba</option>
+							 
+												<option value="5" >Bahamas</option>
+							 
+												<option value="6" >Barbados</option>
+							 
+												<option value="7" >Belice</option>
+							 
+												<option value="8" >Bermudas</option>
+							 
+												<option value="9" >Bolivia</option>
+							 
+												<option value="10" >Brasil</option>
+							 
+												<option value="11" >Canada</option>
+							 
+												<option value="12" >Chile</option>
+							 
+												<option value="13" >Colombia</option>
+							 
+												<option value="14" >Costa Rica</option>
+							 
+												<option value="15" >Cuba</option>
+							 
+												<option value="16" >Dominica</option>
+							 
+												<option value="17" >Ecuador</option>
+							 
+												<option value="18" >El Salvador</option>
+							 
+												<option value="46" >España</option>
+							 
+												<option value="50" >España</option>
+							 
+												<option value="19" >Estados Unidos</option>
+							 
+												<option value="48" >Francia</option>
+							 
+												<option value="20" >Granada</option>
+							 
+												<option value="21" >Groenlandia</option>
+							 
+												<option value="22" >Guatemala</option>
+							 
+												<option value="23" >Guayana Francesa</option>
+							 
+												<option value="24" >Guyana</option>
+							 
+												<option value="25" >Haiti</option>
+							 
+												<option value="26" >Honduras</option>
+							 
+												<option value="47" >Inglaterra</option>
+							 
+												<option value="27" >Islas Caiman</option>
+							 
+												<option value="28" >Islas Malvinas</option>
+							 
+												<option value="29" >Islas Virgenes (GB)</option>
+							 
+												<option value="30" >Islas Virgenes (US)</option>
+							 
+												<option value="49" >Italia</option>
+							 
+												<option value="31" >Jamaica</option>
+							 
+												<option value="32" selected>Mexico</option>
+							 
+												<option value="33" >Nicaragua</option>
+							 
+												<option value="34" >Panama</option>
+							 
+												<option value="35" >Paraguay</option>
+							 
+												<option value="36" >Peru</option>
+							 
+												<option value="37" >Puerto Rico</option>
+							 
+												<option value="38" >Republica Dominicana</option>
+							 
+												<option value="39" >San Cristobal-Nevis</option>
+							 
+												<option value="40" >San Vincente y las Granadinas</option>
+							 
+												<option value="41" >Santa Lucia</option>
+							 
+												<option value="42" >Surinam</option>
+							 
+												<option value="43" >Trinidad & Tobago</option>
+							 
+												<option value="44" >Uruguay</option>
+							 
+												<option value="45" >Venezuela</option>
+							 			
+							</select>
+							<input type="hidden" name="pais" id="pais" />						</td>
+						  <td align="right">Estado:<label style="color:#FF0000">
+                          * </label></td>
+						  <td >&nbsp;
+						    <select name="xEstado" id="xEstado" onchange="document.forma.yAccion.value='2';document.forma.submit();">
+                              <option value="0">-</option>
+							  
+													<option value="1" >Aguascalientes</option>
+								  
+													<option value="2" >Baja California Norte</option>
+								  
+													<option value="3" >Baja California Sur</option>
+								  
+													<option value="4" >Campeche</option>
+								  
+													<option value="7" >Chiapas</option>
+								  
+													<option value="8" >Chihuahua</option>
+								  
+													<option value="5" >Coahuila de Zaragoza</option>
+								  
+													<option value="6" >Colima</option>
+								  
+													<option value="9" >Distrito Federal</option>
+								  
+													<option value="10" >Durango</option>
+								  
+													<option value="11" >Guanajuato</option>
+								  
+													<option value="12" >Guerrero</option>
+								  
+													<option value="13" >Hidalgo</option>
+								  
+													<option value="14" >Jalisco</option>
+								  
+													<option value="15" >México</option>
+								  
+													<option value="16" >Michoacán de Ocampo</option>
+								  
+													<option value="17" >Morelos</option>
+								  
+													<option value="18" >Nayarit</option>
+								  
+													<option value="19" >Nuevo León</option>
+								  
+													<option value="20" >Oaxaca</option>
+								  
+													<option value="21" >Puebla</option>
+								  
+													<option value="22" >Querétaro de Arteaga</option>
+								  
+													<option value="23" >Quintana Roo</option>
+								  
+													<option value="24" selected>San Luis Potosí</option>
+								  
+													<option value="25" >Sinaloa</option>
+								  
+													<option value="26" >Sonora</option>
+								  
+													<option value="27" >Tabasco</option>
+								  
+													<option value="28" >Tamaulipas</option>
+								  
+													<option value="29" >Tlaxcala</option>
+								  
+													<option value="30" >Veracruz</option>
+								  
+													<option value="31" >Yucatán</option>
+								  
+													<option value="32" >Zacatecas</option>
+								  
+                            </select>
+						  <input type="hidden" name="estado" id="estado" /></td>
+					    </tr>
+						<tr style="display:">
+						  <td height="26">&nbsp;Ciudad de Origen:
+                            <label style="color:#FF0000"> *</label>                           
+						  <td colspan="3">&nbsp;
+							<select name="xCiudad" id="xCiudad">
+							  <option value="0">-</option>
+							  
+														<option value="1818" >Ahualulco</option>
+									  
+														<option value="1842" >Alaquines</option>
+									  
+														<option value="1856" >Aquismon</option>
+									  
+														<option value="1836" >Armadillo de los Infante</option>
+									  
+														<option value="1868" >Axtla de Terrazas</option>
+									  
+														<option value="1843" >Cardenas</option>
+									  
+														<option value="1823" >Catorce</option>
+									  
+														<option value="1822" >Cedral</option>
+									  
+														<option value="1844" >Cerritos</option>
+									  
+														<option value="1817" >Cerro de San Pedro</option>
+									  
+														<option value="1824" >Charcas</option>
+									  
+														<option value="1841" >Ciudad del Maiz</option>
+									  
+														<option value="1852" >Ciudad Fernandez</option>
+									  
+														<option value="1837" >Ciudad Valles</option>
+									  
+														<option value="1865" >Coxcatlan</option>
+									  
+														<option value="1838" >Ebano</option>
+									  
+														<option value="1840" >El Naranjo</option>
+									  
+														<option value="1831" >Guadalcazar</option>
+									  
+														<option value="1866" >Huehuetlan</option>
+									  
+														<option value="1857" >Lagunillas</option>
+									  
+														<option value="1828" >Matehuala</option>
+									  
+														<option value="1872" >Matlapa</option>
+									  
+														<option value="1819" >Mexquitic de Carmona</option>
+									  
+														<option value="1832" >Moctezuma</option>
+									  
+														<option value="2479" >PARADA DEL ZARCIDO</option>
+									  
+														<option value="1855" >Rayon</option>
+									  
+														<option value="1851" >Rioverde</option>
+									  
+														<option value="1825" >Salinas</option>
+									  
+														<option value="1862" >San Antonio</option>
+									  
+														<option value="1853" >San Ciro de Acosta</option>
+									  
+														<option value="1815" selected>San Luis Potosí</option>
+									  
+														<option value="1870" >San Martin Chalchicuautla</option>
+									  
+														<option value="1846" >San Nicolas Tolentino</option>
+									  
+														<option value="1861" >San Vicente Tancuayalab</option>
+									  
+														<option value="1858" >Santa Catarina</option>
+									  
+														<option value="1849" >Santa María del Río</option>
+									  
+														<option value="1826" >Santo Domingo</option>
+									  
+														<option value="1816" >Soledad de Graciano Sánchez</option>
+									  
+														<option value="1854" >Tamasopo</option>
+									  
+														<option value="1871" >Tamazunchale</option>
+									  
+														<option value="1869" >Tampacán</option>
+									  
+														<option value="1864" >Tampamolon Corona</option>
+									  
+														<option value="1839" >Tamuín</option>
+									  
+														<option value="1859" >Tancanhuitz de Santos</option>
+									  
+														<option value="1860" >Tanlajás</option>
+									  
+														<option value="1863" >Tanquian de Escobedo</option>
+									  
+														<option value="1850" >Tierra Nueva</option>
+									  
+														<option value="1821" >Vanegas</option>
+									  
+														<option value="1833" >Venado</option>
+									  
+														<option value="1834" >Villa de Arista</option>
+									  
+														<option value="1820" >Villa de Arriaga</option>
+									  
+														<option value="1830" >Villa de Guadalupe</option>
+									  
+														<option value="1829" >Villa de la Paz</option>
+									  
+														<option value="1827" >Villa de Ramos</option>
+									  
+														<option value="1847" >Villa de Reyes</option>
+									  
+														<option value="1835" >Villa Hidalgo</option>
+									  
+														<option value="1845" >Villa Juarez</option>
+									  
+														<option value="1867" >Xilitla</option>
+									  
+														<option value="1848" >Zaragoza</option>
+									  
+							</select>
+						  <input type="hidden" name="ciudad" id="ciudad" />
+						  <label style="color:#FF0000"></label></td>
+					    </tr>
+					  </table>
+				      </td>
+					</tr>
+					<tr> <td>&nbsp;  </td> </tr>
+								<tr>
+									<td>
+										<table border="0" width="97%" align="center" cellpadding="0" cellspacing="0">
+											<colgroup>
+												<col width="3%"> <col width="97%">
+											</colgroup>
+											<tr class="CeldaDatosRezaltar">
+												<td> &nbsp; <label style="color:#FF0000"> * </label>  </td>
+												<td> &nbsp; Información obligatoria  </td>						
+											</tr>					
+										</table>
+									</td>
+								</tr>
+	  		
+	
+  </table>
+</form>
+</body>
+</html>

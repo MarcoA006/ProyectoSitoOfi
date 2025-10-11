@@ -1,0 +1,2919 @@
+    
+        
+      
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head> 
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Solicitud de Ficha de Admisi&oacute;n TSU</title>
+
+        <link rel="stylesheet" href="../../../styles2/pages.css" type="text/css"/>
+        <link rel="stylesheet" href="../../../styles2/tables.css" type="text/css"/>
+        <link rel="stylesheet" href="../../../styles2/cells.css" type="text/css"/>
+        <link rel="stylesheet" href="../../../styles2/characters.css" type="text/css"/>
+        <link rel="stylesheet" href="../../../styles2/reports.css" type="text/css"/>
+        <link rel="stylesheet" href="../../../javascript/themes/aqua.css" type="text/css"/>
+	
+	
+		<link rel="stylesheet" href="../../../styles2/redmond_1.8.7/jquery-ui-1.8.7.custom.css" />
+		<link rel="stylesheet" href="../../../styles2/qtip/jquery.qtip.min.css" />	
+ 
+    </head>
+
+    <script language="javascript" type="text/javascript" src="../../../javascript/utilities.js"></script>
+    <script language="javascript" type="text/javascript" src="../../../javascript/utils.js"></script>
+    <script language="javascript" type="text/javascript" src="../../../javascript/calendar.js"></script>
+    <script language="javascript" type="text/javascript" src="../../../javascript/calendar-setup.js"></script>
+    <script language="javascript" type="text/javascript" src="../../../javascript/calendar-sp.js"></script>
+
+    <script language="javascript" type="text/javascript" src="https://sito.utslp.edu.mx/javascript/glossy.js"></script>
+    <script language="javascript" type="text/javascript" src="../../../javascript/tabpane.js"></script>
+    <script language="javascript" type="text/javascript" src="../../../javascript/jquery-1.3.2.min.js" ></script>
+	
+	<script type="text/javascript" src="../../../javascript/jquery/jquery-1.5.1.min.js"></script>
+	<script type="text/javascript" src="../../../javascript/jquery/jquery-ui-1.8.13.min.js"></script>
+    
+	<script>var $jq = jQuery.noConflict();</script>
+	
+	
+    <script language="javascript" type="text/javascript">
+        <!--
+		
+		$jq(document).ready(function(){	 
+			//Cuadro de mensaje
+			$jq('#mensajeDialogo').dialog({
+				autoOpen: false,  
+				modal: true,
+				draggable: false,      
+				resizable: false,
+				maxWidth:1000,
+                maxHeight: 750,
+                width: 1000,
+                height: 750,  
+				show: 'clip',
+				hide: 'clip',  
+				beforeClose: function(event, ui) { 
+               		//console.log('Event Fire');
+           		 },  
+				 close: function(event, ui) { 
+               		//console.log('Event Fireaaaaaa');
+					//Imprimir();
+           		 },
+				buttons: { 
+                    "Aceptar": function () { 
+                        $jq("#mensajeDialogo").dialog("close");
+                    }
+                }
+			}); 
+			
+		});
+		
+		
+                    window.history.go(1);
+        document.oncontextmenu = function() {
+            return false;
+        }
+
+        document.onkeydown = function()
+        {
+            if (window.event && window.event.keyCode == 116)
+            {
+                window.event.keyCode = 505;
+            }
+
+            if (window.event && window.event.keyCode == 505)
+            {
+                return false;
+            }
+        }
+        //-->
+    </script>
+    <script language="javascript" type="text/javascript">
+        <!--
+		
+		function comprobarWhatsapp(){
+			if(document.forma.xConfirmarWhats.value!=document.forma.xWhatsapp.value){
+				document.getElementById("msgWhatsapp").innerHTML = "Los numeros no coinciden";
+			}else{
+				document.getElementById("msgWhatsapp").innerHTML = "";
+			}
+		}
+             
+        function Alerta(visible, color)
+        {
+            document.getElementById("Alerta").style.visibility = visible;
+            document.getElementById("Alerta").style.color = color;
+            setTimeout("LimpiarMsg()", 6000);
+        }
+
+        function LimpiarMsg()
+        {
+            document.getElementById("Alerta").style.visibility = "hidden";
+        }
+        
+        
+        function Interesado_Guardar()
+        {
+			
+
+             if ((Trim(document.forma.xApPaterno.value) == "-" || Trim(document.forma.xApPaterno.value) == "") && (Trim(document.forma.xApMaterno.value) == "-" || Trim(document.forma.xApMaterno.value) == ""))
+            {
+                alert("Debes introducir al menos uno de tus apellidos");
+                document.forma.xApPaterno.focus();
+                return;
+            }
+            
+            if (Trim(document.forma.xNombre.value) == "-" || Trim(document.forma.xNombre.value) == "" || Trim(document.forma.xNombre.value).length <= 1)
+            {
+                alert("Debes de introducir tu nombre(s)");
+                document.forma.xNombre.focus();
+                return;
+            }
+            
+             var fecha = document.forma.xFechaNacimiento.value;
+
+            if (parseInt(fecha.substring(6, 10)) > (2025 - 15))
+            {
+                alert("La fecha de Nacimiento no es válida. Por favor verificala");
+                return;
+            }
+			
+			
+            if (document.forma.xEstadoNacimiento.value == 0)
+            {
+                alert("Selecciona tu estado de nacimiento");
+                document.forma.xEstadoNacimiento.focus();
+                return;
+            }else{
+				if (document.forma.xEstadoNacimiento.value == -1)
+					{
+						if (document.forma.xEstadoNac.value.length < 5)
+						{
+							alert("Debes ingresar tu estado y país de nacimiento");
+							document.forma.xEstadoNac.focus();
+							return;
+						}
+					}else{
+						if (document.forma.xLugarNacimiento.value == 0)
+						{
+							alert("Selecciona tu lugar de nacimiento");
+							document.forma.xLugarNacimiento.focus();
+							return;
+						}
+					}
+            }
+			
+            
+
+            if (document.forma.xEstadoNacimiento.value == -1)
+            {
+                if (document.forma.xEstadoNac.value == "" || document.forma.xEstadoNac.value == "-")
+                {
+                    alert("Debes proporcionar tu estado de nacimiento");
+                    document.forma.xEstadoNac.focus();
+                    return;
+                }
+            }
+            
+            
+              opcion = parseInt(document.forma.xEstadoCivil.value);
+
+            if (opcion <= 0)
+            {
+                alert("Selecciona tu Estado Civil");
+                document.forma.xEstadoCivil.focus();
+                return;
+            }
+
+            if (Trim(document.forma.xCurp.value) == "" || document.forma.xCurp.value.length < 15)
+            {
+                alert("Debes proporcionar tu CURP de manera correcta");
+                document.forma.xCurp.focus();
+                return;
+            }
+            
+             opcion = parseInt(document.forma.xTipoSeguro.value);
+			var cual_otro = document.getElementById("yCveTipoSeguroOtro").value;
+            if (opcion <= 0)
+            {
+                alert("Selecciona una opción del tipo de seguro");
+                document.forma.xTipoSeguro.focus();
+                return;
+            }
+			else if( cual_otro== opcion)
+			{
+			   if (Trim(document.forma.xSeguroSocial.value) == "-" || Trim(document.forma.xSeguroSocial.value) == "" || Trim(document.forma.xSeguroSocial.value).length <= 3)
+		    	 {
+                	alert("Escribe cual es tu Seguro Social");
+               		document.forma.xSeguroSocial.focus();
+                	return;
+            	}
+			}
+			
+			
+			
+			
+			
+
+               if (Trim(document.forma.xCalle.value) == "-" || Trim(document.forma.xCalle.value) == "" || Trim(document.forma.xCalle.value).length < 5)
+            {
+                alert("Debes de introducir el nombre de la calle donde vives");
+                document.forma.xCalle.focus();
+                return;
+            }
+            
+            if (document.forma.xNumeroExterior.value == 0 || Trim(document.forma.xNumeroExterior.value) == "-")
+            {
+                alert("El Número exterior del domicilio actual es necesario");
+                document.forma.xNumeroExterior.focus();
+                return;
+            }
+            
+            
+             opcion = parseInt(document.forma.yColonia.value);
+
+            if (opcion <= -1)
+            {
+                alert("Selecciona la colonia donde vives");
+                //Colonia_Buscar(document.forma.yColonia);
+                return;
+            }
+            
+			
+           if(Trim(document.forma.xWhatsapp.value) != "-"  && Trim(document.forma.xWhatsapp.value).length>0){
+				if(Trim(document.forma.xWhatsapp.value).length==10){
+					if(document.forma.xConfirmarWhats.value!=document.forma.xWhatsapp.value){
+						alert("Los números de whatsapp no coinciden");
+						document.forma.xWhatsapp.focus();
+						return;
+					}				
+				}else{
+					alert("Tu número para Whatsapp debe de contener 10 dígitos");
+					document.forma.xWhatsapp.focus();
+					return;
+				} 
+			}else{
+				alert("Debes de introducir tu Whatsapp");
+				document.forma.xWhatsapp.focus();
+				return;
+			}
+			
+			
+			if(Trim(document.forma.xMovil.value) != "-"  && Trim(document.forma.xMovil.value).length>0){
+					if(Trim(document.forma.xMovil.value).length==10){
+					}else{
+						alert("Tu teléfono celular debe de contener 10 dígitos");
+						document.forma.xMovil.focus();
+						return;
+					}
+			}else{
+				alert("Debes de introducir tu teléfono celular");
+				document.forma.xMovil.focus();
+				return;
+			}
+		
+		
+
+            if (Trim(document.forma.xCorreo.value) != "-" && Trim(document.forma.xCorreo.value).length > 0)
+            {
+                var filtro = /^[A-Za-z][A-Za-z0-9_.-]*@[A-Za-z0-9_]+\.[A-Za-z0-9_.]+[A-za-z]$/;
+
+                if (filtro.test(document.forma.xCorreo.value) == false)
+                {
+                    alert("Dirección de correo electrónico no valida, Por favor verifiquelo");
+                    document.forma.xCorreo.focus();
+                    return;
+                }
+
+            }
+			
+			if (Trim(document.forma.xCorreo.value) == "-" || Trim(document.forma.xCorreo.value) == "" || Trim(document.forma.xCorreo.value).length < 5)
+            {
+                alert("Debes de introducir tu correo");
+                document.forma.xCorreo.focus();
+                imagen.src = "../../../images/arrow-forward_32.gif";
+				return;
+            }
+
+			//////////////////////AQUI
+			
+			var menor_edad=document.forma.yMenorEdad.value;
+			//alert('menor_edad'+menor_edad);
+						
+			//////////////////////////////////////////////////////////// -------------->>>>>>>> INICIA DATOS OPCIONALES COMO MAYOR DE EDAD
+            if(menor_edad==1){       
+			
+				if (Trim(document.forma.xNombreTutor.value) == "-")
+				{
+					alert("Debes introducir el nombre(s) de tu padre o tutor");
+					document.forma.xNombreTutor.focus();
+					return;
+				}
+				
+				if (Trim(document.forma.xApPaternoTutor.value) == "-" && Trim(document.forma.xApMaternoTutor.value) == "-")
+				{
+					alert("Debes proporcionar al menos un apellido de tu padre o tutor");
+					document.forma.xApPaternoTutor.focus();
+					return;
+				} 
+
+				//datos tutor
+				
+				   if (Trim(document.forma.xCalleP.value).length <= 1 || Trim(document.forma.xCalleP.value) == "-")
+				{
+					alert("El nombre de la calle donde vive el padre o tutor es necesaria.");
+					document.forma.xCalleP.focus();
+					return;
+				}
+				
+				
+				if (document.forma.xNumExtP.value == 0 || Trim(document.forma.xNumExtP.value) == "-")
+				{
+					alert("El Número Exterior de domicilio de Tutor es necesario");
+					document.forma.xNumExtP.focus();
+					return;
+				}
+				
+				opcion = parseInt(document.forma.yColoniaP.value);
+	
+				if (opcion <= -1)
+				{
+					alert("Selecciona la colonia donde vive el tutor");
+					//Colonia_Buscar(document.forma.yColonia);
+					return;
+				}
+	
+					
+				
+				if(Trim(document.forma.xTelParticularP.value) != "-" && Trim(document.forma.xTelParticularP.value).length>0){
+					if(Trim(document.forma.xTelParticularP.value).length==10){
+					}else{
+						alert("El teléfono particular del tutor debe de contener 10 dígitos");
+						document.forma.xTelParticularP.focus();
+						return;
+					}
+				} 
+				
+				if(Trim(document.forma.xCelularP.value) != "-" && Trim(document.forma.xCelularP.value).length>0){
+					if(Trim(document.forma.xCelularP.value).length==10){
+					}else{
+						alert("El teléfono celular del tutor debe de contener 10 dígitos");
+						document.forma.xCelularP.focus();
+						return;
+					}
+				}
+				
+				
+				
+			
+			}	
+             
+			/*if(Trim(document.forma.xTelRecadosP.value) != "-" && Trim(document.forma.xTelRecadosP.value).length>0){
+				if(Trim(document.forma.xTelRecadosP.value).length==10){
+				}else{
+					alert("El teléfono para emergencias debe de contener 10 dígitos");
+					document.forma.xTelRecadosP.focus();
+					return;
+				}
+			}else{
+				alert("Debes de introducir el teléfono para emergencias");
+				document.forma.xTelRecadosP.focus();
+				return;
+			}*/
+			
+			
+			//////////////////////////////////////////////////////////// -------------->>>>>>>> FINALIZA DATOS OPCIONALES COMO MAYOR DE EDAD
+			
+			
+			
+
+            opcion = parseInt(document.forma.yBachillerato.value);
+
+            if (opcion <= -1)
+            {
+                alert("Selecciona tu escuela de procedencia");
+                return;
+            }
+            //---Validar Status Bachillerato
+            var seleccionado = "no";
+            for (var i = 0; i < document.forma.xStatusBachillerato.length; i++) {
+                if (document.forma.xStatusBachillerato[i].checked) {
+                    seleccionado = "si";
+                    break;
+                }
+            }
+            if (seleccionado == "no") {
+                alert("Debe mencionar si ha terminado el Bachillerato");
+                return;
+            }
+            
+            opcion = parseInt(document.forma.xEspecialidad.value);
+            if (opcion < 0)
+            {
+                alert("Selecciona tu especialidad");
+                document.forma.xEspecialidad.focus();
+                return;
+            }
+
+            opcion = (document.forma.xMesInicio.value);
+
+            if (opcion.length <= 1)
+            {
+                alert("Selecciona el mes de inicio de tu periodo de bachillerato");
+                document.forma.xMesInicio.focus();
+                return;
+            }
+
+            var anioInicio = (document.forma.xAnioInicio.value);
+
+            if (anioInicio.length <= 1)
+            {
+                alert("Selecciona el año de inicio de tu periodo de bachillerato");
+                document.forma.xAnioInicio.focus();
+                return;
+            }
+
+            opcion = (document.forma.xMesFin.value);
+
+            if (opcion.length <= 1)
+            {
+                alert("Selecciona el mes de fin de tu periodo de bachillerato");
+                document.forma.xMesFin.focus();
+                return;
+            }
+
+            var anioFin = (document.forma.xAnioFin.value);
+
+            if (anioFin.length <= 1)
+            {
+                alert("Selecciona el año de fin de tu periodo de bachillerato");
+                document.forma.xAnioFin.focus();
+                return;
+            }
+
+            if (anioInicio == 00 && (anioFin < 100 && anioFin > 70) || anioInicio == anioFin)
+            {
+                alert("El año de fin del bachillerato debe ser mayor que el año de inicio");
+                document.forma.xAnioFin.focus();
+                return;
+            }
+
+            if (eval(anioInicio) < 70)
+            {
+                anioInicio = "1" + anioInicio;
+            }
+
+            if (eval(anioFin) < 70)
+            {
+                anioFin = "1" + anioFin;
+            }
+
+            if (eval(anioInicio) > eval(anioFin))
+            {
+                alert("El año de fin del bachillerato debe ser mayor que el año de inicio");
+                document.forma.xAnioFin.focus();
+                return;
+            }
+
+            if (Trim(document.forma.xPromedio.value).length <= 0)
+            {
+                alert("Debes de introducir tu promedio obtenido en tu bachillerato");
+                document.forma.xPromedio.focus();
+                return;
+            }
+            if (Trim(document.forma.xPromedio.value) <= 0)
+            {
+                alert("Debes de introducir tu promedio obtenido en tu bachillerato");
+                document.forma.xPromedio.focus();
+                return;
+            }
+
+            if (parseFloat(Trim(document.forma.xPromedio.value)) > 10)
+            {
+                alert("El promedio proporcionado supera el maximo de 10\nPor favor verifique y corriga el valor");
+                document.forma.xPromedio.focus();
+                return;
+            }
+
+			
+				
+			opcion = parseInt(document.forma.xTurnoBachilerato.value);
+
+            if (opcion <= 0)
+            {
+                alert("Selecciona el turno de tu bachillerato");
+                document.forma.xTurnoBachilerato.focus();
+                return;
+            }
+			
+            
+            // ------------------------------------.................... INICIA DATOS DE INGRESO ...............----------------------------------------------- \\
+            opcion = parseInt(document.forma.xUnidadAcademica.value);
+
+            if (opcion <= 0)
+            {
+                alert("Debes seleccionar la Unidad académica a la cual te vas a inscribir");
+                document.forma.xUnidadAcademica.focus();
+                return;
+            }
+
+            opcion = parseInt(document.forma.xCarrera.value);
+
+            if (opcion <= 0)
+            {
+                alert("Debes seleccionar la carrera de tu preferencia");
+                document.forma.xCarrera.focus();
+                return;
+            }
+
+
+          //  var opcion2 = parseInt(document.forma.xCarrera2.value);
+
+         /* if (opcion2 <= 0)
+            {
+                alert("Debes seleccionar una carrera opcional");
+                document.forma.xCarrera2.focus();
+                return;
+            }
+	*/
+            /*if (document.forma.xEspecialidadCarrera.value == -1)
+            {
+                alert("Debes seleccionar una área de tu preferencia");
+                document.forma.xEspecialidadCarrera.focus();
+                return;
+            }
+			*/
+            //---Validar Escolaridad
+            var seleccion_escolaridad = "no";
+            for (var i = 0; i < document.forma.xEscolaridad.length; i++) {
+                if (document.forma.xEscolaridad[i].checked) {
+                    seleccion_escolaridad = "si";
+                    break;
+                }
+            }
+            if (seleccion_escolaridad == "no") {
+                alert("Debe seleccionar una Escolaridad");
+                return;
+            }
+			
+				if (Trim(document.forma.xCurp.value).length > 1 && document.forma.xCurp.value!="-")
+			   {  				 												 
+					if ( Trim(document.forma.xCurp.value).length < 18 )
+					  {
+						 alert("El CURP introducido no es válido. Por Favor verificalo");
+						 document.forma.xCurp.focus();
+						 return;
+					  }
+					    var fecha2 = document.forma.xFechaNacimiento.value;
+					    fecha2 =  fecha.substring(8,10) + "" + fecha.substring(3,5) + "" + fecha.substring(0,2);
+						
+					 if (Trim(document.forma.xCurp.value).indexOf(fecha2) == -1)
+					  {
+						 alert("El CURP propocionado no corresponde a la fecha de nacimiento seleccionada. Por favor verificalo");
+						 document.forma.xCurp.focus();
+						 return;
+					  }	 	  
+						  
+					var sexo = document.forma.xSexo[0].checked == true ?'H':'M';
+	
+						if (Trim(document.forma.xCurp.value).charAt(10).toUpperCase() != sexo)
+						   {
+							   alert("El CURP proporcionado no corresponde al sexo seleccionado. Por favor verificalo");
+							   document.forma.xCurp.focus();
+							   return;
+						   }	   	
+			 }
+			 
+			 
+			
+			
+			if (Trim(document.forma.xNombreCE.value) == "-")
+			{
+				alert("Debes indicar el nombre del contacto de emergencia");
+				document.forma.xNombreCE.focus();
+				return;
+			}
+			
+			if (Trim(document.forma.xApPaternoCE.value) == "-")
+			{
+				alert("Debes indicar el apellido paterno del contacto de emergencia");
+				document.forma.xApPaternoCE.focus();
+				return;
+			}
+			
+			
+			if (Trim(document.forma.xParentescoCE.value) == "-")
+			{
+				alert("Debes indicar el parentesco del contacto de emergencia");
+				document.forma.xParentescoCE.focus();
+				return;
+			}
+			
+			if (Trim(document.forma.xTelefonoCE.value) == "-")
+			{
+				alert("Debes indicar el telefono del contacto de emergencia");
+				document.forma.xTelefonoCE.focus();
+				return;
+			}
+			
+	  
+			 
+			 
+			opcion = (document.forma.xZonaResidencia.value);
+			if (opcion == '-')
+			{
+				alert("Debe elegirse un tipo de zona residencial");
+				document.forma.xZonaResidencia.focus();
+				return;
+			}
+			
+			if (Trim(document.forma.xEtnia.value) == "0")
+			{
+				alert("Debe Seleccionar si perteneces a alguna etnia");
+				document.forma.xEtnia.focus();
+				return;
+			}
+			if (Trim(document.forma.xDiscapacidadS.value) == "0")
+			{
+				alert("Debe Seleccionar si tienes alguna discapacidad.");
+				document.forma.xDiscapacidadS.focus();
+				return;
+			}
+			
+			
+			if (Trim(document.forma.xMedioRegistro.value) == "-")
+			{
+				alert("Debe Seleccionar el tipo de medio por el que te informaste de la Universidad.");
+				document.forma.xMedioRegistro.focus();
+				return;
+			}
+			
+			
+
+		if( document.forma.xAviso.checked==true)
+		{
+			
+		}
+		else 
+		{
+			alert("Por favor acepta el aviso de privacidad");
+			return;
+		}
+            document.forma.yAccion.value = "Guardar_validacion";
+			document.getElementById("botonGuadado").style.display = "none";
+            document.forma.submit(); 
+
+        }
+
+        function Abrir_Pagina(pagina, titulo)
+        {
+            var vWinPres = window.open(pagina, titulo, "width= 600, height=590, statusbar=yes, directories=no, scrollbars=yes, resizable=no");
+            vWinPres = self;
+        }
+
+        function Recargar(opcion, objeto)
+        {
+            document.forma.yAccion.value = "Recargar" + opcion;
+            document.forma.yObjeto.value = objeto;
+            fragmentoTexto = objeto.split('.');
+
+            if (fragmentoTexto[2] == "xEspecialidadCarrera2" || fragmentoTexto[2] == "xEspecialidadCarrera") {
+                document.getElementById(fragmentoTexto[2]).value = -1;
+
+            }
+            document.forma.submit();
+        }
+        function Enfocar(obj)
+        {
+            obj.focus();
+        }
+
+        function Sexo(valor)
+        {
+            document.forma.ySexo.value = valor;
+        }
+
+        function Colonia_Buscar(control)
+        {
+           //alert(control);
+		    var pagina = "../../muestra_colonia.jsp?xControl=" + control;
+            var vWinPres = window.open(pagina, "Muestra", "width=700, height=500, directories=no, scrollbars=yes, resizable=no, top=0, left=0, location=no, menubar=no, status=no, toolbar=no");
+            vWinPres.opener = self;
+        }	
+
+        function crearAjax() {
+            var xmlhttp = false;
+            try {
+                xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+            } catch (e) {
+                try {
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                } catch (E) {
+                    xmlhttp = false;
+                }
+            }
+
+            if (!xmlhttp && typeof XMLHttpRequest != 'undefined') {
+                xmlhttp = new XMLHttpRequest();
+            }
+
+            return xmlhttp;
+        }
+        function Colonia_Recargar() {
+            var cve_colonia = document.forma.yColonia.value;
+		 
+			//alert(cve_colonia);
+			if(cve_colonia>-0){
+				xmlhttp = crearAjax();
+				if (xmlhttp) {
+					//inicializa_menu();
+					xmlhttp.open("GET", "muestra_domicilio_ajax.jsp?xCveColonia=" + cve_colonia);
+					xmlhttp.onreadystatechange = function() {
+	
+						if (xmlhttp.readyState == 4) {
+							var domicilio = Trim((xmlhttp.responseText).replace(/\r\n|\n|\r/g, " "));
+							var domicilio_corto = domicilio.split('¬');
+	
+							document.getElementById("yColonia").value = domicilio_corto[0];
+							document.getElementById("xColonia").innerHTML = domicilio_corto[1];
+							document.getElementById("xCodigoPostal").innerHTML = domicilio_corto[2];
+							document.getElementById("yCiudad").value = domicilio_corto[3];
+							document.getElementById("xCiudad").innerHTML = domicilio_corto[4];
+							document.getElementById("yEstado").value = domicilio_corto[5];
+							document.getElementById("xEstado").innerHTML = domicilio_corto[6];
+	
+						}
+					}
+					xmlhttp.send(null);
+				}
+			}
+			document.forma.yScroll.value="300";
+            
+        }
+		
+		function Colonia_Buscar_Tutor(control)
+        {			
+            var pagina = "../../muestra_colonia_tutor.jsp?xControl=" + control;
+            var vWinPres = window.open(pagina, "Muestra", "width=700, height=500, status=yes, directories=no, scrollbars=yes, resizable=no, top=0, left=0");
+            vWinPres.opener = self;
+        }
+		
+		function crearAjax3() 
+		{
+            var xmlhttp = false;
+            try {
+                xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+            } catch (e) {
+                try {
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                } catch (E) {
+                    xmlhttp = false;
+                }
+            }
+
+            if (!xmlhttp && typeof XMLHttpRequest != 'undefined') 
+			{
+                xmlhttp = new XMLHttpRequest();
+            }
+
+            return xmlhttp;
+        }
+		function Colonia_Recargar_Tutor()
+		{  			
+            var cve_colonia = document.forma.yColoniaP.value;
+            xmlhttp = crearAjax3();
+			
+            if (xmlhttp) 
+			{
+                //inicializa_menu();
+                xmlhttp.open("GET", "muestra_domicilio_ajax.jsp?xCveColonia=" + cve_colonia);
+                xmlhttp.onreadystatechange = function() 
+				{
+
+                    if (xmlhttp.readyState == 4) 
+					{
+                        var domicilio = Trim((xmlhttp.responseText).replace(/\r\n|\n|\r/g, " "));
+                        var domicilio_corto = domicilio.split('¬');
+						//alert(domicilio_corto[0]+'	'+domicilio_corto[1]+'	'+domicilio_corto[2]+'	'+domicilio_corto[3]+'	'+domicilio_corto[4]+'	'+domicilio_corto[5]+'	'+domicilio_corto[6]);
+						
+                        document.getElementById("yColoniaP").value = domicilio_corto[0];
+                        document.getElementById("xColoniaPP").innerHTML = domicilio_corto[1];
+                        document.getElementById("xCodigoPostal2").innerHTML = domicilio_corto[2];
+                        document.getElementById("yCiudad2").value = domicilio_corto[3];
+                        document.getElementById("xCiudad2").innerHTML = domicilio_corto[4];
+                        document.getElementById("yEstado2").value = domicilio_corto[5];
+                        document.getElementById("xEstado2").innerHTML = domicilio_corto[6];						
+											
+                    }
+                }
+                xmlhttp.send(null);
+            }
+			
+			document.forma.yScroll.value="900";
+			document.forma.submit();
+		}
+
+        /*function Colonia_Recargar()
+         {  
+         alert(document.forma.yColonia.value);
+         return;
+         //document.forma.yAccion.value = "Colonia_Recargar";
+         //document.forma.submit();
+         }*/
+        function crearAjax1() {
+            var xmlhttp1 = false;
+            try {
+                xmlhttp1 = new ActiveXObject("Msxml2.XMLHTTP");
+            } catch (e) {
+                try {
+                    xmlhttp1 = new ActiveXObject("Microsoft.XMLHTTP");
+                } catch (E) {
+                    xmlhttp1 = false;
+                }
+            }
+
+            if (!xmlhttp1 && typeof XMLHttpRequest != 'undefined') {
+                xmlhttp1 = new XMLHttpRequest();
+            }
+
+            return xmlhttp1;
+        }
+
+        function Bachillerato_Buscar(control)
+        {
+            var pagina = "../../muestra_bachillerato2.jsp?xControl=" + control;
+            var vWinPres = window.open(pagina, "Muestra", "width=850, height=550, status=yes, directories=no, scrollbars=yes, resizable=no, top=0, left=0");
+            vWinPres.opener = self;
+        }
+
+        /*function Bachillerato_Recargar()
+         {
+         //document.forma.yAccion.value = "Colonia_Recargar";
+         document.forma.submit();
+         }*/
+
+        function Bachillerato_Recargar() {
+            var cve_bachillerato = document.forma.yBachillerato.value;
+			//alert(cve_bachillerato);
+			if(cve_bachillerato>-1){
+				xmlhttp1 = crearAjax1();
+				if (xmlhttp1) {
+					//inicializa_menu();
+					xmlhttp1.open("GET", "muestra_bachillerato_ajax.jsp?xCveBachillerato=" + cve_bachillerato);
+					xmlhttp1.onreadystatechange = function() {
+						if (xmlhttp1.readyState == 4) {
+							var bachillerato = Trim((xmlhttp1.responseText).replace(/\r\n|\n|\r/g, " "));
+							var nombre_bachillerato = bachillerato.split('¬');
+							document.getElementById("yBachillerato").value = Trim(nombre_bachillerato[0]);
+							document.getElementById("xBachillerato").innerHTML = nombre_bachillerato[1];
+							CargarComboEspecialidadBachillerato();
+						}
+					}
+					xmlhttp1.send(null);
+				}
+			}
+			document.forma.yScroll.value="500";
+            
+        }
+
+        function Colonia_Registrar(opcion)
+        {
+            var pagina = "registrar_colonia.jsp?xOpcion="+opcion;
+            var vWinPres = window.open(pagina, "Registar_Colonia", "width=500, height=170, status=no, directories=no, scrollbars=no, resizable=no, top=0, left=0");
+            vWinPres.opener = self;
+        }
+		
+        function Colonia_Registrar_Tutor()
+        {
+            var pagina = "registrar_colonia_tutor.jsp";            
+			var vWinPres = window.open(pagina, "Registar_Colonia", "width=500, height=170, status=no, directories=no, scrollbars=no, resizable=no, top=0, left=0");
+            vWinPres.opener = self;
+        }		
+			
+
+        function Bachillerato_Registrar()
+        {
+            var pagina = "registrar_bachillerato.jsp";
+            var vWinPres = window.open(pagina, "Registar_Bachillerato", "width=500, height=200, status=no, directories=no, scrollbars=yes, resizable=no, top=0, left=0");
+            vWinPres.opener = self;
+        }
+
+        function Mostrar(valor)
+        {
+            if (valor == -1)
+                document.getElementById("yOtroEstado").style.display = "";
+            else
+                document.getElementById("yOtroEstado").style.display = "none";
+				
+			document.forma.submit();	
+        }
+        // Función que muestra el combo de los grupos
+        function CargarComboEspecialidadBachillerato() {
+            //alert("'"+document.getElementById("yBachillerato").value+"'");	
+            $.post("cargar_especialidad_bachillerato_ajax.jsp",
+                    {
+                        xCveBachillerato: document.getElementById("yBachillerato").value,
+                        xCveEspecialidaBachillerato: document.getElementById("yCveEspecialidadBachillerato").value
+                    },
+            function(data) {
+                $("#xComboEspecialidadBachillerato").html(data);
+            });
+
+        }
+        function CargarFunciones() {
+            Colonia_Recargar();
+            Bachillerato_Recargar();			
+            //CargarComboEspecialidadBachillerato();
+        }
+
+        function Ocultar(valor) {
+            var tipo_otro = document.getElementById("yCveTipoSeguroOtro").value;
+            if (valor == tipo_otro) {
+                document.getElementById('xSeguroSocial').style.display = '';
+                document.getElementById('SeguroSocial').style.display = '';
+            }
+            else {
+                document.getElementById('xSeguroSocial').style.display = 'none';
+                document.getElementById('SeguroSocial').style.display = 'none';
+                document.getElementById('xSeguroSocial').value = "-";
+
+            }
+        }
+        
+        function datos_trabajo_interesado()
+        {
+            document.forma.xEmpresaIntP.value= "-";   
+            document.forma.xTelEmpresaIntP.value="-";
+            document.forma.xJefeDirectoP.value= "-";
+            document.forma.xPuestoP.value= "-";  
+			document.forma.xPuestoInteresadoP.value= "-";  
+            document.forma.submit();     
+        }
+		
+		function valida_curp(){
+		var cup = Trim(document.forma.xCurp.value);
+		//alert(cup);
+			if(cup != "" && cup.length==18){
+				document.forma.yAccion.value = "VCURP";
+				document.forma.submit();
+			}else{
+				alert("debe proporcionar un curp válida");
+				document.forma.xCurp.value = "-";
+				}
+		}
+		 
+		function Interesado_Mensaje(valor)
+		{
+			alert(valor);
+			ubicar(10);
+			document.getElementById("Alerta").style.visibility="visible";
+			document.getElementById("Alerta").style.color="#FF0000";
+			document.getElementById("Alerta").innerHTML = valor;
+			t = window.setTimeout("QuitarMensaje()",12000);
+		}
+		
+		function limpia_curp(){
+			document.forma.xCurp.value = "-";
+		}
+		
+		function verAcuerdo()
+		{
+			//var pagina="aviso.jsp";
+			//var ventana= window.open(pagina,"Aviso de Privacidad","width=1000, height=720, status=no, directories=no, scrollbars=yes, resizable=no, top=50, left=200");
+			//ventana.opener=self;
+			
+			$jq("#mensajeDialogo").dialog("open");
+			$("#frame").attr("src", "AvisoPrivacidad.pdf");
+		}
+		
+		function ubicar(a){
+			scroll(0, a);
+		}
+		
+		function DuplicarDomicilio(){ 
+			var checado=document.forma.xDuplicar.checked;
+			
+			if(checado){ 
+				document.forma.xCalleP.value=document.forma.xCalle.value;
+				document.forma.xNumExtP.value=document.forma.xNumeroExterior.value;
+				var dom=document.forma.yColonia.value;
+				document.forma.yColoniaP.value=dom;
+			}else{
+				document.forma.xCalleP.value="";
+				document.forma.xNumExtP.value="";
+				document.forma.yColoniaP.value="";
+			}
+			Colonia_Recargar_Tutor();
+		}
+		
+		function ValidarEdad(){
+			document.forma.yAccion.value = "ValidarEdad";
+            document.forma.submit();
+		}
+		
+
+        //-->
+    </script>
+</head>  
+
+<body  onLoad="CargarComboEspecialidadBachillerato();;CargarFunciones()">
+    <form action="proceso_interesado.jsp%3FxModalidadP=N.html" method="post" name="forma" id="forma" > 
+        <input type="hidden" name="yAccion" id="yAccion" value="" />
+        <input type="hidden" name="yInteresado" id="yInteresado" value="0" />
+        <input type="hidden" name="yEncuestado" id="yEncuestado" value="0" /> 
+        <input type="hidden" name="yCveTipoSeguroOtro" id="yCveTipoSeguroOtro" value="10" /> 
+        <input name="yResolucion" type="hidden" id="yResolucion" value="800x600"/>
+        <input name="ySexo" type="hidden" id="ySexo" value="M"/> 
+        <input type="hidden" name="yObjeto" id="yObjeto" />
+		<input type="hidden" name="yScroll" id="yScroll" value="" />
+		<input type="hidden" name="yBloqueoG" id="yBloqueoG" value="false" />
+		<input type="hidden" name="yMenorEdad" id="yMenorEdad" value="1" />
+		
+      <!--  <div style="position:relative;left:-180px;top:-26px;z-index:2">
+          <label style="color:#D3D3D3;font-size:46px;font-family:Verdana, Geneva, sans-serif"><b>2025</b></label>
+        </div>-->
+<table width="95%"  align="center" cellpadding="0" cellspacing="0" border="0">
+	<tr bgcolor="#046a38"> 
+		<td width="40%" >&nbsp;&nbsp;</td>
+	</tr> 
+	<tr bgcolor="#046a38"> 
+		<td width="40%" bgcolor="white" align="center">
+		&nbsp;&nbsp;
+		<!--<img src="../../../images/logo_negro.png" height="80" align="center"/>
+		<img src="../../../images/banner_tsu.jpg?time=" height="80"/align="right">-->
+		<img src="../../../images/EnFOSE01.jpg%3Ftime=1759550659727" height="150" align="center"/>
+
+		</td>
+	</tr> 
+	<tr bgcolor="#FF0000"> 
+		<td>&nbsp;</td>
+    </tr>  
+	<tr bgcolor="#FF0000"> 
+		<td>&nbsp;<span style="color:#FFFFFF; font-size:14px"><b>Modalidad Escolarizada: </b> Estudiarás de lunes a viernes en turno matutino </span></td>
+    </tr>
+	<tr bgcolor="#FF0000"> 
+		<td>&nbsp;</td>
+    </tr> 
+	<tr>
+		<td><label id="Alerta"></label></td>
+    </tr>
+	<tr>
+      	<td align="right">&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+
+	<tr>
+            <td>  
+				<!------ inicia tabla externa Datos de Ingreso------------->
+				<table width="100%" align="left" cellpadding="0" cellspacing="0" border="0">
+                	<tr class="CeldaDatos">
+                  		<th class="TablaDatosTitulo" align="left">&nbsp;Datos de Ingreso </th>
+                	</tr>
+                	<tr>
+                  		<td align="right">&nbsp;<label style="color:#FF0000"> * </label>
+							&nbsp;Informaci&oacute;n Obligatoria</td>
+                	</tr>
+                	<tr>
+                  		<td>
+							<table width="100%" cellpadding="0" cellspacing="0" border="0"> <!- tabla interna datos de ingreso -->
+                      			<tr>  
+									
+                        			<td width="22%" align="left">
+									<b>	<label style="color:#FF0000">*</label>&nbsp;&nbsp; Nivel Acad&eacute;mico: </b>
+                          			</td>
+                        			<td width="78%">
+                            			<select name="xUnidadAcademica" id="xUnidadAcademica" onchange="if (eval(this.value) > -1)
+                						Recargar('7', 'document.forma.xCarrera')" style="width: 460px;">
+                              			<option value="0">-</option>
+                             			
+                              			<option value="2" selected> Nivel Licenciatura </option>
+                              			
+                            			</select>
+                        			</td>
+                      			</tr>
+                      			<tr>
+                   					<td align="left">
+										<b><label style="color:#FF0000"> * </label>
+										&nbsp;&nbsp;Carrera:    </b>                      			
+									</td>
+                        			<td width="82%">
+                            			<select name="xCarrera" id="xCarrera" onchange="if (eval(this.value) >= 0)
+                						Recargar('7', 'document.forma.xEspecialidadCarrera')" style="width:460px;">
+									  	<option value="0">-</option>
+                              			
+                              				<option value="39" > (NME) Ingeniería Ambiental y Sustentabilidad 
+											</option>
+										
+                              				<option value="32" > (NME) Ingeniería en Logística 
+											</option>
+										
+                              				<option value="34" > (NME) Ingeniería en Mantenimiento Industrial 
+											</option>
+										
+                              				<option value="37" > (NME) Ingeniería en Sistemas Automotrices 
+											</option>
+										
+                              				<option value="38" > (NME) Ingeniería en Tecnologías de la Información e Innovación Digital 
+											</option>
+										
+                              				<option value="33" > (NME) Ingeniería Industrial 
+											</option>
+										
+                              				<option value="35" > (NME) Ingeniería Mecánica 
+											</option>
+										
+                              				<option value="36" > (NME) Ingeniería Mecatrónica 
+											</option>
+										
+                              				<option value="30" > (NME) Licenciatura en Administración 
+											</option>
+										
+                              				<option value="31" > (NME) Licenciatura en Negocios y Mercadotecnia 
+											</option>
+										
+                            			</select>
+                            			
+                            			
+                        			</td>
+                      			</tr>
+                      			<tr style="display:none;">
+                        			<td align="left">
+										<b><label style="color:#FF0000"> * </label>
+										&nbsp;&nbsp;Enfoque en:</b>
+                          			</td>
+                        			<td>
+                            			<select name="xEspecialidadCarrera" id="xEspecialidadCarrera" style="width:460px;">
+                                        	<option value="1" selected>Seleccione un &aacute;rea</option>			
+                                            	
+                                     </select> 
+
+                        			</td> 
+                      			</tr>
+                      			<tr>
+                        			<td align="left"><b>
+										<label style="color:#FF0000"> * </label>
+										&nbsp;&nbsp;Modalidad:</b>
+                          			</td>  
+                       			  <td > Escolarizada
+                          				<input name="xEscolaridad" id="xEscolaridad" type="radio" value="E" checked  disabled="disabled"/>
+                          				&nbsp;&nbsp; Mixta
+					                    <input name="xEscolaridad" id="xEscolaridad" type="radio" value="M"  disabled="disabled"/>
+										&nbsp;&nbsp; Despresurizada
+					                    <input name="xEscolaridad" id="xEscolaridad" type="radio" value="D"  disabled="disabled"/></td>
+                      			</tr>
+                      			<tr style="display:none">
+									<td align="left"><b><label style="color:#FF0000"> * </label>
+										&nbsp;&nbsp;Turno:</b></td>
+                        			<td> 
+                            			<select name="xTurno" id="xTurno" style="width:460px;" disabled="disabled">
+                              			<option value="0">-</option>
+                              			
+                              			<option value="3" >Matutino
+										</option>
+                              			
+                              			<option value="6" >Verpertino
+										</option>
+                              			
+                            			</select>
+									</td>
+                      			</tr>
+                 			</table> <!-- termina tabla interna datos de ingreso -->
+						</td>
+                	</tr>
+				</table> <!------ termina tabla externa Datos de Ingreso------------->
+			</td>
+        </tr>
+        <tr> 
+        	<td><!------ inicia tabla externa Datos Generales------------->
+				<table width="100%" align="left" cellpadding="0" cellspacing="0" border="0">
+                		<tr><td>&nbsp;</td></tr>
+						<tr class="CeldaDatos">
+                  			<th class="TablaDatosTitulo" align="left">&nbsp;Datos Generales</th>
+                		</tr>
+						
+			
+						<tr>
+							<td> <!----- inicia tabla interna Datos Generales-------->
+								<table border="0" width="100%" align="left" cellpadding="0" cellspacing="0"> 
+									<tr class="CeldaDatosRezaltar">
+										<td width="22%" height="37">
+										<b>	<label style="color:#FF0000"> * </label>
+											&nbsp;&nbsp;Nombre(s) :</b>
+										</td>
+										<td width="28%"><!----- inicia tabla agrupada de Datos Generales ----->
+											<table class="CeldaDatosRezaltar" width="75%" border="0" cellpadding="0" cellspacing="0">
+												<colgroup>
+													<col width="33%"/>
+													<col width="33%"/>
+													<col width="33%"/>
+												</colgroup>
+												<tr>
+													<td width="78%" class="CeldaDatosRezaltar"><input name="xNombre" type="text" id="xNombre" size="35"
+														onfocus="if (Trim(this.value) == '-') this.value = ''" onblur="if (Trim(this.value) == '')
+														this.value = '-'" value="-" onkeypress="return LetrasAcento(event)" class="TextoMayuscula" placeholder="Nombre (s)" />
+													</td>  	 												
+												</tr> 
+											</table><!----- termina tabla agrupada de Datos Generales ----->
+										</td> 
+										<td rowspan="3" width="50%%" align="center"> <img src="../../../images/info_16.gif" />
+														Coloca el nombre en mayúsculas y sin acentos. <b>Ejemplo: JOSE JUAREZ PEREZ</b> <br />
+														Es importante que tengas mucho cuidado de escribir correctamente tu nombre y apellidos,
+														evita las faltas de ortograf&iacute;a, <br><b>como lo escribas se generar&aacute; toda la documentaci&oacute;n oficial</b> </td>
+									</tr>
+									
+									<tr class="CeldaDatosRezaltar">
+										<td width="22%" height="37"><b>
+											<label style="color:#FF0000"> * </label>
+											&nbsp;&nbsp;Primer Apellido :</b>
+										</td>
+										<td width="28%"><!----- inicia tabla agrupada de Datos Generales ----->
+											<table class="CeldaDatosRezaltar" width="75%" border="0" cellpadding="0" cellspacing="0">
+												<colgroup>
+													<col width="33%"/>
+													<col width="33%"/>
+													<col width="33%"/>
+												</colgroup>
+												<tr> 
+													<td width="78%" class="CeldaDatosRezaltar" align="left"><input name="xApPaterno" type="text" id="xApPaterno" size="35"
+														onkeypress="return LetrasAcento(event)" onfocus="if (Trim(this.value) == '-') this.value = ''"
+														onblur="if (Trim(this.value) == '') this.value = '-'" value="-" class="TextoMayuscula" placeholder="Apellido Paterno"/>
+													</td>													
+												</tr> 
+											</table><!----- termina tabla agrupada de Datos Generales ----->
+										</td>
+										
+									</tr>
+									
+									<tr class="CeldaDatosRezaltar">
+										<td width="22%" height="37"><b>
+											<label style="color:#FF0000"> * </label>
+											&nbsp;&nbsp;Segundo Apellido :</b>
+										</td>
+										<td width="28%"><!----- inicia tabla agrupada de Datos Generales ----->
+											<table class="CeldaDatosRezaltar" width="75%" border="0" cellpadding="0" cellspacing="0">
+												<colgroup>
+													<col width="33%"/>
+													<col width="33%"/>
+													<col width="33%"/>
+												</colgroup>
+												<tr> 
+													<td width="78%" class="CeldaDatosRezaltar"><input name="xApMaterno" type="text" id="xApMaterno" size="35"
+														onfocus="if (Trim(this.value) == '-') this.value = ''" onblur="if (Trim(this.value) == '')
+														this.value = '-'" value="-" onkeypress="return LetrasAcento(event)" class="TextoMayuscula" placeholder="Apellido Materno"/>
+													</td>													
+												</tr> 
+											</table><!----- termina tabla agrupada de Datos Generales ----->
+										</td>
+									</tr>
+									
+								<!--	
+									<tr class="CeldaDatosRezaltar">
+										<td width="22%" height="37">
+											<br><br>
+											<label style="color:#FF0000"> * </label>
+											&nbsp;&nbsp;Nombre :
+										</td>
+										<td width="78%">
+											<table class="CeldaDatosRezaltar" width="75%" border="0" cellpadding="0" cellspacing="0">
+												<colgroup>
+													<col width="33%"/>
+													<col width="33%"/>
+													<col width="33%"/>
+												</colgroup>
+												<tr>
+													<td colspan="3" align="center"><label style="color:#FF0000"> * </label>
+														Coloca el nombre en mayúsculas y sin acentos. <b>Ejemplo: JOSE JUAREZ PEREZ</b> <br />
+														Es importante que tengas mucho cuidado de escribir correctamente tu nombre y apellidos,
+														evita las faltas de ortograf&iacute;a, <br><b>como lo escribas se generar&aacute; toda la documentaci&oacute;n oficial</b>
+													</td>
+												</tr>
+												<tr>
+													<td class="CeldaDatosRezaltar"><input name="xNombre" type="text" id="xNombre" size="35"
+														onfocus="if (Trim(this.value) == '-') this.value = ''" onblur="if (Trim(this.value) == '')
+														this.value = '-'" value="" onkeypress="return LetrasAcento(event)" class="TextoMayuscula"/>
+													</td>
+													<td class="CeldaDatosRezaltar" align="left"><input name="xApPaterno" type="text" id="xApPaterno" size="35"
+														onkeypress="return LetrasAcento(event)" onfocus="if (Trim(this.value) == '-') this.value = ''"
+														onblur="if (Trim(this.value) == '') this.value = '-'" value="" class="TextoMayuscula"/>
+													</td>
+													<td class="CeldaDatosRezaltar"><input name="xApMaterno" type="text" id="xApMaterno" size="35"
+														onfocus="if (Trim(this.value) == '-') this.value = ''" onblur="if (Trim(this.value) == '')
+														this.value = '-'" value="" onkeypress="return LetrasAcento(event)" class="TextoMayuscula"/>
+													</td>
+													
+												</tr>  
+												<tr>
+													<td width="34%" align="center">Nombre(s)</td>
+													<td width="33%" align="center">Primer Apellido</td>
+													<td width="33%" align="center">Segundo Apellido</td>
+													
+												</tr>
+											</table>
+										</td>
+									</tr>
+									-->
+									<tr> 
+										<td height="30"><b>
+										<label style="color:#FF0000"> * </label>&nbsp;&nbsp;Sexo :		</b>						
+										</td>  
+										<td colspan="2">Masculino
+											<input name="xSexo" type="radio" value="H" onclick="Sexo('H')"  />
+											&nbsp;&nbsp;Femenino
+                         					<input name="xSexo" type="radio" onclick="Sexo('M')" value="M" checked />
+										</td> 
+									</tr>
+									<tr>
+										<td height="26"><b>
+										<label style="color:#FF0000"> * </label>
+											&nbsp;&nbsp;Fecha de Nacimiento : </b>
+										</td>
+										<td width="985" colspan="2"> 
+											<input type="text" name="xFechaNacimiento" id="xFechaNacimiento" size="35" maxlength="10" 
+											value="03-10-2007" 
+											readonly class="TextoDesabilitado" onchange="ValidarEdad()"  />
+											<img src="../../../images/calendar_16.gif" alt="Selecciona la Fecha de Nacimiento" name="FechaNacimiento" width="16" 
+											height="16" class="CeldaImagenSeleccionada" id="FechaNacimiento"  />
+											<script language="JavaScript" type="text/javascript">//<![CDATA[								
+        									Zapatec.Calendar.setup({ 
+           									firstDay: 0,
+            									showOthers: true,
+           									step: 5,
+            									electric: false,
+           									inputField: "xFechaNacimiento",
+           									button: "FechaNacimiento",
+           									ifFormat: "%d-%m-%Y",
+           									daFormat: "%Y/%m/%d"
+        									});
+       									 //]]></script>
+										</td>
+									</tr>
+                      			<tr>
+                        			<td height="26"><b>
+										<label style="color:#FF0000"> * </label>
+										&nbsp;&nbsp;Estado de Nacimiento :</b>
+                          				
+									</td>
+									<td colspan="2">
+										<select name="xEstadoNacimiento" id="xEstadoNacimiento" onchange="Mostrar(this.value)" style="width:230px">
+                            				<option value="0">-</option>
+                            				
+                            				<option value="1" > Aguascalientes </option>
+                            				
+                            				<option value="2" > Baja California Norte </option>
+                            				
+                            				<option value="3" > Baja California Sur </option>
+                            				
+                            				<option value="4" > Campeche </option>
+                            				
+                            				<option value="5" > Coahuila de Zaragoza </option>
+                            				
+                            				<option value="6" > Colima </option>
+                            				
+                            				<option value="7" > Chiapas </option>
+                            				
+                            				<option value="8" > Chihuahua </option>
+                            				
+                            				<option value="9" > Distrito Federal </option>
+                            				
+                            				<option value="10" > Durango </option>
+                            				
+                            				<option value="11" > Guanajuato </option>
+                            				
+                            				<option value="12" > Guerrero </option>
+                            				
+                            				<option value="13" > Hidalgo </option>
+                            				
+                            				<option value="14" > Jalisco </option>
+                            				
+                            				<option value="15" > México </option>
+                            				
+                            				<option value="16" > Michoacán de Ocampo </option>
+                            				
+                            				<option value="17" > Morelos </option>
+                            				
+                            				<option value="18" > Nayarit </option>
+                            				
+                            				<option value="19" > Nuevo León </option>
+                            				
+                            				<option value="20" > Oaxaca </option>
+                            				
+                            				<option value="21" > Puebla </option>
+                            				
+                            				<option value="22" > Querétaro de Arteaga </option>
+                            				
+                            				<option value="23" > Quintana Roo </option>
+                            				
+                            				<option value="24" selected> San Luis Potosí </option>
+                            				
+                            				<option value="25" > Sinaloa </option>
+                            				
+                            				<option value="26" > Sonora </option>
+                            				
+                            				<option value="27" > Tabasco </option>
+                            				
+                            				<option value="28" > Tamaulipas </option>
+                            				
+                            				<option value="29" > Tlaxcala </option>
+                            				
+                            				<option value="30" > Veracruz </option>
+                            				
+                            				<option value="31" > Yucatán </option>
+                            				
+                            				<option value="32" > Zacatecas </option>
+                            				
+                            				<option value="-1" >Otro</option>
+                         				</select>
+                            			<label id="yOtroEstado" style="display:none">
+										&nbsp;
+										<label style="color:#FF0000"> * </label>&nbsp;Ingresa tu Estado y Pa&iacute;s:&nbsp;
+                            			<input type="text" name="xEstadoNac" id="xEstadoNac" size="48" maxlength="50"   
+                                          						value="" 
+                                           						onfocus="if (Trim(this.value) == '-')
+               										this.value = ''"
+                                          						onblur="if (Trim(this.value) == '')
+                									this.value = '-'"
+                                           						onkeypress="return LetrasAcento(event)"
+                                        />
+                            			</label>
+                        			</td>
+								</tr>
+                      			<tr>
+                        			<td height="26"><b>
+										<label style="color:#FF0000"> * </label>
+										&nbsp;&nbsp;Lugar de Nacimiento :</b>
+                         				
+                        			</td>
+									<td colspan="2">
+										<select name="xLugarNacimiento" id="xLugarNacimiento" style="width:230px">
+                            				<option value="0">-</option>
+                           					
+                            				<option value="1818" > Ahualulco 
+											</option>
+                            				
+                            				<option value="1842" > Alaquines 
+											</option>
+                            				
+                            				<option value="1856" > Aquismon 
+											</option>
+                            				
+                            				<option value="1836" > Armadillo de los Infante 
+											</option>
+                            				
+                            				<option value="1868" > Axtla de Terrazas 
+											</option>
+                            				
+                            				<option value="1843" > Cardenas 
+											</option>
+                            				
+                            				<option value="1823" > Catorce 
+											</option>
+                            				
+                            				<option value="1822" > Cedral 
+											</option>
+                            				
+                            				<option value="1844" > Cerritos 
+											</option>
+                            				
+                            				<option value="1817" > Cerro de San Pedro 
+											</option>
+                            				
+                            				<option value="1824" > Charcas 
+											</option>
+                            				
+                            				<option value="1841" > Ciudad del Maiz 
+											</option>
+                            				
+                            				<option value="1852" > Ciudad Fernandez 
+											</option>
+                            				
+                            				<option value="1837" > Ciudad Valles 
+											</option>
+                            				
+                            				<option value="1865" > Coxcatlan 
+											</option>
+                            				
+                            				<option value="1838" > Ebano 
+											</option>
+                            				
+                            				<option value="1840" > El Naranjo 
+											</option>
+                            				
+                            				<option value="1831" > Guadalcazar 
+											</option>
+                            				
+                            				<option value="1866" > Huehuetlan 
+											</option>
+                            				
+                            				<option value="1857" > Lagunillas 
+											</option>
+                            				
+                            				<option value="1828" > Matehuala 
+											</option>
+                            				
+                            				<option value="1872" > Matlapa 
+											</option>
+                            				
+                            				<option value="1819" > Mexquitic de Carmona 
+											</option>
+                            				
+                            				<option value="1832" > Moctezuma 
+											</option>
+                            				
+                            				<option value="2479" > PARADA DEL ZARCIDO 
+											</option>
+                            				
+                            				<option value="1855" > Rayon 
+											</option>
+                            				
+                            				<option value="1851" > Rioverde 
+											</option>
+                            				
+                            				<option value="1825" > Salinas 
+											</option>
+                            				
+                            				<option value="1862" > San Antonio 
+											</option>
+                            				
+                            				<option value="1853" > San Ciro de Acosta 
+											</option>
+                            				
+                            				<option value="1815" > San Luis Potosí 
+											</option>
+                            				
+                            				<option value="1870" > San Martin Chalchicuautla 
+											</option>
+                            				
+                            				<option value="1846" > San Nicolas Tolentino 
+											</option>
+                            				
+                            				<option value="1861" > San Vicente Tancuayalab 
+											</option>
+                            				
+                            				<option value="1858" > Santa Catarina 
+											</option>
+                            				
+                            				<option value="1849" > Santa María del Río 
+											</option>
+                            				
+                            				<option value="1826" > Santo Domingo 
+											</option>
+                            				
+                            				<option value="1816" > Soledad de Graciano Sánchez 
+											</option>
+                            				
+                            				<option value="1854" > Tamasopo 
+											</option>
+                            				
+                            				<option value="1871" > Tamazunchale 
+											</option>
+                            				
+                            				<option value="1869" > Tampacán 
+											</option>
+                            				
+                            				<option value="1864" > Tampamolon Corona 
+											</option>
+                            				
+                            				<option value="1839" > Tamuín 
+											</option>
+                            				
+                            				<option value="1859" > Tancanhuitz de Santos 
+											</option>
+                            				
+                            				<option value="1860" > Tanlajás 
+											</option>
+                            				
+                            				<option value="1863" > Tanquian de Escobedo 
+											</option>
+                            				
+                            				<option value="1850" > Tierra Nueva 
+											</option>
+                            				
+                            				<option value="1821" > Vanegas 
+											</option>
+                            				
+                            				<option value="1833" > Venado 
+											</option>
+                            				
+                            				<option value="1834" > Villa de Arista 
+											</option>
+                            				
+                            				<option value="1820" > Villa de Arriaga 
+											</option>
+                            				
+                            				<option value="1830" > Villa de Guadalupe 
+											</option>
+                            				
+                            				<option value="1829" > Villa de la Paz 
+											</option>
+                            				
+                            				<option value="1827" > Villa de Ramos 
+											</option>
+                            				
+                            				<option value="1847" > Villa de Reyes 
+											</option>
+                            				
+                            				<option value="1835" > Villa Hidalgo 
+											</option>
+                            				
+                            				<option value="1845" > Villa Juarez 
+											</option>
+                            				
+                            				<option value="1867" > Xilitla 
+											</option>
+                            				
+                            				<option value="1848" > Zaragoza 
+											</option>
+                            				
+                         				</select>
+                        			</td>
+                       			</tr>
+								<tr >
+                        			<td><b>
+										<label style="color:#FF0000"> * </label>
+										&nbsp;&nbsp;Estado Civil:</b>
+                          			</td>
+                        			<td colspan="2"> 
+										<select name="xEstadoCivil" id="xEstadoCivil" style="width:230px">
+                           			 		<option value="0">-</option>  
+                            				
+                            				<option value="1" > Soltero </option>
+                            				
+                            				<option value="2" > Casado </option>
+                            				
+                            				<option value="3" > Divorciado </option>
+                            				
+                            				<option value="4" > Viudo </option>
+                            				
+                            				<option value="5" > Union Libre </option>
+                            				
+                          				</select>
+                        			</td>
+                     			</tr>
+                      			<tr> 
+									<td align="left"><b>
+										<label style="color:#FF0000"> * </label>
+										&nbsp;&nbsp;CURP:
+                          				</b>
+									</td>
+                       				<td colspan="2"><input name="xCurp" type="text" id="xCurp" size="35" 
+                                       					value="-" onfocus="if (this.value == '-')this.value = ''" 
+                                       					onblur="valida_curp();"	
+                                       					maxlength="18" class="TextoMayuscula" onkeypress="return CURP(event)"/> <label style="color:#FF0000; display:">XXXXYYMMDDSXXXXXXX </label>
+											<a href="https://consultas.curp.gob.mx/CurpSP" target="_blank">&nbsp; Buscar CURP&nbsp;<img src="../../../images/search_16.gif"  title="Buscar CURP" style="cursor:pointer" /></a>
+											<label style="color:#FF0000;"><b><--- Da clic aquí para buscar tu CURP</b></label>
+									</td>
+                     			</tr>
+							
+						<!------<tr>
+									<table border="0" width="100%" align="left" cellpadding="0" cellspacing="0">
+										<tr> 
+											<td align="left">
+												<label style="color:#FF0000"> * </label>&nbsp;&nbsp;Número de Seguro Social:
+                          					</td>
+											<td><input name="xCarrera2" id="xCarrera2" size="35" value=""/>
+												<a href="https://serviciosdigitales.imss.gob.mx/gestionAsegurados-web-externo/asignacionNSS" target="_blank">&nbsp;Consultar NSS&nbsp;<img src="../../../images/search_16.gif"  title="Consulta tu número de seguro social" style="cursor:pointer" /></a>
+											</td>
+											<td>
+											<td align="left">
+												<label style="color:#FF0000"> * </label>&nbsp;&nbsp;Ubica la clínica de tu zona:
+                          					</td>
+											<td align="left">
+												<select name="" id=""/>
+													<option value="0">-</option>
+													<option value="5">Unidad Médico Familiar No. 05</option>
+													<option value="7">Unidad Médico Familiar No. 07</option>
+													<option value="9">Unidad Médico Familiar No. 09</option>
+													<option value="16">Unidad Médico Familiar No. 16</option>
+													<option value="20">Unidad Médico Familiar No. 20</option>
+													<option value="45">Unidad Médico Familiar No. 45</option>
+												</select>
+												Consultar Clínica&nbsp;<img src="../../../images/search_16.gif"  title="Ubica la clínica de tu zona" style="cursor:pointer" />
+											</td>
+										</tr
+									</table>
+							---->
+                      			<tr style="display:none"> 
+                        			<td height="30"><b>
+										<label style="color:#FF0000"> * </label>
+										&nbsp;&nbsp;Trabajas:</b>
+                          			</td>
+                        			<td colspan="2">Si
+                          			<input name="xTrabajo" type="radio" value="S" 						
+                                       					 onchange="javascript:datos_trabajo_interesado();" />
+                          &nbsp;&nbsp;No
+                          			<input name="xTrabajo" type="radio" 
+                                       					value="N" checked onchange="javascript:datos_trabajo_interesado();"/>
+                        			</td>
+                     			</tr>
+                      			<tr style="display:none">  
+                        			<td height="30">&nbsp;&nbsp;<b>Tipo de Seguro Social:</b></td>
+                        			<td colspan="2">
+                            			<select name="xTipoSeguro" id="xTipoSeguro" onchange="Ocultar(this.value)" style="width:230px" disabled="disabled">
+                              				<option value="0">----------------------</option>
+                              					
+                              					<option value="1" selected> I.M.S.S. </option>
+                             					
+                              					<option value="2" > I.S.S.S.T.E </option>
+                             					
+                              					<option value="3" > Secretaría de Marina </option>
+                             					
+                              					<option value="4" > Secretaría de la Defensa Nacional </option>
+                             					
+                              					<option value="5" > PEMEX </option>
+                             					
+                              					<option value="6" > Instituto Nacional de Crédito (Bancos) </option>
+                             					
+                              					<option value="7" > Particular </option>
+                             					
+                              					<option value="8" > Ninguno </option>
+                             					
+                              					<option value="9" > Seguro Popular </option>
+                             					
+                              					<option value="10" > Otros </option>
+                             					
+                              					<option value="39" > POPULAR </option>
+                             					
+                              					<option value="40" > La latinoamericana </option>
+                             					
+                              					<option value="41" > derechoabiente </option>
+                             					
+                              					<option value="42" > A.AYUNTAMIENTO </option>
+                             					
+                              					<option value="43" > Seguro Militar </option>
+                             					
+                              					<option value="44" > - </option>
+                             					
+                              					<option value="45" > popular </option>
+                             					
+                              					<option value="46" > SEGUROS MONTERREY </option>
+                             					
+                              					<option value="47" > - </option>
+                             					
+                              					<option value="48" > - </option>
+                             					
+                              					<option value="49" > - </option>
+                             					
+                              					<option value="50" > facultativo </option>
+                             					
+                              					<option value="51" > ninguno </option>
+                             					
+                              					<option value="52" > seguro popular </option>
+                             					
+                              					<option value="53" > gobierno del estado </option>
+                             					
+                              					<option value="54" > ISSEMyM </option>
+                             					
+                              					<option value="55" > - </option>
+                             					
+                              					<option value="56" > - </option>
+                             					
+                              					<option value="57" > INBURSA </option>
+                             					
+                              					<option value="58" > - </option>
+                             					
+                              					<option value="59" > URRETA </option>
+                             					
+                              					<option value="60" > - </option>
+                             					
+                              					<option value="61" > - </option>
+                             					
+                              					<option value="62" > - </option>
+                             					
+                              					<option value="63" > Medico municipal </option>
+                             					
+                              					<option value="64" > Ser.Med.Mpal </option>
+                             					
+                              					<option value="65" > - </option>
+                             					
+                              					<option value="66" > ESTUDIANTE </option>
+                             					
+                              					<option value="67" > seguro facultativo </option>
+                             					
+                              					<option value="68" > Ayuntamiento S.L.P </option>
+                             					
+                              					<option value="69" > 19170127765 </option>
+                             					
+                            				</select>
+                         					&nbsp;
+                          					<label id="SeguroSocial" style='display:none'>
+												&nbsp;
+												<label style="color:#FF0000"> * </label>&nbsp;Ingresa el seguro:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                          					<input size="48" type="text" style='display:none'   name="xSeguroSocial" id="xSeguroSocial" maxlength="20" 
+                                       					onfocus="if (Trim(this.value) == '-')
+               								this.value = ''" onblur="if (Trim(this.value) == '')
+               								this.value = '-'"
+                                      					value="-" />
+                       				</td>
+								</tr>
+                      			<tr style='display: none' >
+                        				<td height="30">&nbsp;&nbsp;<b>Nombre de la Empresa:</b>
+										</td>
+                        				<td colspan="2"><input name="xEmpresaIntP" type="text" id="xEmpresaIntP" size="35" maxlength="60"
+                                       					onfocus="if (Trim(this.value) == '-')
+               								this.value = ''"
+                                      					onblur="if (Trim(this.value) == '')
+               								this.value = '-'"		
+                                      					value="-" class="TextoMayuscula" />
+                        				</td>
+                                </tr> 
+                      			<tr style='display: none'>
+                        			<td height="30">&nbsp;&nbsp;<b>Tel&eacute;fono de la Empresa:</b></td>
+                        			<td colspan="2"><input name="xTelEmpresaIntP" type="text" id="xTelEmpresaIntP" size="35" maxlength="10"
+                                                   			onfocus="if (Trim(this.value) == '-')
+               								this.value = ''"
+                                                  			onblur="if (Trim(this.value) == '')
+               								this.value = '-'"		
+                                                  			value="-"
+                                                   			onkeypress="return Numeros(event)"/>
+											<label style="color:#848484"><b>&nbsp;(a 10 dígitos Ej. 4441234567)</b></label>
+                       				</td>
+                        		</tr>
+								<tr style='display: none' >
+                        				<td height="30">&nbsp;&nbsp;<b>Tu puesto:</b>
+										</td>
+                        				<td colspan="2"><input name="xPuestoInteresadoP" type="text" id="xPuestoInteresadoP" size="35" maxlength="60"
+                                       					onfocus="if (Trim(this.value) == '-')
+               								this.value = ''"
+                                      					onblur="if (Trim(this.value) == '')
+               								this.value = '-'"		
+                                      					value="-" class="TextoMayuscula" />
+                        				</td>
+                                </tr>
+                      			<tr style='display: none'>
+                        			<td height="30">&nbsp;&nbsp;<b>Jefe Directo:</b></td>
+                        			<td colspan="2"><input name="xJefeDirectoP" type="text" id="xJefeDirectoP" size="35" maxlength="70"
+                                                   		onfocus="if (Trim(this.value) == '-')
+                						this.value = ''"
+                                                   		onblur="if (Trim(this.value) == '')
+                						this.value = '-'"		
+                                                   		value="-"
+                                                   		onkeypress="return LetrasAcento(event)" class="TextoMayuscula" />
+                        			</td>
+                       			</tr>
+                     			<tr style='display: none'>
+                        			<td height="30">&nbsp;&nbsp;<b>Puesto del jefe:</b></td>
+                        			<td colspan="2"><input name="xPuestoP" type="text" id="xPuestoP" size="35" maxlength="60"
+                                        				onfocus="if (Trim(this.value) == '-')
+                							this.value = ''"
+                                                  			onblur="if (Trim(this.value) == '')
+                							this.value = '-'"		
+                                                   			value="-" 
+                                                  			onkeypress="return LetrasAcento(event)"  class="TextoMayuscula"/>
+                        			</td>
+                       			</tr>
+							</table> <!------ termina tabla interna Datos Generales------------->
+						</td>	
+					</tr>
+				</table><!------ termina tabla externa Datos Generales------------->
+			</td>
+		</tr>
+		
+		<tr>
+			<td><!------ inicia tabla externa Domicilio Actual------------->
+				<table width="100%" align="left" cellpadding="0" cellspacing="0" border="0">	
+					<tr><td>&nbsp;</td></tr>
+					<tr class="CeldaDatos">
+                		<th class="TablaDatosTitulo" align="left">&nbsp;Domicilio Actual</th>
+              		</tr>
+             		<tr>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+                		<td>
+							<table width="100%" cellpadding="0" cellspacing="0" border="0"> <!-- tabla interna Domicilio Actual -->
+                      			<tr>
+											<td width="22%"><b><label style="color:#FF0000">* </label>&nbsp;&nbsp;Zona de residencia:</b></td>
+											<td>
+												<select name="xZonaResidencia" type="text" id="xZonaResidencia" style="width:229px">
+													<option value="-">-</option>
+													<option value="Rural"  >Rural</option>
+													<option value="Urbana" >Urbana</option>
+													<option value="Marginada" >Marginada</option>
+												</select>
+											</td>				  	
+										</tr>
+										
+								<tr>
+								<tr>
+									<td width="22%" align="left"><b><label style="color:#FF0000"> * </label>
+										&nbsp;&nbsp;Calle:</b>
+										</td>
+									<td width="78%" height="30"><input name="xCalle" type="text" id="xCalle" size="35" maxlength="50"  class="TextoMayuscula"
+                                                       onfocus="if (Trim(this.value) == '-')this.value = ''"
+                                                       onblur="if (Trim(this.value) == '')this.value = '-'"
+                                                       value="-"
+                                                       onkeypress="return Direccion(event)"/>                </td>
+								</tr>
+								<tr>
+									<td><b><span style="color:#FF0000">* </span>&nbsp;&nbsp;N&uacute;mero Exterior:</b> </td>
+									<td><input name="xNumeroExterior" type="text" id="xNumeroExterior" size="10"
+                                                                onfocus="if (Trim(this.value) == '-') this.value = ''" 
+                                                                onblur="if (Trim(this.value) == '')this.value = '-'"
+                                                                maxlength="10" onkeypress="return NumeroDomicilio(event)"
+                                                                value="" class="TextoMayuscula"
+                                                                   />
+													&nbsp;&nbsp;<b> <label style="display:none">N&uacute;mero Interior:</label></b>
+													
+													<input name="xNumeroInterior" type="hidden" id="xNumeroInterior" size="5"
+                                                    onfocus="if (Trim(this.value) == '-') this.value = ''" 
+                                                    onblur="if (Trim(this.value) == '')this.value = '-'"
+                                                    maxlength="10" onkeypress="return NumeroDomicilio(event)"
+                                                    value=""
+                                                    	/>                
+									</td>
+								</tr>
+								<tr>
+									<td height="26">
+										<b><label style="color:#FF0000"> * </label>&nbsp;&nbsp;Colonia :</b>
+									</td>
+																	
+									<td><input type="hidden" name="yColonia" id="yColonia" value="-1"/>
+									<b id="xColonia"> </b> &nbsp;&nbsp;&nbsp;&nbsp; <a href="proceso_interesado.jsp%3FxModalidadP=N.html#" onclick="Colonia_Buscar('document.forma.yColonia');
+            						return false;"> Buscar Colonia&nbsp;</a><img src="../../../images/search_16.gif" onclick="Colonia_Buscar('document.forma.yColonia');
+            						return false;" title="Buscar Colonia" style="cursor:pointer" /> &nbsp;&nbsp;&nbsp;  <label style="color:#FF0000;"><b><--- Da clic aquí para buscar tu Colonia</b></label> 
+									
+							<!--	No encuentro mi colonia </a><img src="../../../images/finance_16.gif" title="Registrar Colonia" onclick="Colonia_Registrar('1');
+									return false;" style="cursor:pointer" /> 
+							-->		
+									</td>
+								</tr>
+								<tr>
+									<td align="left"><b>
+										<label style="color:#FF0000">*</label>&nbsp;&nbsp;Código Postal:</b>
+									</td>
+									<td><b id="xCodigoPostal"> </b> </td>
+								</tr>
+								<tr>
+									<td><b>
+										<label style="color:#FF0000">* </label>&nbsp;&nbsp;Ciudad:</b>
+									</td>
+									<td><b id="xCiudad"> </b>
+										<input type="hidden" name="yCiudad" id="yCiudad" value="0"/>                
+									</td>
+								</tr>
+								<tr>
+									<td align="left">
+										<b><label style="color:#FF0000">* </label>&nbsp;&nbsp;Estado:</b>
+									</td>
+									<td width="985"><b id="xEstado"> </b>
+										<input type="hidden" name="yEstado" id="yEstado" value="0"/>                
+									</td>
+								</tr> 
+								<tr>
+									<td width="20%" height="26"><label style="color:#FF0000">* </label>&nbsp;&nbsp;<b>Teléfono Whatsapp:</b></td>
+									<td width="80%" colspan="2">
+										<input name="xWhatsapp" type="text" id="xWhatsapp" 
+											onfocus="if (Trim(this.value)=='-') this.value=''"
+											onblur="if (Trim(this.value)=='') this.value='-'"	
+											title="Teléfono Whatsapp"
+											value="-"
+											placeholder="Whatsapp"
+											size="25" maxlength="10" onkeypress="return Telefono(event)" />
+										&nbsp;&nbsp;<label style="color:#FF0000">* </label>&nbsp;<b>Confirmar Whatsapp:</b>
+										<input name="xConfirmarWhats" type="text" id="xConfirmarWhats" 
+											onfocus="if (Trim(this.value)=='-') this.value=''"
+											onblur="if (Trim(this.value)=='') this.value='-'"	
+											title="Teléfono Fijo"
+											value="-"
+											onpaste="event.preventDefault()"
+											placeholder="Confirmar Whatsapp"
+											onkeyup="comprobarWhatsapp()"
+											size="25" maxlength="10" onkeypress="return Telefono(event)" /><span id="msgWhatsapp"></span>
+									</td>
+													
+								</tr>
+								<tr>
+									<td align="left"><b><label style="color:#FF0000">*</label>&nbsp;&nbsp;Celular:</b></td>
+									<td><input name="xMovil" type="text" id="xMovil" 
+                                                                       onfocus="if (Trim(this.value) == '-')
+                this.value = ''"
+                                                                       onblur="if (Trim(this.value) == '')
+                this.value = '-'"	
+                                                                       value="-"	
+                                                                       size="10" maxlength="10"  onkeypress="return Telefono(event)"/>
+										<label style="color:#848484"><b>(a 10 dígitos Ej. 4441234567)</b></label> </td>
+								</tr>
+								<tr>
+								<td height="26"><label style="color:#FF0000">*</label>&nbsp;&nbsp;<b>Correo Electrónico:</b></td>
+									<td><input name="xCorreo" type="text" id="xCorreo" size="35"
+                                                                       value="-"	
+                                                                       onfocus="if (Trim(this.value) == '-')
+                this.value = ''"
+                                                                       onblur="if (Trim(this.value) == '')
+                this.value = '-'"	
+                                                                       maxlength="60" onkeypress="return Mail(event)"/> 
+									<label style="color:#848484"><b>en formato: usuario@dominio.com </b></label>
+								</td>
+							</tr>
+						</table><!----- termina tabla interna Domicio Actual--------------->
+					</td>
+				</tr>
+			</table><!----- termina tabla externa Domicio Actual--------------->
+			</td>
+        </tr>
+		<tr><td>&nbsp;</td></tr>
+		<tr class="CeldaDatos">
+            <th  class="TablaDatosTitulo" align="left">&nbsp;Estudios de Bachillerato</th>
+        </tr>
+		<tr><td>&nbsp;</td></tr>
+        <tr>
+        	<td><!------ inicia tabla externa Estudios Bachillerato------------->
+				<table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td width="22%"><b>
+					<label style="color:#FF0000">* </label>&nbsp;&nbsp;Escuela de Procedencia:</b>
+                  </td>
+                  <td width="78%"><b id="xBachillerato"> </b>
+                      
+                     <input type="hidden" name="yBachillerato" id="yBachillerato" value="-1"/> 
+                    &nbsp;&nbsp; <a href="proceso_interesado.jsp%3FxModalidadP=N.html#" onclick="Bachillerato_Buscar('document.forma.yBachillerato');
+            		return false; 
+            		document.forma.xEspecialidad.value = -1"> 
+					Buscar Bachillerato&nbsp;</a> 
+					
+					<img src="../../../images/search_16.gif" onclick=	"Bachillerato_Buscar('document.forma.yBachillerato');
+            		return false;
+            		document.forma.xEspecialidad.value = -1" title="Buscar Bachillerato" style="cursor:pointer" /> &nbsp;&nbsp; <a href="proceso_interesado.jsp%3FxModalidadP=N.html#" onclick="Bachillerato_Registrar();
+            		return false;"> <label style="color:#FF0000;"><b><--- Da clic aquí para buscar tu Bachillerato</b></label> 
+					
+					<!--No encuentro mi Bachillerato</a> <img src="../../../images/finance_16.gif" title="Registrar Bachillerato" onclick="Bachillerato_Registrar();
+            		return false;" style="cursor:pointer" /> --></td>
+          	</tr>
+            <tr>
+            	<td height="30"><b>
+					<label style="color:#FF0000"> * </label>
+					&nbsp;&nbsp;Bachillerato:</b>
+                </td>
+               	<td >Terminado
+                    <input name="xStatusBachillerato" id="xStatusBachillerato" type="radio" value="T" checked />
+                    &nbsp;&nbsp;
+                    Por Terminar
+                    <input name="xStatusBachillerato" id="xStatusBachillerato" type="radio" value="PT"  />              	</td>
+         	</tr>
+         	<tr>
+           		<td align="left"><b>
+					<label style="color:#FF0000"> * </label>
+					&nbsp;&nbsp;Especialidad:</b>
+               	</td>
+               	<td><div id="xComboEspecialidadBachillerato"></div>
+               		<input type="hidden" name="yCveEspecialidadBachillerato" id="yCveEspecialidadBachillerato" value="-1"/>            	</td>
+                	
+                </tr>
+                <tr>
+                  <td><b>
+					 <label style="color:#FF0000"> *</label>&nbsp;&nbsp;Mes y A&ntilde;o en que Iniciaste:</b>
+                  </td>
+                  <td><select name="xMesInicio" id="xMesInicio" style="width:100px">
+                      <option value=0>-</option>
+                      <option value=01 >Enero</option>
+                      <option value=02 >Febrero</option>
+                      <option value=03 >Marzo</option>
+                      <option value=04 >Abril</option>
+                      <option value=05 >Mayo</option>
+                      <option value=06 >Junio</option>
+                      <option value=07 >Julio</option>
+                      <option value=08 >Agosto</option>
+                      <option value=09 >Septiembre</option>
+                      <option value=10 >Octubre</option>
+                      <option value=11 >Noviembre</option>
+                      <option value=12 >Diciembre</option>
+                    </select>
+                      <select name="xAnioInicio" id="xAnioInicio" style="width:65px">
+                        <option value=0>-</option>
+                        
+                        <option value=25 >2025</option>
+                        
+                        <option value=24 >2024</option>
+                        
+                        <option value=23 >2023</option>
+                        
+                        <option value=22 >2022</option>
+                        
+                        <option value=21 >2021</option>
+                        
+                        <option value=20 >2020</option>
+                        
+                        <option value=19 >2019</option>
+                        
+                        <option value=18 >2018</option>
+                        
+                        <option value=17 >2017</option>
+                        
+                        <option value=16 >2016</option>
+                        
+                        <option value=15 >2015</option>
+                        
+                        <option value=14 >2014</option>
+                        
+                        <option value=13 >2013</option>
+                        
+                        <option value=12 >2012</option>
+                        
+                        <option value=11 >2011</option>
+                        
+                        <option value=10 >2010</option>
+                        
+                        <option value=09 >2009</option>
+                        
+                        <option value=08 >2008</option>
+                        
+                        <option value=07 >2007</option>
+                        
+                        <option value=06 >2006</option>
+                        
+                        <option value=05 >2005</option>
+                        
+                        <option value=04 >2004</option>
+                        
+                        <option value=03 >2003</option>
+                        
+                        <option value=02 >2002</option>
+                        
+                        <option value=01 >2001</option>
+                        
+                        <option value=00 >2000</option>
+                        
+                        <option value=99 >1999</option>
+                        
+                        <option value=98 >1998</option>
+                        
+                        <option value=97 >1997</option>
+                        
+                        <option value=96 >1996</option>
+                        
+                        <option value=95 >1995</option>
+                        
+                        <option value=94 >1994</option>
+                        
+                        <option value=93 >1993</option>
+                        
+                        <option value=92 >1992</option>
+                        
+                        <option value=91 >1991</option>
+                        
+                        <option value=90 >1990</option>
+                        
+                        <option value=89 >1989</option>
+                        
+                        <option value=88 >1988</option>
+                        
+                        <option value=87 >1987</option>
+                        
+                        <option value=86 >1986</option>
+                        
+                        <option value=85 >1985</option>
+                        
+                        <option value=84 >1984</option>
+                        
+                        <option value=83 >1983</option>
+                        
+                        <option value=82 >1982</option>
+                        
+                        <option value=81 >1981</option>
+                        
+                        <option value=80 >1980</option>
+                        
+                        <option value=79 >1979</option>
+                        
+                        <option value=78 >1978</option>
+                        
+                        <option value=77 >1977</option>
+                        
+                        <option value=76 >1976</option>
+                        
+                        <option value=75 >1975</option>
+                        
+                        <option value=74 >1974</option>
+                        
+                        <option value=73 >1973</option>
+                        
+                        <option value=72 >1972</option>
+                        
+                        <option value=71 >1971</option>
+                        
+                        <option value=70 >1970</option>
+                        
+                      </select>                  </td>
+                </tr>
+                <tr>
+                  <td width="18%" align="left"><b>
+					<label style="color:#FF0000"> *</label>
+					&nbsp;&nbsp;Mes y A&ntilde;o en que Terminaste:</b>
+                    </td> 
+                  <td><select name="xMesFin" id="xMesFin" style="width:100px">
+                      <option value=0>-</option>
+                      <option value=01 >Enero</option>
+                      <option value=02 >Febrero</option>
+                      <option value=03 >Marzo</option>
+                      <option value=04 >Abril</option>
+                      <option value=05 >Mayo</option>
+                      <option value=06 >Junio</option>
+                      <option value=07 >Julio</option>
+                      <option value=08 >Agosto</option>
+                      <option value=09 >Septiembre</option>
+                      <option value=10 >Octubre</option> 
+                      <option value=11 >Noviembre</option>
+                      <option value=12 >Diciembre</option>
+                    </select>
+                      <select name="xAnioFin" id="xAnioFin" style="width:65px">
+                        <option value="0">-</option>
+                        
+                        <option value=26 >2026</option>
+                        
+                        <option value=25 >2025</option>
+                        
+                        <option value=24 >2024</option>
+                        
+                        <option value=23 >2023</option>
+                        
+                        <option value=22 >2022</option>
+                        
+                        <option value=21 >2021</option>
+                        
+                        <option value=20 >2020</option>
+                        
+                        <option value=19 >2019</option>
+                        
+                        <option value=18 >2018</option>
+                        
+                        <option value=17 >2017</option>
+                        
+                        <option value=16 >2016</option>
+                        
+                        <option value=15 >2015</option>
+                        
+                        <option value=14 >2014</option>
+                        
+                        <option value=13 >2013</option>
+                        
+                        <option value=12 >2012</option>
+                        
+                        <option value=11 >2011</option>
+                        
+                        <option value=10 >2010</option>
+                        
+                        <option value=09 >2009</option>
+                        
+                        <option value=08 >2008</option>
+                        
+                        <option value=07 >2007</option>
+                        
+                        <option value=06 >2006</option>
+                        
+                        <option value=05 >2005</option>
+                        
+                        <option value=04 >2004</option>
+                        
+                        <option value=03 >2003</option>
+                        
+                        <option value=02 >2002</option>
+                        
+                        <option value=01 >2001</option>
+                        
+                        <option value=00 >2000</option>
+                        
+                        <option value=99 >1999</option>
+                        
+                        <option value=98 >1998</option>
+                        
+                        <option value=97 >1997</option>
+                        
+                        <option value=96 >1996</option>
+                        
+                        <option value=95 >1995</option>
+                        
+                        <option value=94 >1994</option>
+                        
+                        <option value=93 >1993</option>
+                        
+                        <option value=92 >1992</option>
+                        
+                        <option value=91 >1991</option>
+                        
+                        <option value=90 >1990</option>
+                        
+                        <option value=89 >1989</option>
+                        
+                        <option value=88 >1988</option>
+                        
+                        <option value=87 >1987</option>
+                        
+                        <option value=86 >1986</option>
+                        
+                        <option value=85 >1985</option>
+                        
+                        <option value=84 >1984</option>
+                        
+                        <option value=83 >1983</option>
+                        
+                        <option value=82 >1982</option>
+                        
+                        <option value=81 >1981</option>
+                        
+                        <option value=80 >1980</option>
+                        
+                        <option value=79 >1979</option>
+                        
+                        <option value=78 >1978</option>
+                        
+                        <option value=77 >1977</option>
+                        
+                        <option value=76 >1976</option>
+                        
+                        <option value=75 >1975</option>
+                        
+                        <option value=74 >1974</option>
+                        
+                        <option value=73 >1973</option>
+                        
+                        <option value=72 >1972</option>
+                        
+                        <option value=71 >1971</option>
+                        
+                        <option value=70 >1970</option>
+                        
+                      </select>                  </td>
+                </tr>
+                <tr>
+                  <td><b>
+					<label style="color:#FF0000"> * </label>
+					&nbsp;&nbsp;Promedio a la Fecha:</b>
+                    </td>
+                  <td width="82%"><input name="xPromedio" type="text" id="xPromedio" size="4" maxlength="3" 
+                                                                                   value="0.0"
+                                                                                   onkeypress="return Moneda(event)" 
+                                                                                   onfocus="if (this.value == '0.0') this.value = ''"
+                                                                                   onblur="if (this.value == '') this.value = '0'"
+                                                                                   />
+                    <label style="color:#848484"><b>&nbsp;&nbsp;Escala de 1 a 10 </b></label> </td>
+                </tr> <!------ termina tabla externa Estudios Bachillerato------------->
+				<tr>
+                  <td><b>
+					<label style="color:#FF0000"> * </label>
+					&nbsp;&nbsp;Turno:</b>
+                    </td>
+                  <td width="82%">
+				  <select name="xTurnoBachilerato" id="xTurnoBachilerato"  >
+                  	<option value="0">-</option>
+                    	
+                              			<option value="1" >Matutino
+										</option>
+                              		
+                              			<option value="2" >Vespertino
+										</option>
+                              		
+                              			<option value="3" >Nocturno
+										</option>
+                              		
+                  </select> 
+				  </td>
+                </tr>							
+            	</table>
+			</td>
+        </tr>
+		<tr><td>&nbsp;</td></tr>
+		
+		<tr>
+		<tr class="CeldaDatos"> 
+			<th class="TablaDatosTitulo" align="left">&nbsp;Datos de Padre, Tutor o Responsable Legal</th>
+       	</tr>
+		<tr><td>&nbsp;</td></tr>  
+			<td><!----- inicia tabla externa Datos de Padre o Tutor -------->			
+				<table width="100%" cellpadding="0" cellspacing="0" border="0">
+					<tr>
+						<td width="22%" height="37"> <b>
+							<label style="color:#FF0000"> * </label>
+							&nbsp;&nbsp;Nombre(s) del Padre, Tutor o Responsable Legal:   </b>
+						</td>  
+            			<td width="28%"> <!----- inicia tabla agrupada Datos de Padre o Tutor -------->
+							<table width="80%" border="0" cellpadding="0" cellspacing="0"> 
+								<tr>  
+									<td><input name="xNombreTutor" type="text" id="xNombreTutor" size="35" 
+                                                   onfocus="if (Trim(this.value) == '-')
+               								this.value = ''"
+                                                   onblur="if (Trim(this.value) == '')
+               								this.value = '-'" 
+                                                   value="-" 
+                                                   onkeypress="return LetrasAcento(event)" class="TextoMayuscula" />                  
+									</td>
+								</tr>  
+							</table><!----- termina tabla agrupada Datos de Padre o Tutor -------->
+						</td>
+						<td rowspan="3" width="50%" style="padding:5px;" > <img src="../../../images/info_16.gif" /> <b><u>Protección de Datos</u></b> <br />
+							En la obtención del consentimiento de menores de edad o de personas 
+							que se encuentren en estado de interdicción o incapacidad declarada 
+							conforme a Ley, se estará a lo dispuesto en las reglas de representación 
+							previstas en la legislación civil que resulte aplicable. 
+							En el caso de personas con la mayoría de edad podrá solicitar la anulación 
+							o modificación de su responsable legal. 
+						 </td>
+        			</tr> 
+
+					<tr>
+						<td width="22%" height="37"><b>
+							<label style="color:#FF0000"> * </label>
+							&nbsp;&nbsp;Primer Apellido: </b>
+						</td> 
+            			<td width="28%"> <!----- inicia tabla agrupada Datos de Padre o Tutor -------->
+							<table width="80%" border="0" cellpadding="0" cellspacing="0">
+								<tr>
+									<td><input name="xApPaternoTutor" type="text" id="xApPaternoTutor" size="35"
+                                                   onfocus="if (Trim(this.value) == '-')
+                							this.value = ''"
+                                                   onblur="if (Trim(this.value) == '')
+                							this.value = '-'"		
+                                                   value="-"
+                                                   onkeypress="return LetrasAcento(event)"  class="TextoMayuscula"/>                   
+									</td>
+								</tr>
+							</table><!----- termina tabla agrupada Datos de Padre o Tutor -------->
+						</td>
+        			</tr>  
+
+					
+					<tr>
+						<td width="22%" height="37"><b>
+							<label style="color:#FF0000"> * </label>
+							&nbsp;&nbsp;Segundo Apellido: </b>
+						</td>
+            			<td width="28%"> <!----- inicia tabla agrupada Datos de Padre o Tutor -------->
+							<table width="80%" border="0" cellpadding="0" cellspacing="0">
+								<tr>
+									<td>
+										<input name="xApMaternoTutor" type="text" id="xApMaternoTutor" size="35" 
+                                                   onfocus="if (Trim(this.value) == '-')
+                							this.value = ''"
+                                                   onblur="if (Trim(this.value) == '')
+                							this.value = '-'" 	
+                                                   value="-"
+                                                   onkeypress="return LetrasAcento(event)" class="TextoMayuscula"/>
+									</td>
+								</tr> 
+							</table><!----- termina tabla agrupada Datos de Padre o Tutor -------->
+						</td>
+        			</tr>  
+					<tr> 
+						<td  height="37" colspan="3" align="center">  						 						
+							<table width="80%" border="0" cellpadding="0" cellspacing="0" align="center"> 
+								<tr>   
+									<td align="center">  
+										<input type="checkbox" name="xDuplicar" id="xDuplicar" onclick="DuplicarDomicilio()" value="1" />
+										<label style="color:#FF0000" > <b>Mi domicilio es el mismo que el domicilio de mi padre o tutor.     </b></label>           
+									</td> 
+								</tr>  
+							</table><!----- termina tabla agrupada Datos de Padre o Tutor -------->
+						</td>    
+        			</tr> 	 	
+					<tr>					
+        				<td height="30"> <b>
+							<label style="color:#FF0000"> * </label>
+							&nbsp;&nbsp;Calle:</b>
+             			</td>
+           				<td colspan="2"><input name="xCalleP" type="text" id="xCalleP" size="35" maxlength="50" 
+                                       onfocus="if (Trim(this.value) == '-')
+                			this.value = ''"
+                                       onblur="if (Trim(this.value) == '')
+                			this.value = '-'"
+                                       value="-"
+                                       onkeypress="return Direccion(event)" class="TextoMayuscula"/>            </td>
+      				</tr>
+        			<tr> 
+        				<td> <b>
+							<span style="color:#FF0000">* </span>&nbsp;&nbsp;N&uacute;mero Exterior:</b> </td>
+           				<td colspan="2">
+							<input name="xNumExtP" type="text" id="xNumExtP" size="10"
+                                                   maxlength="10" onkeypress="return NumeroDomicilio(event)"
+                                                   onfocus="if (Trim(this.value) == '-') this.value = ''" 
+                									onblur="if (Trim(this.value) == '')this.value = '-'"
+                                                   value="-" class="TextoMayuscula"
+                                                   />
+              					&nbsp;&nbsp;<label style="display:none">N&uacute;mero Interior:</label>
+              				<input name="xNumIntP" type="hidden" id="xNumIntP" size="5"
+                                       maxlength="10" onkeypress="return NumeroDomicilio(event)"
+                                       onfocus="if (Trim(this.value) == '-') this.value = ''" 
+                					   onblur="if (Trim(this.value) == '')this.value = '-'"
+                                       value="-" 
+                                       />            
+						</td>
+      					</tr>
+        				<tr>
+        					<td height="26"><b>
+								<label style="color:#FF0000"> * </label>&nbsp;&nbsp;Colonia :</b>
+            				</td>
+            				<td colspan="2">
+               				<input name="xColoniaPP" type="text" class="TextoDesabilitado" id="xColoniaPP" size="35" readonly="" />
+                				
+                			<input type="hidden" name="yColoniaP" id="yColoniaP" value="-1"/>
+              				&nbsp;&nbsp; <a href="proceso_interesado.jsp%3FxModalidadP=N.html#" onclick="Colonia_Buscar_Tutor('document.forma.yColoniaP'); return false;"> Buscar Colonia&nbsp;</a>
+							<img src="../../../images/search_16.gif" onclick="Colonia_Buscar_Tutor('document.forma.yColoniaP'); return false;" title="Buscar Colonia" style="cursor:pointer" /> 
+							&nbsp; <label style="color:#FF0000;"><b><--- Da clic aquí para buscar la Colonia</b></label> 
+						<!--
+							No encuentro mi colonia </a><img src="../../../images/finance_16.gif" title="Registrar Colonia" onclick="Colonia_Registrar('2');
+            				return false;" style="cursor:pointer" /> 
+						-->
+							</td>
+      					</tr>
+        				<tr>
+        					<td align="left"><b>
+								<label style="color:#FF0000">*</label>&nbsp;&nbsp;Código Postal:</b>
+            				</td>
+           					 <td colspan="2">
+                			<input name="xCodigoPostal2" type="text" class="TextoDesabilitado" id="xCodigoPostal2" size="35" readonly="" />
+               						            </td>
+          				</tr>
+         				<tr>
+          					<td><b>
+								<label style="color:#FF0000">* </label>&nbsp;&nbsp;Ciudad:</b>
+            				</td>
+            				<td colspan="2">
+                			<input name="xCiudad2" type="text" class="TextoDesabilitado" id="xCiudad2" size="35" readonly="" />
+                				
+                			<input type="hidden" name="yCiudad2" id="yCiudad2" value="0"/>            </td>
+          			</tr>
+          			<tr>  
+          				<td align="left"><b>
+							<label style="color:#FF0000">* </label>&nbsp;&nbsp;Estado:</b>
+            			</td>
+            			<td colspan="2">
+                			<input name="xEstado2" type="text" class="TextoDesabilitado" id="xEstado2" size="35" readonly="" />
+                			
+                			<input type="hidden" name="yEstado2" id="yEstado2" value="0"/>            </td>
+          				</tr>
+          				<tr>
+          					<td height="26">&nbsp;&nbsp;<b>Tel&eacute;fono Fijo:</b></td>
+            				<td colspan="2"><input name="xTelParticularP" type="text" id="xTelParticularP" 
+                                                       onfocus="if (Trim(this.value) == '-')
+                					this.value = ''"
+                                                       onblur="if (Trim(this.value) == '')
+               						this.value = '-'"	
+                                                       value="-"
+                                                       size="10" maxlength="10" onkeypress="return Telefono(event)" />
+								<label style="color:#848484"><b>(a 10 dígitos Ej. 4441234567)</b></label> </td>
+         				</tr>
+          				<tr>
+            				<td align="left"><b><label style="color:#FF0000">*</label>&nbsp;&nbsp;Celular:</b></td>
+            				<td colspan="2"><input name="xCelularP" type="text" id="xCelularP" 
+                                                       onfocus="if (Trim(this.value) == '-')
+                					this.value = ''"
+                                                       onblur="if (Trim(this.value) == '')
+                					this.value = '-'"	
+                                                       value="-"	
+                                                       size="10" maxlength="10"  onkeypress="return Telefono(event)"/>
+								<label style="color:#848484"><b>(a 10 dígitos Ej. 4441234567)</b></label>
+							</td>
+         				</tr>
+          				<tr style="display:none">
+            				<td height="26"><b><label style="color:#FF0000"> * </label>&nbsp;&nbsp;Teléfono para emergencias</b></td>
+            				<td colspan="2"><input name="xTelRecadosP" type="text" id="xTelRecadosP"  size="10"
+                                                       value="-"	
+                                                       onfocus="if (Trim(this.value) == '-')
+                					this.value = ''"
+                                                       onblur="if (Trim(this.value) == '')
+               						this.value = '-'"	
+                                                       maxlength="10" onkeypress="return Telefono(event)"/>
+              					<label style="color:#848484"><b>(a 10 dígitos Ej. 4441234567)</b></label>
+							</td>
+         				</tr>
+				</table><!----- finaliza tabla externa Datos de Padre o Tutor --------------------->
+          	</td>
+		</tr> 
+		<tr><td>&nbsp;</td></tr>
+		
+		<tr>
+		<tr class="CeldaDatos"> 
+			<th class="TablaDatosTitulo" align="left">&nbsp;Contacto de Emergencia</th>
+       	</tr>  
+		<tr><td>&nbsp;</td></tr>   
+			<td><!----- inicia tabla externa Datos de Padre o Tutor -------->			
+				<table width="100%" cellpadding="0" cellspacing="0" border="0">
+					<tr>
+						<td width="22%" height="37"> <b>
+							<label style="color:#FF0000"> * </label>
+							&nbsp;&nbsp;Nombre(s):   </b>
+						</td>    
+            			<td width="80%" colspan="2"> <!----- inicia tabla agrupada Datos de Padre o Tutor -------->
+							<table width="80%" border="0" cellpadding="0" cellspacing="0"> 
+								<tr>  
+									<td><input name="xNombreCE" type="text" id="xNombreCE" size="35" 
+                                                   onfocus="if (Trim(this.value) == '-')
+               								this.value = ''"
+                                                   onblur="if (Trim(this.value) == '')
+               								this.value = '-'" 
+                                                   value="-" 
+                                                   onkeypress="return LetrasAcento(event)" class="TextoMayuscula" />                  
+									</td>
+								</tr>  
+							</table><!----- termina tabla agrupada Datos de Padre o Tutor -------->
+						</td>
+        			</tr> 
+
+					<tr>
+						<td width="22%" height="37"><b>
+							<label style="color:#FF0000"> * </label>
+							&nbsp;&nbsp;Primer Apellido: </b>
+						</td> 
+            			<td width="80%" colspan="2"> <!----- inicia tabla agrupada Datos de Padre o Tutor -------->
+							<table width="80%" border="0" cellpadding="0" cellspacing="0">
+								<tr>
+									<td><input name="xApPaternoCE" type="text" id="xApPaternoCE" size="35"
+                                                   onfocus="if (Trim(this.value) == '-')
+                							this.value = ''"
+                                                   onblur="if (Trim(this.value) == '')
+                							this.value = '-'"		
+                                                   value="-"
+                                                   onkeypress="return LetrasAcento(event)"  class="TextoMayuscula"/>                   
+									</td>
+								</tr>
+							</table><!----- termina tabla agrupada Datos de Padre o Tutor -------->
+						</td>
+        			</tr>  
+
+					
+					<tr>
+						<td width="22%" height="37"><b>
+							<label style="color:#FF0000"> * </label>
+							&nbsp;&nbsp;Segundo Apellido: </b>
+						</td>
+            			<td width="80%" colspan="2"> <!----- inicia tabla agrupada Datos de Padre o Tutor -------->
+							<table width="80%" border="0" cellpadding="0" cellspacing="0">
+								<tr>
+									<td>
+										<input name="xApMaternoCE" type="text" id="xApMaternoCE" size="35" 
+                                                   onfocus="if (Trim(this.value) == '-')
+                							this.value = ''"
+                                                   onblur="if (Trim(this.value) == '')
+                							this.value = '-'" 	
+                                                   value="-"
+                                                   onkeypress="return LetrasAcento(event)" class="TextoMayuscula"/>
+									</td>
+								</tr> 
+							</table><!----- termina tabla agrupada Datos de Padre o Tutor -------->
+						</td>
+        			</tr>   
+					<tr>
+						<td width="22%" height="37"><b>
+							<label style="color:#FF0000"> * </label>
+							&nbsp;&nbsp;Parentesco: </b>
+						</td>
+            			<td width="80%" colspan="2"> <!----- inicia tabla agrupada Datos de Padre o Tutor -------->
+							<table width="80%" border="0" cellpadding="0" cellspacing="0">
+								<tr>
+									<td>
+										<input name="xParentescoCE" type="text" id="xParentescoCE" size="35" 
+                                                   onfocus="if (Trim(this.value) == '-')
+                							this.value = ''"
+                                                   onblur="if (Trim(this.value) == '')
+                							this.value = '-'" 	
+                                                   value="-"
+                                                   onkeypress="return LetrasAcento(event)" class="TextoMayuscula"/>
+									</td>
+								</tr> 
+							</table><!----- termina tabla agrupada Datos de Padre o Tutor -------->
+						</td>
+        			</tr> 
+       					<tr>
+            				<td align="left"><b><label style="color:#FF0000">*</label>&nbsp;&nbsp;
+							Teléfono:</b></td> 
+            				<td colspan="2"><input name="xTelefonoCE" type="text" id="xTelefonoCE" 
+                                                       onfocus="if (Trim(this.value) == '-')
+                					this.value = ''"
+                                                       onblur="if (Trim(this.value) == '')
+                					this.value = '-'"	
+                                                       value="-"	
+                                                       size="10" maxlength="10"  onkeypress="return Telefono(event)"/>
+								<label style="color:#848484"><b>(a 10 dígitos Ej. 4441234567)</b></label>
+							</td>
+         				</tr>
+				</table><!----- finaliza tabla externa Datos de Padre o Tutor --------------------->
+          	</td>
+		</tr> 
+		<tr><td>&nbsp;</td></tr>
+		<tr>
+			<td><table width="100%" cellpadding="0" cellspacing="0" border="0"><!----- inicia tabla externa Datos Adicionales -------->
+				<tr class="CeldaDatos">
+					<th class="TablaDatosTitulo" align="left">&nbsp;Datos estadísticos	</th></tr>
+                <tr><td>&nbsp;</td></tr>
+				<tr>				   
+                    <td>
+                        <table width="100%" cellpadding="0" cellspacing="0"border="0">
+							
+							<tr>
+								<td width="22%"><b><label style="color:#FF0000"> * </label>&nbsp;&nbsp;¿Perteneces a alguna etnia indígena de México?</b></td>
+                                <td width="78%"> 
+									<select name="xEtnia"  id="xEtnia" > 
+										<option value="0">-</option>  
+										
+													<option value="1"   >Ninguna</option>
+												
+													<option value="2"   >Chatino</option>
+												
+													<option value="3"   >Chinanteca</option>
+												
+													<option value="4"   >Chol</option>
+												
+													<option value="5"   >Huasteco</option>
+												
+													<option value="6"   >Huichol</option>
+												
+													<option value="7"   >Maya</option>
+												
+													<option value="8"   >Mazahua</option>
+												
+													<option value="9"   >Mazateco</option>
+												
+													<option value="10"   >Mixe</option>
+												
+													<option value="11"   >Mixteco</option>
+												
+													<option value="12"   >Otomí</option>
+												
+													<option value="13"   >Tarahumara</option>
+												
+													<option value="14"   >Tarasco</option>
+												
+													<option value="15"   >Tlapaneco</option>
+												
+													<option value="16"   >Tojolabal</option>
+												
+													<option value="17"   >Totonaca</option>
+												
+													<option value="18"   >Tzeltal</option>
+												
+													<option value="19"   >Tzotzi</option>
+												
+													<option value="20"   >Zapoteco</option>
+												
+													<option value="21"   >Zoque</option>
+												
+									</select>
+                                </td>				  	
+							</tr>
+							<tr>
+								<td width="22%"><b><label style="color:#FF0000"> * </label>&nbsp;&nbsp;¿Tienes alguna discapacidad?</b></td>
+                                <td width="78%">  
+									<select name="xDiscapacidadS"  id="xDiscapacidadS" >
+										<option value="0">-</option>   
+										 
+													<option value="1"   >Sin Discapacidad</option>
+												 
+													<option value="2"   >Discapacidad Física/motríz</option>
+												 
+													<option value="3"   >Discapacidad Intelectual</option>
+												 
+													<option value="4"   >Discapacidad Múltiple</option>
+												 
+													<option value="5"   >Discapacidad auditiva Hipoacusia</option>
+												 
+													<option value="6"   >Discapacidad auditiva Sordera</option>
+												 
+													<option value="7"   >Discapacidad visual Baja Visión</option>
+												 
+													<option value="8"   >Discapacidad visual Ceguera</option>
+												 
+													<option value="9"   >Discapacidad Psicosocial</option>
+												
+									</select>
+                                </td>				  	
+							</tr> 
+
+							<tr>
+								<td><b><label style="color:#FF0000">* </label>&nbsp;&nbsp;Selecciona el principal medio por el cual te informaste de esta universidad:</b></td>
+								<td>	 					
+									<select name="xMedioRegistro"  id="xMedioRegistro" style="width:229px">
+										<option value="-">-</option>  
+										
+													<option value="2"   >Cartel</option>
+												
+													<option value="3"   >Folleto</option>
+												
+													<option value="8"   >Sitio web oficial</option>
+												
+													<option value="9"   >Página de Facebook</option>
+												
+													<option value="10"   >Correo electrónico</option>
+												
+													<option value="12"   >Feria vocacional</option>
+												
+													<option value="13"   >Pláticas en preparatoria</option>
+												
+													<option value="14"   >Recomendación de amigo o familiar</option>
+												
+													<option value="16"   >Whatsapp</option>
+												
+									</select>
+								</td>
+							</tr>
+						</table>	  
+					</td>				  
+				</tr>
+				</table><!----- finaliza tabla externa Datos adicionales----->
+			</td>
+		</tr>
+		<tr><td>&nbsp;</td></tr> 
+					
+		<tr>    
+			<td> <!------ inicia tabla externa Aviso de Privacidad------------->
+				<table width="100%" align="center" cellpadding="0" cellspacing="0" border="0">
+					<tr class="CeldaDatos">
+						<th class="TablaDatosTitulo" align="left">&nbsp;Aviso de Privacidad </th> 
+					</tr>
+					<tr> 
+						<td></td>
+					</tr>
+					<tr> 
+						<td>
+							<table width="100%" cellpadding="0" cellspacing="0" border="0"> <!- tabla interna aviso de privacidad -->
+							<tr><td>&nbsp;</td></tr> 
+							<tr>  				   
+								<td width="50%" colspan="2"><i>
+									"Su información será utilizada para: cumplir con los requerimientos oficiales, identificarlos,
+										contactarlos, avisos en casos de emergencia y proveerles el servicio de educación que ha
+										solicitado, informarles sobre cambios en los mismos y evaluar la calidad del servicio que
+										brindamos"</i> &nbsp;&nbsp;&nbsp;
+									<!--  aviso_32-->
+									<img src="../../../images/asignar_doc.png" onclick="verAcuerdo();" style="cursor:pointer"> 
+									<label style="font-size:15px"><a "https://sito.utslp.edu.mx/jsp/escolar/proceso_admision/href" onclick="verAcuerdo(); return false;">Leer acuerdo...</a> </label>
+								</td>   							  		  	
+							</tr> 
+							<tr>
+								<td>&nbsp;</td>   
+							</tr>
+							<tr><td>
+									<input type="checkbox" id="xAviso" name="xAviso" /> 
+									<label style="color:#FF0000" > <b>Acepto las condiciones manifestadas en el aviso de privacidad. 	     </b></label> 
+								  						
+							</td><td><input type="checkbox" id="xAviso2" name="xAviso2" disabled=disabled checked /> 
+									<label style="color:#FF0000" > <b>Autorizo que mi usuario y contraseña sean informados a mi tutor.	     </b></label> 
+								</td></tr>
+
+							</table>	  
+						</td>				  
+					</tr>							   
+				</table>
+			</td>
+		</tr>								   
+		<tr>
+						<td><!------ inicia tabla botón------------->
+							<table class="TablaDatosTitulo" width="100%" align="left" cellpadding="0" cellspacing="0" border="0">
+                				<tr><td>&nbsp;</td></tr>	
+                                <tr>   
+                                    <td>
+                                        <table width="100%" border="0">
+                                            <tr  class="CeldaDatos">
+                                                <td align="center" width="14%"  >
+													<table width="100%" align="center" border="0">
+														<tr>
+                                                            <td align="center">	
+                                                                <table align="center" width="10%" border="0">	
+                                                                    <tr class="CeldaDatos">
+																		<td align="center" onclick="Interesado_Guardar()" onmouseover="this.className = 'CeldaBotonSeleccionado'" onmouseout="this.className = 'CeldaBoton'" id="botonGuadado">	  
+																			<img src="../../../images/arrow-forward_32.gif"  class="CeldaMenuOpcion" onmouseover="this.className = 'CeldaMenuOpcionSeleccionado'" onmouseout="this.className = 'CeldaMenuOpcion'" /> <br />
+																			Siguiente
+                                                                        </td>
+                                                                    </tr>
+						
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+												</td>         
+											</tr>
+										</table>	  
+                                    </td>
+                                </tr>  
+                                <tr><td>&nbsp;</td></tr>	
+                                <tr class="CeldaDatos">
+                                    <td>
+										<table border="0" width="100%" align="left" cellpadding="0" cellspacing="0">
+											<colgroup>
+												<col width="3%" />
+                                                <col width="97%" />
+                                            </colgroup>
+											<tr class="CeldaDatosRezaltar">
+												<td>&nbsp;<label style="color:#FF0000"> * </label> </td>
+												<td>&nbsp; Informaci&oacute;n obligatoria </td>
+											</tr>
+										</table>
+                                    </td> 
+                                </tr> 
+                                <tr><td>&nbsp;</td></tr> 
+								<tr><td align="right">FO-CA-01 Rev:3</td></tr>
+							</table>
+						</td>
+		</tr>
+																								   
+						
+			
+
+  	
+	</table> 
+	
+	<div id="mensajeDialogo" title="Mensaje del Sistema - SITO" style="padding:8px"> 
+        <div width="98%" >   <!--top:0px;-->
+			<iframe id="frame" style="position:absolute;width:98%;height:98%;" >prueba</iframe>
+    	</div>
+    </div>
+
+</body>
+</html>

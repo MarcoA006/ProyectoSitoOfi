@@ -1,0 +1,12 @@
+admin:admin
+admin:password
+admin:tomcat
+admin:s3cret
+tomcat:tomcat
+tomcat:s3cret
+tomcat:password
+manager:manager
+both:tomcat
+role1:role1
+role1:tomcat
+admin:adminadmin

@@ -1,0 +1,31 @@
+.TextoColorAzul{
+	color:#0000FF;
+}
+
+.TextoColorNegro{
+	color:#000000;
+}
+
+.TextoVinculo{
+	color:#D76B00;
+	font-weight:bold;
+}
+
+.TextoMinuscula{
+	text-transform:lowercase;
+}
+
+.TextoMayuscula{
+	 text-transform:uppercase;
+}
+
+.TextoDesabilitado{
+	background-color:#F5F6FA;
+	color:#666666;
+}
+
+.TituloLogin{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:18px;
+	color:#0076A8;
+}

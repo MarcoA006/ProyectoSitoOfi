@@ -1,0 +1,302 @@
+ 
+        
+      
+
+ 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head> 
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Entrevistas TSU</title>
+
+        <link rel="stylesheet" href="../../../styles2/pages.css" type="text/css"/>
+        <link rel="stylesheet" href="../../../styles2/tables.css" type="text/css"/>
+        <link rel="stylesheet" href="../../../styles2/cells.css" type="text/css"/>
+        <link rel="stylesheet" href="../../../styles2/characters.css" type="text/css"/>
+        <link rel="stylesheet" href="../../../styles2/reports.css" type="text/css"/>
+        <link rel="stylesheet" href="../../../javascript/themes/aqua.css" type="text/css"/>
+	
+	
+		<link rel="stylesheet" href="../../../styles2/redmond_1.8.7/jquery-ui-1.8.7.custom.css" />
+		<link rel="stylesheet" href="../../../styles2/qtip/jquery.qtip.min.css" />	
+ 
+    </head>
+ 
+    <script language="javascript" type="text/javascript" src="../../../javascript/utilities.js"></script>
+    <script language="javascript" type="text/javascript" src="../../../javascript/utils.js"></script>
+    <script language="javascript" type="text/javascript" src="../../../javascript/calendar.js"></script>
+    <script language="javascript" type="text/javascript" src="../../../javascript/calendar-setup.js"></script>
+    <script language="javascript" type="text/javascript" src="../../../javascript/calendar-sp.js"></script>
+
+    <script language="javascript" type="text/javascript" src="../../../javascript/tabpane.js"></script>
+    <script language="javascript" type="text/javascript" src="../../../javascript/jquery-1.3.2.min.js" ></script>
+	
+	<script type="text/javascript" src="../../../javascript/jquery/jquery-1.5.1.min.js"></script>
+	<script type="text/javascript" src="../../../javascript/jquery/jquery-ui-1.8.13.min.js"></script>
+    
+	<script>var $jq = jQuery.noConflict();</script>
+	
+	
+    <script language="javascript" type="text/javascript">
+        <!--
+		window.history.go(1);
+        document.oncontextmenu = function() {
+            return false;
+        } 
+
+        document.onkeydown = function()
+        {
+            if (window.event && window.event.keyCode == 116)
+            {
+                window.event.keyCode = 505;
+            }
+
+            if (window.event && window.event.keyCode == 505)
+            {
+                return false;
+            }
+        }
+        //-->
+    </script>
+    <script language="javascript" type="text/javascript">
+        <!--
+             
+        function Alerta(visible, color)
+        {
+            document.getElementById("Alerta").style.visibility = visible;
+            document.getElementById("Alerta").style.color = color;
+            setTimeout("LimpiarMsg()", 6000);
+        }
+
+        function LimpiarMsg()
+        {
+            document.getElementById("Alerta").style.visibility = "hidden";
+        }
+        
+        
+
+        function Abrir_Pagina(pagina, titulo)
+        {
+            var vWinPres = window.open(pagina, titulo, "width= 600, height=590, statusbar=yes, directories=no, scrollbars=yes, resizable=no");
+            vWinPres = self;
+        }
+
+        function Recargar(opcion, objeto)
+        {
+            document.forma.yAccion.value = "Recargar" + opcion;
+            document.forma.yObjeto.value = objeto;
+            fragmentoTexto = objeto.split('.');
+
+            if (fragmentoTexto[2] == "xEspecialidadCarrera2" || fragmentoTexto[2] == "xEspecialidadCarrera") {
+                document.getElementById(fragmentoTexto[2]).value = -1;
+
+            }
+            document.forma.submit();
+        }
+        function Enfocar(obj)
+        {
+            obj.focus();
+        }
+
+        function Sexo(valor)
+        {
+            document.forma.ySexo.value = valor;
+        }
+
+       
+
+        function Mostrar(valor)
+        {
+            if (valor == -1)
+                document.getElementById("yOtroEstado").style.display = "";
+            else
+                document.getElementById("yOtroEstado").style.display = "none";
+				
+			document.forma.submit();	
+        }
+     
+
+        function Ocultar(valor) {
+            var tipo_otro = document.getElementById("yCveTipoSeguroOtro").value;
+            if (valor == tipo_otro) {
+                document.getElementById('xSeguroSocial').style.display = '';
+                document.getElementById('SeguroSocial').style.display = '';
+            }
+            else {
+                document.getElementById('xSeguroSocial').style.display = 'none';
+                document.getElementById('SeguroSocial').style.display = 'none';
+                document.getElementById('xSeguroSocial').value = "-";
+
+            }
+        }
+        
+        function datos_trabajo_interesado()
+        {
+            document.forma.xEmpresaIntP.value= "-";   
+            document.forma.xTelEmpresaIntP.value="-";
+            document.forma.xJefeDirectoP.value= "-";
+            document.forma.xPuestoP.value= "-";  
+			document.forma.xPuestoInteresadoP.value= "-";  
+            document.forma.submit();     
+        }
+		
+		function valida_curp(){
+		var cup = Trim(document.forma.xCurp.value);
+		//alert(cup);
+			if(cup != "" && cup.length==18){
+				document.forma.yAccion.value = "VCURP";
+				document.forma.submit();
+			}else{
+				alert("debe proporcionar un curp válida");
+				document.forma.xCurp.value = "-";
+				}
+		}
+		
+		 function valida_curp2(){ 
+		var cup = Trim(document.forma.xCurp.value);
+		//alert(cup);
+		console.log(cup.length);
+			if(cup != "" && cup.length==18){
+				valida_curp(); 
+			}
+		}
+		
+		 
+		function Interesado_Mensaje(valor)
+		{
+			alert(valor);
+			ubicar(10);
+			document.getElementById("Alerta").style.visibility="visible";
+			document.getElementById("Alerta").style.color="#FF0000";
+			document.getElementById("Alerta").innerHTML = valor;
+			t = window.setTimeout("QuitarMensaje()",12000);
+		}
+		
+		function limpia_curp(){
+			document.forma.xCurp.value = "-";
+		}
+		
+	
+		
+		function ubicar(a){
+			scroll(0, a);
+		}
+		
+
+
+        //-->
+    </script>
+</head>  
+
+<body  onLoad="">
+    <form action="" method="post" name="forma" id="forma" > 
+        <input type="hidden" name="yAccion" id="yAccion" value="" />
+        <input type="hidden" name="yInteresado" id="yInteresado" value="0" />
+        <input type="hidden" name="yEncuestado" id="yEncuestado" value="0" /> 
+        <input type="hidden" name="yCveTipoSeguroOtro" id="yCveTipoSeguroOtro" value="10" /> 
+        <input name="yResolucion" type="hidden" id="yResolucion" value="800x600"/>
+        <input name="ySexo" type="hidden" id="ySexo" value="M"/> 
+        <input type="hidden" name="yObjeto" id="yObjeto" />
+		<input type="hidden" name="yScroll" id="yScroll" value="" />
+		<input type="hidden" name="yBloqueoG" id="yBloqueoG" value="false" />
+		<input type="hidden" name="yMenorEdad" id="yMenorEdad" value="1" />
+		
+      <!--  <div style="position:relative;left:-180px;top:-26px;z-index:2">
+          <label style="color:#D3D3D3;font-size:46px;font-family:Verdana, Geneva, sans-serif"><b>2025</b></label>
+        </div>--> 
+<table width="95%"  align="center" cellpadding="0" cellspacing="0" border="0">
+	<tr bgcolor="#046a38"> 
+		<td width="40%" >&nbsp;&nbsp;</td>
+	</tr> 
+	<tr bgcolor="#046a38"> 
+		<td width="40%" bgcolor="white" align="center">
+		&nbsp;&nbsp;
+		<!--<img src="../../../images/logo_negro.png" height="80" align="center"/>
+		<img src="../../../images/banner_tsu.jpg?time=" height="80"/align="right">-->
+		<img src="../../../images/EnFOSE01_2.jpg?time=1760124052656" height="150" align="center"/>
+
+		</td>
+	</tr>  
+	<tr bgcolor="#046a38"> 
+		<td>&nbsp;</td>
+    </tr>  
+	<tr bgcolor="#046a38"> 
+		<td>&nbsp;<span style="color:#FFFFFF; font-size:14px"><b>Modalidad Escolarizada: </b> Estudiarás de lunes a viernes en turno matutino </span></td>
+    </tr> 
+	<tr bgcolor="#046a38"> 
+		<td>&nbsp;</td>
+    </tr> 
+	<tr>
+		<td><label id="Alerta"></label></td>
+    </tr>
+	<tr>
+      	<td align="right">&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+
+	    <tr> 
+        	<td height="309"><!------ inicia tabla externa Datos Generales------------->
+			
+				<table width="44%" height="187" style="border:#000000; border:solid"  align="center" cellpadding="0" cellspacing="0">
+                		<!----<tr><td>&nbsp;</td></tr>----->
+						
+						<tr class="CeldaDatos"> 
+                  			<th height="76" align="center" class="TablaDatosTitulo" style="font-size:30px; font-family:Georgia";>&nbsp;Ingresa tu CURP</th>
+                		</tr>
+ 
+						<tr >
+							<td> <!----- inicia tabla interna Datos Generales-------->
+								<table width="98%" height="83" border="0" align="center" cellpadding="0" cellspacing="0"> 
+                      			<tr>									
+                       				<td width="393" height="83" colspan="39" align="center"><p>
+                       				  <input name="xCurp"  type="text" id="xCurp" size="30" height="20"
+                                       					value="-" onfocus="if (this.value == '-')this.value = ''" 
+                                       					onblur="valida_curp()"
+                                       					maxlength="30" class="TextoMayuscula" onkeypress="return CURP(event)" onkeyup="valida_curp2()" style="font-family:Verdana; font-size:15px;  "
+														/>
+                       				
+                       				  <p> 
+									  	<a href="https://consultas.curp.gob.mx/CurpSP" target="_blank" style="font-family:Verdana; font-size:20px; text-align:center">Buscar CURP&nbsp;<img src="../../../images/search_16.gif"  title="Buscar CURP" style="cursor:pointer" /></a>
+                   				      </p>
+								  </td>
+                     			</tr>
+		
+							</table> <!------ termina tabla interna Datos Generales------------->
+						</td>	
+					</tr>
+			  </table><!------ termina tabla externa Datos Generales------------->
+		  </td>
+		</tr>
+	 
+			 	 					   
+		<tr>
+						<td><!------ inicia tabla botón------------->
+							
+                				<tr><td>&nbsp;</td></tr>	
+
+                                <tr class="CeldaDatos">
+                                    <td>
+										<table border="0" width="100%" align="left" cellpadding="0" cellspacing="0">
+											<colgroup>
+												<col width="3%" />
+                                                <col width="97%" />
+                                            </colgroup>
+											
+										</table>
+                                    </td>
+                                </tr>
+        
+							
+							</table>
+						</td>
+		</tr>
+																								   
+						
+			
+
+  	
+	</table> 
+	
+
+
+</body>
+</html>

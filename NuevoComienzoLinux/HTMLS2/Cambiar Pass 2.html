@@ -1,0 +1,246 @@
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Content-Type: text/html;charset=iso-8859-1
+Date: Sat, 11 Oct 2025 18:15:17 GMT
+Content-Length: 9969
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Cambiar Contrase&ntilde;a</title>
+
+	<link rel="stylesheet" href="../styles/pages.css" type="text/css">
+	<link rel="stylesheet" href="../styles/tables.css" type="text/css">
+	<link rel="stylesheet" href="../styles/cells.css" type="text/css">
+	<link rel="stylesheet" href="../styles/characters.css" type="text/css">
+    <link rel="stylesheet" href="../javascript/themes/aqua.css" type="text/css">
+</head>
+<script language="javascript" type="text/javascript" src="../javascript/utils.js"></script>
+<script language="javascript" type="text/javascript" src="../javascript/calendar.js"></script>
+<script language="javascript" type="text/javascript" src="../javascript/calendar-setup.js"></script>
+<script language="javascript" type="text/javascript" src="../javascript/calendar-sp.js"></script>
+<script language="javascript">
+	<!--
+		window.history.go(1);
+		//document.oncontextmenu = function(){return false} 
+	//-->
+</script>
+<script language="javascript" type="text/javascript" src="../javascript/utilities.js"></script>
+<script language="javascript" type="text/javascript">
+	<!--
+		function Muestra_Pregunta()
+		  {		  
+		  	  //var pregunta = prompt("Por seguridad, Introduce tu fecha de Nacimiento (DD/MM/YYYY)\npara verificar tu autenticidad. ","11/10/2025");
+			  document.getElementById('VerificarFecha').style.display = '';
+			  //document.forma.xFecha.value = pregunta;			  
+			 // document.forma.yAccion.value = "Mostrar";			  
+			  //document.forma.xI.value = 1;			  
+			  //document.forma.submit(); 
+		  }
+		  
+		  function Verificar()
+		  {
+			  document.forma.yAccion.value = "Verificar_Fecha";
+			  document.forma.xI.value = 1;			  
+			  document.forma.submit();
+		  }
+		function Alerta(visible,color,opcion)
+		  {	
+		  	 document.getElementById("Alerta").visibility = visible;
+			 document.getElementById("Alerta").style.color = color;
+			 
+			 switch (opcion)
+			   {
+			   	  case 1:
+				  			document.forma.xPasswordActual.focus();
+							break;
+				  case 2:
+				  			document.forma.xNuevoPassword.focus();
+							break;			   	  
+			   }
+		  }
+		function Guardar()
+		  {
+		  	 
+			  if (Trim(document.forma.xPasswordActual.value).length <= 0)
+			    {
+					alert("La contraseña actual es necesaria..");
+					document.forma.xPasswordActual.focus();
+					return;
+				}			 
+			 
+			 
+			 if (Trim(document.forma.xNuevoPassword.value).length <= 0)
+			    {
+					alert("La nueva contraseña es necesaria..");
+					document.forma.xNuevoPassword.focus();
+					return;
+				}
+				
+			 if (Trim(document.forma.xPassword.value).length <= 0)
+			    {
+					alert("Es necesario confirmar la nueva contraseña");
+					document.forma.xPassword.focus();
+					return;
+				}	
+				
+			if (Trim(document.forma.xNuevoPassword.value) != Trim(document.forma.xPassword.value))
+			    {
+					alert("Las contraseñas no coinciden, por favor verifiquelo");
+					document.forma.xPassword.focus();
+					return;
+				}	
+				
+			 var aceptar = confirm("Esta seguro de querer cambiar la contraseña?");
+			 
+			 if (!aceptar) 	
+			   return;
+			   
+			   
+			 document.forma.yAccion.value = "Guardar";
+			 document.forma.submit();	
+		  }
+	//-->	
+</script>
+
+<body onload="">
+<form name="forma" method="post" action="" >
+	<input type="hidden" name="yAccion" id="yAccion" value="">
+	<input type="hidden" name="x4" id="x4" value="17158">
+	<input type="hidden" name="xI" id="xI" value="1">	
+	<!--<input type="hidden" name="xFecha" id="xFecha" /> -->
+	<input type="hidden" name="yResolucion" id="yResolucion" value="0" />
+	<br />
+    <!-- Div para mostrar el calendario y enviar los datos y pueda aparecer el resto del formulario -->
+    <div id="VerificarFecha" style="display:none;">
+    <table class="TablaDatosTitulo" width="95%" align="center" cellpadding="0" cellspacing="0">
+							    <th width="31%" class="CeldaDatosTitulo"> Verificaci&oacute;n </th>
+								  <th width="69%"> 	<label id="Alerta">  </label> </th>
+							
+					</table>
+                    <table border="0" width="95%" align="center" cellpadding="0" cellspacing="0">
+						<tr class="CeldaDatos" align="center" height="20">	
+							<td width="24%" colspan="2">&nbsp;</td>								
+						</tr>
+						<tr class="CeldaDatos">
+							<td>&nbsp; Usuario: </td>
+							
+							<td width="76%">&nbsp;<b>MARCO ANTONIO BLANCO MENDEZ</b></td>
+						</tr>	
+						
+									<tr class="CeldaDatos">
+										<td>&nbsp;
+											Fecha de nacimiento: 
+										&nbsp;
+                                        <label style="color:#FF0000"> * </label></td>
+										<td>&nbsp;
+											<input type="text" name="xFecha" id="xFecha" size="12" maxlength="10" value="11/10/2025" 
+							readonly class="TextoDesabilitado" />
+						<img src="../images/calendar_16.gif" alt="Selecciona la Fecha de Nacimiento" name="Fecha" width="16" height="16" class="CeldaImagenSeleccionada" id="Fecha" />
+						<script language="JavaScript" type="text/javascript">//<![CDATA[								
+							Zapatec.Calendar.setup({
+							firstDay          : 0,
+							showOthers        : true,
+							step              : 5,
+							electric          : false,
+							inputField        : "xFecha",
+							button            : "Fecha",
+							ifFormat          : "%d-%m-%Y",
+							daFormat          : "%Y/%m/%d"
+							});
+						//]]></script>
+										</td>
+									</tr>
+						
+                        <tr class="CeldaDatos">
+                        	<td>&nbsp;</td>
+                        	<td align="left" style="cursor:pointer;" onclick="Verificar();"><b>Verificar</b>&nbsp;<img src="../images/check2.gif" /></td>
+                        </tr>					
+				  </table>
+                  <table width="95%" cellpadding="0" cellspacing="0" border="0" align="center">
+					<tr class="CeldaDatosRezaltar">
+					 <label style="color:#FF0000">
+						 <td width="3%">&nbsp;
+							 * 
+					  </td>
+					  <td width="97%">&nbsp; Debes introducir tu fecha de nacimiento para cambiar tu contraseña </td>
+					</label>
+					</tr>
+		</table></div>
+        
+	
+	
+<table class="TablaDatosTitulo" width="95%" align="center" cellpadding="0" cellspacing="0" style="display:">
+							    <th width="31%" class="CeldaDatosTitulo"> Cambio de Contrase&ntilde;a </th>
+								  <th width="69%"> 	<label id="Alerta">  </label> </th>
+							
+					</table>
+					<table border="0" width="95%" align="center" cellpadding="0" cellspacing="0" style="display:">
+					  <tr class="CeldaDatos" align="center" height="20">	
+							<td width="24%" colspan="2">&nbsp;</td>								
+						</tr>
+						<tr class="CeldaDatos">
+							<td>&nbsp; Usuario: </td>
+							
+							<td width="76%">&nbsp;<b>MARCO ANTONIO BLANCO MENDEZ</b></td>
+						</tr>	
+							  	
+									<tr class="CeldaDatos">
+										<td>&nbsp;
+											Contraseña actual: 
+										&nbsp;
+                                        <label style="color:#FF0000"> * </label></td>
+										<td>&nbsp;
+											<input type="password" id="xPasswordActual" name="xPasswordActual" onkeypress="return Password(event)"
+												    maxlength="8" size="13" onkeydown="if (event.keyCode == 13) Guardar(); if (this.value.length == 8 && event.keyCode != 13 && event.keyCode != 8){ alert('El sistema solo admite un máximo de 8 caracteres'); return false }"/>
+										</td>
+									</tr>
+							
+						<tr class="CeldaDatos">
+							<td>&nbsp; Nueva contraseña: &nbsp;
+                              <label style="color:#FF0000"> * </label></td>
+						  <td>&nbsp;
+								<input type="password" id="xNuevoPassword" name="xNuevoPassword" onkeypress="return Password(event)"
+												    maxlength="8" size="13" onkeydown="if (event.keyCode == 13) Guardar(); if (this.value.length == 8 && event.keyCode != 13 && event.keyCode != 8){ alert('El sistema solo admite un máximo de 8 caracteres'); return false }"/>
+								&nbsp;
+                                <label style="color:#FF0000"> * </label>
+                                <b style="font-size:14px">M&aacute;ximo	8	car&aacute;cteres	</b>				</td>
+						</tr>
+						<tr class="CeldaDatos">
+							<td>&nbsp; Confirme la contraseña:&nbsp;
+                              <label style="color:#FF0000"> * </label></td>
+							<td>&nbsp;
+								<input type="password" id="xPassword" name="xPassword" onkeypress="return Password(event)"
+												    maxlength="8" size="13" onkeydown="if (event.keyCode == 13) Guardar(); if (this.value.length == 8 && event.keyCode != 13 && event.keyCode != 8){ alert('El sistema solo admite un máximo de 8 caracteres'); return false }"/>
+							</td>
+						</tr>						
+				  </table>	
+				  <table cellpadding="0" cellspacing="0" border="0" width="95%" align="center" style="display:">
+						<tr class="CeldaDatos">
+							<td width="80%" >&nbsp;</td>	
+							<td width="20%"  align="right" class="CeldaBoton" onclick="Guardar();" onmouseover="this.className='CeldaBotonSeleccionado'" onmouseout="this.className='CeldaBoton'">&nbsp;
+								<img src="../images/save_16.gif" alt="Cambiar contraseña" />&nbsp; Cambiar contraseña&nbsp;&nbsp;&nbsp;											
+							</td>
+						</tr>
+						<tr class="CeldaDatos">
+							<td colspan="2">&nbsp;</td>
+						</tr>
+						<tr><td>&nbsp;</td></tr>
+				  </table>
+				  <table width="95%" cellpadding="0" cellspacing="0" border="0" align="center" style="display:">
+					<tr class="CeldaDatosRezaltar">
+					  <td width="3%">&nbsp;
+							<label style="color:#FF0000"> * </label>
+					  </td>
+					  <td width="97%">&nbsp; Informaci&oacute;n obligatoria </td>
+					</tr>
+				  </table>
+    
+</form>	
+</body>
+</html>

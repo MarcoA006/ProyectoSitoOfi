@@ -1,0 +1,771 @@
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Content-Type: text/html;charset=iso-8859-1
+Date: Sat, 11 Oct 2025 18:29:33 GMT
+Content-Length: 24189
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title> Boleta de Calificaciones </title>
+
+	<link rel="stylesheet" href="../../styles2/pages.css" type="text/css">
+	<link rel="stylesheet" href="../../styles2/tables.css" type="text/css">
+	<link rel="stylesheet" href="../../styles2/cells.css" type="text/css">
+	<link rel="stylesheet" href="../../styles2/characters.css" type="text/css">
+	<link rel="stylesheet" href="../../javascript/themes/aqua.css" type="text/css">
+</head>
+
+<script language="javascript" type="text/javascript" src="../../javascript/utilities.js"></script>
+<script language="javascript" type="text/javascript">
+<!--
+	window.history.go(1);
+	document.oncontextmenu = function(){return false};
+	document.onkeydown = function(){
+		if (window.event && window.event.keyCode == 116)
+			window.event.keyCode = 505;
+		if (window.event && window.event.keyCode == 505)
+			return false;
+	}
+//-->
+</script>
+<script language="javascript" type="text/javascript">
+<!--
+	function Boleta_Alerta(visible, color){
+		document.getElementById("Alerta").style.visibility = visible;
+		document.getElementById("Alerta").style.color = color;
+	}
+
+	function Boleta_Recargar(){
+		document.forma.yResolucion.value = screen.width + "x" + screen.height;
+		document.forma.yAccion.value = "Boleta_Recargar";
+		document.forma.submit();
+	}
+	
+	function Boleta_Combo_Recargar(opc){   	
+	 
+		if(opc==1){  
+			document.forma.xCarrera.value = 0;
+			document.forma.xPE.value = 0;
+			document.forma.xCuatrimestre.value = -1;
+		}
+		if(opc==2){
+			document.forma.xPE.value = 0;
+			document.forma.xCuatrimestre.value = -1;
+		}
+		if(opc==3){	
+			document.forma.xCuatrimestre.value = -1;
+		}
+		if(opc==4){ 
+		}
+		document.forma.yResolucion.value = screen.width + "x" + screen.height;
+		document.forma.yAccion.value = (document.forma.yTipoAccion.value=="Cancelar"?"Boleta_Recargar":"");
+		document.forma.submit();
+	}
+	
+	function Boleta_Limpiar(){
+	
+	}
+
+	function Boleta_Nuevo(){
+		document.forma.yResolucion.value = screen.width + "x" + screen.height;
+		document.forma.yAccion.value = "Boleta_Nuevo";
+		document.forma.submit();
+	}
+	
+	function Boleta_Guardar(){
+
+	}
+	
+	 
+	function Muestra_Boleta(matricula, cuatrimestre, periodo, parcial){
+		//alert(matricula+'---'+cuatrimestre+'---'+periodo+'---'+parcial);
+		var pagina = "muestra_boleta_individual.jsp?xMatricula=" + matricula + "&xCuatrimestre=" + cuatrimestre + "&xPeriodo=" + periodo + "&xParcial=" + parcial;
+		var vWinPres = window.open(pagina, "Muestra", "width=800, height=500, statusbar=yes, directories=no, scrollbars=yes, resizable=no, top=0, left=0");
+		vWinPres.opener = self;
+	}
+	
+	function Reporte_Imprimir_Preparar(){		
+		document.forma.yAccion.value = "Reporte_Imprimir";
+		document.forma.submit();
+	}
+	
+	function Reporte_Imprimir(){
+		window.print();
+		setTimeout(function(){document.forma.submit();}, 2000);
+	}
+	
+	
+	function Buscar_Alumno(control){
+		var pagina = "muestra_alumno.jsp?xControl=" + control;
+		var vWinPres = window.open(pagina, "Muestra", "width=790, height=590, statusbar=yes, directories=no, scrollbars=yes, resizable=no, top=0, left=0");
+		vWinPres.opener = self;
+	}
+	
+	function Alumno_Recargar(){
+		document.forma.yAccion.value = "Recargar_Datos";
+		document.forma.submit();	
+	}
+</script>
+
+<body onload="" >
+<form name="forma" method="post" action="">
+	<input type="hidden" name="yAccion" id="yAccion" value="">
+	<input type="hidden" name="yTipoAccion" id="yTipoAccion" value="Nuevo">
+	<input type="hidden" name="yResolucion" id="yResolucion" value="0">
+	<input type="hidden" name="yMatricula" id="yMatricula" value="21136">	
+	<input type="hidden" name="yPeriodo" id="yPeriodo" value="37">	
+	<table border="0" width="100%" align="center" cellpadding="0" cellspacing="0">
+		<tr>
+			<table border="0" width="100%" align="center" cellpadding="0" cellspacing="0">
+				<tr>
+					<td>&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;</td>
+					<td>&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;</td> 
+					<td>&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;</td> 
+					<td><img src="../../images/banner_logo.jpg" width="80" height="70" align="right" /></td>
+					<td><b style="font-size:14px">&nbsp;&nbsp; Universidad Tecnológica de San Luís Potosí</b></td>
+					<td align="right" onmouseover="this.className='CeldaBotonSeleccionado'" onmouseout="this.className='CeldaBoton'" onclick="Reporte_Imprimir_Preparar()">
+											<img src="../../images/print_16.gif" >
+											<label >Imprimir</label>
+											&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	
+										</td>  
+				</tr>
+			</table>
+		</tr>
+		
+		
+
+	
+					<tr>
+						<td>
+							<table class="TablaDatosTitulo" width="97%" align="center" cellpadding="0" cellspacing="0" >
+								<colgroup>
+									<col width="25%"> <col width="25%"> <col width="25%"> <col width="25%">
+								</colgroup>
+								<th colspan="2" class="CeldaDatosTitulo"> Boleta de Calificaciones </th>
+								<th colspan="2" align="left"> <label id="Alerta" style="font-size:14px">  </label> </th>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<table border="0" width="97%" align="center" cellpadding="0" cellspacing="0">
+								<colgroup>
+									<col width="15%"> <col width="25%"> <col width="35%"> <col width="25%">
+								</colgroup>
+								<tr class="CeldaDatos">
+									<td>&nbsp;  </td>
+									<td>&nbsp;  </td>
+									<td>&nbsp;  </td>
+									<td>&nbsp;  </td>
+								</tr>
+                                
+								<tr class="CeldaDatos">
+								<td></td>
+								<td></td>
+								 <td  colspan="2" rowspan="10" align="center"  > </td>
+								 </tr> 
+								
+								<tr class="CeldaDatos" >
+									<td> &nbsp; Seleccione el Nivel Académico:</td>
+									<td> 
+										&nbsp;
+										<select name="xUnidadAcademica" id="xUnidadAcademica" onchange="Boleta_Combo_Recargar(1)" style="width:175px">
+											<option value="0"> --- </option>
+											
+										
+											<option value="2" selected> Nivel Licenciatura </option>
+										 
+									  </select>
+									</td>
+									
+								</tr>		
+									
+								<tr class="CeldaDatos" >
+									<td> &nbsp; Seleccione el Plan Educativo:</td>
+									<td>
+										&nbsp;
+										<select name="xCarrera" id="xCarrera" onchange="Boleta_Combo_Recargar(2)" style="width:175px">
+											<option value="0"> --- </option>
+											
+										
+											<option value="38" selected> (NME) Ingeniería en Tecnologías de la Información e Innovación Digital </option>
+										
+											</select>
+											 
+											
+									</td> 
+									
+									
+									
+								</tr>
+								
+								<tr class="CeldaDatos" >
+									<td> &nbsp; Seleccione el Plan de Estudios:</td>
+								  <td >
+										&nbsp; 
+										<select name="xPE" id="xPE" onchange="Boleta_Combo_Recargar(3)" style="width:175px">
+											<option value="0"> --- </option>
+											 
+										
+											<option value="116" selected> ITI2024TIR </option>
+										
+											</select>
+									</td>
+								</tr> 
+								
+								<tr class="CeldaDatos" >
+									<td> &nbsp; Seleccione el Cuatrimestre: </td>
+								  <td > 
+										&nbsp;
+										<select name="xCuatrimestre" id="xCuatrimestre" onchange="Boleta_Combo_Recargar(4)" style="width:150px">
+											<option value="-1"> --- </option>
+								 
+													<option value="1" > 1 </option>
+										 
+													<option value="2" > 2 </option>
+										 
+													<option value="3" > 3 </option>
+										 
+													<option value="4" selected> 4 </option>
+										
+										</select>
+									</td>
+									
+								</tr>			
+				
+							<tr class="CeldaDatos">
+								<td> &nbsp; Matricula: </td>
+								<td > &nbsp; <b> 21136 </b> </td>
+							</tr>
+							<tr class="CeldaDatos">
+								<td> &nbsp; Nombre: </td>
+								<td > &nbsp; <b> BLANCO MENDEZ MARCO ANTONIO </b> </td>
+							</tr>
+							<tr class="CeldaDatos">
+								<td > &nbsp; Estatus: </td>
+								
+								<td > &nbsp; <b> Inscrito </b> </td>
+							</tr>
+							<tr class="CeldaDatos"  style="display:none">
+								<td> &nbsp; Carrera: </td> 
+								<td > &nbsp; <b> (NME) Ingeniería en Tecnologías de la Información e Innovación Digital </b> </td>
+							</tr>
+				
+									<tr class="CeldaDatos">
+										<td> &nbsp; Grupo: </td>
+										<td > &nbsp; <b> ITI4.2 </b> </td>
+									</tr>
+									
+									
+					
+								<tr class="CeldaDatos">
+									<td colspan="4">&nbsp;  </td>
+								</tr>
+							</table>
+						</td> 
+					</tr> 
+				
+				
+							<tr> <td>&nbsp;</td> </tr>
+							<tr>
+								<td>
+									<table class="TablaDatosTitulo" width="97%" align="center" cellpadding="0" cellspacing="0">
+										<colgroup>
+											<col width="25%"> <col width="25%"> <col width="25%"> <col width="25%">
+										</colgroup>
+										<th colspan="2" class="CeldaDatosTitulo"> Calificaciones del Cuatrimestre 4 </th>
+										<th colspan="2" align="left">  </th>
+									</table>
+								</td>
+							</tr>
+							
+							<tr>
+							<td>
+								<table border="0" width="97%" align="center" cellpadding="0" cellspacing="0">
+									<colgroup>
+										<col width="30%"> 
+										  
+												<col width="15%"> 
+										  
+												<col width="15%"> 
+										  
+												<col width="15%"> 
+										
+												<col width="15%"> 
+										 
+									   <col width="10%"> 
+									</colgroup>
+									
+													<tr class="CeldaLista" align="center" rowspan="2">
+										<td  style="text-align:left;" class="CeldaLista" colspan="6"> &nbsp;&nbsp;
+											<b style="text-align:left; color:white;font-size:120%;text-shadow: 2px 1px #999"> 
+												Periodo 
+												Septiembre - Diciembre 2025
+
+												 &nbsp;&nbsp; Plan: ITI2024TIR
+											</b> 									
+										</td>
+										<tr>
+										<tr class="CeldaLista" align="center">
+										<td> <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Materias </b> </td>
+										 
+											   <td onmouseover="this.className='CeldaBotonSeleccionado'" onmouseout="this.className='CeldaLista'" class="CeldaLista" align="center" valign="middle"  onclick="Muestra_Boleta('21136', 4, 37, 1)"> <b> Parcial 1 </b> 
+											   <img src="../../images/info_16.gif"  />
+                                               <br/>
+                                               
+
+                                              <!-- <b onmouseover="this.className='CeldaBotonSeleccionado'" onmouseout="this.className='CeldaLista'"> boleta </b> -->
+                                               </td>
+										 
+											   <td onmouseover="this.className='CeldaBotonSeleccionado'" onmouseout="this.className='CeldaLista'" class="CeldaLista" align="center" valign="middle"  onclick="Muestra_Boleta('21136', 4, 37, 2)"> <b> Parcial 2 </b> 
+											   <img src="../../images/info_16.gif"  />
+                                               <br/>
+                                               
+
+                                              <!-- <b onmouseover="this.className='CeldaBotonSeleccionado'" onmouseout="this.className='CeldaLista'"> boleta </b> -->
+                                               </td>
+										 
+											   <td onmouseover="this.className='CeldaBotonSeleccionado'" onmouseout="this.className='CeldaLista'" class="CeldaLista" align="center" valign="middle"  onclick="Muestra_Boleta('21136', 4, 37, 3)"> <b> Parcial 3 </b> 
+											   <img src="../../images/info_16.gif"  />
+                                               <br/>
+                                               
+
+                                              <!-- <b onmouseover="this.className='CeldaBotonSeleccionado'" onmouseout="this.className='CeldaLista'"> boleta </b> -->
+                                               </td>
+										
+											  <td class="CeldaLista"  valign="middle" align="center"> <b> Calificación Final </b> </td>
+										
+										<td class="CeldaLista" valign="middle" > <b> Estado </b> </td>
+									</tr>
+									
+				
+									
+						  
+												 <tr align="center" class="celdaHover">
+													<td align="left">
+														&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+														<b>Cálculo de Varias Variables</b>
+													</td>
+													
+															 
+															
+																			<td > 
+																				24 
+																		 	</td>
+																		
+																	
+													
+															 
+															
+																		<td> &nbsp;- </td>
+													
+															 
+															
+																		<td> &nbsp;- </td>
+													
+																<td  style="color:#FF0000" > 
+																<b>
+																24.0 </b>
+
+																</td>
+																
+													<td> 
+														<span style="color:#0000CC" title="Cursando"><b>Cursando</b></span>
+														
+													</td>	
+												  </tr>
+									
+												 <tr align="center" class="celdaHover">
+													<td align="left">
+														&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+														<b>Centro de Datos</b>
+													</td>
+													
+															 
+															
+																			<td > 
+																				27 
+																		 	</td>
+																		
+																	
+													
+															 
+															
+																		<td> &nbsp;- </td>
+													
+															 
+															
+																		<td> &nbsp;- </td>
+													
+																<td  style="color:#FF0000" > 
+																<b>
+																27.0 </b>
+
+																</td>
+																
+													<td> 
+														<span style="color:#0000CC" title="Cursando"><b>Cursando</b></span>
+														
+													</td>	
+												  </tr>
+									
+												 <tr align="center" class="celdaHover">
+													<td align="left">
+														&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+														<b>Escalabilidad de Redes</b>
+													</td>
+													
+															 
+															
+																			<td > 
+																				25 
+																		 	</td>
+																		
+																	
+													
+															 
+															
+																		<td> &nbsp;- </td>
+													
+															 
+															
+																		<td> &nbsp;- </td>
+													
+																<td  style="color:#FF0000" > 
+																<b>
+																25.0 </b>
+
+																</td>
+																
+													<td> 
+														<span style="color:#0000CC" title="Cursando"><b>Cursando</b></span>
+														
+													</td>	
+												  </tr>
+									
+												 <tr align="center" class="celdaHover">
+													<td align="left">
+														&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+														<b>Ética Profesional</b>
+													</td>
+													
+															 
+															
+																			<td > 
+																				26 
+																		 	</td>
+																		
+																	
+													
+															 
+															
+																		<td> &nbsp;- </td>
+													
+															 
+															
+																		<td> &nbsp;- </td>
+													
+																<td  style="color:#FF0000" > 
+																<b>
+																26.0 </b>
+
+																</td>
+																
+													<td> 
+														<span style="color:#0000CC" title="Cursando"><b>Cursando</b></span>
+														
+													</td>	
+												  </tr>
+									
+												 <tr align="center" class="celdaHover">
+													<td align="left">
+														&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+														<b>Habilidades Interpersonales para el Desarrollo Profesional 4</b>
+													</td>
+													
+															 
+															
+																			<td > 
+																				30 
+																		 	</td>
+																		
+																	
+													
+															 
+															
+																		<td> &nbsp;- </td>
+													
+															 
+															
+																		<td> &nbsp;- </td>
+													
+																<td  style="color:#FF0000" > 
+																<b>
+																30.0 </b>
+
+																</td>
+																
+													<td> 
+														<span style="color:#0000CC" title="Cursando"><b>Cursando</b></span>
+														
+													</td>	
+												  </tr>
+									
+												 <tr align="center" class="celdaHover">
+													<td align="left">
+														&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+														<b>Infraestructura de Redes de Datos</b>
+													</td>
+													
+															 
+															
+																			<td > 
+																				28 
+																		 	</td>
+																		
+																	
+													
+															 
+															
+																		<td> &nbsp;- </td>
+													
+															 
+															
+																		<td> &nbsp;- </td>
+													
+																<td  style="color:#FF0000" > 
+																<b>
+																28.0 </b>
+
+																</td>
+																
+													<td> 
+														<span style="color:#0000CC" title="Cursando"><b>Cursando</b></span>
+														
+													</td>	
+												  </tr>
+									
+												 <tr align="center" class="celdaHover">
+													<td align="left">
+														&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+														<b>Inglés IV</b>
+													</td>
+													
+															 
+															
+																			<td > 
+																				24 
+																		 	</td>
+																		
+																	
+													
+															 
+															
+																		<td> &nbsp;- </td>
+													
+															 
+															
+																		<td> &nbsp;- </td>
+													
+																<td  style="color:#FF0000" > 
+																<b>
+																24.0 </b>
+
+																</td>
+																
+													<td> 
+														<span style="color:#0000CC" title="Cursando"><b>Cursando</b></span>
+														
+													</td>	
+												  </tr>
+									
+												 <tr align="center" class="celdaHover">
+													<td align="left">
+														&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+														<b>Programación de Redes</b>
+													</td>
+													
+															 
+															
+																			<td > 
+																				29 
+																		 	</td>
+																		
+																	
+													
+															 
+															
+																		<td> &nbsp;- </td>
+													
+															 
+															
+																		<td> &nbsp;- </td>
+													
+																<td  style="color:#FF0000" > 
+																<b>
+																29.0 </b>
+
+																</td>
+																
+													<td> 
+														<span style="color:#0000CC" title="Cursando"><b>Cursando</b></span>
+														
+													</td>	
+												  </tr>
+									
+							
+							
+								
+							</table>
+						
+						
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				
+				<tr  class="CeldaLista"> 
+				
+					<td align="right"> 
+						<table width="97%">
+							<tr class="celdaHover">
+							<td align="left" >&nbsp;<b> Promedio:</b></td>
+								<td align="center">
+								<b>   
+								</b>
+								 
+								
+								<b style="color:#FF0000"> 
+								0.0
+								</b>
+								</td>
+							</tr>
+							<tr><td colspan="2" ><b style="color:#FF0000"> * El promedio solo contempla cuatrimestres finalizados</b></td></tr>
+							<tr><td colspan="2">&nbsp;</td></tr>
+							
+					
+							<!--<tr  style="display:none">-->
+								<tr> 
+								<td colspan="2">
+									<table width="95%" align="center" border="0">	
+										<colgroup> 
+											<col width="20%"> 
+											<col width="20%">
+											<col width="20%"> 
+											<col width="20%">
+											<col width="10%"> 
+											<col width="10%">
+										</colgroup>	
+										 
+										<tr>
+											<td colspan="2"  align="center" class="CeldaLista"><b>ESTATUS PARCIALES</b></td>
+											<td colspan="2"  align="center" class="CeldaLista"><b>ESTATUS MATERIA</b></td>
+											<td colspan="2"  align="center"></td>
+										</tr>
+										<tr>
+											<td colspan="2" align="center" valign="top">
+												<table width="90%"  border="0">
+													<tr class="CeldaLista">
+														<td align="center"> <b>Estatus</b></td>
+														<td align="center"><b>Descripción</b></td>
+													</tr>
+													<tr class="celdaHover">
+														<td align="center" style="color:#FF0000;"><b>BL</b></td>
+														<td align="left">&nbsp;Bloqueada por inasistencias</td>
+													</tr>
+													<tr class="celdaHover">
+														<td align="center" style="color:#FF0000;"><b>FO</b></td>
+														<td align="left">&nbsp;Final ordinario pendiente por capturar</td>
+													</tr>
+													<tr class="celdaHover">
+														<td align="center" style="color:#FF0000;"><b>EX</b></td>
+														<td align="left">&nbsp;Extraordinario pendiente por capturar</td>
+													</tr>
+												</table>
+												<br />
+											</td>
+											<td colspan="2" align="center"  valign="top">
+												<table width="90%" border="0">
+													<tr class="CeldaLista">
+														<td align="center"> <b>Estatus</b></td>
+														<td align="center"><b>Descripción</b></td>
+													</tr>
+													
+														  	<tr class="celdaHover">
+																<td align="center" style="color:#0000FF;"><b>AF</b></td>
+																<td align="left">&nbsp;Aprobado en Final Ordinario</td>
+															</tr>
+														  
+														  	<tr class="celdaHover">
+																<td align="center" style="color:#0000FF;"><b>Cursando</b></td>
+																<td align="left">&nbsp;Cursando</td>
+															</tr>
+														  
+														  	<tr class="celdaHover">
+																<td align="center" style="color:#0000FF;"><b>Exento</b></td>
+																<td align="left">&nbsp;Aprobado en Parcial</td>
+															</tr>
+														  
+													<tr>
+														<td colspan="2"  align="center" class="CeldaLista"><b>ESTATUS CALIFICACIÓN</b></td>
+													</tr>
+													<tr>
+														<td align="center" style="color:#FF0000"><b>NA</b></td> 
+														<td align="left">&nbsp; No acreditada</td>
+													</tr>	
+													<tr>
+														<td align="center" ><b>AC</b></td> 
+														<td align="left">&nbsp; Acreditada</td>
+													</tr>												
+												</table>
+												<br />
+											</td>
+											<td colspan="2" align="center"  style="display:none">
+												<table> 
+													<tr align="center">
+														<td><b>Ing. Omar Alexandro Mora Carrillo<b><br />
+														_______________________________________<br />
+														<b>Jefe de Servicios Escolares<b>
+														
+														</td> 
+													</tr>
+												</table>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr> 
+							<tr> 
+								<td colspan="2" align="right"> <b>FO-SE-56 REV 0</b> </td> 
+							</tr> 
+							<tr> 
+								<td colspan="2" align="right">&nbsp;  </td> 
+							</tr> 
+							<tr> 
+								<td colspan="2" align="right">&nbsp;   </td> 
+							</tr> 
+						</table>
+					</td>
+				</tr>
+						
+				
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				
+
+						
+
+
+					
+	</table>
+</form>
+</body>
+</html>

@@ -1,0 +1,138 @@
+=== ANÁLISIS PROFUNDO DE banner2.jpg ===
+---- ExifTool ----
+ExifTool Version Number         : 12.57
+---- System ----
+File Name                       : banner2.jpg
+Directory                       : .
+File Size                       : 11 kB
+File Modification Date/Time     : 2016:02:19 17:05:32-06:00
+File Access Date/Time           : 2025:10:08 19:13:21-06:00
+File Inode Change Date/Time     : 2025:10:08 19:13:21-06:00
+File Permissions                : -rw-r--r--
+---- File ----
+File Type                       : JPEG
+File Type Extension             : jpg
+MIME Type                       : image/jpeg
+Exif Byte Order                 : Big-endian (Motorola, MM)
+Image Width                     : 632
+Image Height                    : 78
+Encoding Process                : Baseline DCT, Huffman coding
+Bits Per Sample                 : 8
+Color Components                : 3
+Y Cb Cr Sub Sampling            : YCbCr4:2:0 (2 2)
+---- JFIF ----
+JFIF Version                    : 1.01
+Resolution Unit                 : inches
+X Resolution                    : 96
+Y Resolution                    : 96
+---- IFD0 ----
+Orientation                     : Horizontal (normal)
+---- Composite ----
+Image Size                      : 632x78
+Megapixels                      : 0.049
+=== STRINGS EN banner2.jpg ===
+=== FIN DE banner2.jpg ===
+
+=== ANÁLISIS PROFUNDO DE banner2.png ===
+---- ExifTool ----
+ExifTool Version Number         : 12.57
+---- System ----
+File Name                       : banner2.png
+Directory                       : .
+File Size                       : 344 kB
+File Modification Date/Time     : 2016:11:10 16:40:40-06:00
+File Access Date/Time           : 2025:10:08 19:13:24-06:00
+File Inode Change Date/Time     : 2025:10:08 19:13:24-06:00
+File Permissions                : -rw-r--r--
+---- File ----
+File Type                       : PNG
+File Type Extension             : png
+MIME Type                       : image/png
+---- PNG ----
+Image Width                     : 2903
+Image Height                    : 796
+Bit Depth                       : 8
+Color Type                      : RGB with Alpha
+Compression                     : Deflate/Inflate
+Filter                          : Adaptive
+Interlace                       : Noninterlaced
+---- PNG-pHYs ----
+Pixels Per Unit X               : 11811
+Pixels Per Unit Y               : 11811
+Pixel Units                     : meters
+---- Composite ----
+Image Size                      : 2903x796
+Megapixels                      : 2.3
+=== STRINGS EN banner2.png ===
+=== FIN DE banner2.png ===
+
+=== ANÁLISIS PROFUNDO DE profile.png ===
+---- ExifTool ----
+ExifTool Version Number         : 12.57
+---- System ----
+File Name                       : profile.png
+Directory                       : .
+File Size                       : 103 kB
+File Modification Date/Time     : 2015:01:15 10:56:38-06:00
+File Access Date/Time           : 2025:10:08 19:13:26-06:00
+File Inode Change Date/Time     : 2025:10:08 19:13:26-06:00
+File Permissions                : -rw-r--r--
+---- File ----
+File Type                       : PNG
+File Type Extension             : png
+MIME Type                       : image/png
+---- PNG ----
+Image Width                     : 489
+Image Height                    : 289
+Bit Depth                       : 8
+Color Type                      : RGB with Alpha
+Compression                     : Deflate/Inflate
+Filter                          : Adaptive
+Interlace                       : Noninterlaced
+Significant Bits                : 8 8 8 8
+Software                        : Macromedia Fireworks 8
+---- PNG-pHYs ----
+Pixels Per Unit X               : 11800
+Pixels Per Unit Y               : 11800
+Pixel Units                     : meters
+---- Composite ----
+Image Size                      : 489x289
+Megapixels                      : 0.141
+=== STRINGS EN profile.png ===
+=== FIN DE profile.png ===
+
+=== ANÁLISIS PROFUNDO DE logo.jpg ===
+---- ExifTool ----
+ExifTool Version Number         : 12.57
+---- System ----
+File Name                       : logo.jpg
+Directory                       : .
+File Size                       : 66 kB
+File Modification Date/Time     : 2015:01:15 10:56:36-06:00
+File Access Date/Time           : 2025:10:08 19:13:28-06:00
+File Inode Change Date/Time     : 2025:10:08 19:13:28-06:00
+File Permissions                : -rw-r--r--
+---- File ----
+File Type                       : PNG
+File Type Extension             : png
+MIME Type                       : image/png
+---- PNG ----
+Image Width                     : 621
+Image Height                    : 586
+Bit Depth                       : 8
+Color Type                      : RGB with Alpha
+Compression                     : Deflate/Inflate
+Filter                          : Adaptive
+Interlace                       : Noninterlaced
+Gamma                           : 1.8182
+Software                        : Adobe ImageReady
+---- PNG-pHYs ----
+Pixels Per Unit X               : 11811
+Pixels Per Unit Y               : 11811
+Pixel Units                     : meters
+---- Composite ----
+Image Size                      : 621x586
+Megapixels                      : 0.364
+=== STRINGS EN logo.jpg ===
+=== FIN DE logo.jpg ===
+

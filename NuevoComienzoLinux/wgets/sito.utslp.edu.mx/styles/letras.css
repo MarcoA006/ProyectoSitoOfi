@@ -1,0 +1,77 @@
+.LetraTitulo
+{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#000000;
+	font-weight:bold;
+	font-style:normal;
+}
+
+.LetraSubtitulo
+{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	color:#000000;
+	font-weight:bold;
+	font-style:normal;
+}
+
+.LetrasTablaDatos
+{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	color:#000000;
+	font-weight:normal;
+	font-style:normal;
+}
+
+.LetrasTablaDatos label
+{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	color:#000000;
+	font-weight:bold;
+	font-style:normal;
+}
+
+.CintilloCalidad
+{
+	border-top:1px solid #666;
+	border-right:1px solid #666;
+	background:#E9E9E9;
+	color:#666;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	size:10px;
+}
+.CintilloCalidad td
+{
+	border-bottom:1px solid #666;
+	border-left:1px solid #666;
+	padding-left:6px;
+	padding-right:8px;
+}
+
+
+/* --------------------------------------------------------------- */
+.nTexto1, .aTexto1, .bTexto1, .rTexto1, .vTexto1{font-size:8px;}
+.nTexto1N, .aTexto1N, .bTexto1N, .rTexto1N, .vTexto1N{font-size:8px; font-weight:bold;}
+.nTexto2, .aTexto2, .bTexto2, .rTexto2, .vTexto2{font-size:10px;}
+.nTexto2N, .aTexto2N, .bTexto2N, .rTexto2N, .vTexto2N{font-size:10px; font-weight:bold;}
+.nTexto3, .aTexto3, .bTexto3, .rTexto3, .vTexto3{font-size:12px;}
+.nTexto3N, .aTexto3N, .bTexto3N, .rTexto3N, .vTexto3N{font-size:12px; font-weight:bold;}
+.nTexto4, .aTexto4, .bTexto4, .rTexto4, .vTexto4{font-size:14px;}
+.nTexto4N, .aTexto4N, .bTexto4N, .rTexto4N, .vTexto4N{font-size:14px; font-weight:bold;}
+.nTexto5, .aTexto5, .bTexto5, .rTexto5, .vTexto5{font-size:16px;}
+.nTexto5N, .aTexto5N, .bTexto5N, .rTexto5N, .vTexto5N{font-size:16px; font-weight:bold;}
+.nTexto6, .aTexto6, .bTexto6, .rTexto6, .vTexto6{font-size:18px;}
+.nTexto6N, .aTexto6N, .bTexto6N, .rTexto6N, .vTexto6N{font-size:18px; font-weight:bold;}
+.nTexto1, .nTexto1N, .nTexto2, .nTexto2N, .nTexto3, .nTexto3N, .nTexto4, .nTexto4N, .nTexto5, .nTexto5N, .nTexto6, .nTexto6N
+{font-family:Verdana, Arial, Helvetica, sans-serif; color:#000;}
+.aTexto1, .aTexto1N, .aTexto2, .aTexto2N, .aTexto3, .aTexto3N, .aTexto4, .aTexto4N, .aTexto5, .aTexto5N, .aTexto6, .aTexto6N
+{font-family:Verdana, Arial, Helvetica, sans-serif; color:#002B7F;}
+.bTexto1, .bTexto1N, .bTexto2, .bTexto2N, .bTexto3, .bTexto3N, .bTexto4, .bTexto4N, .bTexto5, .bTexto5N, .bTexto6, .bTexto6N
+{font-family:Verdana, Arial, Helvetica, sans-serif; color:#FFF;}
+.rTexto1, .rTexto1N, .rTexto2, .rTexto2N, .rTexto3, .rTexto3N, .rTexto4, .rTexto4N, .rTexto5, .rTexto5N, .rTexto6, .rTexto6N
+{font-family:Verdana, Arial, Helvetica, sans-serif; color:#FF0000;}
+.vTexto1, .vTexto1N, .vTexto2, .vTexto2N, .vTexto3, .vTexto3N, .vTexto4, .vTexto4N, .vTexto5, .vTexto5N, .vTexto6, .vTexto6N
+{font-family:Verdana, Arial, Helvetica, sans-serif; color:#008800;}

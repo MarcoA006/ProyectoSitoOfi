@@ -1,0 +1,25 @@
+.TablaInferior{
+	border-bottom-width:1px;
+	border-bottom-style:solid;
+	border-color:#000000;
+}
+
+.TablaDerechaInferior{
+	border-right-width:1px;
+	border-bottom-width:1px;
+	border-right-style:solid;
+	border-bottom-style:solid;
+	border-color:#000000;
+}
+
+.TablaDatosTitulo{
+	border-bottom-width:1px;
+	border-bottom-style:solid;
+	border-color:#000000;
+}
+
+.TablaFotografia{
+	border:1px;
+	border-color:#000000;
+	border-style:solid;
+}

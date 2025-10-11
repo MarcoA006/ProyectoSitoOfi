@@ -1,0 +1,844 @@
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Pragma: No-cache
+Cache-Control: no-cache
+Expires: Wed, 31 Dec 1969 18:00:00 CST
+Content-Type: text/html;charset=iso-8859-1
+Date: Sat, 11 Oct 2025 17:48:16 GMT
+Content-Length: 29243
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <link rel="shortcut icon" href="../images/shortcutico.png" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<title> Sistema de Información Táctico Operativo </title>
+	<link rel="stylesheet" href="../styles/pages.css" type="text/css">
+	<link rel="stylesheet" href="../styles/tables.css" type="text/css">
+	<link rel="stylesheet" href="../styles/cells.css?v=2.0" type="text/css">
+	<link rel="stylesheet" href="../styles/characters.css" type="text/css">
+	<link rel="stylesheet" href="../styles2/redmond_1.7.3/jquery-ui-1.7.3.custom.css" /> <!--DIALOG-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+    <link rel="stylesheet" href="../styles2/thumbnail-gallery.css">
+
+    <style type="text/css">
+<!--
+.Estilo1 {color: #FFFFFF}
+-->
+    </style>
+</head>
+<style>
+.tabla {
+	width:290px;
+	height:565px;
+	z-index:1;
+	overflow: auto;
+	left: 287px;
+	top: 222px;
+}
+.fade
+{
+        opacity:0.6;
+}
+.fade:hover
+{
+        opacity:1;
+		-webkit-transform: scale(1.1);
+		-ms-transform: scale(1.1);
+		transform: scale(1.1);
+}
+.iconomodulo, .iconoflecha
+{
+	height:16px;
+}
+.fadebox {
+display: none;
+position: absolute;
+top: 0%;
+left: 0%;
+width: 100%;
+height: 100%;
+background-color: black;
+z-index:1001;
+-moz-opacity: 0.5;
+opacity:.60;
+filter: alpha(opacity=80);
+}
+.overbox {
+display: none;
+position: absolute;
+top: 25%;
+left: 25%;
+width: 60%;
+height: 60%;
+z-index:1002;
+overflow: auto;
+}
+.no-close .ui-dialog-titlebar-close {
+  display: none;
+   
+}
+
+.no-close .ui-dialog-titlebar{
+	background-color:#FF0000
+}
+
+
+
+
+
+
+
+/*MENU*/
+        
+        .menu-item, .submenu-item {
+            background: white;
+            padding: 3px;
+            cursor: pointer;
+            position: relative;
+            list-style: none;
+			overflow:hidden;
+        }
+        .subsub {
+            width: auto;
+        }
+        .submenu-item {
+            padding: 3px;
+        }
+       
+        .menu-icono {
+            height: 17px;
+            margin: 0px 6px;
+            position: absolute;
+            top: 5px;
+        }
+       
+        .CeldaModulo {
+            font-weight: bold;
+            font-family: sans-serif;
+            font-size: 10.5px;
+            margin-left: 29px;
+        }
+        .CeldaDependiente, .CeldaVinculo {
+            font-weight: normal;
+			white-space: normal;
+        }
+		
+		
+		.submenu, .subsub {
+			list-style: none;
+			padding-left: 3px;
+			transition: max-height 0.2s ease-out;
+            margin: 0;
+            background: white;
+            /*box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);*/
+            white-space: nowrap;
+			max-height:0px;
+			overflow:hidden;
+		}
+		
+
+		.submenu.open, .subsub.open {
+			max-height: 600px; /* Ajusta este valor según sea necesario */
+		}
+		
+		.elementomenu:hover, .CeldaDependiente:hover{
+			 background:#f3f3f3 !important;
+		}
+		
+		.lisub:hover *:not(li:hover) {
+			background: none;
+		}
+		
+		.lisubsub:hover{
+			 background:#e9e9e9;
+		}
+		.lisubsub{
+			 margin-left:3px;
+			 color
+		}
+		
+		.lisub, .elementomenu{
+			transition: background 0.2s ease-out;
+		}
+</style>
+
+<script type="text/javascript" src="../javascript/jquery/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="../javascript/jquery/jquery-ui-1.8.2.min.js"></script> <!--para dialog-->
+		<script>var $jq = jQuery.noConflict();</script>
+        <script type="text/javascript">
+		   $jq(document).ready(function(){           
+			   var tamPanta = $jq(window).height() - 48;
+			   document.getElementById("Menu").style.height = tamPanta+"px";
+			   document.getElementById("contenido_principal").style.height = tamPanta+"px";
+			  			 
+			   $jq('#mensajeDialogo').dialog({
+				autoOpen: false,
+				modal: true, 
+				draggable: false,
+				resizable: false,
+				height: "500",
+    			width: "800px",
+				show: 'clip',
+				hide: 'clip',
+				dialogClass: "no-close",
+				buttons: {
+					"E N T E R A D O": function() {
+					 // $jq( this ).dialog( "close" );
+					  $jq("#mensajeDialogo").dialog("close");
+					}
+				},
+				show: { 
+					effect: "highlight",
+					duration: 2000
+				},
+				closeOnEscape: false
+				}); 			
+			});
+        </script> 
+
+<script language="javascript" type="text/javascript">
+<!--
+	window.history.go(1);
+	
+	document.oncontextmenu = function(){ return false;}		
+	
+	document.onkeydown = function()
+	  { 
+		if(window.event && window.event.keyCode == 116)
+		  {
+			 window.event.keyCode = 505; 
+		  }
+		
+		if(window.event && window.event.keyCode == 505)
+		  { 
+			return false;    
+		  }			  			
+	   }  
+//-->
+
+
+</script>
+<script language="javascript" type="text/javascript">
+<!--
+	function showLightbox() {
+		document.getElementById('over').style.display='block';
+		document.getElementById('fade').style.display='block';
+	}
+	function hideLightbox() {
+		document.getElementById('over').style.display='none';
+		document.getElementById('fade').style.display='none';
+	}
+
+	function bloquear(){
+		
+		window.frames["contenido_principal"].document.oncontextmenu = function(){ return false;};  
+		//document.getElementById("contenido_principal").contentWindow.document.oncontextmenu = function(){return false;}; 
+	}
+	function Encabezado_Soporte()
+		{
+			alert("Teléfono: (444) 834 8300 Ext. 2072\nHorario: 08:00 - 16:30 hrs.\nCorreo: omora@utslp.edu.mx");
+			
+		}
+	
+	function CambioPagina(pagina,liga)
+		{
+			// variable (cve)para saber cual es el link anterior seleccionado
+			var cve = document.getElementById("yLiga").value;
+			
+			//se regresa la liga seleccionada anterior a estado normal 
+			if(cve > 0)
+				{
+					document.getElementById("liga"+cve).style.color="#336600";
+					document.getElementById("liga"+cve).style.textDecoration="";
+				}
+				
+			// control (yLiga) para obtener el link seleccionado
+			document.getElementById("yLiga").value = liga;
+			
+			//se subraya la liga seleccionada y cambia de color
+			document.getElementById("liga"+liga).style.color="#215E21";
+			document.getElementById("liga"+liga).style.textDecoration="underline";
+			document.getElementById("contenido_principal").src = pagina+"?yResolucion=0&xResolucion=0";
+			document.getElementById("ruta").innerHTML = pagina.replace("/","\\");
+
+			
+			//alert(document.getElementById("contenido_principal").src);
+		}
+		
+	
+		
+		function Validar(){
+			var existe=document.getElementById("yMensaje");
+			if(existe.value=='true'){
+				VerMensaje(); 
+			}
+		}
+		
+		function VerMensaje(){
+			var alumno=document.getElementById("yAlumnoValida");
+			 $jq.post("mostrar_mensajes.jsp",
+				{
+					alumno: alumno.value, 
+					usuario:""+21136+""
+				},
+				function(data){            
+				// Recarga de la JSP al div asignado
+					$jq("#contenidoMsg").html(data); 
+				});
+				
+			$jq("#mensajeDialogo").dialog("open");
+		 	 
+		}
+		
+		//posicion menu
+		
+		
+		function hideAllSubmenus(exceptId) {
+			const allSubmenus = document.querySelectorAll('.submenu');
+			allSubmenus.forEach(submenu => {
+				if (submenu.id !== exceptId) {
+					submenu.style.maxHeight = '0px';
+				}
+			});
+		}
+		
+		function hideAllSubSubmenus(exceptId) {
+			const allSubmenus = document.querySelectorAll('.subsub');
+			allSubmenus.forEach(submenu => {
+				if (submenu.id !== exceptId) {
+					submenu.style.maxHeight = '0px';
+				}
+			});
+		}
+		
+		function toggleMenu(menuId) {
+			hideAllSubmenus(menuId);
+			const submenu = document.getElementById(menuId);
+			if (submenu.style.maxHeight === '0px' || submenu.style.maxHeight === '') {
+				submenu.style.maxHeight = submenu.scrollHeight + 'px';
+			} else {
+				submenu.style.maxHeight = '0px';
+			}
+		}
+		
+		function toggleSubMenu(subMenuId) {
+			hideAllSubSubmenus(subMenuId);
+			const submenu = document.getElementById(subMenuId);
+			if (submenu.style.maxHeight === '0px' || submenu.style.maxHeight === '') {
+				submenu.style.maxHeight = submenu.scrollHeight + 'px';
+				
+				// Ajustar la altura del contenedor de nivel 1
+				const parentMenu = submenu.closest('.sub'); 
+				if (parentMenu) {
+					parentMenu.style.maxHeight = parentMenu.scrollHeight + submenu.scrollHeight + 'px';
+				}
+			} else {
+				submenu.style.maxHeight = '0px';
+			}
+		}
+		
+		function toggleSubMenu(subMenuId) {
+			hideAllSubSubmenus(subMenuId);
+			const submenu = document.getElementById(subMenuId);
+		
+			if (submenu.style.maxHeight === '0px' || submenu.style.maxHeight === '') {
+				submenu.style.maxHeight = 'none'; // Permitir que el contenido determine la altura completa temporalmente
+				submenu.style.maxHeight = submenu.scrollHeight + 'px';
+		
+				// Ajustar la altura del contenedor de nivel 1
+				const parentMenu = submenu.closest('.sub'); 
+				if (parentMenu) {
+					parentMenu.style.maxHeight = 'none'; // Permitir que el contenido determine la altura completa temporalmente
+					parentMenu.style.maxHeight = parentMenu.scrollHeight + submenu.scrollHeight + 'px';
+				}
+			} else {
+				submenu.style.maxHeight = '0px';
+			}
+		}
+
+//--> 
+</script>
+<body onload="Validar()">
+<div id="over" class="overbox">
+	<table align="center" bgcolor="#F0F0F0" border="0" width="30%" cellpadding="5" cellspacing="5">
+		<tr><td align="center"><img alt="Sopórte técnico" title="Sopórte Técnico" src="../images/banner2.png" height="100"/></td></tr>
+		<tr><td>&nbsp; </td></tr>
+		<tr><th>Responsable: ISC. Hector de Jesus Nieto Briones </th></tr>
+		<tr><th>Teléfono: (444) 834 8300 Ext. 2072</th></tr>
+		<tr><th>Horario: 08:00 - 16:00 hrs.</th></tr> 
+		<tr><th>Correo: hnieto@utslp.edu.mx</th></tr>
+		<tr><td align="right"><a href="javascript:hideLightbox();">X Cerrar Ventana</a></td></tr>
+  </table> 
+</div>
+<div id="fade" class="fadebox"></div>
+
+<form name="forma" method="post" action="">
+	<input type="hidden" name="yAccion" id="yAccion" value="">
+    <input type="hidden" name="yAbuelo" id="yAbuelo" value="0">
+    <input type="hidden" name="yLiga" id="yLiga" value="0">
+    <input type="hidden" name="yPadre" id="yPadre" value="0">
+	<table border="0" height="605" width="100%" cellpadding="0" cellspacing="0">
+    	<tr height="40px">
+        	<td colspan="2" bgcolor="#336600">
+
+            	<table border="0" width="100%" cellpadding="5" cellspacing="5" style="background:white; border-bottom:1px solid #e5e5e5;">
+                    <tr>
+						<td width="15%" align="left" class="CeldaImagenSeleccionada"  onclick="document.forma.submit()">
+							&nbsp;&nbsp; <img align="center" src="../images/logo_negro.png" height="50"/> 
+							<!--<&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img align="center" src="../images/AngryXmas.png" height="100"/>-->
+                        </td> 
+					
+						<td width="35%" class="CeldaBoton" align="right" onmouseover="this.className='CeldaBotonSeleccionado'" onmouseout="this.className='CeldaBoton'">
+                           	<a href="javascript:showLightbox();">
+							<!--<img alt="Sopórte técnico" title="Sopórte Técnico" src="../images/banner_central.png" height="40"/>-->
+							<img alt="Sopórte técnico" title="Sopórte Técnico" src="../images/banner_central.png?time=1760204896353" height="40"/>
+							
+							</a>
+                        </td>										
+                        <td width="40%" class="CeldaUsuario" align="left"> 
+							<label style="font-size:12px">
+								MARCO ANTONIO BLANCO MENDEZ &nbsp; 
+								
+							</label>
+							
+							
+							 
+							 
+							 
+							<img class ="foto" src="../fotos_matricula/21136.bmp" height="40" width="33" valign="middle"> 
+						</td>
+					
+						<td width="10%" align="center" valign="middle">
+						<input type="hidden" name="yMensaje" id="yMensaje" value="false">
+						<input type="hidden" name="yAlumnoValida" id="yAlumnoValida" value="true">
+						 	 
+							&nbsp;
+                            <a href="cerrar_sesion.jsp" target="_top" class="CeldaBoton" onmouseover="this.className='CeldaBotonSeleccionado'" onmouseout="this.className='CeldaBoton'" valign="middle"> 
+								<img alt="Cerrar sesión" title="Cerrar sesión" class="fade" src="../images/logoff2.png" height="35">
+                            </a>&nbsp;
+                            			
+						</td>
+						
+							
+						
+                    </tr>
+                </table>
+            </td>
+        </tr> 
+       	<tr>
+
+        	<td width="180px" valign="top"  >
+            	
+				<div class="tabla" id="Menu" style="background-color:#FFFFFF; border-right:1px solid #e5e5e5;"> 
+				
+        <div bgcolor="#046A38" >
+         	<label style="color:white;font-size:10px" id="ruta">D:\Sito_Sanluis\web\ </label>
+        </div> 
+				<table border="0" width="168px" align="left"  cellpadding="0" cellspacing="0" >
+				<colgroup>
+					<col width="10%" />
+					<col width="10%" />
+					<col width="5%" />
+					<col width="5%" />
+					<col width="68%"/>
+					<col width="2%" />
+				</colgroup>
+				 
+				
+    
+        <div class="menu-item">
+			<div class="elementomenu" onclick="toggleMenu('submenu1')">
+				<img src="../images/modulo144.png" alt="Icono" class="menu-icono">
+				<span class="CeldaModulo"> ALUMNOS</span>
+			</div>
+			<ul class="submenu sub" id="submenu1">
+
+                <li class="submenu-item lisub">
+                    <div class="CeldaDependiente" onclick="toggleSubMenu('subsubmenu1')"> DATOS PERSONALES </div>
+                    <ul class="submenu subsub" id="subsubmenu1">
+
+                        <li class="submenu-item lisubsub" onclick="CambioPagina('escolar/documentos_entregados_alumnos.jsp',1293)">
+                            <div id="liga1293" class="CeldaVinculo">DOCUMENTOS ENTREGADOS </div>
+                        </li>
+
+                        <li class="submenu-item lisubsub" onclick="CambioPagina('escolar/proceso_informacion_alumno.jsp',1294)">
+                            <div id="liga1294" class="CeldaVinculo">INFORMACION ALUMNO </div>
+                        </li>
+
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+
+    
+        <div class="menu-item">
+			<div class="elementomenu" onclick="toggleMenu('submenu2')">
+				<img src="../images/modulo568.png" alt="Icono" class="menu-icono">
+				<span class="CeldaModulo"> BECAS</span>
+			</div>
+			<ul class="submenu sub" id="submenu2">
+
+                <input type="hidden" name="y144" id="y144" value="1">
+
+                <li class="submenu-item lisub">
+                    <div class="CeldaDependiente" onclick="toggleSubMenu('subsubmenu3')"> CARTAS </div>
+                    <ul class="submenu subsub" id="subsubmenu3">
+
+                        <input type="hidden" name="y248" id="y248" value="2">
+
+                        <li class="submenu-item lisubsub" onclick="CambioPagina('escolar/becas/descargar_carta_beca.jsp',1219)">
+                            <div id="liga1219" class="CeldaVinculo">DESCARGAR CARTA </div>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li class="submenu-item lisub">
+                    <div class="CeldaDependiente" onclick="toggleSubMenu('subsubmenu4')"> PROCESO </div>
+                    <ul class="submenu subsub" id="subsubmenu4">
+
+                        <input type="hidden" name="y1218" id="y1218" value="1">
+
+                        <li class="submenu-item lisubsub" onclick="CambioPagina('escolar/becas/catalogo_solicitud_beca_alumno.jsp',578)">
+                            <div id="liga578" class="CeldaVinculo">SOLICITUD BECA </div>
+                        </li>
+
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+
+    
+        <div class="menu-item">
+			<div class="elementomenu" onclick="toggleMenu('submenu4')">
+				<img src="../images/modulo516.png" alt="Icono" class="menu-icono">
+				<span class="CeldaModulo"> BUZÓN</span>
+			</div>
+			<ul class="submenu sub" id="submenu4">
+
+                <input type="hidden" name="y568" id="y568" value="2">
+
+                <li class="submenu-item lisub">
+                    <div class="CeldaDependiente" onclick="toggleSubMenu('subsubmenu5')"> BUZÓN </div>
+                    <ul class="submenu subsub" id="subsubmenu5">
+
+                        <input type="hidden" name="y570" id="y570" value="1">
+
+                        <li class="submenu-item lisubsub" onclick="CambioPagina('buzon/catalogo_retroalimentacion.jsp',519)">
+                            <div id="liga519" class="CeldaVinculo">RETROALIMENTACION </div>
+                        </li>
+
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+
+    
+        <div class="menu-item">
+			<div class="elementomenu" onclick="toggleMenu('submenu5')">
+				<img src="../images/modulo1044.png" alt="Icono" class="menu-icono">
+				<span class="CeldaModulo"> ENCUESTAS PERSONALIZADAS</span>
+			</div>
+			<ul class="submenu sub" id="submenu5">
+
+                <input type="hidden" name="y516" id="y516" value="1">
+
+                <li class="submenu-item lisub">
+                    <div class="CeldaDependiente" onclick="toggleSubMenu('subsubmenu6')"> PROCESOS </div>
+                    <ul class="submenu subsub" id="subsubmenu6">
+
+                        <input type="hidden" name="y524" id="y524" value="1">
+
+                        <li class="submenu-item lisubsub" onclick="CambioPagina('encuesta/proceso_contestar_encuesta.jsp',1056)">
+                            <div id="liga1056" class="CeldaVinculo">ENCUESTAS </div>
+                        </li>
+
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+
+    
+        <div class="menu-item">
+			<div class="elementomenu" onclick="toggleMenu('submenu6')">
+				<img src="../images/modulo1171.png" alt="Icono" class="menu-icono">
+				<span class="CeldaModulo"> GRADUACIONES</span>
+			</div>
+			<ul class="submenu sub" id="submenu6">
+
+                <input type="hidden" name="y1044" id="y1044" value="1">
+
+                <li class="submenu-item lisub">
+                    <div class="CeldaDependiente" onclick="toggleSubMenu('subsubmenu7')"> INVITACIONES </div>
+                    <ul class="submenu subsub" id="subsubmenu7">
+
+                        <input type="hidden" name="y1046" id="y1046" value="1">
+
+                        <li class="submenu-item lisubsub" onclick="CambioPagina('escolar/graduaciones/descargar_invitacion.jsp',1173)">
+                            <div id="liga1173" class="CeldaVinculo">DESCARGAR INVITACIÓN </div>
+                        </li>
+
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+
+    
+        <div class="menu-item">
+			<div class="elementomenu" onclick="toggleMenu('submenu7')">
+				<img src="../images/modulo1227.png" alt="Icono" class="menu-icono">
+				<span class="CeldaModulo"> IMSS</span>
+			</div>
+			<ul class="submenu sub" id="submenu7">
+
+                <input type="hidden" name="y1171" id="y1171" value="1">
+
+                <li class="submenu-item lisub">
+                    <div class="CeldaDependiente" onclick="toggleSubMenu('subsubmenu8')"> CARTAS </div>
+                    <ul class="submenu subsub" id="subsubmenu8">
+
+                        <input type="hidden" name="y1172" id="y1172" value="1">
+
+                        <li class="submenu-item lisubsub" onclick="CambioPagina('escolar/becas/descargar_carta_imss.jsp',1229)">
+                            <div id="liga1229" class="CeldaVinculo">DESCARGAR CARTAS IMSS </div>
+                        </li>
+
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+
+    
+        <div class="menu-item">
+			<div class="elementomenu" onclick="toggleMenu('submenu8')">
+				<img src="../images/modulo123.png" alt="Icono" class="menu-icono">
+				<span class="CeldaModulo"> PERFIL</span>
+			</div>
+			<ul class="submenu sub" id="submenu8">
+
+                <input type="hidden" name="y1227" id="y1227" value="1">
+
+                <li class="submenu-item lisub">
+                    <div class="CeldaDependiente" onclick="toggleSubMenu('subsubmenu9')"> CUENTA </div>
+                    <ul class="submenu subsub" id="subsubmenu9">
+
+                        <input type="hidden" name="y1228" id="y1228" value="1">
+
+                        <li class="submenu-item lisubsub" onclick="CambioPagina('escolar/conjunto_registro_alumno.jsp',249)">
+                            <div id="liga249" class="CeldaVinculo">DATOS PERSONALES </div>
+                        </li>
+
+                        <li class="submenu-item lisubsub" onclick="CambioPagina('catalogo_cambio_password.jsp',103)">
+                            <div id="liga103" class="CeldaVinculo">CAMBIAR CONTRASEÑA </div>
+                        </li>
+
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+
+    
+        <div class="menu-item">
+			<div class="elementomenu" onclick="toggleMenu('submenu9')">
+				<img src="../images/modulo1205.png" alt="Icono" class="menu-icono">
+				<span class="CeldaModulo"> REINGRESOS</span>
+			</div>
+			<ul class="submenu sub" id="submenu9">
+
+                <input type="hidden" name="y123" id="y123" value="1">
+
+                <li class="submenu-item lisub">
+                    <div class="CeldaDependiente" onclick="toggleSubMenu('subsubmenu11')"> REINGRESO SOLICITUD </div>
+                    <ul class="submenu subsub" id="subsubmenu11">
+
+                        <input type="hidden" name="y102" id="y102" value="2">
+
+                        <li class="submenu-item lisubsub" onclick="CambioPagina('escolar/reingresos/proceso_solicitud_reingreso_alumno.jsp',1217)">
+                            <div id="liga1217" class="CeldaVinculo">SOLICITAR REINGRESO ALUMNOS </div>
+                        </li>
+
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+
+    
+        <div class="menu-item">
+			<div class="elementomenu" onclick="toggleMenu('submenu10')">
+				<img src="../images/modulo178.png" alt="Icono" class="menu-icono">
+				<span class="CeldaModulo"> SEGUIMIENTO ALUMNOS</span>
+			</div>
+			<ul class="submenu sub" id="submenu10">
+
+                <input type="hidden" name="y1205" id="y1205" value="1">
+
+                <li class="submenu-item lisub">
+                    <div class="CeldaDependiente" onclick="toggleSubMenu('subsubmenu12')"> CONCENTRADOS </div>
+                    <ul class="submenu subsub" id="subsubmenu12">
+
+                        <input type="hidden" name="y1206" id="y1206" value="1">
+
+                        <li class="submenu-item lisubsub" onclick="CambioPagina('escolar/calificaciones/reporte_concentrado_asistencias.jsp',1029)">
+                            <div id="liga1029" class="CeldaVinculo">CONCENTRADO ASISTENCIA </div>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li class="submenu-item lisub">
+                    <div class="CeldaDependiente" onclick="toggleSubMenu('subsubmenu13')"> CONSULTAS </div>
+                    <ul class="submenu subsub" id="subsubmenu13">
+
+                        <input type="hidden" name="y1199" id="y1199" value="1">
+
+                        <li class="submenu-item lisubsub" onclick="CambioPagina('escolar/muestra_boleta_calificacion_alumno_ok.jsp',146)">
+                            <div id="liga146" class="CeldaVinculo">BOLETA DE CALIFICACIONES </div>
+                        </li>
+
+                        <li class="submenu-item lisubsub" onclick="CambioPagina('caja/reporte_estado_de_cuenta.jsp',1285)">
+                            <div id="liga1285" class="CeldaVinculo">ESTADO DE CUENTA </div>
+                        </li>
+
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+
+    
+        <div class="menu-item">
+			<div class="elementomenu" onclick="toggleMenu('submenu12')">
+				<img src="../images/modulo1231.png" alt="Icono" class="menu-icono">
+				<span class="CeldaModulo"> TRAYECTORIA EDUCATIVA</span>
+			</div>
+			<ul class="submenu sub" id="submenu12">
+
+                <input type="hidden" name="y178" id="y178" value="2">
+
+                <li class="submenu-item lisub">
+                    <div class="CeldaDependiente" onclick="toggleSubMenu('subsubmenu15')"> CARTAS </div>
+                    <ul class="submenu subsub" id="subsubmenu15">
+
+                        <input type="hidden" name="y145" id="y145" value="2">
+
+                        <li class="submenu-item lisubsub" onclick="CambioPagina('escolar/becas/descargar_carta_trayectoria.jsp',1233)">
+                            <div id="liga1233" class="CeldaVinculo">DESCARGAR CARTAS TRAYECTORIA EDUCATIVA </div>
+                        </li>
+
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+
+    
+        <div class="menu-item">
+			<div class="elementomenu" onclick="toggleMenu('submenu13')">
+				<img src="../images/modulo777.png" alt="Icono" class="menu-icono">
+				<span class="CeldaModulo"> TUTOREO</span>
+			</div>
+			<ul class="submenu sub" id="submenu13">
+
+                <input type="hidden" name="y1231" id="y1231" value="1">
+
+                <li class="submenu-item lisub">
+                    <div class="CeldaDependiente" onclick="toggleSubMenu('subsubmenu16')"> ACTIVIDADES DEL TUTOR </div>
+                    <ul class="submenu subsub" id="subsubmenu16">
+
+                        <input type="hidden" name="y1232" id="y1232" value="1">
+
+                        <li class="submenu-item lisubsub" onclick="CambioPagina('tutoreo/catalogo_plan_vida.jsp',1077)">
+                            <div id="liga1077" class="CeldaVinculo">REGISTRO PLAN DE VIDA </div>
+                        </li>
+
+                        <li class="submenu-item lisubsub" onclick="CambioPagina('tutoreo/catalogo_plan_renovacion.jsp',1078)">
+                            <div id="liga1078" class="CeldaVinculo">REGISTRO PLAN DE RENOVACION </div>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li class="submenu-item lisub">
+                    <div class="CeldaDependiente" onclick="toggleSubMenu('subsubmenu18')"> CANALIZACIONES </div>
+                    <ul class="submenu subsub" id="subsubmenu18">
+
+                        <input type="hidden" name="y781" id="y781" value="2">
+
+                        <li class="submenu-item lisubsub" onclick="CambioPagina('tutoreo/consulta_listado_canalizacion_alumno.jsp',792)">
+                            <div id="liga792" class="CeldaVinculo">CONSTANCIAS DE CANALIZACION </div>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li class="submenu-item lisub">
+                    <div class="CeldaDependiente" onclick="toggleSubMenu('subsubmenu19')"> ENCUESTAS </div>
+                    <ul class="submenu subsub" id="subsubmenu19">
+
+                        <input type="hidden" name="y1147" id="y1147" value="1">
+
+                        <li class="submenu-item lisubsub" onclick="CambioPagina('tutoreo/proceso_encuesta_tutoreo.jsp',1059)">
+                            <div id="liga1059" class="CeldaVinculo">ENCUESTA TUTOREO </div>
+                        </li>
+
+                        <li class="submenu-item lisubsub" onclick="CambioPagina('escolar/proceso_encuesta_nuevo_ingreso.jsp',1088)">
+                            <div id="liga1088" class="CeldaVinculo">ENCUESTA NUEVO INGRESO </div>
+                        </li>
+
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+
+    <input type="hidden" name="y777" id="y777" value="3">
+    <input type="hidden" name="y1058" id="y1058" value="2">
+
+                <tr>
+                	<td>&nbsp;</td>
+                    <td>&nbsp;</td> 
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+				</table> 
+				</div>
+			</td>
+             
+			<td align="left" valign="top" width="90%">
+				<div>
+					<iframe  src="default.jsp?xBandera=false" align="left" name="contenido_principal" id="contenido_principal" onload="bloquear()" width="100%" height="100%" frameborder="0" scrolling="auto" ></iframe>
+				</div>
+			
+			</td>
+		</tr>
+	</table>
+	<div id="mensajeDialogo" title="A V I S O S" style="padding:1px;color:#FF0000" class="selector">
+		<table border="0" cellpadding="0" cellspacing="0" align="center" width="100%">
+			<tr>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td><div id="contenidoMsg">bla</div></td>
+			</tr>
+		</table>
+	</div> 
+</form>
+</body>
+</html>				

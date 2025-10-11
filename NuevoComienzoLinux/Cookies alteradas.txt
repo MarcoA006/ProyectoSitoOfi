@@ -1,0 +1,121 @@
+Request de Informacion de Alumno:
+GET /jsp/escolar/proceso_informacion_alumno.jsp?yResolucion=0&xResolucion=0 HTTP/1.1
+Host: sito.utslp.edu.mx
+Cookie: JSESSIONID=BA930B336B85CCC4053D91B60B71078B
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: es-MX,es;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br
+Referer: https://sito.utslp.edu.mx/jsp/
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: iframe
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: same-origin
+Sec-Fetch-User: ?1
+Priority: u=4
+Te: trailers
+Connection: keep-alive
+
+Request de Informacion personal:
+GET /jsp/escolar/conjunto_registro_alumno.jsp?yResolucion=0&xResolucion=0 HTTP/1.1
+Host: sito.utslp.edu.mx
+Cookie: JSESSIONID=BA930B336B85CCC4053D91B60B71078B
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: es-MX,es;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br
+Referer: https://sito.utslp.edu.mx/jsp/
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: iframe
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: same-origin
+Sec-Fetch-User: ?1
+Priority: u=4
+Te: trailers
+Connection: keep-alive
+
+Request de cambio de contraseña:
+GET /jsp/catalogo_cambio_password.jsp?yResolucion=0&xResolucion=0 HTTP/1.1
+Host: sito.utslp.edu.mx
+Cookie: JSESSIONID=BA930B336B85CCC4053D91B60B71078B
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: es-MX,es;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br
+Referer: https://sito.utslp.edu.mx/jsp/
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: iframe
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: same-origin
+Sec-Fetch-User: ?1
+Priority: u=4
+Te: trailers
+Connection: keep-alive
+
+POST /jsp/catalogo_cambio_password.jsp?yResolucion=0&xResolucion=0 HTTP/1.1
+Host: sito.utslp.edu.mx
+Cookie: JSESSIONID=BA930B336B85CCC4053D91B60B71078B; ZP_CAL=%27fdow%27%3Anull%2C%27history%27%3A%222006/05/28/00/00%22%2C%27sortOrder%27%3A%22asc%22%2C%27hsize%27%3A9
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: es-MX,es;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 113
+Origin: https://sito.utslp.edu.mx
+Referer: https://sito.utslp.edu.mx/jsp/catalogo_cambio_password.jsp?yResolucion=0&xResolucion=0
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: iframe
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: same-origin
+Sec-Fetch-User: ?1
+Priority: u=4
+Te: trailers
+Connection: keep-alive
+
+yAccion=Verificar_Fecha&x4=17158&xI=1&yResolucion=0&xFecha=28-05-2006&xPasswordActual=&xNuevoPassword=&xPassword=
+
+Request ver calificaciones:
+POST /jsp/catalogo_cambio_password.jsp?yResolucion=0&xResolucion=0 HTTP/1.1
+Host: sito.utslp.edu.mx
+Cookie: JSESSIONID=BA930B336B85CCC4053D91B60B71078B; ZP_CAL=%27fdow%27%3Anull%2C%27history%27%3A%222006/05/28/00/00%22%2C%27sortOrder%27%3A%22asc%22%2C%27hsize%27%3A9
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: es-MX,es;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 113
+Origin: https://sito.utslp.edu.mx
+Referer: https://sito.utslp.edu.mx/jsp/catalogo_cambio_password.jsp?yResolucion=0&xResolucion=0
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: iframe
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: same-origin
+Sec-Fetch-User: ?1
+Priority: u=4
+Te: trailers
+Connection: keep-alive
+
+yAccion=Verificar_Fecha&x4=17158&xI=1&yResolucion=0&xFecha=28-05-2006&xPasswordActual=&xNuevoPassword=&xPassword=
+
+request ver asistenciaas:
+POST /jsp/escolar/calificaciones/reporte_concentrado_asistencias.jsp?yResolucion=0&xResolucion=0 HTTP/1.1
+Host: sito.utslp.edu.mx
+Cookie: JSESSIONID=BA930B336B85CCC4053D91B60B71078B; ZP_CAL=%27fdow%27%3Anull%2C%27history%27%3A%222006/05/28/00/00%22%2C%27sortOrder%27%3A%22asc%22%2C%27hsize%27%3A9
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: es-MX,es;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 145
+Origin: https://sito.utslp.edu.mx
+Referer: https://sito.utslp.edu.mx/jsp/escolar/calificaciones/reporte_concentrado_asistencias.jsp?yResolucion=0&xResolucion=0
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: iframe
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: same-origin
+Sec-Fetch-User: ?1
+Priority: u=4
+Te: trailers
+Connection: keep-alive
+
+yResolucion=0&yAccion=&yCargar=true&xPeriodo=37&xUnidadAcademica=2&xCarrera=38&xEspecialidad=1&xGrupo=6619&xTipo=N&xParcial=2&xJustificantes=true

